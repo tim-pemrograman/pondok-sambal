@@ -9,7 +9,7 @@ class User extends CI_Controller {
 		$this->load->view('admin/template/header');
 		$this->load->view('admin/template/sidebar');
 		$this->load->view('admin/template/topbar');
-		$this->load->view('admin/dashboard');
+		$this->load->view('admin/user/index');
 		$this->load->view('admin/template/footer');
 	}
 
