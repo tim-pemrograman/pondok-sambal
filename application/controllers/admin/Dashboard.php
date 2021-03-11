@@ -6,7 +6,9 @@ class Dashboard extends CI_Controller {
 	// Halaman dashboard
 	public function index()
 	{
-		$this->load->view('admin/template/header');
+		$data['titles'] = "Dashboard - Pondok Sambal";
+
+		$this->load->view('admin/template/header',$data);
 		$this->load->view('admin/template/sidebar');
 		$this->load->view('admin/template/topbar');
 		$this->load->view('admin/dashboard');
