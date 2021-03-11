@@ -43,7 +43,13 @@ class Auth extends CI_Controller {
 
 		// Cek User
 		if ($user && $password) {
-			//Cek Password
+
+			$role = [
+				'employee_id' => $user['employee_id']
+			];
+			// Simpan Role ke session
+			$this->session->set_userdata($role);
+
 			redirect('admin/Dashboard');
 		} else {
 			$this->session->set_flashdata('message', '<div class="alert alert-danger">Email Tidak Di Temukan !, Periksa Kembali</div>');
@@ -57,6 +63,14 @@ class Auth extends CI_Controller {
 		$this->load->view('admin/template/auth_header');
         $this->load->view('admin/auth/register');
 		$this->load->view('admin/template/auth_footer');
+	}
+
+	public function logout()
+	{
+		$this->session->unset_userdata('employee_id');
+
+		$this->session->set_flashdata('message', '<div class="alert alert-success">Logout Berhasil</div>');
+		redirect('admin/auth');
 	}
 
 }
