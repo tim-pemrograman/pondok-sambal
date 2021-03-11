@@ -34,7 +34,7 @@
                             </td>
                        </tr>
                        <tr>
-                            <td>1</td>
+                            <td>2</td>
                             <td>Desserts</td>
                             <td>
                                 <a class="btn-circle btn-primary"
