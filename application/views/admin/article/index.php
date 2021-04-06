@@ -15,7 +15,7 @@
                         <tr> 
                             <th>No</th>
                             <td>Article Content</td>
-                            <td>Article Images</td>
+                            <td>Article assets/images</td>
                             <td>Article Views</td>
                             <td>Employee Name</td>
                             <th>Action</th>
@@ -26,7 +26,7 @@
                        <tr>
                             <td>1</td>
                             <td>Mengapa Makanan Nusantara Terasa Sangat Lezat ?</td>
-                            <td><img src="https://www.goodnewsfromindonesia.id/uploads/post/large-8-makanan-unik-khas-nusantara-dd01e6847330e5b27d9be8c57847f853.jpg" width="100" alt="img Makanan Nusantara"></td>
+                            <td><img src="https://www.goodnewsfromindonesia.id/assets/uploads/post/large-8-makanan-unik-khas-nusantara-dd01e6847330e5b27d9be8c57847f853.jpg" width="100" alt="img Makanan Nusantara"></td>
                             <td>125 Views</td>
                             <td>Admin Pondok Sambal</td>
                             <td>
