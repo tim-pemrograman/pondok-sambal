@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.5
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Apr 06, 2021 at 01:02 AM
--- Server version: 10.3.28-MariaDB
--- PHP Version: 7.3.6
+-- Host: 127.0.0.1
+-- Generation Time: Apr 06, 2021 at 05:43 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `tugaskul_PondokSambal`
+-- Database: `tugaskul_pondoksambal`
 --
 
 -- --------------------------------------------------------
@@ -30,6 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `tbl_article` (
   `article_id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
   `content` varchar(250) NOT NULL,
   `article_img` varchar(150) NOT NULL,
   `views` int(11) NOT NULL,
@@ -65,6 +65,32 @@ CREATE TABLE `tbl_company` (
   `gallery_image` varchar(100) NOT NULL,
   `banner_image` varchar(100) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_company_banner`
+--
+
+CREATE TABLE `tbl_company_banner` (
+  `id` int(11) NOT NULL,
+  `img_path` varchar(255) NOT NULL,
+  `img_alt` varchar(255) DEFAULT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `subtitle` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_company_gallery`
+--
+
+CREATE TABLE `tbl_company_gallery` (
+  `id` int(11) NOT NULL,
+  `img_path` varchar(255) NOT NULL,
+  `img_alt` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -128,6 +154,18 @@ ALTER TABLE `tbl_company`
   ADD PRIMARY KEY (`company_id`);
 
 --
+-- Indexes for table `tbl_company_banner`
+--
+ALTER TABLE `tbl_company_banner`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_company_gallery`
+--
+ALTER TABLE `tbl_company_gallery`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tbl_employee`
 --
 ALTER TABLE `tbl_employee`
@@ -161,6 +199,18 @@ ALTER TABLE `tbl_category`
 --
 ALTER TABLE `tbl_company`
   MODIFY `company_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tbl_company_banner`
+--
+ALTER TABLE `tbl_company_banner`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tbl_company_gallery`
+--
+ALTER TABLE `tbl_company_gallery`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tbl_employee`
