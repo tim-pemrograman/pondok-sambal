@@ -4,8 +4,7 @@
 		<!-- Above Sidebar Section-->
 		<div class="above-sidebar-wrapper">
 			<section id="content-section-1">
-				<div class="gdlr-full-size-wrapper gdlr-show-all"
-					style="padding-bottom: 0px;  background-color: #ffffff; ">
+				<div class="gdlr-full-size-wrapper gdlr-show-all" style="padding-bottom: 0px;  background-color: #ffffff; ">
 					<div class="gdlr-master-slider-item gdlr-slider-item gdlr-item" style="margin-bottom: 0px;">
 						<!-- MasterSlider -->
 						<div id="P_slider_1" class="master-slider-parent ms-parent-id-1">
@@ -15,116 +14,14 @@
 
 								<div class="ms-slide" data-delay="3" data-fill-mode="fill">
 									<div class="mask" style="background-color: black;">
-										<img src="<?= base_url('assets/images/main-header.jpg')?>" alt="" title=""
-											data-src="<?= base_url('assets/images/main-header.jpg')?>"
-											style="opacity: 0.6; " />
+										<img src="<?= base_url('assets/images/main-header.jpg') ?>" alt="" title="" data-src="<?= base_url('assets/images/main-header.jpg') ?>" style="opacity: 0.6; " />
 									</div>
 
-									<div class="ms-layer  msp-cn-1-7" style=""
-										data-effect="t(true,n,-150,n,n,n,n,n,n,n,n,n,n,n,n)" data-duration="450"
-										data-ease="easeOutQuint" data-offset-x="0" data-offset-y="-106" data-origin="mc"
-										data-position="normal">
+									<div class="ms-layer  msp-cn-1-7" style="" data-effect="t(true,n,-150,n,n,n,n,n,n,n,n,n,n,n,n)" data-duration="450" data-ease="easeOutQuint" data-offset-x="0" data-offset-y="-106" data-origin="mc" data-position="normal">
 										Taste Of Nusantara</div>
 
-									<div class="ms-layer  msp-cn-1-8" style=""
-										data-effect="t(true,n,n,-500,n,n,n,n,n,n,n,n,n,n,n)" data-duration="475"
-										data-delay="462" data-ease="easeOutQuint" data-offset-x="228"
-										data-offset-y="314" data-origin="tl" data-position="normal">
-										Started Since</div>
-
-									<div class="ms-layer  msp-cn-1-9" style="" data-duration="525" data-delay="950"
-										data-ease="easeOutQuint" data-offset-x="499" data-offset-y="490"
-										data-origin="tl" data-position="normal">
-										2020</div>
-
-									<img class="ms-layer"
-										src="<?= base_url('plugins/masterslider/public/assets/css/blank.gif')?>"
-										data-src="assets/upload/slider-3-2.jpg" alt="" style="" data-duration="537"
-										data-delay="937" data-ease="easeOutQuint" data-type="image" data-offset-x="-685"
-										data-offset-y="128" data-origin="ml" data-position="normal" />
-
-									<img class="ms-layer"
-										src="<?= base_url('plugins/masterslider/public/assets/css/blank.gif')?>"
-										data-src="assets/upload/slider-3-2.jpg" alt="" style="" data-duration="512"
-										data-delay="937" data-ease="easeOutQuint" data-type="image" data-offset-x="685"
-										data-offset-y="128" data-origin="ml" data-position="normal" />
-
-								</div>
-								<div class="ms-slide" data-delay="3" data-fill-mode="fill">
-									<div class="mask" style="background-color: black;">
-										<img src="<?= base_url('assets/images/makananpedas.jpg')?>" alt="" title=""
-											data-src="<?= base_url('assets/images/makananpedas.jpg')?>"
-											style="opacity: 0.6; " />
-									</div>
-									<div class="ms-layer  msp-cn-1-1" style=""
-										data-effect="t(true,-150,n,n,n,n,n,n,n,n,n,n,n,n,n)" data-duration="387"
-										data-ease="easeOutQuint" data-offset-x="462" data-offset-y="-207"
-										data-origin="ml" data-position="normal">
-										Selamat Datang di</div>
-
-									<div class="ms-layer  msp-cn-1-2" style=""
-										data-effect="t(true,-150,n,n,n,n,n,n,n,n,n,n,n,n,n)" data-duration="375"
-										data-delay="412" data-ease="easeOutQuint" data-fixed="true" data-offset-x="106"
-										data-offset-y="23" data-origin="ml" data-position="normal">
-										Pondok Sambal</div>
-
-									<div class="ms-layer  msp-cn-1-4" style=""
-										data-effect="t(true,-150,n,n,n,n,n,n,n,n,n,n,n,n,n)" data-duration="362"
-										data-delay="1025" data-ease="easeOutQuint" data-offset-x="341"
-										data-offset-y="276" data-origin="ml" data-position="normal">
-										Sambal Terenak di Batam</div>
-
-									<img class="ms-layer"
-										src="<?= base_url('plugins/masterslider/public/assets/css/blank.gif')?>"
-										data-src="<?= base_url('assets/upload/slider-1-2.png')?>" alt="" style=""
-										data-duration="350" data-delay="1400" data-ease="easeOutQuint" data-type="image"
-										data-offset-x="695" data-offset-y="38" data-origin="ml"
-										data-position="normal" />
-
-									<a href="<?= base_url('aboutpage/about')?>" target="_self"
-										class="ms-layer ms-btn ms-btn-round ms-btn-n msp-preset-btn-159"
-										data-duration="450" data-delay="1412" data-ease="easeOutQuint"
-										data-type="button" data-offset-x="837" data-offset-y="399" data-origin="tl"
-										data-position="normal">Learn More</a>
-
-								</div>
-								<div class="ms-slide" data-delay="3" data-fill-mode="fill">
-									<div class="mask" style="background-color: black;">
-										<img src="<?= base_url('assets/images/cook.png')?>" alt="" title=""
-											data-src="<?= base_url('assets/images/main-header.jpg')?>"
-											style="opacity: 0.6; " />
-									</div>
-									<div class="ms-layer  msp-cn-1-17" style=""
-										data-effect="t(true,n,-150,n,n,n,n,n,n,n,n,n,n,n,n)" data-duration="450"
-										data-ease="easeOutQuint" data-offset-x="0" data-offset-y="-106" data-origin="mc"
-										data-position="normal">
-										Art Of Cooking</div>
-
-									<div class="ms-layer  msp-cn-1-18" style=""
-										data-effect="t(true,n,n,-500,n,n,n,n,n,n,n,n,n,n,n)" data-duration="475"
-										data-delay="462" data-ease="easeOutQuint" data-offset-x="169"
-										data-offset-y="314" data-origin="tl" data-position="normal">
-										All About Passion</div>
-
-									<div class="ms-layer  msp-cn-1-19" style="" data-duration="525" data-delay="950"
-										data-ease="easeOutQuint" data-offset-x="468" data-offset-y="484"
-										data-origin="tl" data-position="normal">
-										And Love</div>
-
-									<img class="ms-layer"
-										src="<?= base_url('plugins/masterslider/public/assets/css/blank.gif')?>"
-										data-src="<?= base_url('assets/upload/slider-3-2.jpg')?>" alt="" style=""
-										data-duration="537" data-delay="937" data-ease="easeOutQuint" data-type="image"
-										data-offset-x="-739" data-offset-y="128" data-origin="ml"
-										data-position="normal" />
-
-									<img class="ms-layer"
-										src="<?= base_url('plugins/masterslider/public/assets/css/blank.gif')?>"
-										data-src="<?= base_url('assets/upload/slider-3-2.jpg')?>" alt="" style=""
-										data-duration="512" data-delay="937" data-ease="easeOutQuint" data-type="image"
-										data-offset-x="739" data-offset-y="128" data-origin="ml"
-										data-position="normal" />
-
+									<div class="ms-layer  msp-cn-1-8" style="" data-effect="t(true,n,n,-500,n,n,n,n,n,n,n,n,n,n,n)" data-duration="475" data-delay="462" data-ease="easeOutQuint" data-offset-x="228" data-offset-y="314" data-origin="tl" data-position="normal">
+										Started Since 2020</div>
 								</div>
 
 							</div>
@@ -150,37 +47,34 @@
 						<div class="clear"></div>
 						<div class="gdlr-column-service-tab-item  gdlr-first four columns" style="background: #FFD44C;">
 							<div class="gdlr-column-service-item gdlr-type-1">
-								<div class="column-service-image"><img src="<?= base_url('assets/images/icon.png')?>" alt=""
-										width="70" height="74" /></div>
+								<div class="column-service-image"><img src="<?= base_url('assets/images/icon.png') ?>" alt="" width="70" height="74" /></div>
 								<h3 class="column-service-title">Cocok untuk Santapan Anda</h3>
 								<div class="clear"></div>
 								<div class="column-service-content">
-								<p>Kami mengikuti Protokol Kesehatan sehingga orang hanya dapat menikmati dan makan
+									<p>Kami mengikuti Protokol Kesehatan sehingga orang hanya dapat menikmati dan makan
 										makanan yang enak di Pondok Sambal</p>
-								</div><a class="column-service-learn-more" href="<?= base_url('')?>">Read More</a>
+								</div><a class="column-service-learn-more" href="<?= base_url('') ?>">Read More</a>
 							</div>
 						</div>
 						<div class="gdlr-column-service-tab-item  four columns" style="background: #e9c051;">
 							<div class="gdlr-column-service-item gdlr-type-1">
-								<div class="column-service-image"><img src="<?= base_url('assets/images/icon.png')?>" alt=""
-										width="70" height="71" /></div>
+								<div class="column-service-image"><img src="<?= base_url('assets/images/icon.png') ?>" alt="" width="70" height="71" /></div>
 								<h3 class="column-service-title">Berbagai Sambal</h3>
 								<div class="clear"></div>
 								<div class="column-service-content">
 									<p>Kami menyediakan berbagai macam sambal yang dapat membuat perut dan lidah kalian bergoyang dan nafsu makan bertambah! Mau tau seenak apa? Ayo pesan sekarang!</p>
-								</div><a class="column-service-learn-more" href="<?= base_url('')?>">Read More</a>
+								</div><a class="column-service-learn-more" href="<?= base_url('') ?>">Read More</a>
 							</div>
 						</div>
 						<div class="gdlr-column-service-tab-item  gdlr-last four columns" style="background: #d6b353;">
 							<div class="gdlr-column-service-item gdlr-type-1">
-								<div class="column-service-image"><img src="<?= base_url('assets/images/icon.png')?>" alt=""
-										width="70" height="71" /></div>
+								<div class="column-service-image"><img src="<?= base_url('assets/images/icon.png') ?>" alt="" width="70" height="71" /></div>
 								<h3 class="column-service-title">Pelayanan yang Memuaskan</h3>
 								<div class="clear"></div>
 								<div class="column-service-content">
 									<p>Kami hanya menggunakan bahan segar untuk memberikan yang terbaik bagi pelanggan
 										kami Pondok Sambal makanan enak</p>
-								</div><a class="column-service-learn-more" href="<?= base_url('')?>">Read More</a>
+								</div><a class="column-service-learn-more" href="<?= base_url('') ?>">Read More</a>
 							</div>
 						</div>
 						<div class="clear"></div>
@@ -189,8 +83,7 @@
 				</div>
 			</section>
 			<section id="content-section-3">
-				<div class="gdlr-color-wrapper  gdlr-show-all no-skin"
-					style="background-color: #ffffff; padding-bottom: 55px; ">
+				<div class="gdlr-color-wrapper  gdlr-show-all no-skin" style="background-color: #ffffff; padding-bottom: 55px; ">
 					<div class="container">
 						<div class="six columns">
 							<div class="gdlr-item gdlr-about-us-item">
@@ -203,7 +96,7 @@
 									<p>Pondok Sambal adalah sebuah restoran yang tidak hanya menyediakan makanan yang
 										enak dan nikmat, tetapi juga rasa pedas dari berbagai sambal kami. Anda mungkin
 										tidak menemukan makanan seperti itu di tempat lain. Ingin tahu lebih banyak?</p>
-								</div><a class="about-us-learn-more" href="<?= base_url('')?>">Learn More</a>
+								</div><a class="about-us-learn-more" href="<?= base_url('') ?>">Learn More</a>
 								<div class="clear"></div>
 							</div>
 						</div>
@@ -211,8 +104,7 @@
 							<div class="gdlr-item gdlr-content-item"></div>
 							<div class="gdlr-image-frame-item gdlr-item">
 								<div class="gdlr-frame frame-type-none">
-									<div class="gdlr-image-link-shortcode"><img src="<?= base_url('assets/images/resto.jpg')?>"
-											alt="" width="237" height="237" /></div>
+									<div class="gdlr-image-link-shortcode"><img src="<?= base_url('assets/images/resto.jpg') ?>" alt="" width="237" height="237" /></div>
 								</div>
 							</div>
 						</div>
@@ -220,9 +112,7 @@
 							<div class="gdlr-item gdlr-content-item"></div>
 							<div class="gdlr-image-frame-item gdlr-item">
 								<div class="gdlr-frame frame-type-none">
-									<div class="gdlr-image-link-shortcode"><img
-											src="<?= base_url('assets/images/resto-2.jpg')?>" alt="" width="237"
-											height="237" /></div>
+									<div class="gdlr-image-link-shortcode"><img src="<?= base_url('assets/images/resto-2.jpg') ?>" alt="" width="237" height="237" /></div>
 								</div>
 							</div>
 						</div>
@@ -232,12 +122,9 @@
 				<div class="clear"></div>
 			</section>
 			<section id="content-section-4">
-				<div class="gdlr-parallax-wrapper gdlr-background-image gdlr-show-all gdlr-skin-dark-yellow-skin"
-					id="gdlr-parallax-wrapper-1" data-bgspeed="0.1"
-					style="background-image: url('<?= base_url('assets/images/food-bg.jpg')?>'); padding-top: 90px; padding-bottom: 10px; width:100%; background-size:cover; background-repeat:no-repeat; ">
+				<div class="gdlr-parallax-wrapper gdlr-background-image gdlr-show-all gdlr-skin-dark-yellow-skin" id="gdlr-parallax-wrapper-1" data-bgspeed="0.1" style="background-image: url('<?= base_url('assets/images/food-bg.jpg') ?>'); padding-top: 90px; padding-bottom: 10px; width:100%; background-size:cover; background-repeat:no-repeat; ">
 					<div class="container">
-						<div class="menu-item-wrapper menu-column-3 type-classic"
-							data-ajax="<?= base_url('wp-admin/admin-ajax.php')?>">
+						<div class="menu-item-wrapper menu-column-3 type-classic" data-ajax="<?= base_url('wp-admin/admin-ajax.php') ?>">
 							<div class="gdlr-item-title-wrapper gdlr-item  pos-center-divider gdlr-size-large ">
 								<div class="gdlr-item-title-head">
 									<h3 class="gdlr-item-title gdlr-skin-title gdlr-skin-border">Chef Recommends</h3>
@@ -246,122 +133,77 @@
 									<div class="clear"></div>
 								</div>
 							</div>
-							<div class="gdlr-item-title-nav gdlr-nav-container  pos-center-divider gdlr-size-large"><i
-									class="icon-angle-left gdlr-flex-prev"></i><i
-									class="icon-angle-right gdlr-flex-next"></i></div>
+							<div class="gdlr-item-title-nav gdlr-nav-container  pos-center-divider gdlr-size-large"><i class="icon-angle-left gdlr-flex-prev"></i><i class="icon-angle-right gdlr-flex-next"></i></div>
 							<div class="menu-item-holder">
 								<div class="gdlr-menu-carousel-item gdlr-item">
-									<div class="flexslider" data-type="carousel" data-nav-container="menu-item-holder"
-										data-columns="3">
+									<div class="flexslider" data-type="carousel" data-nav-container="menu-item-holder" data-columns="3">
 										<ul class="slides">
 											<li class="gdlr-item gdlr-menu-item gdlr-classic-menu with-price">
 												<div class="gdlr-menu-thumbnail">
-													<a href="<?= base_url('menupage/single')?>"><img
-															src="<?= base_url('assets/images/rekom.jpeg')?>" alt="" width="400"
-															height="300" /></a>
-													<div class="menu-info menu-recommendation"><span
-															class="menu-recommendation-inner"><i
-																class="fa fa-thumbs-o-up"></i>Recommended</span></div>
+													<a href="<?= base_url('menupage/single') ?>"><img src="<?= base_url('assets/images/rekom.jpeg') ?>" alt="" width="400" height="300" /></a>
+													<div class="menu-info menu-recommendation"><span class="menu-recommendation-inner"><i class="fa fa-thumbs-o-up"></i>Recommended</span></div>
 												</div>
 												<div class="gdlr-menu-item-content">
-													<h3 class="menu-title gdlr-skin-title gdlr-content-font"><a
-															href="<?= base_url('menupage/single')?>">Bandeng
+													<h3 class="menu-title gdlr-skin-title gdlr-content-font"><a href="<?= base_url('menupage/single') ?>">Bandeng
 															Millenium</a></h3>
 													<div class="menu-info menu-ingredients-caption gdlr-skin-info">
 														Masakan dengan bumbu dan cara khas Kediri</div>
-													<div class="menu-info menu-rating gdlr-skin-link"><i
-															class="fa fa-star icon-star"></i><i
-															class="fa fa-star icon-star"></i><i
-															class="fa fa-star icon-star"></i><i
-															class="fa fa-star icon-star"></i><i
-															class="fa fa-star icon-star"></i></div>
+													<div class="menu-info menu-rating gdlr-skin-link"><i class="fa fa-star icon-star"></i><i class="fa fa-star icon-star"></i><i class="fa fa-star icon-star"></i><i class="fa fa-star icon-star"></i><i class="fa fa-star icon-star"></i></div>
 													<div class="menu-info menu-price gdlr-title-font gdlr-skin-link">Rp
 														40.000</div>
 												</div>
 											</li>
 											<li class="gdlr-item gdlr-menu-item gdlr-classic-menu with-price">
 												<div class="gdlr-menu-thumbnail">
-													<a href="<?= base_url('menupage/single')?>"><img
-															src="<?= base_url('assets/images/menu.jpg')?>" alt="" width="400"
-															height="300" /></a>
+													<a href="<?= base_url('menupage/single') ?>"><img src="<?= base_url('assets/images/menu.jpg') ?>" alt="" width="400" height="300" /></a>
 												</div>
 												<div class="gdlr-menu-item-content">
-													<h3 class="menu-title gdlr-skin-title gdlr-content-font"><a
-															href="<?= base_url('menupage/single')?>">Sambal Timun</a>
+													<h3 class="menu-title gdlr-skin-title gdlr-content-font"><a href="<?= base_url('menupage/single') ?>">Sambal Timun</a>
 													</h3>
 													<div class="menu-info menu-ingredients-caption gdlr-skin-info">
 														Perpaduan Pedas dan segar</div>
-													<div class="menu-info menu-rating gdlr-skin-link"><i
-															class="fa fa-star icon-star"></i><i
-															class="fa fa-star icon-star"></i><i
-															class="fa fa-star icon-star"></i><i
-															class="fa fa-star icon-star"></i><i
-															class="fa fa-star-half-full icon-star-half-full"></i></div>
+													<div class="menu-info menu-rating gdlr-skin-link"><i class="fa fa-star icon-star"></i><i class="fa fa-star icon-star"></i><i class="fa fa-star icon-star"></i><i class="fa fa-star icon-star"></i><i class="fa fa-star-half-full icon-star-half-full"></i></div>
 													<div class="menu-info menu-price gdlr-title-font gdlr-skin-link">Rp
 														6.000</div>
 												</div>
 											</li>
 											<li class="gdlr-item gdlr-menu-item gdlr-classic-menu with-price">
 												<div class="gdlr-menu-thumbnail">
-													<a href="<?= base_url('menupage/single')?>"><img
-															src="<?= base_url('assets/images/menu-0.jpg')?>" alt="" width="400"
-															height="300" /></a>
+													<a href="<?= base_url('menupage/single') ?>"><img src="<?= base_url('assets/images/menu-0.jpg') ?>" alt="" width="400" height="300" /></a>
 												</div>
 												<div class="gdlr-menu-item-content">
-													<h3 class="menu-title gdlr-skin-title gdlr-content-font"><a
-															href="<?= base_url('menupage/single')?>">Bandeng Presto
+													<h3 class="menu-title gdlr-skin-title gdlr-content-font"><a href="<?= base_url('menupage/single') ?>">Bandeng Presto
 															Bakar</a></h3>
 													<div class="menu-info menu-ingredients-caption gdlr-skin-info">
 														Bandeng Presto Bumbu dan Sambal yang nagih</div>
-													<div class="menu-info menu-rating gdlr-skin-link"><i
-															class="fa fa-star icon-star"></i><i
-															class="fa fa-star icon-star"></i><i
-															class="fa fa-star icon-star"></i><i
-															class="fa fa-star icon-star"></i><i
-															class="fa fa-star-half-full icon-star-half-full"></i></div>
+													<div class="menu-info menu-rating gdlr-skin-link"><i class="fa fa-star icon-star"></i><i class="fa fa-star icon-star"></i><i class="fa fa-star icon-star"></i><i class="fa fa-star icon-star"></i><i class="fa fa-star-half-full icon-star-half-full"></i></div>
 													<div class="menu-info menu-price gdlr-title-font gdlr-skin-link">Rp
 														25.000</div>
 												</div>
 											</li>
 											<li class="gdlr-item gdlr-menu-item gdlr-classic-menu with-price">
 												<div class="gdlr-menu-thumbnail">
-													<a href="<?= base_url('menupage/single')?>"><img
-															src="<?= base_url('assets/images/menu-1.jpg')?>" alt="" width="400"
-															height="300" /></a>
+													<a href="<?= base_url('menupage/single') ?>"><img src="<?= base_url('assets/images/menu-1.jpg') ?>" alt="" width="400" height="300" /></a>
 												</div>
 												<div class="gdlr-menu-item-content">
-													<h3 class="menu-title gdlr-skin-title gdlr-content-font"><a
-															href="<?= base_url('menupage/single')?>">Nasi Rames
+													<h3 class="menu-title gdlr-skin-title gdlr-content-font"><a href="<?= base_url('menupage/single') ?>">Nasi Rames
 															Cobain</a></h3>
 													<div class="menu-info menu-ingredients-caption gdlr-skin-info">Nasi
 														dengan Ayam, Telur, bihun, dan sambal</div>
-													<div class="menu-info menu-rating gdlr-skin-link"><i
-															class="fa fa-star icon-star"></i><i
-															class="fa fa-star icon-star"></i><i
-															class="fa fa-star icon-star"></i><i
-															class="fa fa-star icon-star"></i><i
-															class="fa fa-star icon-star"></i></div>
+													<div class="menu-info menu-rating gdlr-skin-link"><i class="fa fa-star icon-star"></i><i class="fa fa-star icon-star"></i><i class="fa fa-star icon-star"></i><i class="fa fa-star icon-star"></i><i class="fa fa-star icon-star"></i></div>
 													<div class="menu-info menu-price gdlr-title-font gdlr-skin-link">Rp
 														20.000</div>
 												</div>
 											</li>
 											<li class="gdlr-item gdlr-menu-item gdlr-classic-menu with-price">
 												<div class="gdlr-menu-thumbnail">
-													<a href="<?= base_url('menupage/single')?>"><img
-															src="<?= base_url('assets/images/menu-2.jpg')?>" alt="" width="400"
-															height="300" /></a>
+													<a href="<?= base_url('menupage/single') ?>"><img src="<?= base_url('assets/images/menu-2.jpg') ?>" alt="" width="400" height="300" /></a>
 												</div>
 												<div class="gdlr-menu-item-content">
-													<h3 class="menu-title gdlr-skin-title gdlr-content-font"><a
-															href="<?= base_url('menupage/single')?>">Ayam Bakar</a></h3>
+													<h3 class="menu-title gdlr-skin-title gdlr-content-font"><a href="<?= base_url('menupage/single') ?>">Ayam Bakar</a></h3>
 													<div class="menu-info menu-ingredients-caption gdlr-skin-info">Nasi
 														dengan Ayam yang dibakar dengan Cinta</div>
-													<div class="menu-info menu-rating gdlr-skin-link"><i
-															class="fa fa-star icon-star"></i><i
-															class="fa fa-star icon-star"></i><i
-															class="fa fa-star icon-star"></i><i
-															class="fa fa-star icon-star"></i><i
-															class="fa fa-star icon-star"></i></div>
+													<div class="menu-info menu-rating gdlr-skin-link"><i class="fa fa-star icon-star"></i><i class="fa fa-star icon-star"></i><i class="fa fa-star icon-star"></i><i class="fa fa-star icon-star"></i><i class="fa fa-star icon-star"></i></div>
 													<div class="menu-info menu-price gdlr-title-font gdlr-skin-link">Rp
 														22.000</div>
 												</div>
@@ -380,17 +222,12 @@
 				<div class="clear"></div>
 			</section>
 			<section id="content-section-5">
-				<div class="gdlr-color-wrapper  gdlr-show-all no-skin"
-					style="background-color: #ffffff; padding-top: 80px; padding-bottom: 55px; ">
+				<div class="gdlr-color-wrapper  gdlr-show-all no-skin" style="background-color: #ffffff; padding-top: 80px; padding-bottom: 55px; ">
 					<div class="container">
 						<div class="three columns">
 							<div class="gdlr-image-frame-item gdlr-item">
 								<div class="gdlr-frame frame-type-none">
-									<div class="gdlr-image-link-shortcode"><img
-											src="<?= base_url('assets/images/menu-1.jpg')?>" alt="" width="400"
-											height="487" /><span class="gdlr-image-link-overlay">&nbsp;</span><span
-											class="gdlr-image-frame-content"><span
-												class="gdlr-image-frame-content-title gdlr-title-font">The Best
+									<div class="gdlr-image-link-shortcode"><img src="<?= base_url('assets/images/menu-1.jpg') ?>" alt="" width="400" height="487" /><span class="gdlr-image-link-overlay">&nbsp;</span><span class="gdlr-image-frame-content"><span class="gdlr-image-frame-content-title gdlr-title-font">The Best
 												Chef</span><span class="gdlr-image-frame-content-caption">Hanya
 												bergairah dan memasak dengan cinta mungkin Chef kami yang bisa membuat
 												Anda jatuh cinta dengan makanan kita!</span></span>
@@ -401,11 +238,7 @@
 						<div class="three columns">
 							<div class="gdlr-image-frame-item gdlr-item">
 								<div class="gdlr-frame frame-type-none">
-									<div class="gdlr-image-link-shortcode"><img
-											src="<?= base_url('assets/images/menu-2.jpg')?>" alt="" width="400"
-											height="487" /><span class="gdlr-image-link-overlay">&nbsp;</span><span
-											class="gdlr-image-frame-content"><span
-												class="gdlr-image-frame-content-title gdlr-title-font">We Pick
+									<div class="gdlr-image-link-shortcode"><img src="<?= base_url('assets/images/menu-2.jpg') ?>" alt="" width="400" height="487" /><span class="gdlr-image-link-overlay">&nbsp;</span><span class="gdlr-image-frame-content"><span class="gdlr-image-frame-content-title gdlr-title-font">We Pick
 												Carefully</span><span class="gdlr-image-frame-content-caption">Setiap
 												bahan-bahan yang kami pilih dan masak akan menjadi makanan terbaik yang
 												pernah Anda miliki rasa!</span></span>
@@ -424,7 +257,7 @@
 									<p>Kelezatan dan rasa pedas dari makanan kita semuanya dari yang terbaik
 										bahan yang sudah kami siapkan untuk lidah dan perut anda. Ingin melihat
 										Makanan lezat kita?</p>
-								</div><a class="about-us-learn-more" href="<?= base_url('menupage/menu')?>">Learn
+								</div><a class="about-us-learn-more" href="<?= base_url('menupage/menu') ?>">Learn
 									More</a>
 								<div class="clear"></div>
 							</div>
@@ -435,8 +268,7 @@
 				<div class="clear"></div>
 			</section>
 			<section id="content-section-6">
-				<div class="gdlr-color-wrapper  gdlr-show-all no-skin"
-					style="background-color: #ffd44c; padding-bottom: 5px; ">
+				<div class="gdlr-color-wrapper  gdlr-show-all no-skin" style="background-color: #ffd44c; padding-bottom: 5px; ">
 					<div class="container">
 						<div class="gdlr-item gdlr-stunning-item">
 							<div class="stunning-item-inner">
@@ -458,9 +290,7 @@
 				<div class="clear"></div>
 			</section>
 			<section id="content-section-7">
-				<div class="gdlr-parallax-wrapper gdlr-background-image gdlr-show-all gdlr-skin-dark-yellow-skin-3"
-					id="gdlr-parallax-wrapper-2" data-bgspeed="0.1"
-					style="background-image: url('<?= base_url('assets/images/wood-cook.jpg')?>'); padding-top: 85px; padding-bottom: 45px; width: 100%; background-size:cover; background-repeat:no-repeat; ">
+				<div class="gdlr-parallax-wrapper gdlr-background-image gdlr-show-all gdlr-skin-dark-yellow-skin-3" id="gdlr-parallax-wrapper-2" data-bgspeed="0.1" style="background-image: url('<?= base_url('assets/images/wood-cook.jpg') ?>'); padding-top: 85px; padding-bottom: 45px; width: 100%; background-size:cover; background-repeat:no-repeat; ">
 					<div class="container">
 						<div class="gdlr-title-item" style="margin-bottom: 65px;">
 							<div class="gdlr-item-title-wrapper gdlr-item  pos-center-divider gdlr-size-large ">
@@ -476,28 +306,26 @@
 						<div class="four columns">
 							<div class="gdlr-item gdlr-content-item">
 								<p>
-									<div class="gdlr-shortcode-wrapper">
-										<div
-											class="gdlr-item-title-wrapper gdlr-item  pos-left-content gdlr-size-small ">
-											<div class="gdlr-item-title-head">
-												<h3 class="gdlr-item-title gdlr-skin-title gdlr-skin-border">Want to
-													contact us?</h3>
-												<div class="clear"></div>
-											</div>
+								<div class="gdlr-shortcode-wrapper">
+									<div class="gdlr-item-title-wrapper gdlr-item  pos-left-content gdlr-size-small ">
+										<div class="gdlr-item-title-head">
+											<h3 class="gdlr-item-title gdlr-skin-title gdlr-skin-border">Want to
+												contact us?</h3>
+											<div class="clear"></div>
 										</div>
 									</div>
+								</div>
 								</p>
 								<p>
-									<div class="clear"></div>
-									<div class="gdlr-space" style="margin-top: -30px;"></div>
+								<div class="clear"></div>
+								<div class="gdlr-space" style="margin-top: -30px;"></div>
 								</p>
 								<p>We provide our location, Number, and email just for you!</p>
 								<p>
-									<div class="clear"></div>
-									<div class="gdlr-space" style="margin-top: 35px;"></div>
+								<div class="clear"></div>
+								<div class="gdlr-space" style="margin-top: 35px;"></div>
 								</p>
-								<p><a class="gdlr-button medium border-button" href="aboutpage/contact" target="_self"
-										style="color:#ffd44c; border-color:#ffd44c; ">Contact Us!</a></p>
+								<p><a class="gdlr-button medium border-button" href="aboutpage/contact" target="_self" style="color:#ffd44c; border-color:#ffd44c; ">Contact Us!</a></p>
 							</div>
 						</div>
 						<div class="four columns">
@@ -507,14 +335,16 @@
 									<div class="contact-us-tab-icon"><i class="fa fa-location-arrow"></i></div>
 									<div class="contact-us-tab-content">
 										<p><strong>Pondok Sambal Restaurant</strong>
-											<br />Jln. Golden Land Blok A No 3 Simpang Kara Batam Centre</p>
+											<br />Jln. Golden Land Blok A No 3 Simpang Kara Batam Centre
+										</p>
 									</div>
 								</div>
 								<div class="contact-us-tab-item">
 									<div class="contact-us-tab-icon"><i class="fa fa-phone"></i></div>
 									<div class="contact-us-tab-content">
 										<p>+6281371337667
-											<br />+6281371337667</p>
+											<br />+6281371337667
+										</p>
 									</div>
 								</div>
 								<div class="contact-us-tab-item">
@@ -529,26 +359,18 @@
 						<div class="four columns">
 							<div class="gdlr-item gdlr-opening-hours-item gdlr-type-1">
 								<h3 class="gdlr-content-title gdlr-content-font">Opening Hours</h3>
-								<div class="opening-hours-day"><span class="gdlr-head"><i
-											class="fa fa-clock-o"></i>Monday</span><span class="gdlr-tail">10:00 AM -
+								<div class="opening-hours-day"><span class="gdlr-head"><i class="fa fa-clock-o"></i>Monday</span><span class="gdlr-tail">10:00 AM -
 										9:00 PM</span></div>
-								<div class="opening-hours-day"><span class="gdlr-head"><i
-											class="fa fa-clock-o"></i>Tuesday</span><span
-										class="gdlr-tail"><strong>CLOSED</strong></span></div>
-								<div class="opening-hours-day"><span class="gdlr-head"><i
-											class="fa fa-clock-o"></i>Wednesday</span><span class="gdlr-tail">10:00 AM -
+								<div class="opening-hours-day"><span class="gdlr-head"><i class="fa fa-clock-o"></i>Tuesday</span><span class="gdlr-tail"><strong>CLOSED</strong></span></div>
+								<div class="opening-hours-day"><span class="gdlr-head"><i class="fa fa-clock-o"></i>Wednesday</span><span class="gdlr-tail">10:00 AM -
 										9:00 PM</span></div>
-								<div class="opening-hours-day"><span class="gdlr-head"><i
-											class="fa fa-clock-o"></i>Thursday</span><span class="gdlr-tail">10:00 AM -
+								<div class="opening-hours-day"><span class="gdlr-head"><i class="fa fa-clock-o"></i>Thursday</span><span class="gdlr-tail">10:00 AM -
 										9:00 PM</span></div>
-								<div class="opening-hours-day"><span class="gdlr-head"><i
-											class="fa fa-clock-o"></i>Friday</span><span class="gdlr-tail">10:00 AM -
+								<div class="opening-hours-day"><span class="gdlr-head"><i class="fa fa-clock-o"></i>Friday</span><span class="gdlr-tail">10:00 AM -
 										9:00 PM</span></div>
-								<div class="opening-hours-day"><span class="gdlr-head"><i
-											class="fa fa-clock-o"></i>Saturday</span><span class="gdlr-tail">09:00 AM -
+								<div class="opening-hours-day"><span class="gdlr-head"><i class="fa fa-clock-o"></i>Saturday</span><span class="gdlr-tail">09:00 AM -
 										11:00 PM</span></div>
-								<div class="opening-hours-day"><span class="gdlr-head"><i
-											class="fa fa-clock-o"></i>Sunday</span><span class="gdlr-tail">09:00 AM -
+								<div class="opening-hours-day"><span class="gdlr-head"><i class="fa fa-clock-o"></i>Sunday</span><span class="gdlr-tail">09:00 AM -
 										11:00 PM</span></div>
 							</div>
 						</div>
@@ -558,8 +380,7 @@
 				<div class="clear"></div>
 			</section>
 			<section id="content-section-8">
-				<div class="gdlr-color-wrapper  gdlr-show-all no-skin"
-					style="background-color: #ffffff; padding-top: 65px; padding-bottom: 5px; ">
+				<div class="gdlr-color-wrapper  gdlr-show-all no-skin" style="background-color: #ffffff; padding-top: 65px; padding-bottom: 5px; ">
 					<div class="container">
 						<div class="three columns">
 							<div class="gdlr-title-item">
@@ -582,29 +403,22 @@
 										<div class="four columns">
 											<div class="gdlr-item gdlr-blog-grid">
 												<div class="gdlr-ux gdlr-blog-grid-ux">
-													<article id="post-852"
-														class="post-852 post type-post status-publish format-standard has-post-thumbnail hentry category-fit-row tag-blog tag-life-style">
+													<article id="post-852" class="post-852 post type-post status-publish format-standard has-post-thumbnail hentry category-fit-row tag-blog tag-life-style">
 														<div class="gdlr-standard-style">
 															<div class="gdlr-blog-thumbnail">
-																<a href="#"> <img
-																		src="<?= base_url('assets/images/resto.jpg')?>" alt=""
-																		width="400" height="300" /></a>
+																<a href="#"> <img src="<?= base_url('assets/images/resto.jpg') ?>" alt="" width="400" height="300" /></a>
 															</div>
 
 															<div class="gdlr-blog-info gdlr-info">
-																<div class="blog-info blog-date"><i
-																		class="fa fa-clock-o"></i><a href="#">03 Mar
+																<div class="blog-info blog-date"><i class="fa fa-clock-o"></i><a href="#">03 Mar
 																		2020</a></div>
-																<div class="blog-info blog-author"><i
-																		class="fa fa-pencil"></i><a href="#"
-																		title="Posts by Jose" rel="author">Jose</a>
+																<div class="blog-info blog-author"><i class="fa fa-pencil"></i><a href="#" title="Posts by Jose" rel="author">Jose</a>
 																</div>
 																<div class="clear"></div>
 															</div>
 
 															<header class="post-header">
-																<h3 class="gdlr-blog-title gdlr-content-font"><a
-																		href="blogpage/blog4">Cuma disini kamu bisa
+																<h3 class="gdlr-blog-title gdlr-content-font"><a href="blogpage/blog4">Cuma disini kamu bisa
 																		makan enak dan pedas yang nagih!</a></h3>
 																<div class="clear"></div>
 															</header>
@@ -614,8 +428,8 @@
 																melepaskan rindumu akan kepedasan yang hakiki. Pondok
 																Sambal tidak cuma menawarkan sambal yang itu-itu saja,
 																tapi kami masih banyak lagi...
-																<div class="clear"></div><a href="#"
-																	class="excerpt-read-more">Read More</a></div>
+																<div class="clear"></div><a href="#" class="excerpt-read-more">Read More</a>
+															</div>
 														</div>
 													</article>
 													<!-- #post -->
@@ -625,29 +439,22 @@
 										<div class="four columns">
 											<div class="gdlr-item gdlr-blog-grid">
 												<div class="gdlr-ux gdlr-blog-grid-ux">
-													<article id="post-862"
-														class="post-862 post type-post status-publish format-standard has-post-thumbnail hentry category-blog category-fit-row tag-blog tag-link tag-news">
+													<article id="post-862" class="post-862 post type-post status-publish format-standard has-post-thumbnail hentry category-blog category-fit-row tag-blog tag-link tag-news">
 														<div class="gdlr-standard-style">
 															<div class="gdlr-blog-thumbnail">
-																<a href="#"> <img
-																		src="<?= base_url('assets/images/resto-2.jpg')?>"
-																		alt="" width="400" height="300" /></a>
+																<a href="#"> <img src="<?= base_url('assets/images/resto-2.jpg') ?>" alt="" width="400" height="300" /></a>
 															</div>
 
 															<div class="gdlr-blog-info gdlr-info">
-																<div class="blog-info blog-date"><i
-																		class="fa fa-clock-o"></i><a href="#">12 Feb
+																<div class="blog-info blog-date"><i class="fa fa-clock-o"></i><a href="#">12 Feb
 																		2020</a></div>
-																<div class="blog-info blog-author"><i
-																		class="fa fa-pencil"></i><a href="#"
-																		title="Posts by Steven" rel="author">Steven</a>
+																<div class="blog-info blog-author"><i class="fa fa-pencil"></i><a href="#" title="Posts by Steven" rel="author">Steven</a>
 																</div>
 																<div class="clear"></div>
 															</div>
 
 															<header class="post-header">
-																<h3 class="gdlr-blog-title gdlr-content-font"><a
-																		href="blogpage/blog4">Kamu tidak akan tahu apa
+																<h3 class="gdlr-blog-title gdlr-content-font"><a href="blogpage/blog4">Kamu tidak akan tahu apa
 																		itu pedas kalau belum ke Pondok Sambal!</a></h3>
 																<div class="clear"></div>
 															</header>
@@ -659,8 +466,8 @@
 																Pondok Sambal. Sambal disini membuatmu melupakan
 																semuanya kecuali rasa pedas yang membuatmu mau lagi dan
 																...
-																<div class="clear"></div><a href="blogpage/blog4"
-																	class="excerpt-read-more">Read More</a></div>
+																<div class="clear"></div><a href="blogpage/blog4" class="excerpt-read-more">Read More</a>
+															</div>
 														</div>
 													</article>
 													<!-- #post -->
@@ -670,31 +477,23 @@
 										<div class="four columns">
 											<div class="gdlr-item gdlr-blog-grid">
 												<div class="gdlr-ux gdlr-blog-grid-ux">
-													<article id="post-859"
-														class="post-859 post type-post status-publish format-standard has-post-thumbnail hentry category-blog category-fit-row tag-blog tag-news">
+													<article id="post-859" class="post-859 post type-post status-publish format-standard has-post-thumbnail hentry category-blog category-fit-row tag-blog tag-news">
 														<div class="gdlr-standard-style">
 															<div class="gdlr-blog-thumbnail">
-																<a href="<?= base_url('')?>"> <img
-																		src="<?= base_url('assets/images/resto-3.jpg')?>"
-																		alt="" width="400" height="300" /></a>
-																<div class="gdlr-sticky-banner"><i
-																		class="fa fa-bullhorn"></i>Sticky Post</div>
+																<a href="<?= base_url('') ?>"> <img src="<?= base_url('assets/images/resto-3.jpg') ?>" alt="" width="400" height="300" /></a>
+																<div class="gdlr-sticky-banner"><i class="fa fa-bullhorn"></i>Sticky Post</div>
 															</div>
 
 															<div class="gdlr-blog-info gdlr-info">
-																<div class="blog-info blog-date"><i
-																		class="fa fa-clock-o"></i><a href="#">23 Jan
+																<div class="blog-info blog-date"><i class="fa fa-clock-o"></i><a href="#">23 Jan
 																		2020</a></div>
-																<div class="blog-info blog-author"><i
-																		class="fa fa-pencil"></i><a href="#"
-																		title="Posts by Kisus" rel="author">Kisus</a>
+																<div class="blog-info blog-author"><i class="fa fa-pencil"></i><a href="#" title="Posts by Kisus" rel="author">Kisus</a>
 																</div>
 																<div class="clear"></div>
 															</div>
 
 															<header class="post-header">
-																<h3 class="gdlr-blog-title gdlr-content-font"><a
-																		href="<?= base_url('blogpage/blog4')?>">Cuma
+																<h3 class="gdlr-blog-title gdlr-content-font"><a href="<?= base_url('blogpage/blog4') ?>">Cuma
 																		disini Pedasnya gak ngebosenin</a></h3>
 																<div class="clear"></div>
 															</header>
@@ -704,8 +503,8 @@
 																siang, sore, dan bahkan malam? Disini tempat yang tepat
 																terutama untuk kalian kaum pencinta pedas yang
 																menggoyang lidah. Hanya di...
-																<div class="clear"></div><a href="blogpage/blog4"
-																	class="excerpt-read-more">Read More</a></div>
+																<div class="clear"></div><a href="blogpage/blog4" class="excerpt-read-more">Read More</a>
+															</div>
 														</div>
 													</article>
 													<!-- #post -->
@@ -724,8 +523,7 @@
 			</section>
 
 			<section id="content-section-10">
-				<div class="gdlr-color-wrapper  gdlr-show-all no-skin"
-					style="background-color: #f5f5f5; padding-top: 70px; padding-bottom: 50px; ">
+				<div class="gdlr-color-wrapper  gdlr-show-all no-skin" style="background-color: #f5f5f5; padding-top: 70px; padding-bottom: 50px; ">
 					<div class="container">
 						<div class="twelve columns">
 							<div class="gdlr-item-title-wrapper gdlr-item  pos-center-divider gdlr-size-small ">
@@ -739,51 +537,37 @@
 							<div class="gdlr-gallery-item gdlr-item">
 								<div class="gallery-column two-fifth columns">
 									<div class="gallery-item">
-										<a href="<?= base_url('assets/images/resto.jpg')?>" data-fancybox-group="gdlr-gal-1"
-											data-rel="fancybox"><img src="<?= base_url('assets/images/resto.jpg')?>" alt=""
-												width="400" height="500" /></a>
+										<a href="<?= base_url('assets/images/resto.jpg') ?>" data-fancybox-group="gdlr-gal-1" data-rel="fancybox"><img src="<?= base_url('assets/images/resto.jpg') ?>" alt="" width="400" height="500" /></a>
 									</div>
 								</div>
 								<div class="gallery-column one-fifth column">
 									<div class="gallery-item">
-										<a href="<?= base_url('assets/images/resto-1.jpg')?>" data-fancybox-group="gdlr-gal-1"
-											data-rel="fancybox"><img src="<?= base_url('assets/images/resto-1.jpg')?>" alt=""
-												width="400" height="400" /></a>
+										<a href="<?= base_url('assets/images/resto-1.jpg') ?>" data-fancybox-group="gdlr-gal-1" data-rel="fancybox"><img src="<?= base_url('assets/images/resto-1.jpg') ?>" alt="" width="400" height="400" /></a>
 									</div>
 								</div>
 								<div class="gallery-column one-fifth column">
 									<div class="gallery-item">
-										<a href="<?= base_url('assets/images/resto-2.jpg')?>" data-fancybox-group="gdlr-gal-1"
-											data-rel="fancybox"><img src="<?= base_url('assets/images/resto-2.jpg')?>" alt=""
-												width="400" height="400" /></a>
+										<a href="<?= base_url('assets/images/resto-2.jpg') ?>" data-fancybox-group="gdlr-gal-1" data-rel="fancybox"><img src="<?= base_url('assets/images/resto-2.jpg') ?>" alt="" width="400" height="400" /></a>
 									</div>
 								</div>
 								<div class="gallery-column one-fifth column">
 									<div class="gallery-item">
-										<a href="<?= base_url('assets/images/resto-3.jpg')?>" data-fancybox-group="gdlr-gal-1"
-											data-rel="fancybox"><img src="<?= base_url('assets/images/resto-3.jpg')?>" alt=""
-												width="400" height="400" /></a>
+										<a href="<?= base_url('assets/images/resto-3.jpg') ?>" data-fancybox-group="gdlr-gal-1" data-rel="fancybox"><img src="<?= base_url('assets/images/resto-3.jpg') ?>" alt="" width="400" height="400" /></a>
 									</div>
 								</div>
 								<div class="gallery-column one-fifth column">
 									<div class="gallery-item">
-										<a href="<?= base_url('assets/images/resto-4.jpg')?>" data-fancybox-group="gdlr-gal-1"
-											data-rel="fancybox"><img src="<?= base_url('assets/images/resto-4.jpg')?>" alt=""
-												width="400" height="400" /></a>
+										<a href="<?= base_url('assets/images/resto-4.jpg') ?>" data-fancybox-group="gdlr-gal-1" data-rel="fancybox"><img src="<?= base_url('assets/images/resto-4.jpg') ?>" alt="" width="400" height="400" /></a>
 									</div>
 								</div>
 								<div class="gallery-column one-fifth column">
 									<div class="gallery-item">
-										<a href="<?= base_url('assets/images/resto-5.jpg')?>" data-fancybox-group="gdlr-gal-1"
-											data-rel="fancybox"><img src="<?= base_url('assets/images/resto-5.jpg')?>" alt=""
-												width="400" height="400" /></a>
+										<a href="<?= base_url('assets/images/resto-5.jpg') ?>" data-fancybox-group="gdlr-gal-1" data-rel="fancybox"><img src="<?= base_url('assets/images/resto-5.jpg') ?>" alt="" width="400" height="400" /></a>
 									</div>
 								</div>
 								<div class="gallery-column one-fifth column">
 									<div class="gallery-item">
-										<a href="<?= base_url('assets/images/resto-6.jpg')?>" data-fancybox-group="gdlr-gal-1"
-											data-rel="fancybox"><img src="<?= base_url('assets/images/resto-6.jpg')?>" alt=""
-												width="400" height="400" /></a>
+										<a href="<?= base_url('assets/images/resto-6.jpg') ?>" data-fancybox-group="gdlr-gal-1" data-rel="fancybox"><img src="<?= base_url('assets/images/resto-6.jpg') ?>" alt="" width="400" height="400" /></a>
 									</div>
 								</div>
 								<div class="clear"></div>
@@ -796,9 +580,7 @@
 				<div class="clear"></div>
 			</section>
 			<section id="content-section-11">
-				<div class="gdlr-parallax-wrapper gdlr-background-image gdlr-show-all gdlr-skin-dark-yellow-skin-2"
-					id="gdlr-parallax-wrapper-3" data-bgspeed="0.1"
-					style="background-image: url('<?= base_url('assets/images/page-title-background.jpg')?>'); padding-top: 80px; padding-bottom: 60px; width:100%; background-size:cover; background-repeat:no-repeat;">
+				<div class="gdlr-parallax-wrapper gdlr-background-image gdlr-show-all gdlr-skin-dark-yellow-skin-2" id="gdlr-parallax-wrapper-3" data-bgspeed="0.1" style="background-image: url('<?= base_url('assets/images/page-title-background.jpg') ?>'); padding-top: 80px; padding-bottom: 60px; width:100%; background-size:cover; background-repeat:no-repeat;">
 					<div class="container">
 						<div class="one-fifth column"></div>
 						<div class="three-fifth columns">
@@ -809,14 +591,10 @@
 											<div class="clear"></div>
 									</div>
 								</div>
-								<div class="gdlr-item-title-nav gdlr-nav-container  pos-center gdlr-size-large"><i
-										class="icon-angle-left gdlr-flex-prev"></i><img
-										src="<?= base_url('assets/images/dark/testimonial-quote.png')?>" alt="" /><i
-										class="icon-angle-right gdlr-flex-next"></i></div>
+								<div class="gdlr-item-title-nav gdlr-nav-container  pos-center gdlr-size-large"><i class="icon-angle-left gdlr-flex-prev"></i><img src="<?= base_url('assets/images/dark/testimonial-quote.png') ?>" alt="" /><i class="icon-angle-right gdlr-flex-next"></i></div>
 								<div class="gdlr-item gdlr-testimonial-item carousel large plain-style">
 									<div class="gdlr-ux gdlr-testimonial-ux">
-										<div class="flexslider" data-type="carousel"
-											data-nav-container="gdlr-testimonial-item" data-columns="1">
+										<div class="flexslider" data-type="carousel" data-nav-container="gdlr-testimonial-item" data-columns="1">
 											<ul class="slides">
 												<li class="testimonial-item">
 													<div class="testimonial-content gdlr-skin-content">
@@ -826,9 +604,7 @@
 															tapi yang paling enak tuh Bandeng Milleniumnya. Pasti bakal
 															datang lagi bawa rombongan nih!</p>
 													</div>
-													<div class="testimonial-info"><span
-															class="testimonial-author gdlr-skin-link-color">Sukiman</span><span
-															class="testimonial-position gdlr-skin-info"><span>,
+													<div class="testimonial-info"><span class="testimonial-author gdlr-skin-link-color">Sukiman</span><span class="testimonial-position gdlr-skin-info"><span>,
 															</span>PNS</span>
 													</div>
 												</li>
@@ -841,9 +617,7 @@
 															top banget adalah Sambalnya. Jadi sambalnya ada 8 macam dan
 															semuanya ENAAAK!</p>
 													</div>
-													<div class="testimonial-info"><span
-															class="testimonial-author gdlr-skin-link-color">Ningsih</span><span
-															class="testimonial-position gdlr-skin-info"><span>,
+													<div class="testimonial-info"><span class="testimonial-author gdlr-skin-link-color">Ningsih</span><span class="testimonial-position gdlr-skin-info"><span>,
 															</span>Food Blogger</span>
 													</div>
 												</li>
@@ -852,9 +626,7 @@
 														<p>Sambel sini mantul. Pedasnya pas, dan pakai nasi + bandeng
 															milleniumnya, beuh. Surga untuk pecinta pedas</p>
 													</div>
-													<div class="testimonial-info"><span
-															class="testimonial-author gdlr-skin-link-color">Budi</span><span
-															class="testimonial-position gdlr-skin-info"><span>,
+													<div class="testimonial-info"><span class="testimonial-author gdlr-skin-link-color">Budi</span><span class="testimonial-position gdlr-skin-info"><span>,
 															</span>Mahasiswa</span>
 													</div>
 												</li>
