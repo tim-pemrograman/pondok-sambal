@@ -11,19 +11,19 @@
 
 							<!-- MasterSlider Main -->
 							<div id="slider_1" class="master-slider ms-skin-default">
+								<?php foreach ($banners as $banner) : ?>
+									<div class="ms-slide" data-delay="3" data-fill-mode="fill">
+										<div class="mask" style="background-color: black;">
+											<img src="<?= base_url($banner->img_path) ?>" alt="<?= $banner->img_alt; ?>" title="<?= $banner->img_alt; ?>" data-src="<?= base_url($banner->img_path) ?>" style="opacity: 0.6; " />
+										</div>
 
-								<div class="ms-slide" data-delay="3" data-fill-mode="fill">
-									<div class="mask" style="background-color: black;">
-										<img src="<?= base_url('assets/images/main-header.jpg') ?>" alt="" title="" data-src="<?= base_url('assets/images/main-header.jpg') ?>" style="opacity: 0.6; " />
+										<div class="ms-layer  msp-cn-1-7" style="" data-effect="t(true,n,-150,n,n,n,n,n,n,n,n,n,n,n,n)" data-duration="250" data-ease="easeOutQuint" data-offset-x="0" data-offset-y="-106" data-origin="mc" data-position="normal">
+											<?= $banner->subtitle; ?></div>
+
+										<div class="ms-layer  msp-cn-1-8" style="font-size:100px" data-effect="t(true,n,n,-500,n,n,n,n,n,n,n,n,n,n,n)" data-duration="275" data-delay="162" data-ease="easeOutQuint" data-offset-x="228" data-offset-y="314" data-origin="tl" data-position="normal">
+											<?= $banner->title; ?></div>
 									</div>
-
-									<div class="ms-layer  msp-cn-1-7" style="" data-effect="t(true,n,-150,n,n,n,n,n,n,n,n,n,n,n,n)" data-duration="450" data-ease="easeOutQuint" data-offset-x="0" data-offset-y="-106" data-origin="mc" data-position="normal">
-										Taste Of Nusantara</div>
-
-									<div class="ms-layer  msp-cn-1-8" style="" data-effect="t(true,n,n,-500,n,n,n,n,n,n,n,n,n,n,n)" data-duration="475" data-delay="462" data-ease="easeOutQuint" data-offset-x="228" data-offset-y="314" data-origin="tl" data-position="normal">
-										Started Since 2020</div>
-								</div>
-
+								<?php endforeach; ?>
 							</div>
 							<!-- END MasterSlider Main -->
 
