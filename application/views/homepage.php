@@ -535,41 +535,19 @@
 								</div>
 							</div>
 							<div class="gdlr-gallery-item gdlr-item">
-								<div class="gallery-column two-fifth columns">
-									<div class="gallery-item">
-										<a href="<?= base_url('assets/images/resto.jpg') ?>" data-fancybox-group="gdlr-gal-1" data-rel="fancybox"><img src="<?= base_url('assets/images/resto.jpg') ?>" alt="" width="400" height="500" /></a>
+								<?php
+								$i = 0;
+								foreach ($galleries as $gallery) :
+									$i++;
+								?>
+									<div class="gallery-column <?= ($i == 1) ? 'two-fifth' : 'one-fifth' ?> columns">
+										<div class="gallery-item">
+											<a href="<?= base_url($gallery->img_path) ?>" data-fancybox-group="gdlr-gal-1" data-rel="fancybox"><img src="<?= base_url($gallery->img_path) ?>" alt="<?= $gallery->img_alt; ?>" width="400" height="<?= ($i == 1) ? '500' : '400' ?>" /></a>
+										</div>
 									</div>
-								</div>
-								<div class="gallery-column one-fifth column">
-									<div class="gallery-item">
-										<a href="<?= base_url('assets/images/resto-1.jpg') ?>" data-fancybox-group="gdlr-gal-1" data-rel="fancybox"><img src="<?= base_url('assets/images/resto-1.jpg') ?>" alt="" width="400" height="400" /></a>
-									</div>
-								</div>
-								<div class="gallery-column one-fifth column">
-									<div class="gallery-item">
-										<a href="<?= base_url('assets/images/resto-2.jpg') ?>" data-fancybox-group="gdlr-gal-1" data-rel="fancybox"><img src="<?= base_url('assets/images/resto-2.jpg') ?>" alt="" width="400" height="400" /></a>
-									</div>
-								</div>
-								<div class="gallery-column one-fifth column">
-									<div class="gallery-item">
-										<a href="<?= base_url('assets/images/resto-3.jpg') ?>" data-fancybox-group="gdlr-gal-1" data-rel="fancybox"><img src="<?= base_url('assets/images/resto-3.jpg') ?>" alt="" width="400" height="400" /></a>
-									</div>
-								</div>
-								<div class="gallery-column one-fifth column">
-									<div class="gallery-item">
-										<a href="<?= base_url('assets/images/resto-4.jpg') ?>" data-fancybox-group="gdlr-gal-1" data-rel="fancybox"><img src="<?= base_url('assets/images/resto-4.jpg') ?>" alt="" width="400" height="400" /></a>
-									</div>
-								</div>
-								<div class="gallery-column one-fifth column">
-									<div class="gallery-item">
-										<a href="<?= base_url('assets/images/resto-5.jpg') ?>" data-fancybox-group="gdlr-gal-1" data-rel="fancybox"><img src="<?= base_url('assets/images/resto-5.jpg') ?>" alt="" width="400" height="400" /></a>
-									</div>
-								</div>
-								<div class="gallery-column one-fifth column">
-									<div class="gallery-item">
-										<a href="<?= base_url('assets/images/resto-6.jpg') ?>" data-fancybox-group="gdlr-gal-1" data-rel="fancybox"><img src="<?= base_url('assets/images/resto-6.jpg') ?>" alt="" width="400" height="400" /></a>
-									</div>
-								</div>
+									<?php if ($i == 7) break; ?>
+								<?php endforeach; ?>
+
 								<div class="clear"></div>
 							</div>
 						</div>
