@@ -57,21 +57,21 @@
                                                     <label for="inputTitle">Title</label>
                                                     <input type="hidden" name="id_banner" id="id_banner" value="<?= $banner->id; ?>">
                                                     <input type="text" class="form-control" id="title" name="title" value="<?= $banner->title; ?>">
-                                                    <?= form_error('title', '<small class="text-danger pl-3">', ' </small>') ?>
+                                                    <?= form_error('title', '<small class="text-danger">', ' </small>') ?>
                                                 </div>
 
                                                 <!-- Subtitle Form -->
                                                 <div class="form-group">
                                                     <label for="inputSubtitle">Subtitle</label>
                                                     <input class="form-control" type="text" id="subtitle" name="subtitle" value="<?= $banner->subtitle; ?>">
-                                                    <?= form_error('subtitle', '<small class="text-danger pl-3">', ' </small>') ?>
+                                                    <?= form_error('subtitle', '<small class="text-danger">', ' </small>') ?>
                                                 </div>
 
                                                 <!-- Description Form -->
                                                 <div class="form-group">
                                                     <label for="inputDesc">Description</label>
                                                     <input class="form-control" type="text" id="img_alt" name="img_alt" value="<?= $banner->img_alt; ?>">
-                                                    <?= form_error('img_alt', '<small class="text-danger pl-3">', ' </small>') ?>
+                                                    <?= form_error('img_alt', '<small class="text-danger">', ' </small>') ?>
                                                 </div>
                                             </div>
                                             <div class="modal-footer">

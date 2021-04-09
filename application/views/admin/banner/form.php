@@ -17,27 +17,28 @@
                     <div class="form-group">
                         <label for="inputImage">Image</label>
                         <input type="file" class="form-control-file" id="img_path" name="img_path" accept="image/*">
+                        <?= form_error('img_path', '<small class="text-danger">', ' </small>') ?>
                     </div>
 
                     <!-- Title Form -->
                     <div class="form-group">
                         <label for="inputTitle">Title</label>
                         <input type="text" class="form-control" id="title" name="title" placeholder="ex: Pondok Sambal Enak">
-                        <?= form_error('title', '<small class="text-danger pl-3">', ' </small>') ?>
+                        <?= form_error('title', '<small class="text-danger">', ' </small>') ?>
                     </div>
 
                     <!-- Subtitle Form -->
                     <div class="form-group">
                         <label for="inputSubtitle">Subtitle</label>
                         <input class="form-control" type="text" id="subtitle" name="subtitle">
-                        <?= form_error('subtitle', '<small class="text-danger pl-3">', ' </small>') ?>
+                        <?= form_error('subtitle', '<small class="text-danger">', ' </small>') ?>
                     </div>
 
                     <!-- Description Form -->
                     <div class="form-group">
                         <label for="inputDesc">Description</label>
                         <input class="form-control" type="text" id="img_alt" name="img_alt">
-                        <?= form_error('img_alt', '<small class="text-danger pl-3">', ' </small>') ?>
+                        <?= form_error('img_alt', '<small class="text-danger">', ' </small>') ?>
                     </div>
 
                     <div class="text-right">

@@ -6,6 +6,7 @@ class banner_model extends CI_Model
         $query = $this->db->get('tbl_company_banner');
         return $query->result();
     }
+
     public function add_banner($data)
     {
         $this->db->insert('tbl_company_banner', $data);

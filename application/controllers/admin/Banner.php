@@ -17,8 +17,6 @@ class Banner extends CI_Controller
         if (!$this->session->userdata('employee_id')) {
             redirect('admin/auth');
         } else {
-            $employee_id = $this->session->userdata('employee_id');
-            $data['data_core'] = $this->login_model->GetNama($employee_id);
         }
     }
 
@@ -51,7 +49,7 @@ class Banner extends CI_Controller
 
         $data['titles'] = "Banner - Pondok Sambal";
 
-        $this->form_validation->set_rules('img_path', 'image');
+        $this->form_validation->set_rules('img_path', 'image', 'required');
         $this->form_validation->set_rules('title', 'title', 'required');
         $this->form_validation->set_rules('subtitle', 'subtitle', 'required');
         $this->form_validation->set_rules('img_alt', 'image description');
@@ -101,9 +99,9 @@ class Banner extends CI_Controller
 
     public function edit()
     {
-        $data['data_core'] = $this->validate();
+        // $data['data_core'] = $this->validate();
 
-        $data['titles'] = "Banner - Pondok Sambal";
+        // $data['titles'] = "Banner - Pondok Sambal";
 
         $this->form_validation->set_rules('title', 'Title', 'required');
         $this->form_validation->set_rules('subtitle', 'Subtitle', 'required');
@@ -111,11 +109,7 @@ class Banner extends CI_Controller
         $this->form_validation->set_rules('img_path', 'Image Description');
 
         if ($this->form_validation->run() === FALSE) {
-            $this->load->view('admin/template/header', $data);
-            $this->load->view('admin/template/sidebar');
-            $this->load->view('admin/template/topbar', $data);
-            $this->load->view('admin/banner/index');
-            $this->load->view('admin/template/footer');
+            redirect('admin/banner');
         } else {
 
             $this->banner_model->edit_banner();
