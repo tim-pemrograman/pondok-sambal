@@ -12,40 +12,27 @@
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
-                        <tr> 
+                        <tr>
                             <th>No</th>
                             <td>Category Name</td>
+                            <td>Description</td>
+                            <td>Image</td>
                             <th>Action</th>
                         </tr>
                     </thead>
 
                     <tbody>
-                       <tr>
+                        <tr>
                             <td>1</td>
                             <td>Main Course</td>
                             <td>
-                                <a class="btn-circle btn-primary"
-                                    href="#"><i
-                                        class="fas fa-edit "></i></a>
-                                <a class="btn-circle btn-danger"
-                                    onclick="return confirm('Are You Sure to Delete This Record?')"
-                                    href="#"><i
-                                        class="fas fa-trash "></i></a>
+                                <a class="btn-circle btn-primary" href="#"><i class="fas fa-edit "></i></a>
+                                <a class="btn-circle btn-danger" onclick="return confirm('Are You Sure to Delete This Record?')" href="#"><i class="fas fa-trash "></i></a>
                             </td>
-                       </tr>
-                       <tr>
-                            <td>2</td>
-                            <td>Desserts</td>
-                            <td>
-                                <a class="btn-circle btn-primary"
-                                    href="#"><i
-                                        class="fas fa-edit "></i></a>
-                                <a class="btn-circle btn-danger"
-                                    onclick="return confirm('Are You Sure to Delete This Record?')"
-                                    href="#"><i
-                                        class="fas fa-trash "></i></a>
-                            </td>
-                       </tr>
+                            <td></td>
+                            <td><img src="" alt="" width="100"></td>
+                        </tr>
+
                     </tbody>
 
                 </table>
