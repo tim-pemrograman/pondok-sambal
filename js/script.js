@@ -489,5 +489,5 @@ $(document).on('ready',function($) {
 
 		
 	})();
-
+	
 });

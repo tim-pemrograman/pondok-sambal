@@ -131,7 +131,11 @@
 										</ul>
 									</li>
 									<li class="menu-item menu-item-has-children menu-item-641"><a
-											href="<?= base_url('blogpage/blog4')?>">Blog</a></li>
+											href="<?= base_url('blogpage/blog4')?>">Blog</a>
+									</li>
+									<li class="menu-item menu-item-has-children menu-item-641">
+									<a href="<?= base_url('loginpage/login')?>">ORDER NOW!</a>
+									</li>
 
 								</ul>
 							</div>
@@ -166,6 +170,9 @@
 									<li
 										class="menu-item menu-item-has-children menu-item-641menu-item menu-item-has-children menu-item-641 gdlr-mega-menu">
 										<a href="<?= base_url('blogpage/blog4')?>" class="sf-with-ul-pre">Blog</a></li>
+									<li class="menu-item menu-item-has-childrenmenu-item menu-item-has-children gdlr-normal-menu">
+										<a href="<?= base_url('loginpage/login')?>">ORDER NOW!</a>
+									</li>
 
 								</ul><img id="gdlr-menu-search-button"
 									src="<?= base_url('assets/images/magnifier-light.png')?>" alt="" width="58" height="59" />
