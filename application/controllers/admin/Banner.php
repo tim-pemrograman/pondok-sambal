@@ -49,12 +49,14 @@ class Banner extends CI_Controller
 
         $data['titles'] = "Banner - Pondok Sambal";
 
-        $this->form_validation->set_rules('img_path', 'image', 'required');
+        if (empty($_FILES['img_path']['name'])) {
+            $this->form_validation->set_rules('img_path', 'image', 'required');
+        }
         $this->form_validation->set_rules('title', 'title', 'required');
         $this->form_validation->set_rules('subtitle', 'subtitle', 'required');
         $this->form_validation->set_rules('img_alt', 'image description');
 
-        if ($this->form_validation->run() === FALSE) {
+        if ($this->form_validation->run() === FALSE && empty($_FILES['img_path']['name'])) {
             $this->load->view('admin/template/header', $data);
             $this->load->view('admin/template/sidebar');
             $this->load->view('admin/template/topbar', $data);
