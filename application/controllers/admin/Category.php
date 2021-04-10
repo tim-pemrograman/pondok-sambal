@@ -31,6 +31,8 @@ class Category extends CI_Controller
     {
         $data['data_core'] = $this->validate();
 
+        $data['categories'] = $this->category_model->get_categories();
+
         $data['titles'] = "Category - Pondok Sambal";
 
         $this->load->view('admin/template/header', $data);
@@ -46,10 +48,9 @@ class Category extends CI_Controller
 
         $data['titles'] = "Add New Category - Pondok Sambal";
 
-        $this->form_validation->set_rules('img_path', 'image', 'required');
-        $this->form_validation->set_rules('title', 'title', 'required');
-        $this->form_validation->set_rules('subtitle', 'subtitle', 'required');
-        $this->form_validation->set_rules('img_alt', 'image description');
+        $this->form_validation->set_rules('name', 'name', 'required');
+        $this->form_validation->set_rules('description', 'description');
+        $this->form_validation->set_rules('img_path', 'image');
 
         if ($this->form_validation->run() === FALSE) {
             $this->load->view('admin/template/header', $data);
@@ -58,13 +59,20 @@ class Category extends CI_Controller
             $this->load->view('admin/category/form');
             $this->load->view('admin/template/footer');
         } else {
-            $upload_image = $this->upload_image();
-            $data = array(
-                'name' => $this->input->post('name'),
-                'description' => $this->input->post('description'),
-                'category_img' => $this->input->post('category_img')
-            );
-            // var_dump($upload_image);
+            if (empty($_FILES['img_path']['name'])) {
+                $data = array(
+                    'name' => $this->input->post('name'),
+                    'description' => $this->input->post('description')
+                );
+            } else {
+                $upload_image = $this->upload_image();
+                $data = array(
+                    'name' => $this->input->post('name'),
+                    'description' => $this->input->post('description'),
+                    'category_img' => $upload_image
+                );
+            }
+            // var_dump($data);
             $this->category_model->add_category($data);
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data kategori berhasil ditambah!</div>');
             redirect('admin/category');
@@ -73,7 +81,7 @@ class Category extends CI_Controller
 
     private function upload_image()
     {
-        $config['upload_path'] = './assets/images/banner/';
+        $config['upload_path'] = './assets/images/category/';
         $config['allowed_types'] = 'gif|jpg|png';
         $config['max_size'] = 10000;
 
@@ -91,5 +99,45 @@ class Category extends CI_Controller
             $path = $config['upload_path'] . $data["upload_data"]["file_name"];
             return ($data == true) ? $path : false;
         }
+    }
+
+    public function edit()
+    {
+
+        $this->form_validation->set_rules('name', 'name', 'required');
+        $this->form_validation->set_rules('description', 'description');
+        $this->form_validation->set_rules('img_path', 'image');
+
+        if ($this->form_validation->run() === FALSE) {
+            redirect('admin/banner');
+        } else {
+
+            if (empty($_FILES['img_path']['name'])) {
+                $data = array(
+                    'name' => $this->input->post('name'),
+                    'description' => $this->input->post('description')
+                );
+            } else {
+                $upload_image = $this->upload_image();
+                $data = array(
+                    'name' => $this->input->post('name'),
+                    'description' => $this->input->post('description'),
+                    'category_img' => $upload_image
+                );
+            }
+            // var_dump($data);
+            $this->category_model->edit_category($data);
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+            Data kategori berhasil diupdate! </div>');
+            redirect('admin/category');
+        }
+    }
+
+    public function delete($id)
+    {
+        $this->category_model->delete_category($id);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+        Data kategori berhasil dihapus! </div>');
+        redirect('admin/category');
     }
 }

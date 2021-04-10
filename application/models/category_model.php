@@ -12,15 +12,10 @@ class category_model extends CI_Model
         $this->db->insert('tbl_category', $data);
     }
 
-    public function edit_category()
+    public function edit_category($data)
     {
         $id = $this->input->post('id_category');
 
-        $data = array(
-            'name' => $this->input->post('name'),
-            'description' => $this->input->post('description'),
-            'category_img' => $this->input->post('category_img')
-        );
         $this->db->where('id', $id);
         $this->db->update('tbl_category', $data);
     }
