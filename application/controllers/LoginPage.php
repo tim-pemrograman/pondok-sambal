@@ -1,5 +1,4 @@
 <?php
-<<<<<<< HEAD
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 class LoginPage extends CI_Controller
@@ -17,10 +16,6 @@ class LoginPage extends CI_Controller
 		
 	}
 
-=======
-class LoginPage extends CI_Controller
-{
->>>>>>> b31c7d7684bdc7e827918ab5eb3908ea027ab95f
 	public function login()
 	{
         $this->form_validation->set_rules('email', 'email', 'required');
@@ -28,14 +23,9 @@ class LoginPage extends CI_Controller
 		if ($this->form_validation->run() ==  false) {
 			$data['titles'] = "Login - Pondok Sambal";
 			
-<<<<<<< HEAD
 
 		    $this->load->view('login');
 	
-=======
-			$this->load->helper('url');
-		    $this->load->view('login');
->>>>>>> b31c7d7684bdc7e827918ab5eb3908ea027ab95f
 		} else {
 			$this->_login();
 		}
@@ -62,44 +52,49 @@ class LoginPage extends CI_Controller
 			redirect('admin/Dashboard');
 		} else {
 			$this->session->set_flashdata('message', '<div class="alert alert-danger">Email Tidak Di Temukan !, Periksa Kembali</div>');
-			redirect('admin/auth');
+			redirect('loginpage/login');
 			
 		}
 	}
 
-<<<<<<< HEAD
-	function signup()
+	public function signup()
 	{
-		$Fname=$_POST['Fname'];
-		$Lname=$_POST['Lname'];
-		$phone=$_POST['phone'];
-		$address=$_POST['address'];
-		$email=$_POST['email'];
-		$password=$_POST['password'];
-		$count=$this->model->check_user($email);
-			if($count > 0){
-				echo 'This User Already Exists';
-				}
-			else{
-				$data = array(
-					'employee_id' =>null,
-					'Fname' =>$_POST['Fname'],
-					'Lname' =>$_POST['Lname'],
-					'phone' =>$_POST['phone'],
-					'address' =>$_POST['address'],
-					'email' =>$_POST['email'],
-					'password' =>$_POST['password']
-					);
-					$this->model->insert_user($data);
-				}
-=======
-	public function register()
-	{
-		$this->load->view('admin/template/auth_header');
-        $this->load->view('admin/auth/register');
-		$this->load->view('admin/template/auth_footer');
->>>>>>> b31c7d7684bdc7e827918ab5eb3908ea027ab95f
+		// Cek User
+		$email = $this->input->post('email');
+
+
+		$user = $this->signup_model->GetEmail($email);
+	
+			if ($user && $email) {
+				$this->session->set_flashdata('message', '<div>Email anda telah terpakai,Periksa Kembali</div>');
+				// $this->session->set_flashdata('message', '<div class="alert alert-danger">Akun berhasil dibuat!, Silahkan login</div>');
+				redirect('loginpage/login');
+			} else {
+		
+			$this->_signup();
+			}
+		
 	}
+
+	private function _signup()
+	{
+		
+				
+		$data_acc = [
+
+			'Fname' => $this->input->post('Fname'),
+			'Lname' => $this->input->post('Lname'),
+			'email' => $this->input->post('email'),
+			'password' => $this->input->post('password'),
+			'phone' => $this->input->post('phone'),
+			'address' => $this->input->post('address')
+			
+		];
+		 $this->signup_model->InsertDtAcc($data_acc);
+		 $this->session->set_flashdata('message', '<div class="alert alert-danger">Akun berhasil dibuat!, Silahkan login</div>');
+		 redirect('loginpage/login');
+	
+}
 
 	public function logout()
 	{
