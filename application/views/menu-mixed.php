@@ -57,9 +57,11 @@
 																href="#"><?= $menu->name; ?></a></h3>
 														<div class="menu-info menu-ingredients-caption gdlr-skin-info">
 															<?= $menu->description; ?></div>
+															<h3>Rp <?= $menu->price; ?></h3>
+															
 														<div
 															class="menu-info menu-price gdlr-title-font gdlr-skin-link">
-															<?= $menu->price; ?></div>
+															<a class="btn-circle btn-primary" data-toggle="modal" ><i class="fas fa-edit ">Add to Cart</i></a></div>
 														<div class="gdlr-list-menu-gimmick"></div>
 													</div>
 												</div>
@@ -113,18 +115,16 @@
 																alt="" width="400" height="300" /></a>
 													</div>
 													<div class="gdlr-menu-item-content">
-														<h3 class="menu-title gdlr-skin-title gdlr-content-font"><a
-																href="#">Nasi Ayam Bakar</a></h3>
-														<div class="menu-info menu-ingredients-caption gdlr-skin-info">Nasi
-															+ Ayam Bakar dengan tempe dan tahu</div>
-														<div class="menu-info menu-rating gdlr-skin-link"><i
-																class="fa fa-star icon-star"></i><i
-																class="fa fa-star icon-star"></i><i
-																class="fa fa-star icon-star"></i><i
-																class="fa fa-star icon-star"></i><i
-																class="fa fa-star-half-full icon-star-half-full"></i></div>
-														<div class="menu-info menu-price gdlr-title-font gdlr-skin-link">Rp
-															22.000</div>
+													<h3 class="menu-title gdlr-skin-title gdlr-content-font"><a
+																href="#"><?= $menu->name; ?></a></h3>
+																<div class="menu-info menu-ingredients-caption gdlr-skin-info">
+															<?= $menu->description; ?></div>
+															<h3>Rp <?= $menu->price; ?></h3>
+															
+														<div
+															class="menu-info menu-price gdlr-title-font gdlr-skin-link">
+															<a class="btn-circle btn-primary" data-toggle="modal" ><i class="fas fa-edit ">Add to Cart</i></a></div>
+														<div class="gdlr-list-menu-gimmick"></div>
 													</div>
 												</div>
 											</div>
