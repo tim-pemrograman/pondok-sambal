@@ -17,7 +17,7 @@
 											<img src="<?= base_url($banner->img_path) ?>" alt="<?= $banner->img_alt; ?>" title="<?= $banner->img_alt; ?>" data-src="<?= base_url($banner->img_path) ?>" style="opacity: 0.6; " />
 										</div>
 
-										<div class="ms-layer  msp-cn-1-7" style="" data-effect="t(true,n,-150,n,n,n,n,n,n,n,n,n,n,n,n)" data-duration="250" data-ease="easeOutQuint" data-offset-x="0" data-offset-y="-106" data-origin="mc" data-position="normal">
+										<div class="ms-layer  msp-cn-1-7"  data-effect="t(true,n,-150,n,n,n,n,n,n,n,n,n,n,n,n)" data-duration="250" data-ease="easeOutQuint" data-offset-x="0" data-offset-y="-106" data-origin="mc" data-position="normal">
 											<?= $banner->subtitle; ?></div>
 
 										<div class="ms-layer  msp-cn-1-8" style="font-size:100px" data-effect="t(true,n,n,-500,n,n,n,n,n,n,n,n,n,n,n)" data-duration="275" data-delay="162" data-ease="easeOutQuint" data-offset-x="228" data-offset-y="314" data-origin="tl" data-position="normal">
@@ -138,77 +138,26 @@
 								<div class="gdlr-menu-carousel-item gdlr-item">
 									<div class="flexslider" data-type="carousel" data-nav-container="menu-item-holder" data-columns="3">
 										<ul class="slides">
+										<?php foreach ($featured_menus as $menu): ?>
 											<li class="gdlr-item gdlr-menu-item gdlr-classic-menu with-price">
 												<div class="gdlr-menu-thumbnail">
-													<a href="<?= base_url('menupage/single') ?>"><img src="<?= base_url('assets/images/rekom.jpeg') ?>" alt="" width="400" height="300" /></a>
+													<a href="<?= base_url('menupage/single') ?>"><img src="<?= base_url($menu->product_img) ?>" alt="" width="400" height="300" /></a>
 													<div class="menu-info menu-recommendation"><span class="menu-recommendation-inner"><i class="fa fa-thumbs-o-up"></i>Recommended</span></div>
 												</div>
 												<div class="gdlr-menu-item-content">
-													<h3 class="menu-title gdlr-skin-title gdlr-content-font"><a href="<?= base_url('menupage/single') ?>">Bandeng
-															Millenium</a></h3>
+													<h3 class="menu-title gdlr-skin-title gdlr-content-font"><a href="<?= base_url('menupage/single') ?>"><?= $menu->name; ?></a></h3>
 													<div class="menu-info menu-ingredients-caption gdlr-skin-info">
-														Masakan dengan bumbu dan cara khas Kediri</div>
-													<div class="menu-info menu-rating gdlr-skin-link"><i class="fa fa-star icon-star"></i><i class="fa fa-star icon-star"></i><i class="fa fa-star icon-star"></i><i class="fa fa-star icon-star"></i><i class="fa fa-star icon-star"></i></div>
+														<?= $menu->description; ?></div>
+													<div class="menu-info menu-rating gdlr-skin-link">
+													<?php for($star = 0; $star<$menu->rating; $star++) 
+														echo "<i class='fa fa-star icon-star'></i>";
+													?>
+													</div>
 													<div class="menu-info menu-price gdlr-title-font gdlr-skin-link">Rp
-														40.000</div>
+														<?= $menu->price; ?></div>
 												</div>
 											</li>
-											<li class="gdlr-item gdlr-menu-item gdlr-classic-menu with-price">
-												<div class="gdlr-menu-thumbnail">
-													<a href="<?= base_url('menupage/single') ?>"><img src="<?= base_url('assets/images/menu.jpg') ?>" alt="" width="400" height="300" /></a>
-												</div>
-												<div class="gdlr-menu-item-content">
-													<h3 class="menu-title gdlr-skin-title gdlr-content-font"><a href="<?= base_url('menupage/single') ?>">Sambal Timun</a>
-													</h3>
-													<div class="menu-info menu-ingredients-caption gdlr-skin-info">
-														Perpaduan Pedas dan segar</div>
-													<div class="menu-info menu-rating gdlr-skin-link"><i class="fa fa-star icon-star"></i><i class="fa fa-star icon-star"></i><i class="fa fa-star icon-star"></i><i class="fa fa-star icon-star"></i><i class="fa fa-star-half-full icon-star-half-full"></i></div>
-													<div class="menu-info menu-price gdlr-title-font gdlr-skin-link">Rp
-														6.000</div>
-												</div>
-											</li>
-											<li class="gdlr-item gdlr-menu-item gdlr-classic-menu with-price">
-												<div class="gdlr-menu-thumbnail">
-													<a href="<?= base_url('menupage/single') ?>"><img src="<?= base_url('assets/images/menu-0.jpg') ?>" alt="" width="400" height="300" /></a>
-												</div>
-												<div class="gdlr-menu-item-content">
-													<h3 class="menu-title gdlr-skin-title gdlr-content-font"><a href="<?= base_url('menupage/single') ?>">Bandeng Presto
-															Bakar</a></h3>
-													<div class="menu-info menu-ingredients-caption gdlr-skin-info">
-														Bandeng Presto Bumbu dan Sambal yang nagih</div>
-													<div class="menu-info menu-rating gdlr-skin-link"><i class="fa fa-star icon-star"></i><i class="fa fa-star icon-star"></i><i class="fa fa-star icon-star"></i><i class="fa fa-star icon-star"></i><i class="fa fa-star-half-full icon-star-half-full"></i></div>
-													<div class="menu-info menu-price gdlr-title-font gdlr-skin-link">Rp
-														25.000</div>
-												</div>
-											</li>
-											<li class="gdlr-item gdlr-menu-item gdlr-classic-menu with-price">
-												<div class="gdlr-menu-thumbnail">
-													<a href="<?= base_url('menupage/single') ?>"><img src="<?= base_url('assets/images/menu-1.jpg') ?>" alt="" width="400" height="300" /></a>
-												</div>
-												<div class="gdlr-menu-item-content">
-													<h3 class="menu-title gdlr-skin-title gdlr-content-font"><a href="<?= base_url('menupage/single') ?>">Nasi Rames
-															Cobain</a></h3>
-													<div class="menu-info menu-ingredients-caption gdlr-skin-info">Nasi
-														dengan Ayam, Telur, bihun, dan sambal</div>
-													<div class="menu-info menu-rating gdlr-skin-link"><i class="fa fa-star icon-star"></i><i class="fa fa-star icon-star"></i><i class="fa fa-star icon-star"></i><i class="fa fa-star icon-star"></i><i class="fa fa-star icon-star"></i></div>
-													<div class="menu-info menu-price gdlr-title-font gdlr-skin-link">Rp
-														20.000</div>
-												</div>
-											</li>
-											<li class="gdlr-item gdlr-menu-item gdlr-classic-menu with-price">
-												<div class="gdlr-menu-thumbnail">
-													<a href="<?= base_url('menupage/single') ?>"><img src="<?= base_url('assets/images/menu-2.jpg') ?>" alt="" width="400" height="300" /></a>
-												</div>
-												<div class="gdlr-menu-item-content">
-													<h3 class="menu-title gdlr-skin-title gdlr-content-font"><a href="<?= base_url('menupage/single') ?>">Ayam Bakar</a></h3>
-													<div class="menu-info menu-ingredients-caption gdlr-skin-info">Nasi
-														dengan Ayam yang dibakar dengan Cinta</div>
-													<div class="menu-info menu-rating gdlr-skin-link"><i class="fa fa-star icon-star"></i><i class="fa fa-star icon-star"></i><i class="fa fa-star icon-star"></i><i class="fa fa-star icon-star"></i><i class="fa fa-star icon-star"></i></div>
-													<div class="menu-info menu-price gdlr-title-font gdlr-skin-link">Rp
-														22.000</div>
-												</div>
-											</li>
-
+										<?php endforeach; ?>
 										</ul>
 									</div>
 								</div>
