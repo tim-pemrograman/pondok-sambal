@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 class LoginPage extends CI_Controller
@@ -16,6 +17,10 @@ class LoginPage extends CI_Controller
 		
 	}
 
+=======
+class LoginPage extends CI_Controller
+{
+>>>>>>> b31c7d7684bdc7e827918ab5eb3908ea027ab95f
 	public function login()
 	{
         $this->form_validation->set_rules('email', 'email', 'required');
@@ -23,9 +28,14 @@ class LoginPage extends CI_Controller
 		if ($this->form_validation->run() ==  false) {
 			$data['titles'] = "Login - Pondok Sambal";
 			
+<<<<<<< HEAD
 
 		    $this->load->view('login');
 	
+=======
+			$this->load->helper('url');
+		    $this->load->view('login');
+>>>>>>> b31c7d7684bdc7e827918ab5eb3908ea027ab95f
 		} else {
 			$this->_login();
 		}
@@ -57,6 +67,7 @@ class LoginPage extends CI_Controller
 		}
 	}
 
+<<<<<<< HEAD
 	function signup()
 	{
 		$Fname=$_POST['Fname'];
@@ -81,6 +92,13 @@ class LoginPage extends CI_Controller
 					);
 					$this->model->insert_user($data);
 				}
+=======
+	public function register()
+	{
+		$this->load->view('admin/template/auth_header');
+        $this->load->view('admin/auth/register');
+		$this->load->view('admin/template/auth_footer');
+>>>>>>> b31c7d7684bdc7e827918ab5eb3908ea027ab95f
 	}
 
 	public function logout()

@@ -8,7 +8,11 @@
 	<title>Login and SignUp</title>
     <link rel="icon" href="<?= base_url('assets/images/logo.png')?>" type="image/x-icon" sizes="157x48">
 
+<<<<<<< HEAD
     <link rel='stylesheet' href="<?= base_url('css/login.css') ?>" type='text/css' media='all' />
+=======
+    <link rel='stylesheet' href="<?= base_url('css/style.css') ?>" type='text/css' media='all' />
+>>>>>>> b31c7d7684bdc7e827918ab5eb3908ea027ab95f
 
 </head>
 
@@ -31,9 +35,15 @@
 			</div>
 			<div class="form-inner">
             <?php echo $this->session->flashdata('message'); ?>
+<<<<<<< HEAD
             <form class="login" method="POST" action="<?= base_url('loginpage/login'); ?>">
 					<div class="field">
 						<input type="email" name="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Email Address" required>
+=======
+            <form class="login" method="POST" action="<?= base_url('admin/auth'); ?>">
+					<div class="field">
+						<input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Email Address" required>
+>>>>>>> b31c7d7684bdc7e827918ab5eb3908ea027ab95f
 					</div>
 					<div class="field">
 						<input type="password" name="password" class="form-control form-control-user"id="exampleInputPassword" placeholder="Password" required>
@@ -48,6 +58,7 @@
 					<div class="signup-link">
 						Not a member? <a href="">Signup now</a></div>
 				</form>
+<<<<<<< HEAD
 				<form action="<?= base_url('loginpage/signup'); ?>" class="signup" method="POST">
 					<div class="field">
 						<input type="text" name="Fname" class="form-control form-control-user" id="exampleFirstName" placeholder="First Name" required>
@@ -69,17 +80,36 @@
 					</div>
 					<div class="field">
 					<input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Confirm Password" required>
+=======
+				<form action="#" class="signup">
+					<div class="field">
+						<input type="text" placeholder="Email Address" required>
+					</div>
+					<div class="field">
+						<input type="password" placeholder="Password" required>
+					</div>
+					<div class="field">
+						<input type="password" placeholder="Confirm password" required>
+>>>>>>> b31c7d7684bdc7e827918ab5eb3908ea027ab95f
 					</div>
 					<div class="field btn">
 						<div class="btn-layer">
 						</div>
+<<<<<<< HEAD
 						<input type="submit" name="submit" value="Signup" class="btn btn-primary btn-user btn-block">
+=======
+						<input type="submit" value="Signup">
+>>>>>>> b31c7d7684bdc7e827918ab5eb3908ea027ab95f
 					</div>
 				</form>
 			</div>
 		</div>
 	</div>
+<<<<<<< HEAD
 	<script type='text/javascript' src='<?= base_url('js/login.js')?>'></script>
+=======
+
+>>>>>>> b31c7d7684bdc7e827918ab5eb3908ea027ab95f
 </body>
 
 </html>
