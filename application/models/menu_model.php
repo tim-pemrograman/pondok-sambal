@@ -7,6 +7,18 @@ class menu_model extends CI_Model
         return $query->result();
     }
 
+    public function get_featured_menus()
+    {
+        $query =$this->db->get_where('tbl_product', array('featured' => 1));
+        return $query->result();
+    }
+    
+    public function get_menus_by_category($category_id)
+    {
+        $query =$this->db->get_where('tbl_product', array('category_id' => $category_id));
+        return $query->result();
+    }
+
     public function get_menu_by_id($id)
     {
         $query = $this->db->get_where('tbl_product', array('id' => $id));
