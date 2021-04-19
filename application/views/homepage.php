@@ -350,7 +350,7 @@
 										<div class="clear"></div>
 									</div>
 									<div class="gdlr-item-title-caption gdlr-skin-info">Find out more article just here!
-									</div><a class="gdlr-item-title-link" href="blogpage/blog4">Read All News</a>
+									</div><a class="gdlr-item-title-link" href="article">Read All News</a>
 								</div>
 							</div>
 						</div>
@@ -377,7 +377,7 @@
 															</div>
 
 															<header class="post-header">
-																<h3 class="gdlr-blog-title gdlr-content-font"><a href="blogpage/blog4">Cuma disini kamu bisa
+																<h3 class="gdlr-blog-title gdlr-content-font"><a href="article">Cuma disini kamu bisa
 																		makan enak dan pedas yang nagih!</a></h3>
 																<div class="clear"></div>
 															</header>
@@ -413,7 +413,7 @@
 															</div>
 
 															<header class="post-header">
-																<h3 class="gdlr-blog-title gdlr-content-font"><a href="blogpage/article/blog4">Kamu tidak akan tahu apa
+																<h3 class="gdlr-blog-title gdlr-content-font"><a href="article">Kamu tidak akan tahu apa
 																		itu pedas kalau belum ke Pondok Sambal!</a></h3>
 																<div class="clear"></div>
 															</header>
@@ -425,7 +425,7 @@
 																Pondok Sambal. Sambal disini membuatmu melupakan
 																semuanya kecuali rasa pedas yang membuatmu mau lagi dan
 																...
-																<div class="clear"></div><a href="blogpage/blog4" class="excerpt-read-more">Read More</a>
+																<div class="clear"></div><a href="article" class="excerpt-read-more">Read More</a>
 															</div>
 														</div>
 													</article>
@@ -452,7 +452,7 @@
 															</div>
 
 															<header class="post-header">
-																<h3 class="gdlr-blog-title gdlr-content-font"><a href="<?= base_url('blogpage/blog4') ?>">Cuma
+																<h3 class="gdlr-blog-title gdlr-content-font"><a href="<?= base_url('article') ?>">Cuma
 																		disini Pedasnya gak ngebosenin</a></h3>
 																<div class="clear"></div>
 															</header>
@@ -462,7 +462,7 @@
 																siang, sore, dan bahkan malam? Disini tempat yang tepat
 																terutama untuk kalian kaum pencinta pedas yang
 																menggoyang lidah. Hanya di...
-																<div class="clear"></div><a href="blogpage/blog4" class="excerpt-read-more">Read More</a>
+																<div class="clear"></div><a href="article" class="excerpt-read-more">Read More</a>
 															</div>
 														</div>
 													</article>
