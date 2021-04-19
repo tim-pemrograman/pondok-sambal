@@ -20,8 +20,8 @@
 							<div class="gdlr-image-frame-item gdlr-item">
 								<div class="gdlr-frame frame-type-none">
 									<div class="gdlr-image-link-shortcode"><img
-											src="<?= base_url('assets/images/menu/bandengmillenium.jpeg')?>" alt="" width="250"
-											height="250" /></div>
+											src="<?= base_url('assets/images/menu/bandengmillenium.jpeg')?>" alt=""
+											width="250" height="250" /></div>
 								</div>
 							</div>
 						</div>
@@ -57,11 +57,12 @@
 																href="#"><?= $menu->name; ?></a></h3>
 														<div class="menu-info menu-ingredients-caption gdlr-skin-info">
 															<?= $menu->description; ?></div>
-															<a class="btn-circle btn-primary" data-toggle="modal" ><i class="fas fa-edit ">Add to Cart</i></a></div>
-															
-														<div
-															class="menu-info menu-price gdlr-title-font gdlr-skin-link">
-															<h3>Rp <?= $menu->price; ?></h3>
+														<a class="btn-circle btn-primary" data-toggle="modal"><i
+																class="fas fa-edit ">Add to Cart</i></a>
+													</div>
+
+													<div class="menu-info menu-price gdlr-title-font gdlr-skin-link">
+														<h3>Rp <?= $menu->price; ?></h3>
 														<div class="gdlr-list-menu-gimmick"></div>
 													</div>
 												</div>
@@ -80,36 +81,36 @@
 				<div class="clear"></div>
 			</section>
 
-				<section id="content-section-2">
-					<div class="gdlr-parallax-wrapper gdlr-background-image gdlr-show-all gdlr-skin-dark-skin"
-						id="gdlr-parallax-wrapper-1" data-bgspeed="0.1"
-						style="background-image: url('<?= base_url('assets/images/food.jpg')?>'); padding-top: 170px; padding-bottom: 140px; ">
-						<div class="container">
-							<div class="gdlr-item gdlr-content-item">
-								<h2 style="font-size: 75px; text-align: center;">All Menu</h2>
-								<h5 style="text-align: center;">Aneka menu Pondok Sambal</h5>
-							</div>
-							<div class="clear"></div>
+			<section id="content-section-2">
+				<div class="gdlr-parallax-wrapper gdlr-background-image gdlr-show-all gdlr-skin-dark-skin"
+					id="gdlr-parallax-wrapper-1" data-bgspeed="0.1"
+					style="background-image: url('<?= base_url('assets/images/food.jpg')?>'); padding-top: 170px; padding-bottom: 140px; ">
+					<div class="container">
+						<div class="gdlr-item gdlr-content-item">
+							<h2 style="font-size: 75px; text-align: center;">All Menu</h2>
+							<h5 style="text-align: center;">Aneka menu Pondok Sambal</h5>
 						</div>
+						<div class="clear"></div>
 					</div>
-					<div class="clear"></div>
-				</section>
-				<section id="content-section-3">
-					<div class="gdlr-color-wrapper  gdlr-show-all no-skin"
-						style="background-color: #ffffff; padding-bottom: 25px; ">
-						<div class="container">
-							<div class="menu-item-wrapper menu-column-3 type-classic">
-								<div class="menu-item-holder">
-									<div class="gdlr-grid" data-type="menu" data-layout="fitRows">
-										<?php $i=0; foreach($menus as $cat_menu): 
+				</div>
+				<div class="clear"></div>
+			</section>
+			<section id="content-section-3">
+				<div class="gdlr-color-wrapper  gdlr-show-all no-skin"
+					style="background-color: #ffffff; padding-bottom: 25px; ">
+					<div class="container">
+						<div class="menu-item-wrapper menu-column-3 type-classic">
+							<div class="menu-item-holder">
+								<div class="gdlr-grid" data-type="menu" data-layout="fitRows">
+									<?php $i=0; foreach($menus as $cat_menu): 
 											
 											$i++;
 										?>
-										<div class="four columns">
-											<div class="gdlr-item gdlr-menu-item gdlr-classic-menu with-price">
-												<div class="gdlr-ux gdlr-classic-menu-ux">
-													<div class="gdlr-menu-thumbnail">
-														<a href="#">
+									<div class="four columns">
+										<div class="gdlr-item gdlr-menu-item gdlr-classic-menu with-price">
+											<div class="gdlr-ux gdlr-classic-menu-ux">
+												<div class="gdlr-menu-thumbnail">
+													<a href="#">
 														<img src="
 															<?php 
 															if(($cat_menu->product_img) == '') {
@@ -117,47 +118,106 @@
 															} else  {
 																echo(base_url($cat_menu->product_img));
 															}
-														?>" 
-														alt="<?= $cat_menu->name; ?>" width="400" height="300" 
-													onerror="this.src='<?= base_url('assets/images/default.jpg'); ?>'" />
-														</a>
-													</div>
-													<div class="gdlr-menu-item-content">
+														?>" alt="<?= $cat_menu->name; ?>" width="400" height="300"
+															onerror="this.src='<?= base_url('assets/images/default.jpg'); ?>'" />
+													</a>
+												</div>
+												<div class="gdlr-menu-item-content">
 													<h3 class="menu-title gdlr-skin-title gdlr-content-font"><a
-																href="#"><?= $menu->name; ?></a></h3>
-																<div class="menu-info menu-ingredients-caption gdlr-skin-info">
-															<?= $menu->description; ?></div>
-															<h3>Rp <?= $menu->price; ?></h3>
-															<a class="btn-circle btn-primary" data-toggle="modal" ><i class="fas fa-edit ">Add to Cart</i></a>
-															
-														
-													</div>
+															href="#"><?= $menu->name; ?></a></h3>
+													<div class="menu-info menu-ingredients-caption gdlr-skin-info">
+														<?= $menu->description; ?></div>
+													<h3>Rp <?= $menu->price; ?></h3>
+													<input type="number" name="quantity" id="<?= $menu->id;?>" value="1"
+														class="quantity form-control">
+													<!-- <a class="add_cart btn-circle btn-primary" data-toggle="modal" ><i class="fas fa-edit ">Add to Cart</i></a> -->
+													<button class="add_cart btn btn-success btn-block"
+														id="<?= $menu->id;?>" name="<?= $menu->name;?>"
+														price="<?= $menu->price;?>">Add To Cart</button>
 												</div>
 											</div>
 										</div>
+									</div>
 
-										<?php 
+									<?php 
 											if(($i%3) == 0 && $i <= count($menus) && $i!== 0) {
 												echo"<div class='clear'></div>";
 											}
 										endforeach; ?>
-									</div>
-									<div class="clear"></div>
 								</div>
+								<div class="col-md-4">
+									<h4>Shopping Cart</h4>
+									<table class="table table-striped">
+										<thead>
+											<tr>
+												<th>Items</th>
+												<th>Price</th>
+												<th>Qty</th>
+												<th>Total</th>
+												<th>Actions</th>
+											</tr>
+										</thead>
+										<tbody id="detail_cart">
+
+										</tbody>
+
+									</table>
+								</div>
+								<div class="clear"></div>
 							</div>
-							<div class="clear"></div>
-							<div class="clear"></div>
 						</div>
+						<div class="clear"></div>
+						<div class="clear"></div>
 					</div>
-					<div class="clear"></div>
-				</section>
-
+				</div>
+				<div class="clear"></div>
+			</section>
 		</div>
-
 		<!-- Below Sidebar Section-->
 
 	</div>
 	<!-- gdlr-content -->
 	<div class="clear"></div>
+	<script type="text/javascript" src="<?php echo base_url().'assets/js/jquery-3.2.1.js'?>"></script>
+	<script type="text/javascript" src="<?php echo base_url().'assets/js/bootstrap.js'?>"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('.add_cart').click(function () {
+				var id = $(this).data("id");
+				var name = $(this).data("name");
+				var price = $(this).data("price");
+				var quantity = $('#' + id).val();
+				$.ajax({
+					url: "<?php echo site_url('menupage/add_to_cart');?>",
+					method: "POST",
+					data: {
+						id: id,
+						name: name,
+						price: price,
+						quantity: quantity
+					},
+					success: function (data) {
+						$('#detail_cart').html(data);
+					}
+				});
+			});
+			$('#detail_cart').load("<?php echo site_url('menupage/load_cart');?>");
+			$(document).on('click', '.remove_cart', function () {
+				var menu = $(this).attr("id");
+				$.ajax({
+					url: "<?php echo site_url('menupage/delete_cart');?>",
+					method: "POST",
+					data: {
+						menu: menu
+					},
+					success: function (data) {
+						$('#detail_cart').html(data);
+					}
+				});
+			});
+		});
+
+	</script>
+
 </div>
 <!-- content wrapper -->

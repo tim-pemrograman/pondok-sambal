@@ -41,4 +41,8 @@ class menu_model extends CI_Model
     {
         $this->db->delete('tbl_product', array('id' => $id));
     }
+    function get_all_product(){
+        $result=$this->db->get('tbl_product');
+        return $result;
+        }
 }
