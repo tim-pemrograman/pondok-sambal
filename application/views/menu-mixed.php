@@ -57,11 +57,11 @@
 																href="#"><?= $menu->name; ?></a></h3>
 														<div class="menu-info menu-ingredients-caption gdlr-skin-info">
 															<?= $menu->description; ?></div>
-															<h3>Rp <?= $menu->price; ?></h3>
+															<a class="btn-circle btn-primary" data-toggle="modal" ><i class="fas fa-edit ">Add to Cart</i></a></div>
 															
 														<div
 															class="menu-info menu-price gdlr-title-font gdlr-skin-link">
-															<a class="btn-circle btn-primary" data-toggle="modal" ><i class="fas fa-edit ">Add to Cart</i></a></div>
+															<h3>Rp <?= $menu->price; ?></h3>
 														<div class="gdlr-list-menu-gimmick"></div>
 													</div>
 												</div>
@@ -128,11 +128,9 @@
 																<div class="menu-info menu-ingredients-caption gdlr-skin-info">
 															<?= $menu->description; ?></div>
 															<h3>Rp <?= $menu->price; ?></h3>
+															<a class="btn-circle btn-primary" data-toggle="modal" ><i class="fas fa-edit ">Add to Cart</i></a>
 															
-														<div
-															class="menu-info menu-price gdlr-title-font gdlr-skin-link">
-															<a class="btn-circle btn-primary" data-toggle="modal" ><i class="fas fa-edit ">Add to Cart</i></a></div>
-														<div class="gdlr-list-menu-gimmick"></div>
+														
 													</div>
 												</div>
 											</div>
