@@ -23,16 +23,38 @@ class Company extends CI_Controller {
         }
     }
 
-    private function upload_image()
+    private function upload_gallery_image()
     {
-        $config['upload_path'] = './assets/images/article/';
+        $config['upload_path'] = './assets/images/company/';
         $config['allowed_types'] = 'gif|jpg|png';
         $config['max_size'] = 10000;
 
         $this->load->library('upload', $config);
 
         // return $config;
-        if (!$this->upload->do_upload('img_path')) {
+        if (!$this->upload->do_upload('gallery_img')) {
+            $error = array('error' => $this->upload->display_errors());
+            return $error;
+        } else {
+            $data = array('upload_data' => $this->upload->data());
+            // $type = explode('.', $_FILES['img_path']['name']);
+            // $type = $type[count($type) - 1];
+
+            $path = $config['upload_path'] . $data["upload_data"]["file_name"];
+            return ($data == true) ? $path : false;
+        }
+    }
+    
+    private function upload_banner_image()
+    {
+        $config['upload_path'] = './assets/images/company/';
+        $config['allowed_types'] = 'gif|jpg|png';
+        $config['max_size'] = 10000;
+
+        $this->load->library('upload', $config);
+
+        // return $config;
+        if (!$this->upload->do_upload('banner_img')) {
             $error = array('error' => $this->upload->display_errors());
             return $error;
         } else {
@@ -95,11 +117,16 @@ class Company extends CI_Controller {
                 'phone' => $this->input->post('phone')
             );
         } else {
-            $upload_image = $this->upload_image();
+            $gallery_image = $this->upload_gallery_image();
+            $banner_image = $this->upload_banner_image();
             $data = array(
-                'title' => $this->input->post('title'),
-                'content' => $this->input->post('content'),
-                'img_path' => $upload_image
+                'name' => $this->input->post('name'),
+                'about' => $this->input->post('about'),
+                'email' => $this->input->post('email'),
+                'address' => $this->input->post('address'),
+                'phone' => $this->input->post('phone'),
+                'gallery_image' => $gallery_image,
+                'banner_image' => $banner_image
             );
         }
         // var_dump($data);
@@ -108,8 +135,6 @@ class Company extends CI_Controller {
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
         Data kategori berhasil diupdate! </div>');
         redirect('admin/company');
-
-
 
 
     }
