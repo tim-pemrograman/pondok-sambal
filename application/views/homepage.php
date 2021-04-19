@@ -104,7 +104,7 @@
 							<div class="gdlr-item gdlr-content-item"></div>
 							<div class="gdlr-image-frame-item gdlr-item">
 								<div class="gdlr-frame frame-type-none">
-									<div class="gdlr-image-link-shortcode"><img src="<?= base_url('assets/images/resto.jpg') ?>" alt="" width="237" height="237" /></div>
+									<div class="gdlr-image-link-shortcode"><img src="<?= base_url('assets/images/article/resto.jpg') ?>" alt="" width="237" height="237" /></div>
 								</div>
 							</div>
 						</div>
@@ -112,7 +112,7 @@
 							<div class="gdlr-item gdlr-content-item"></div>
 							<div class="gdlr-image-frame-item gdlr-item">
 								<div class="gdlr-frame frame-type-none">
-									<div class="gdlr-image-link-shortcode"><img src="<?= base_url('assets/images/resto-2.jpg') ?>" alt="" width="237" height="237" /></div>
+									<div class="gdlr-image-link-shortcode"><img src="<?= base_url('assets/images/article/resto-2.jpg') ?>" alt="" width="237" height="237" /></div>
 								</div>
 							</div>
 						</div>
@@ -365,7 +365,7 @@
 													<article id="post-852" class="post-852 post type-post status-publish format-standard has-post-thumbnail hentry category-fit-row tag-blog tag-life-style">
 														<div class="gdlr-standard-style">
 															<div class="gdlr-blog-thumbnail">
-																<a href="#"> <img src="<?= base_url('assets/images/resto.jpg') ?>" alt="" width="400" height="300" /></a>
+																<a href="#"> <img src="<?= base_url('assets/images/article/resto.jpg') ?>" alt="" width="400" height="300" /></a>
 															</div>
 
 															<div class="gdlr-blog-info gdlr-info">
@@ -401,7 +401,7 @@
 													<article id="post-862" class="post-862 post type-post status-publish format-standard has-post-thumbnail hentry category-blog category-fit-row tag-blog tag-link tag-news">
 														<div class="gdlr-standard-style">
 															<div class="gdlr-blog-thumbnail">
-																<a href="#"> <img src="<?= base_url('assets/images/resto-2.jpg') ?>" alt="" width="400" height="300" /></a>
+																<a href="#"> <img src="<?= base_url('assets/images/article/resto-2.jpg') ?>" alt="" width="400" height="300" /></a>
 															</div>
 
 															<div class="gdlr-blog-info gdlr-info">
@@ -413,7 +413,7 @@
 															</div>
 
 															<header class="post-header">
-																<h3 class="gdlr-blog-title gdlr-content-font"><a href="blogpage/blog4">Kamu tidak akan tahu apa
+																<h3 class="gdlr-blog-title gdlr-content-font"><a href="blogpage/article/blog4">Kamu tidak akan tahu apa
 																		itu pedas kalau belum ke Pondok Sambal!</a></h3>
 																<div class="clear"></div>
 															</header>

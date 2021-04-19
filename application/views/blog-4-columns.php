@@ -29,7 +29,7 @@
 															<div class="gdlr-standard-style">
 																<div class="gdlr-blog-thumbnail">
 																	<a href="<?= base_url('')?>"> <img
-																			src="<?= base_url('assets/images/resto-3.jpg')?>"
+																			src="<?= base_url('assets/images/article/resto-3.jpg')?>"
 																			alt="" width="400" height="300" /></a>
 																	<div class="gdlr-sticky-banner"><i
 																			class="fa fa-bullhorn"></i>Sticky Post</div>
@@ -75,7 +75,7 @@
 															<div class="gdlr-standard-style">
 																<div class="gdlr-blog-thumbnail">
 																	<a href="#"> <img
-																			src="<?= base_url('assets/images/resto-2.jpg')?>"
+																			src="<?= base_url('assets/images/article/resto-2.jpg')?>"
 																			alt="" width="400" height="300" /></a>
 																</div>
 
@@ -119,7 +119,7 @@
 															<div class="gdlr-standard-style">
 																<div class="gdlr-blog-thumbnail">
 																	<a href="#"> <img
-																			src="<?= base_url('assets/images/resto.jpg')?>"
+																			src="<?= base_url('assets/images/article/resto.jpg')?>"
 																			alt="" width="400" height="300" /></a>
 																</div>
 
@@ -162,7 +162,7 @@
 															<div class="gdlr-standard-style">
 																<div class="gdlr-blog-thumbnail">
 																	<a href="<?= base_url('#')?>"> <img
-																			src="<?= base_url('assets/images/resto-5.jpg')?>"
+																			src="<?= base_url('assets/images/article/resto-5.jpg')?>"
 																			alt="" width="400" height="300" /></a>
 																</div>
 
