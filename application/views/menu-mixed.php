@@ -123,7 +123,6 @@
 														</a>
 													</div>
 													<div class="gdlr-menu-item-content">
-<<<<<<< HEAD
 													<h3 class="menu-title gdlr-skin-title gdlr-content-font"><a
 																href="#"><?= $menu->name; ?></a></h3>
 																<div class="menu-info menu-ingredients-caption gdlr-skin-info">
@@ -134,18 +133,6 @@
 															class="menu-info menu-price gdlr-title-font gdlr-skin-link">
 															<a class="btn-circle btn-primary" data-toggle="modal" ><i class="fas fa-edit ">Add to Cart</i></a></div>
 														<div class="gdlr-list-menu-gimmick"></div>
-=======
-														<h3 class="menu-title gdlr-skin-title gdlr-content-font"><a
-																href="#"><?= $cat_menu->name; ?></a></h3>
-														<div class="menu-info menu-ingredients-caption gdlr-skin-info"><?= $cat_menu->description; ?></div>
-														<div class="menu-info menu-rating gdlr-skin-link">
-														<?php for($star = 0; $star<$cat_menu->rating; $star++) 
-															echo "<i class='fa fa-star icon-star'></i>";
-														?>
-														</div>
-														<div class="menu-info menu-price gdlr-title-font gdlr-skin-link">Rp
-															22.000</div>
->>>>>>> 29fbe401199d7ab2ad0520b3e9b8f3fa058de395
 													</div>
 												</div>
 											</div>
