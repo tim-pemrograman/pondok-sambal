@@ -4,14 +4,14 @@ class signup_model extends CI_Model
 
     public function InsertDtAcc($data_acc) {
     
-    $this->db->insert('tbl_employee', $data_acc);
+    $this->db->insert('tbl_user', $data_acc);
     
 }
 
 public function GetEmail($email)
     {
         $this->db->select('email');
-        $this->db->from('tbl_employee');
+        $this->db->from('tbl_user');
         $this->db->where('email', $email);
         $query = $this->db->get();
         // $query = $this->db->get_where('tb_users', ['nik' , $nik]);
@@ -20,11 +20,11 @@ public function GetEmail($email)
         die;
     }
 
-    public function GetNama($employee_id)
+    public function GetNama($user_id)
     {
         $this->db->select('Fname,Lname');
-        $this->db->from('tbl_employee');
-        $this->db->where('employee_id', $employee_id);
+        $this->db->from('tbl_user');
+        $this->db->where('employee_id', $user_id);
         $query = $this->db->get();
         // $query = $this->db->get_where('tb_users', ['nik' , $nik]);
         return $query->row_array();

@@ -57,12 +57,13 @@
 																href="#"><?= $menu->name; ?></a></h3>
 														<div class="menu-info menu-ingredients-caption gdlr-skin-info">
 															<?= $menu->description; ?></div>
-														<a class="btn-circle btn-primary" data-toggle="modal"><i
-																class="fas fa-edit ">Add to Cart</i></a>
+															<h3>Rp <?= $menu->price; ?></h3>
+														
 													</div>
 
 													<div class="menu-info menu-price gdlr-title-font gdlr-skin-link">
-														<h3>Rp <?= $menu->price; ?></h3>
+													<a class="btn-circle btn-primary" data-toggle="modal"><i
+																class="fas fa-edit ">Add to Cart</i></a>
 														<div class="gdlr-list-menu-gimmick"></div>
 													</div>
 												</div>
@@ -178,8 +179,8 @@
 	</div>
 	<!-- gdlr-content -->
 	<div class="clear"></div>
-	<script type="text/javascript" src="<?php echo base_url().'assets/js/jquery-3.2.1.js'?>"></script>
-	<script type="text/javascript" src="<?php echo base_url().'assets/js/bootstrap.js'?>"></script>
+	<script type="text/javascript" src="<?= base_url().'assets/js/jquery-3.2.1.js'?>"></script>
+	<script type="text/javascript" src="<?= base_url().'assets/js/bootstrap.js'?>"></script>
 	<script type="text/javascript">
 		$(document).ready(function () {
 			$('.add_cart').click(function () {
@@ -188,7 +189,7 @@
 				var price = $(this).data("price");
 				var quantity = $('#' + id).val();
 				$.ajax({
-					url: "<?php echo site_url('menupage/add_to_cart');?>",
+					url: "<?= site_url('menupage/add_to_cart');?>",
 					method: "POST",
 					data: {
 						id: id,
@@ -201,11 +202,11 @@
 					}
 				});
 			});
-			$('#detail_cart').load("<?php echo site_url('menupage/load_cart');?>");
+			$('#detail_cart').load("<?= site_url('menupage/load_cart');?>");
 			$(document).on('click', '.remove_cart', function () {
 				var menu = $(this).attr("id");
 				$.ajax({
-					url: "<?php echo site_url('menupage/delete_cart');?>",
+					url: "<?= site_url('menupage/delete_cart');?>",
 					method: "POST",
 					data: {
 						menu: menu
