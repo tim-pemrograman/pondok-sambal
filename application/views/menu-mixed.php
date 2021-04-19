@@ -66,12 +66,8 @@
 													</div>
 												</div>
 											</div>
-										
+										</div>
 										<?php endforeach; ?>
-										
-										
-										
-										
 										<div class="clear"></div>
 									</div>
 									<div class="clear"></div>
@@ -104,17 +100,30 @@
 						<div class="container">
 							<div class="menu-item-wrapper menu-column-3 type-classic">
 								<div class="menu-item-holder">
-									<div class="gdlr-isotope" data-type="menu" data-layout="fitRows">
-										<?php foreach($menus as $cat_menu): ?>
-										<div class="clear"></div>
+									<div class="gdlr-grid" data-type="menu" data-layout="fitRows">
+										<?php $i=0; foreach($menus as $cat_menu): 
+											
+											$i++;
+										?>
 										<div class="four columns">
 											<div class="gdlr-item gdlr-menu-item gdlr-classic-menu with-price">
 												<div class="gdlr-ux gdlr-classic-menu-ux">
 													<div class="gdlr-menu-thumbnail">
-														<a href="#"><img src="<?= base_url('assets/images/menu/ayambakar.jpg')?>"
-																alt="" width="400" height="300" /></a>
+														<a href="#">
+														<img src="
+															<?php 
+															if(($cat_menu->product_img) == '') {
+																echo(base_url('assets/images/default.jpg'));
+															} else  {
+																echo(base_url($cat_menu->product_img));
+															}
+														?>" 
+														alt="<?= $cat_menu->name; ?>" width="400" height="300" 
+													onerror="this.src='<?= base_url('assets/images/default.jpg'); ?>'" />
+														</a>
 													</div>
 													<div class="gdlr-menu-item-content">
+<<<<<<< HEAD
 													<h3 class="menu-title gdlr-skin-title gdlr-content-font"><a
 																href="#"><?= $menu->name; ?></a></h3>
 																<div class="menu-info menu-ingredients-caption gdlr-skin-info">
@@ -125,12 +134,28 @@
 															class="menu-info menu-price gdlr-title-font gdlr-skin-link">
 															<a class="btn-circle btn-primary" data-toggle="modal" ><i class="fas fa-edit ">Add to Cart</i></a></div>
 														<div class="gdlr-list-menu-gimmick"></div>
+=======
+														<h3 class="menu-title gdlr-skin-title gdlr-content-font"><a
+																href="#"><?= $cat_menu->name; ?></a></h3>
+														<div class="menu-info menu-ingredients-caption gdlr-skin-info"><?= $cat_menu->description; ?></div>
+														<div class="menu-info menu-rating gdlr-skin-link">
+														<?php for($star = 0; $star<$cat_menu->rating; $star++) 
+															echo "<i class='fa fa-star icon-star'></i>";
+														?>
+														</div>
+														<div class="menu-info menu-price gdlr-title-font gdlr-skin-link">Rp
+															22.000</div>
+>>>>>>> 29fbe401199d7ab2ad0520b3e9b8f3fa058de395
 													</div>
 												</div>
 											</div>
 										</div>
 
-										<?php endforeach; ?>
+										<?php 
+											if(($i%3) == 0 && $i <= count($menus) && $i!== 0) {
+												echo"<div class='clear'></div>";
+											}
+										endforeach; ?>
 									</div>
 									<div class="clear"></div>
 								</div>

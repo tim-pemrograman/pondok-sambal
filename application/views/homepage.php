@@ -141,7 +141,17 @@
 										<?php foreach ($featured_menus as $menu): ?>
 											<li class="gdlr-item gdlr-menu-item gdlr-classic-menu with-price">
 												<div class="gdlr-menu-thumbnail">
-													<a href="<?= base_url('menupage/single') ?>"><img src="<?= base_url($menu->product_img) ?>" alt="" width="400" height="300" /></a>
+													<a href="<?= base_url('menupage/single') ?>">
+													<img src="
+														<?php 
+														if(($menu->product_img) == '') {
+															echo(base_url('assets/images/default.jpg'));
+														} else  {
+															echo(base_url($menu->product_img));
+														}
+														?>" 
+													alt="<?= $menu->name; ?>" width="400" height="300" 
+													onerror="this.src='<?= base_url('assets/images/default.jpg'); ?>'" /></a>
 													<div class="menu-info menu-recommendation"><span class="menu-recommendation-inner"><i class="fa fa-thumbs-o-up"></i>Recommended</span></div>
 												</div>
 												<div class="gdlr-menu-item-content">
