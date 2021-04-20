@@ -26,6 +26,16 @@ class article_model extends CI_Model
         return $query->row();
     }
 
+    public function get_recent()
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_article');
+        $this->db->join('tbl_employee', 'tbl_employee.employee_id = tbl_article.employee_id');
+        $this->db->limit(3,20);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
     public function add_article($data)
     {
         $this->db->insert('tbl_article', $data);
