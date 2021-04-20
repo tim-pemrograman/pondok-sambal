@@ -182,44 +182,71 @@
 	<script type="text/javascript" src="<?= base_url().'assets/js/jquery-3.2.1.js'?>"></script>
 	<script type="text/javascript" src="<?= base_url().'assets/js/bootstrap.js'?>"></script>
 
-	<script type="text/javascript">
-		$(document).ready(function () {
-			$('.add_cart').click(function () {
-				var id = $(this).data("id");
-				var name = $(this).data("name");
-				var price = $(this).data("price");
-				var quantity = $('#' + id).val();
-				$.ajax({
-					url: "<?= base_url('menupage/add_to_cart');?>",
-					method: "POST",
-					data: {
-						id: id,
-						name: name,
-						price: price,
-						quantity: quantity
-					},
-					success: function (data) {
-						$('#detail_cart').html(data);
-					}
-				});
-			});
-			$('#detail_cart').load("<?= site_url('menupage/load_cart');?>");
-			$(document).on('click', '.remove_cart', function () {
-				var menu = $(this).attr("id");
-				$.ajax({
-					url: "<?= base_url('menupage/delete_cart');?>",
-					method: "POST",
-					data: {
-						menu: menu
-					},
-					success: function (data) {
-						$('#detail_cart').html(data);
-					}
-				});
-			});
-		});
+	<script>
+    $(document).ready(function () {
 
-	</script>
+        localStorage.clear();
+
+        
+
+        $("#add_cart").click(function () {
+            
+            $('#add_cart').removeAttr('disabled');
+            
+            var id = $id.val();
+            var name = $name.text();
+            var price = $price.val().substring(4);
+            var description = $description.val();
+            var quantity = $('#quantity').val();
+            var product_img = $product_img.attr('product_img');
+
+            var order_list = JSON.parse(localStorage.getItem("order_list"));
+
+            if (order_list == null) {
+                order_list = [];
+
+                // Isi Array
+                order_list.push({
+                    order_id_menu: id,
+                    order_menu_name: name,
+                    order_price: price,
+                    order_description: description,
+                    order_qty: quantity,
+                    order_img: product_img
+                });
+
+            } else {
+                // Cek id menu yang masuk, ada ngga di localstorage
+                objIndex = order_list.findIndex((obj => obj.order_id_menu == id));
+
+                // -1 artinya tidak ada yang sama menu nya (tambah id baru)
+                if (objIndex == -1) {
+                    // Isi Array
+                    order_list.push({
+                    order_id_menu: id,
+                    order_menu_name: name,
+                    order_price: price,
+                    order_description: description,
+                    order_qty: quantity,
+                    order_img: product_img
+                    });
+
+                } else {
+                    // console.log('masuk filter -1 else');
+                    var order = parseInt(order_list[objIndex].order_qty);
+                    order_list[objIndex].order_qty = order + parseInt(qty);
+                };
+            };
+
+            // Simpan Array ke Local Storage
+            localStorage.setItem("order_list", JSON.stringify(order_list));
+            loadData();
+
+        });
+
+
+    });
+</script>
 
 </div>
 <!-- content wrapper -->
