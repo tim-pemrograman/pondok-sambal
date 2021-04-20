@@ -1,5 +1,5 @@
 <?php
-class signup_model extends CI_Model
+class Usersignup_model extends CI_Model
 {
 
     public function InsertDtAcc($data_acc) {
@@ -24,7 +24,7 @@ public function GetEmail($email)
     {
         $this->db->select('Fname,Lname');
         $this->db->from('tbl_user');
-        $this->db->where('employee_id', $user_id);
+        $this->db->where('user_id', $user_id);
         $query = $this->db->get();
         // $query = $this->db->get_where('tb_users', ['nik' , $nik]);
         return $query->row_array();
