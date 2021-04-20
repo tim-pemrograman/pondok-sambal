@@ -181,6 +181,7 @@
 	<div class="clear"></div>
 	<script type="text/javascript" src="<?= base_url().'assets/js/jquery-3.2.1.js'?>"></script>
 	<script type="text/javascript" src="<?= base_url().'assets/js/bootstrap.js'?>"></script>
+
 	<script type="text/javascript">
 		$(document).ready(function () {
 			$('.add_cart').click(function () {
@@ -189,7 +190,7 @@
 				var price = $(this).data("price");
 				var quantity = $('#' + id).val();
 				$.ajax({
-					url: "<?= site_url('menupage/add_to_cart');?>",
+					url: "<?= base_url('menupage/add_to_cart');?>",
 					method: "POST",
 					data: {
 						id: id,
@@ -206,7 +207,7 @@
 			$(document).on('click', '.remove_cart', function () {
 				var menu = $(this).attr("id");
 				$.ajax({
-					url: "<?= site_url('menupage/delete_cart');?>",
+					url: "<?= base_url('menupage/delete_cart');?>",
 					method: "POST",
 					data: {
 						menu: menu
