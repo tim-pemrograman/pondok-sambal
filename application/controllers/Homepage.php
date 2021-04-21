@@ -11,15 +11,15 @@ class Homepage extends CI_Controller
 		$this->load->model('Userlogin_model');
 		$this->load->library('form_validation');
 
-		// cek_login();
-        if (!$this->session->userdata('user_id')) {
-            redirect('loginpage/login');
-        } else {
-			// // cek role
-            // if ($this->session->userdata('id_posisi') != "4") {
-            //     redirect('auth/blocked');
-            // }
-        }
+		// // cek_login();
+        // if (!$this->session->userdata('user_id')) {
+        //     redirect('loginpage/login');
+        // } else {
+		// 	// // cek role
+        //     // if ($this->session->userdata('id_posisi') != "4") {
+        //     //     redirect('auth/blocked');
+        //     // }
+        // }
 	}
 	public function index()
 	{
@@ -33,5 +33,13 @@ class Homepage extends CI_Controller
 		$this->load->view('header', $data);
 		$this->load->view('homepage', $data);
 		$this->load->view('footer');
+	}
+
+	public function logout()
+	{
+		$this->session->unset_userdata('user_id');
+
+		$this->session->set_flashdata('message', '<div class="alert alert-success">Logout Berhasil</div>');
+		redirect('homepage/');
 	}
 }

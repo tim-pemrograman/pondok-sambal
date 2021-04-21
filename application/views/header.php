@@ -42,6 +42,7 @@
 	<link rel='stylesheet' href="<?= base_url('plugins/masterslider/public/assets/css/masterslider.main.css') ?>"
 		type='text/css' media='all' />
 	<link rel='stylesheet' href="<?= base_url('css/master-custom.css') ?>" type='text/css' media='all' />
+	<!-- <link rel='stylesheet' href="<?= base_url('assets/css/sb-admin-2.min.css') ?>" type='text/css' media='all' /> -->
 
 
 
@@ -61,7 +62,7 @@
 						<div class="top-navigation-right-text">
 							<i class="fa fa-clock-o"></i> Mon - Fri / 10:00-21:00, Sat - Sun / 09:00 - 23:00 </div>
 						<div class="top-social-wrapper">
-							<div class="social-icon">
+							<!-- <div class="social-icon">
 								<a href="#" target="_blank">
 									<img width="32" height="32"
 										src="<?= base_url('assets/images/light/social-icon/facebook.png')?>"
@@ -95,7 +96,7 @@
 										src="<?= base_url('assets/images/light/social-icon/twitter.png')?>"
 										alt="Twitter" />
 								</a>
-							</div>
+							</div> -->
 							<li class="nav-item dropdown no-arrow">
 								<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
 									data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -120,7 +121,7 @@
 										Activity Log
 									</a>
 									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+									<a class="dropdown-item" href="#logoutModal" data-toggle="modal" data-target="#logoutModal">
 										<i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
 										Logout
 									</a>
@@ -232,21 +233,4 @@
 				</div>
 			</div>
 			<!-- Logout Modal-->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="<?php echo base_url(); ?>admin/auth/logout">Logout</a>
-            </div>
-        </div>
-    </div>
-</div>
 		</header>
