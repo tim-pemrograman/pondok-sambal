@@ -64,19 +64,22 @@
 							<div class="social-icon">
 								<a href="#" target="_blank">
 									<img width="32" height="32"
-										src="<?= base_url('assets/images/light/social-icon/facebook.png')?>" alt="Facebook" />
+										src="<?= base_url('assets/images/light/social-icon/facebook.png')?>"
+										alt="Facebook" />
 								</a>
 							</div>
 							<div class="social-icon">
 								<a href="#" target="_blank">
 									<img width="32" height="32"
-										src="<?= base_url('assets/images/light/social-icon/flickr.png')?>" alt="Flickr" />
+										src="<?= base_url('assets/images/light/social-icon/flickr.png')?>"
+										alt="Flickr" />
 								</a>
 							</div>
 							<div class="social-icon">
 								<a href="#" target="_blank">
 									<img width="32" height="32"
-										src="<?= base_url('assets/images/light/social-icon/linkedin.png')?>" alt="Linkedin" />
+										src="<?= base_url('assets/images/light/social-icon/linkedin.png')?>"
+										alt="Linkedin" />
 								</a>
 							</div>
 							<div class="social-icon">
@@ -89,9 +92,40 @@
 							<div class="social-icon">
 								<a href="#" target="_blank">
 									<img width="32" height="32"
-										src="<?= base_url('assets/images/light/social-icon/twitter.png')?>" alt="Twitter" />
+										src="<?= base_url('assets/images/light/social-icon/twitter.png')?>"
+										alt="Twitter" />
 								</a>
 							</div>
+							<li class="nav-item dropdown no-arrow">
+								<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+									data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									<span
+										class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $data_core['Fname'].' '.$data_core['Lname'];?></span>
+									<img class="img-profile rounded-circle"
+										src="https://cdn.business2community.com/wp-content/assets/uploads/2017/08/blank-profile-picture-973460_640.png">
+								</a>
+								<!-- Dropdown - User Information -->
+								<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+									aria-labelledby="userDropdown">
+									<a class="dropdown-item" href="#">
+										<i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+										Profile
+									</a>
+									<a class="dropdown-item" href="#">
+										<i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+										Settings
+									</a>
+									<a class="dropdown-item" href="#">
+										<i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+										Activity Log
+									</a>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+										<i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+										Logout
+									</a>
+								</div>
+							</li>
 							<div class="clear"></div>
 						</div>
 					</div>
@@ -134,7 +168,7 @@
 											href="<?= base_url('blogpage/blog4')?>">Blog</a>
 									</li>
 									<li class="menu-item menu-item-has-children menu-item-641">
-									<a href="<?= base_url('loginpage/login')?>">ORDER NOW!</a>
+										<a href="<?= base_url('loginpage/login')?>">ORDER NOW!</a>
 									</li>
 
 								</ul>
@@ -170,12 +204,14 @@
 									<li
 										class="menu-item menu-item-has-children menu-item-641menu-item menu-item-has-children menu-item-641 gdlr-mega-menu">
 										<a href="<?= base_url('blogpage/blog4')?>" class="sf-with-ul-pre">Blog</a></li>
-									<li class="menu-item menu-item-has-childrenmenu-item menu-item-has-children gdlr-normal-menu">
+									<li
+										class="menu-item menu-item-has-childrenmenu-item menu-item-has-children gdlr-normal-menu">
 										<a href="<?= base_url('loginpage/login')?>">ORDER NOW!</a>
 									</li>
 
 								</ul><img id="gdlr-menu-search-button"
-									src="<?= base_url('assets/images/magnifier-light.png')?>" alt="" width="58" height="59" />
+									src="<?= base_url('assets/images/magnifier-light.png')?>" alt="" width="58"
+									height="59" />
 								<div class="gdlr-menu-search" id="gdlr-menu-search">
 									<form method="get" id="searchform" action="#">
 										<div class="search-text">
@@ -195,4 +231,22 @@
 					</div>
 				</div>
 			</div>
+			<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-primary" href="<?php echo base_url(); ?>admin/auth/logout">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>
 		</header>

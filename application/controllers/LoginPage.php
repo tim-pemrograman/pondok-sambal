@@ -101,7 +101,7 @@ class LoginPage extends CI_Controller
 		$this->session->unset_userdata('user_id');
 
 		$this->session->set_flashdata('message', '<div class="alert alert-success">Logout Berhasil</div>');
-		redirect('admin/auth');
+		redirect('homepage');
 	}
 
 }
