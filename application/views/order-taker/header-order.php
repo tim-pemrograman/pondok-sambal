@@ -48,6 +48,57 @@
 
 </head>
 
+<body>
+<!DOCTYPE html>
+<!--[if IE 7]><html class="ie ie7 ltie8 ltie9" lang="en-US"><![endif]-->
+<!--[if IE 8]><html class="ie ie8 ltie9" lang="en-US"><![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="initial-scale=1.0" />
+
+	<title>Pondok Sambal </title>
+	<link rel="icon" href="<?= base_url('assets/images/logo.png')?>" type="image/x-icon" sizes="157x48">
+
+
+	<link rel='stylesheet'
+		href='https://fonts.googleapis.com/css?family=Courgette%3Aregular&amp;subset=latin%2Clatin-ext&amp;ver=b85dc0fb3d1e6e1da870c45887969c19'
+		type='text/css' media='all' />
+	<link rel='stylesheet'
+		href='https://fonts.googleapis.com/css?family=Open+Sans%3A300%2C300italic%2Cregular%2Citalic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic&amp;subset=greek%2Ccyrillic-ext%2Ccyrillic%2Clatin%2Clatin-ext%2Cvietnamese%2Cgreek-ext&amp;ver=b85dc0fb3d1e6e1da870c45887969c19'
+		type='text/css' media='all' />
+	<link rel='stylesheet'
+		href='https://fonts.googleapis.com/css?family=Droid+Serif%3Aregular%2Citalic%2C700%2C700italic&amp;subset=latin&amp;ver=b85dc0fb3d1e6e1da870c45887969c19'
+		type='text/css' media='all' />
+	<link rel='stylesheet'
+		href='https://fonts.googleapis.com/css?family=ABeeZee%3Aregular%2Citalic&amp;subset=latin&amp;ver=b85dc0fb3d1e6e1da870c45887969c19'
+		type='text/css' media='all' />
+	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Dancing+Script:regular|Courgette:regular'
+		type='text/css' media='all' />
+
+
+	<link rel='stylesheet' href="<?= base_url('css/style.css') ?>" type='text/css' media='all' />
+	<link rel='stylesheet' href="<?= base_url('plugins/superfish/css/superfish.css') ?>" type='text/css' media='all' />
+	<link rel='stylesheet' href="<?= base_url('plugins/dl-menu/component.css') ?>" type='text/css' media='all' />
+	<link rel='stylesheet' href="<?= base_url('plugins/font-awesome-new/css/font-awesome.min.css') ?>" type='text/css'
+		media='all' />
+	<link rel='stylesheet' href="<?= base_url('plugins/fancybox/jquery.fancybox.css') ?>" type='text/css' media='all' />
+	<link rel='stylesheet' href="<?= base_url('plugins/flexslider/flexslider.css') ?>" type='text/css' media='all' />
+	<link rel='stylesheet' href="<?= base_url('css/style-responsive.css') ?>" type='text/css' media='all' />
+	<link rel='stylesheet' href="<?= base_url('css/style-custom.css') ?>" type='text/css' media='all' />
+	<link rel='stylesheet' href="<?= base_url('plugins/masterslider/public/assets/css/masterslider.main.css') ?>"
+		type='text/css' media='all' />
+	<link rel='stylesheet' href="<?= base_url('css/master-custom.css') ?>" type='text/css' media='all' />
+	<!-- <link rel='stylesheet' href="<?= base_url('assets/css/sb-admin-2.min.css') ?>" type='text/css' media='all' /> -->
+
+
+
+</head>
+
 <body data-rsssl=1
 	class="home page-template-default page page-id-4474 _masterslider _msp_version_3.2.7 woocommerce-no-js tribe-no-js">
 	<div class="body-wrapper  header-style-1" data-home="content.php">
@@ -205,3 +256,34 @@
 			</div>
 			<!-- Logout Modal-->
 		</header>
+
+<li class="nav-item dropdown no-arrow">
+								<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+									data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									<span
+										class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $data_core['Fname'].' '.$data_core['Lname'];?></span>
+									<img class="img-profile rounded-circle"
+										src="https://cdn.business2community.com/wp-content/assets/uploads/2017/08/blank-profile-picture-973460_640.png">
+								</a>
+								<!-- Dropdown - User Information -->
+								<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+									aria-labelledby="userDropdown">
+									<a class="dropdown-item" href="#">
+										<i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+										Profile
+									</a>
+									<a class="dropdown-item" href="#">
+										<i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+										Settings
+									</a>
+									<a class="dropdown-item" href="#">
+										<i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+										Activity Log
+									</a>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" href="#logoutModal" data-toggle="modal" data-target="#logoutModal">
+										<i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+										Logout
+									</a>
+								</div>
+							</li>
