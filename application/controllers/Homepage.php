@@ -35,11 +35,5 @@ class Homepage extends CI_Controller
 		$this->load->view('footer');
 	}
 
-	public function logout()
-	{
-		$this->session->unset_userdata('user_id');
-
-		$this->session->set_flashdata('message', '<div class="alert alert-success">Logout Berhasil</div>');
-		redirect('homepage/');
-	}
+	
 }

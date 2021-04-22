@@ -49,7 +49,7 @@ class LoginPage extends CI_Controller
 			// Simpan Role ke session
 			$this->session->set_userdata($role);
 
-			redirect('Homepage');
+			redirect('ordertaker');
 		} else {
 			$this->session->set_flashdata('message', '<div class="alert alert-danger">Email Tidak Di Temukan !, Periksa Kembali</div>');
 			redirect('loginpage/login');

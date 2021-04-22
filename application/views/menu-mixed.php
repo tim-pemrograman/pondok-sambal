@@ -62,8 +62,8 @@
 													</div>
 
 													<div class="menu-info menu-price gdlr-title-font gdlr-skin-link">
-													<a class="btn-circle btn-primary" data-toggle="modal"><i
-																class="fas fa-edit ">Add to Cart</i></a>
+													<a class="btn-circle btn-primary" data-toggle="modal" href="<?= base_url('loginpage/login')?>"><i
+																class="fas fa-edit ">Order Now!</i></a>
 														<div class="gdlr-list-menu-gimmick"></div>
 													</div>
 												</div>
@@ -129,12 +129,8 @@
 													<div class="menu-info menu-ingredients-caption gdlr-skin-info">
 														<?= $menu->description; ?></div>
 													<h3>Rp <?= $menu->price; ?></h3>
-													<input type="number" name="quantity" id="<?= $menu->id;?>" value="1"
-														class="quantity form-control">
-													<!-- <a class="add_cart btn-circle btn-primary" data-toggle="modal" ><i class="fas fa-edit ">Add to Cart</i></a> -->
-													<button class="add_cart btn btn-success btn-block"
-														id="<?= $menu->id;?>" name="<?= $menu->name;?>"
-														price="<?= $menu->price;?>">Add To Cart</button>
+													<p><a class="add_cart btn-circle btn-primary" data-toggle="modal" href="<?= base_url('loginpage/login')?>" ><i class="fas fa-edit ">Order Now!</i></a></p>
+													
 												</div>
 											</div>
 										</div>
@@ -145,24 +141,6 @@
 												echo"<div class='clear'></div>";
 											}
 										endforeach; ?>
-								</div>
-								<div class="col-md-4">
-									<h4>Shopping Cart</h4>
-									<table class="table table-striped">
-										<thead>
-											<tr>
-												<th>Items</th>
-												<th>Price</th>
-												<th>Qty</th>
-												<th>Total</th>
-												<th>Actions</th>
-											</tr>
-										</thead>
-										<tbody id="detail_cart">
-
-										</tbody>
-
-									</table>
 								</div>
 								<div class="clear"></div>
 							</div>
@@ -181,72 +159,6 @@
 	<div class="clear"></div>
 	<script type="text/javascript" src="<?= base_url().'assets/js/jquery-3.2.1.js'?>"></script>
 	<script type="text/javascript" src="<?= base_url().'assets/js/bootstrap.js'?>"></script>
-
-	<script>
-    $(document).ready(function () {
-
-        localStorage.clear();
-
-        
-
-        $("#add_cart").click(function () {
-            
-            $('#add_cart').removeAttr('disabled');
-            
-            var id = $id.val();
-            var name = $name.text();
-            var price = $price.val().substring(4);
-            var description = $description.val();
-            var quantity = $('#quantity').val();
-            var product_img = $product_img.attr('product_img');
-
-            var order_list = JSON.parse(localStorage.getItem("order_list"));
-
-            if (order_list == null) {
-                order_list = [];
-
-                // Isi Array
-                order_list.push({
-                    order_id_menu: id,
-                    order_menu_name: name,
-                    order_price: price,
-                    order_description: description,
-                    order_qty: quantity,
-                    order_img: product_img
-                });
-
-            } else {
-                // Cek id menu yang masuk, ada ngga di localstorage
-                objIndex = order_list.findIndex((obj => obj.order_id_menu == id));
-
-                // -1 artinya tidak ada yang sama menu nya (tambah id baru)
-                if (objIndex == -1) {
-                    // Isi Array
-                    order_list.push({
-                    order_id_menu: id,
-                    order_menu_name: name,
-                    order_price: price,
-                    order_description: description,
-                    order_qty: quantity,
-                    order_img: product_img
-                    });
-
-                } else {
-                    // console.log('masuk filter -1 else');
-                    var order = parseInt(order_list[objIndex].order_qty);
-                    order_list[objIndex].order_qty = order + parseInt(qty);
-                };
-            };
-
-            // Simpan Array ke Local Storage
-            localStorage.setItem("order_list", JSON.stringify(order_list));
-            loadData();
-
-        });
-
-
-    });
-</script>
 
 </div>
 <!-- content wrapper -->
