@@ -35,7 +35,7 @@
                          <td>
                              <a class="btn-circle btn-primary"
                                 href="<?= base_url('admin'); ?>/user/edit/<?= $data_users->employee_id; ?>"><i class="fas fa-edit "></i></a>
-                             <a class="btn-circle btn-danger" onclick="return deleteArticle(<?= $data_users->employee_id; ?>)" href="javascript:void(0)"><i class="fas fa-trash "></i></a>
+                             <a class="btn-circle btn-danger" onclick="return deleteUser(<?= $data_users->employee_id; ?>)" href="javascript:void(0)"><i class="fas fa-trash "></i></a>
                          </td>
                     </tr>
                     <?php endforeach; ?>
@@ -47,3 +47,16 @@
     </div>
 
 </div>
+
+
+<script type="text/javascript">
+    var url = "<?php echo base_url(); ?>";
+
+    function deleteUser(id) {
+        var x = confirm("Apakah Anda ingin menghapus User ini?");
+        if (x == true)
+            window.location = url + "admin/user/delete/" + id;
+        else
+            return false;
+    }
+</script>

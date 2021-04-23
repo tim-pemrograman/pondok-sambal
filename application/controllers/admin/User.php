@@ -60,8 +60,11 @@ class User extends CI_Controller {
         $this->form_validation->set_rules('fname', 'First Name', 'required');
         $this->form_validation->set_rules('lname', 'Last Name', 'required');
         $this->form_validation->set_rules('email', 'Email', 'required');
-        $this->form_validation->set_rules('password', 'Password', 'required');
-        $this->form_validation->set_rules('confirmpassword', 'Confirm Password', 'required');
+
+        // Cek Pasword dan Confirm Password
+        $this->form_validation->set_rules('password', 'Password', 'matches[confirmpassword]');
+        $this->form_validation->set_rules('confirmpassword', 'Confirm Password', 'matches[confirmpassword]');
+
         $this->form_validation->set_rules('phone', 'Phone', 'required');
         $this->form_validation->set_rules('address', 'Address', 'required');
         
@@ -78,18 +81,84 @@ class User extends CI_Controller {
                 'email' => $this->input->post('email'),
                 'password' => $this->input->post('password'),
                 'phone' => $this->input->post('phone'),
-                'address' => $this->input->post('address'),
-                'employee_id' => $this->session->userdata('employee_id')
+                'address' => $this->input->post('address')
             );
             // var_dump($data);
             // exit;
             $this->user_model->add_users($data);
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data Users berhasil ditambah!</div>');
-            redirect('admin/users');
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data User berhasil ditambah!</div>');
+            redirect('admin/user');
         }
 
 		
 	}
+
+    public function edit($id)
+    {
+        $data['data_core'] = $this->validate();
+
+        $data['data_user'] = $this->user_model->get_employee_by_id($id);
+
+        $data['titles'] = "Edit Article - Pondok Sambal";
+        $data['action'] = "edit";
+        $data['header'] = "Ubah";
+
+        $this->form_validation->set_rules('fname', 'First Name', 'required');
+        $this->form_validation->set_rules('lname', 'Last Name', 'required');
+        $this->form_validation->set_rules('email', 'Email', 'required');
+
+        // control dlu untuk confirm password nya 
+        $this->form_validation->set_rules('password', 'Password', 'matches[confirmpassword]' );
+        $this->form_validation->set_rules('confirmpassword', 'Confirm Password', 'matches[password]');
+
+
+        $this->form_validation->set_rules('phone', 'Phone', 'required');
+        $this->form_validation->set_rules('address', 'Address', 'required');
+        
+        if ($this->form_validation->run() === FALSE) {
+            $this->load->view('admin/template/header', $data);
+            $this->load->view('admin/template/sidebar');
+            $this->load->view('admin/template/topbar', $data);
+            $this->load->view('admin/user/form');
+            $this->load->view('admin/template/footer');
+        } else {
+            
+            if($this->input->post('password') == ''){
+                $data = array(
+                    'fname' => $this->input->post('fname'),
+                    'lname' => $this->input->post('lname'),
+                    'email' => $this->input->post('email'),
+                    'phone' => $this->input->post('phone'),
+                    'address' => $this->input->post('address')
+                );
+            }else{
+                $data = array(
+                    'fname' => $this->input->post('fname'),
+                    'lname' => $this->input->post('lname'),
+                    'email' => $this->input->post('email'),
+                    'password' => $this->input->post('password'),
+                    'phone' => $this->input->post('phone'),
+                    'address' => $this->input->post('address')
+                );
+            }
+            
+            // var_dump($data);
+            // exit;
+            $this->user_model->edit_user($data);
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+            Data User berhasil diupdate! </div>');
+            redirect('admin/user');
+        }
+    }
+
+    public function delete($id)
+    {
+        $this->user_model->delete_user($id);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+        Data user berhasil dihapus! </div>');
+        redirect('admin/user');
+    }
+
 
 }
 
