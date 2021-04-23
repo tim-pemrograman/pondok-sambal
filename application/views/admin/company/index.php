@@ -10,6 +10,8 @@
                 $id = '/' . $data_company->company_id;
             echo form_open_multipart('admin/company/edit'. $id); ?>
 
+            
+
 
         <!-- <form method="POST" action="" enctype="multipart/form-data"> -->
             <div class="form-group">
