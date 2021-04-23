@@ -53,7 +53,7 @@
     <li class="nav-item">
         <a class="nav-link" href="<?= base_url('admin/user') ?>">
             <i class="fas fa-users"></i>
-            <span>User List</span></a>
+            <span>Employee List</span></a>
     </li>
 
     <!-- Divider -->
