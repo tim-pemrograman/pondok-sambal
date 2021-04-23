@@ -1,5 +1,7 @@
-<?php if(!$this->cart->content()):
+<?php 
+if(!$this->cart->contents()):
     echo 'You don\'t have any items yet.';
+    // var_dump('masuk content tpi gk ad'); exit;
 else:
 ?>
  
@@ -15,18 +17,18 @@ else:
     </thead>
     <tbody>
         <?php $i = 1; ?>
+       
         <?php foreach($this->cart->contents() as $items): ?>
-         
-        <?= form_hidden('rowid[]', $items['rowid']); ?>
+            <?php echo form_hidden('rowid[]', $items['rowid']); ?>
         <tr <?php if($i&1){ echo 'class="alt"'; }?>>
             <td>
-                <?= form_input(array('name' => 'qty[]', 'value' => $items['qty'], 'maxlength' => '3', 'size' => '5')); ?>
+            <?php echo form_input(array('name' => 'qty[]', 'value' => $items['qty'], 'maxlength' => '3', 'size' => '5')); ?>
             </td>
              
-            <td><?= $items['name']; ?></td>
+            <td><?php echo $items['name']; ?></td>
              
-            <td>&euro;<?= $this->cart->format_number($items['price']); ?></td>
-            <td>&euro;<?= $this->cart->format_number($items['subtotal']); ?></td>
+            <td>Rp <?php echo $this->cart->format_number($items['price']); ?></td>
+            <td>Rp <?php echo $this->cart->format_number($items['subtotal']); ?></td>
         </tr>
          
         <?php $i++; ?>

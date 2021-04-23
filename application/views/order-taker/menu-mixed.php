@@ -47,6 +47,7 @@
 								</div>
 								<div class="menu-item-holder">
 									<div class="gdlr-menu-list-wrapper">
+									
 										<?php foreach ($featured_menus as $menu): ?>
 										<div class="clear"></div>
 										<div class="twelve columns">
@@ -61,29 +62,30 @@
 
 													</div>
 
-													<div class="menu-info menu-price gdlr-title-font gdlr-skin-link">
-													<div class="input-group">
+													
+													<div class="input-group" style="width: 30%; float:right;" >
 															<span class="input-group-btn">
 																<button type="button" class="btn btn-danger btn-number"
-																	data-type="minus" data-field="quant[2]">
+																	data-type="minus" data-field="<?=$menu->id?>">
 																	<span class="glyphicon glyphicon-minus">-</span>
 																</button>
 															</span>
-															<input type="text" name="quant[2]"
+															<input type="text" name="<?=$menu->id?>"
 																class="form-control input-number" value="1" min="1"
 																max="100">
 																
 															<span class="input-group-btn">
 																<button type="button" class="btn btn-success btn-number"
-																	data-type="plus" data-field="quant[2]">
+																	data-type="plus" data-field= '<?=$menu->id?>'>
 																	<span class="glyphicon glyphicon-plus">+</span>
 																</button>
 															</span>
 														</div>
+														<br>
 														<a class="btn btn-success" data-toggle="modal"><i
 																class="fas fa-edit ">Add to Cart</i></a>
 														<div class="gdlr-list-menu-gimmick"></div>
-													</div>
+													
 												</div>
 											</div>
 										</div>
@@ -143,34 +145,43 @@
 												</div>
 												<div class="gdlr-menu-item-content">
 													<h3 class="menu-title gdlr-skin-title gdlr-content-font"><a
-															href="#"><?= $menu->name; ?></a></h3>
+															href="#"><?= $cat_menu->name; ?></a></h3>
 													<div class="menu-info menu-ingredients-caption gdlr-skin-info">
-														<?= $menu->description; ?></div>
-													<h3>Rp <?= $menu->price; ?></h3>
-													<!-- <input type="number" name="quantity" id="<?= $menu->id;?>" value="1"
+														<?= $cat_menu->description; ?></div>
+													<h3>Rp <?= $cat_menu->price; ?></h3>
+													<!-- <input type="number" name="quantity" id="<?= $cat_menu->id;?>" value="1"
 														class="quantity form-control"> -->
-														<div class="input-group">
+														<div class="input-group" style="width: 40%; margin-left:auto; margin-right:auto;">
 															<span class="input-group-btn">
 																<button type="button" class="btn btn-danger btn-number"
-																	data-type="minus" data-field="quant[2]">
+																	data-type="minus" data-field="<?= $cat_menu->id;?>">
 																	<span class="glyphicon glyphicon-minus">-</span>
 																</button>
 															</span>
-															<input type="text" name="quant[2]"
+															<input type="text" name="<?= $cat_menu->id;?>"
 																class="form-control input-number" value="1" min="1"
-																max="100">
+																max="100" id="quantity">
 																
 															<span class="input-group-btn">
 																<button type="button" class="btn btn-success btn-number"
-																	data-type="plus" data-field="quant[2]">
+																	data-type="plus" data-field="<?= $cat_menu->id;?>">
 																	<span class="glyphicon glyphicon-plus">+</span>
 																</button>
 															</span>
 														</div>
 													<!-- <a class="add_cart btn-circle btn-primary" data-toggle="modal" ><i class="fas fa-edit ">Add to Cart</i></a> -->
-													<button class="add_cart btn btn-success btn-block"
-														id="<?= $menu->id;?>" name="<?= $menu->name;?>"
-														price="<?= $menu->price;?>">Add To Cart</button>
+													<button class="add_cart btn  btn-block"
+														id="<?= $cat_menu->id;?>" name="<?= $cat_menu->name;?>"
+														price="<?= $menu->price;?>">
+														<?= form_open('cart/add_cart_item'); ?>
+            														<fieldset>
+                													<?= form_hidden('quantity'); ?>
+                													<?= form_hidden('id', $menu->id); ?>
+                													<?= form_submit('add', 'Add to Cart!'); ?>
+            														</fieldset>
+        													<?= form_close(); ?>
+														
+														</button>
 												</div>
 											</div>
 										</div>
@@ -219,70 +230,44 @@
 	<script type="text/javascript" src="<?= base_url().'assets/js/bootstrap.js'?>"></script>
 
 	<script>
-		$(document).ready(function () {
+        function getInputValue(){
+            // Selecting the input element and get its value 
+            var inputVal = document.getElementById("quantity").value;
+            
+            // Displaying the value
+            alert(inputVal);
+        }
+    </script>
 
-			localStorage.clear();
+	<script>
+$(document).ready(function() { 
+    /*place jQuery actions here*/ 
 
+    $("button.add_cart form").submit(function() {
+        // Get the product ID and the quantity 
+        var id = $(this).find('input[name=id]').val();
+        var qty = $(this).find('input[name=quantity]').val();
+        
+         $.post("<?= base_url()?>/cart/add_cart_item", { id: id, quantity: qty, ajax: '1' },
+              function(data){	
+                  // Interact with returned data
+          });
+          
+        return false; // Stop the browser of loading the page defined in the form "action" parameter.
+    });
 
+});
 
-			$("#add_cart").click(function () {
-
-				$('#add_cart').removeAttr('disabled');
-
-				var id = $id.val();
-				var name = $name.text();
-				var price = $price.val().substring(4);
-				var description = $description.val();
-				var quantity = $('#quantity').val();
-				var product_img = $product_img.attr('product_img');
-
-				var order_list = JSON.parse(localStorage.getItem("order_list"));
-
-				if (order_list == null) {
-					order_list = [];
-
-					// Isi Array
-					order_list.push({
-						order_id_menu: id,
-						order_menu_name: name,
-						order_price: price,
-						order_description: description,
-						order_qty: quantity,
-						order_img: product_img
-					});
-
-				} else {
-					// Cek id menu yang masuk, ada ngga di localstorage
-					objIndex = order_list.findIndex((obj => obj.order_id_menu == id));
-
-					// -1 artinya tidak ada yang sama menu nya (tambah id baru)
-					if (objIndex == -1) {
-						// Isi Array
-						order_list.push({
-							order_id_menu: id,
-							order_menu_name: name,
-							order_price: price,
-							order_description: description,
-							order_qty: quantity,
-							order_img: product_img
-						});
-
-					} else {
-						// console.log('masuk filter -1 else');
-						var order = parseInt(order_list[objIndex].order_qty);
-						order_list[objIndex].order_qty = order + parseInt(qty);
-					};
-				};
-
-				// Simpan Array ke Local Storage
-				localStorage.setItem("order_list", JSON.stringify(order_list));
-				loadData();
-
-			});
-
-
-		});
-	</script>
+$(".empty").live("click", function(){
+    $.get(link + "cart/empty_cart", function(){
+        $.get(link + "cart/show_cart", function(cart){
+              $("#cart_content").html(cart);
+        });
+    });
+    
+    return false;
+});
+</script>
 
 </div>
 <!-- content wrapper -->

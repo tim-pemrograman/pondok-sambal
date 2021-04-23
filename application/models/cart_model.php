@@ -9,32 +9,51 @@
         }  
 
         function validate_add_cart_item(){
-     
+            
             $id = $this->input->post('id'); // Assign posted product_id to $id
             $cty = $this->input->post('quantity'); // Assign posted quantity to $cty
-             
-            $this->db->where('id', $id); // Select where id matches the posted id
-            $query = $this->db->get('tbl_product', 1); // Select the products where a match is found and limit the query by 1
-             
+            
+            //$this->db->where('id', $id); // Select where id matches the posted id
+            $query = $this->db->get_where('tbl_product', array('id' => $id)); // Select the products where a match is found and limit the query by 1
+            
             // Check if a row has matched our product id
-            if($query->num_rows > 0){
-             
-            // We have a match!
+            if($query->num_rows() > 0){
+                
+                // We have a match!0
+
                 foreach ($query->result() as $row)
                 {
                     // Create an array with product information
                     $data = array(
                         'id'      => $id,
-                        'quantity'     => $cty,
-                        'price'   => $row->price,
+                        'qty'   => intval($cty),
+                        'price'   => intval($row->price),
                         'name'    => $row->name
                     );
-         
+
+                    // // DATA CONTOH DARI DOKUMENASI
+                    // $data = array(
+                    //     'id'      => 'sku_123ABC',
+                    //     'qty'     => 1,
+                    //     'price'   => 39.95,
+                    //     'name'    => 'T-Shirt',
+                    // );
+                
+                    // var_dump($data); exit;
+                    
                     // Add the data to the cart using the insert function that is available because we loaded the cart library
-                    $this->cart->insert($data); 
-                     
-                    return TRUE; // Finally return TRUE
+                    // var_dump($this->cart->insert($data)); exit;
+                    // var_dump($data); exit;
+
+                    // // CEK FUNCTION INSNERT CART
+                    if($this->cart->insert($data)){
+                        return TRUE; // Finally return TRUE
+                        // var_dump('berhasil insert kealam cart'); exit;
+                    }else{
+                        var_dump('gagal insert kedalam cart'); exit;
+                    }
                 }
+                    
              
             }else{
                 // Nothing found! Return FALSE! 

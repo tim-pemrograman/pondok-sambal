@@ -18,7 +18,7 @@
     <div class="cart_list">
         <h3>Your shopping cart</h3>
         <div id="cart_content">
-            <?= $this->view('cart/cart.php'); ?>
+        <?php $this->view('cart/cart'); ?>
         </div>
     </div>
 </div>
