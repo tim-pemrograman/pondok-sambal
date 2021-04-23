@@ -27,7 +27,7 @@ class Menu extends CI_Controller
     // Halaman dashboard
     public function index()
     {
-
+        $data['meta_data'] = getSEOData();
         $data['data_core'] = $this->validate();
 
         $data['menus'] = $this->menu_model->get_menus();
@@ -50,6 +50,7 @@ class Menu extends CI_Controller
 
     public function add()
     {
+        $data['meta_data'] = getSEOData();
         $data['data_core'] = $this->validate();
 
         $data['titles'] = "Add New Menu - Pondok Sambal";
@@ -121,6 +122,7 @@ class Menu extends CI_Controller
 
     public function edit($id)
     {
+        $data['meta_data'] = getSEOData();
         $data['data_core'] = $this->validate();
 
         $data['menu'] = $this->menu_model->get_menu_by_id($id);

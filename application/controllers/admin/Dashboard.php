@@ -25,6 +25,7 @@ class Dashboard extends CI_Controller {
 	// Halaman dashboard
 	public function index()
 	{
+        $data['meta_data'] = getSEOData();
 		$employee_id = $this->session->userdata('employee_id');
 
         $data['data_core'] = $this->login_model->GetNama($employee_id);

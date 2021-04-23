@@ -29,6 +29,7 @@ class Category extends CI_Controller
 
     public function index()
     {
+        $data['meta_data'] = getSEOData();
         $data['data_core'] = $this->validate();
 
         $data['categories'] = $this->category_model->get_categories();
@@ -44,6 +45,7 @@ class Category extends CI_Controller
 
     public function add()
     {
+        $data['meta_data'] = getSEOData();
         $data['data_core'] = $this->validate();
 
         $data['titles'] = "Add New Category - Pondok Sambal";

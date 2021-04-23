@@ -11,6 +11,7 @@ class Company extends CI_Controller {
         $this->load->model('login_model');
         $this->load->model('company_model');
         $this->load->library('form_validation');
+        
 
         // cek_login();
         if (!$this->session->userdata('employee_id')) {
@@ -77,7 +78,9 @@ class Company extends CI_Controller {
 	// Halaman dashboard
 	public function index()
 	{
-		$employee_id = $this->session->userdata('employee_id');
+        $data['meta_data'] = getSEOData();
+        
+        $employee_id = $this->session->userdata('employee_id');
 
         $data['data_core'] = $this->login_model->GetNama($employee_id);
         $data['data_company'] = $this->company_model->get_company();

@@ -33,6 +33,7 @@ class Article extends CI_Controller {
 	// Halaman dashboard
 	public function index()
 	{
+        $data['meta_data'] = getSEOData();
 		$data['data_core'] = $this->validate();
 
 		$data['titles'] = "Article - Pondok Sambal";
@@ -47,6 +48,7 @@ class Article extends CI_Controller {
 
     public function view($id)
     {
+        $data['meta_data'] = getSEOData();
         $data['data_core'] = $this->validate();
 
 		$data['titles'] = "Article - Pondok Sambal";
@@ -61,6 +63,7 @@ class Article extends CI_Controller {
 
     public function add()
     {
+        $data['meta_data'] = getSEOData();
         $data['data_core'] = $this->validate();
 
         $data['titles'] = "Tambah Artikel Baru - Pondok Sambal";
@@ -130,6 +133,7 @@ class Article extends CI_Controller {
 
     public function edit($id)
     {
+        $data['meta_data'] = getSEOData();
         $data['data_core'] = $this->validate();
 
         $data['article'] = $this->article_model->get_article_by_id($id);

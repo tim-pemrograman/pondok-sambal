@@ -30,6 +30,7 @@ class Banner extends CI_Controller
     // Halaman dashboard
     public function index()
     {
+        $data['meta_data'] = getSEOData();
         $data['data_core'] = $this->validate();
 
         $data['banners'] = $this->banner_model->get_banners();
@@ -45,6 +46,7 @@ class Banner extends CI_Controller
 
     public function add()
     {
+        $data['meta_data'] = getSEOData();
         $data['data_core'] = $this->validate();
 
         $data['titles'] = "Banner - Pondok Sambal";

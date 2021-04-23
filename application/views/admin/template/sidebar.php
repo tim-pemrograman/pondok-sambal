@@ -99,6 +99,13 @@
             <span>Message</span></a>
     </li>
 
+    <!-- Nav Item - SEO -->
+    <li class="nav-item">
+        <a class="nav-link" href="<?= base_url('admin/seo') ?>">
+            <i class="fas fa-globe-asia"></i>
+            <span>Manage SEO</span></a>
+    </li>
+
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 

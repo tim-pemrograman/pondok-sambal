@@ -33,6 +33,7 @@ class Gallery extends CI_Controller
     // Halaman dashboard
     public function index()
     {
+        $data['meta_data'] = getSEOData();
         $data['data_core'] = $this->validate();
 
         $data['galleries'] = $this->gallery_model->get_galleries();
@@ -48,6 +49,7 @@ class Gallery extends CI_Controller
 
     public function add()
     {
+        $data['meta_data'] = getSEOData();
         $data['data_core'] = $this->validate();
 
         $data['titles'] = "Add Gallery - Pondok Sambal";
