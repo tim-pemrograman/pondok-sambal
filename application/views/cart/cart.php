@@ -38,7 +38,7 @@ else:
             <td</td>
             <td></td>
             <td><strong>Total</strong></td>
-            <td>&euro;<?= $this->cart->format_number($this->cart->total()); ?></td>
+            <td>Rp <?= $this->cart->format_number($this->cart->total()); ?></td>
         </tr>
     </tbody>
 </table>

@@ -123,10 +123,8 @@
 						<div class="menu-item-wrapper menu-column-3 type-classic">
 							<div class="menu-item-holder">
 								<div class="gdlr-grid" data-type="menu" data-layout="fitRows">
-									<?php $i=0; foreach($menus as $cat_menu): 
-											
-											$i++;
-										?>
+									
+									<?php $i=0; foreach($menus as $cat_menu): ?>
 									<div class="four columns">
 										<div class="gdlr-item gdlr-menu-item gdlr-classic-menu with-price">
 											<div class="gdlr-ux gdlr-classic-menu-ux">
@@ -151,32 +149,30 @@
 													<h3>Rp <?= $cat_menu->price; ?></h3>
 													<!-- <input type="number" name="quantity" id="<?= $cat_menu->id;?>" value="1"
 														class="quantity form-control"> -->
-														<div class="input-group" style="width: 40%; margin-left:auto; margin-right:auto;">
+														<div name="quantity" class="input-group" style="width: 40%; margin-left:auto; margin-right:auto;">
 															<span class="input-group-btn">
 																<button type="button" class="btn btn-danger btn-number"
-																	data-type="minus" data-field="<?= $cat_menu->id;?>">
+																	data-type="minus" data-field="quantity">
 																	<span class="glyphicon glyphicon-minus">-</span>
 																</button>
 															</span>
-															<input type="text" name="<?= $cat_menu->id;?>"
+															<input type="text" name="quantity"
 																class="form-control input-number" value="1" min="1"
-																max="100" id="quantity">
+																max="100" id="<?= $cat_menu->id;?>">
 																
 															<span class="input-group-btn">
 																<button type="button" class="btn btn-success btn-number"
-																	data-type="plus" data-field="<?= $cat_menu->id;?>">
+																	data-type="plus" data-field="quantity">
 																	<span class="glyphicon glyphicon-plus">+</span>
 																</button>
 															</span>
 														</div>
 													<!-- <a class="add_cart btn-circle btn-primary" data-toggle="modal" ><i class="fas fa-edit ">Add to Cart</i></a> -->
-													<button class="add_cart btn  btn-block"
-														id="<?= $cat_menu->id;?>" name="<?= $cat_menu->name;?>"
-														price="<?= $menu->price;?>">
+													<button class="add_cart btn  btn-block">
 														<?= form_open('cart/add_cart_item'); ?>
             														<fieldset>
-                													<?= form_hidden('quantity'); ?>
-                													<?= form_hidden('id', $menu->id); ?>
+                													<?= form_hidden('quantity','1'); ?>
+                													<?= form_hidden('id', $cat_menu->id); ?>
                 													<?= form_submit('add', 'Add to Cart!'); ?>
             														</fieldset>
         													<?= form_close(); ?>
@@ -186,7 +182,7 @@
 											</div>
 										</div>
 									</div>
-
+																
 									<?php 
 											if(($i%3) == 0 && $i <= count($menus) && $i!== 0) {
 												echo"<div class='clear'></div>";
@@ -235,7 +231,7 @@
             var inputVal = document.getElementById("quantity").value;
             
             // Displaying the value
-            alert(inputVal);
+            
         }
     </script>
 

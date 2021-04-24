@@ -182,11 +182,23 @@
 										<li class="menu-item menu-item-has-children menu-item-641"><a
 												href="<?= base_url('#')?>">Review</a>
 										</li>
-										<li class="menu-item menu-item-has-children menu-item-641"><a
-												href="<?= base_url('#')?>">Cart</a>
+										<li class="menu-item menu-item-has-children menu-item menu-item-has-children gdlr-normal-menu">
+										<a class="nav-link dropdown-toggle" href="#" id="userDropdown"
+														role="button" data-toggle="dropdown" aria-haspopup="true"
+														aria-expanded="false">Cart</a>
+														<ul class="sub-menu">
+														<!-- Dropdown - User Information -->
+
+														<li class="menu-item">
+															<a class="dropdown-item" href="#">
+																<i
+																	class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+																Profile
+															</a>
+														</li>
+														</ul>
 										</li>
-										<li
-													class="menu-item menu-item-has-children menu-item menu-item-has-children gdlr-normal-menu">
+										<li class="menu-item menu-item-has-children menu-item menu-item-has-children gdlr-normal-menu">
 													<a class="nav-link dropdown-toggle" href="#" id="userDropdown"
 														role="button" data-toggle="dropdown" aria-haspopup="true"
 														aria-expanded="false">
@@ -245,8 +257,19 @@
 										<li class="menu-item menu-item-has-children">
 											<a href="<?= base_url('#')?>" class="sf-with-ul-pre">Review</a>
 										</li>
-										<li class="menu-item menu-item-has-children menu-item-641">
-											<a href="<?= base_url('#')?>">Cart</a>
+										<li class="menu-item menu-item-has-children menu-item menu-item-has-children gdlr-normal-menu">
+										<a class="nav-link dropdown-toggle" href="#" id="userDropdown"
+														role="button" data-toggle="dropdown" aria-haspopup="true"
+														aria-expanded="false">Cart</a>
+														<ul class="sub-menu">
+														<!-- Dropdown - User Information -->
+
+														<li class="menu-item">
+															<a class="dropdown-item" href="#">
+															<?php $this->view('cart/cart'); ?>
+															</a>
+														</li>
+														</ul>
 										</li>
 										<li
 											class="menu-item menu-item-has-children menu-item menu-item-has-children gdlr-normal-menu">

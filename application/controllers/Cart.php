@@ -23,7 +23,7 @@ class Cart extends CI_Controller { // Our Cart class extends the Controller clas
         if($this->cart_model->validate_add_cart_item() == TRUE){
             // Check if user has javascript enabled
             if($this->input->post('ajax') != '1'){
-                redirect('cart'); // If javascript is not enabled, reload the page with new data
+                redirect('ordertaker'); // If javascript is not enabled, reload the page with new data
             }else{
                 echo 'true'; // If javascript is enabled, return true, so the cart gets updated
             }

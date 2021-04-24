@@ -21,7 +21,7 @@ class Ordertaker extends CI_Controller
 
         $data['categories'] = $this->category_model->get_categories();
 		$data['featured_menus'] = $this->menu_model->get_featured_menus();
-		$data['cat_menus'] = $this->menu_model->get_menus_by_category(1);
+		$data['cat_menu'] = $this->menu_model->get_menus_by_category(1);
 		$data['menus'] = $this->menu_model->get_menus();
 		
 
