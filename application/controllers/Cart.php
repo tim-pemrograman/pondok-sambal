@@ -37,11 +37,11 @@ class Cart extends CI_Controller { // Our Cart class extends the Controller clas
 
     public function update_cart(){
         $this->cart_model->validate_update_cart();
-        redirect('cart');
+        redirect('ordertaker');
     }
 
     public function empty_cart(){
         $this->cart->destroy(); // Destroy all cart data
-        redirect('cart'); // Refresh te page
+        redirect('ordertaker'); // Refresh te page
     }
 }
