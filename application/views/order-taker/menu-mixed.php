@@ -149,29 +149,33 @@
 													<h3>Rp <?= $cat_menu->price; ?></h3>
 													<!-- <input type="number" name="quantity" id="<?= $cat_menu->id;?>" value="1"
 														class="quantity form-control"> -->
-														<div name="quantity" class="input-group" style="width: 40%; margin-left:auto; margin-right:auto;">
+														
+														<div name="<?= $cat_menu->id;?>" <?= $cat_menu->id;?> class="input-group" style="width: 40%; margin-left:auto; margin-right:auto;">
 															<span class="input-group-btn">
 																<button type="button" class="btn btn-danger btn-number"
-																	data-type="minus" data-field="<?php echo'quantity' . $cat_menu->id ?>">
+																	data-type="minus" data-field="<?= $cat_menu->id;?>" <?= $cat_menu->id;?>>
 																	<span class="glyphicon glyphicon-minus">-</span>
 																</button>
 															</span>
-															<input type="text" name="<?php echo'quantity' . $cat_menu->id ?>"
+															
+															<input type="text" name="<?= $cat_menu->id;?>" <?= $cat_menu->id;?>
 																class="form-control input-number" value="1" min="1"
-																max="100" id="<?= $cat_menu->id?>">
+																max="100" id="quantity"> 
 																
 															<span class="input-group-btn">
 																<button type="button" class="btn btn-success btn-number"
-																	data-type="plus" data-field="<?php echo'quantity' . $cat_menu->id ?>">
+																	data-type="plus" data-field="<?= $cat_menu->id;?>" <?= $cat_menu->id;?>>
 																	<span class="glyphicon glyphicon-plus">+</span>
 																</button>
 															</span>
 														</div>
+													
 													<!-- <a class="add_cart btn-circle btn-primary" data-toggle="modal" ><i class="fas fa-edit ">Add to Cart</i></a> -->
 													<button class="add_cart btn  btn-block">
 														<?= form_open('cart/add_cart_item'); ?>
             														<fieldset>
-                													<?php //form_hidden('quantity',); ?>
+																	
+                													<?= form_input($cat_menu->id,'1' ); ?>
                 													<?= form_hidden('id', $cat_menu->id); ?>
                 													<?= form_submit('add', 'Add to Cart!'); ?>
             														</fieldset>
@@ -225,15 +229,7 @@
 	<script type="text/javascript" src="<?= base_url().'assets/js/jquery-3.2.1.js'?>"></script>
 	<script type="text/javascript" src="<?= base_url().'assets/js/bootstrap.js'?>"></script>
 
-	<script>
-        function getInputValue(){
-            // Selecting the input element and get its value 
-            var inputVal = document.getElementById("quantity").value;
-            
-            // Displaying the value
-            
-        }
-    </script>
+	
 
 	<script>
 $(document).ready(function() { 
@@ -241,8 +237,9 @@ $(document).ready(function() {
 
     $("button.add_cart form").submit(function() {
         // Get the product ID and the quantity 
+		var quantity = 'input[name=<?= $cat_menu->id;?>]';
         var id = $(this).find('input[name=id]').val();
-        var qty = $(this).find('input[name=quantity'+id+']').val();
+        var qty = $(this).find(quantity+id+']').val();
         
          $.post("<?= base_url()?>/cart/add_cart_item", { id: id, quantity: qty, ajax: '1' },
               function(data){	
