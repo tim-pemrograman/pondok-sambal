@@ -84,6 +84,7 @@
 
 
 		<link rel='stylesheet' href="<?= base_url('css/style.css') ?>" type='text/css' media='all' />
+		<link rel='stylesheet' href="<?= base_url('css/transaction.css') ?>" type='text/css' media='all' />
 		<link rel='stylesheet' href="<?= base_url('plugins/superfish/css/superfish.css') ?>" type='text/css'
 			media='all' />
 		<link rel='stylesheet' href="<?= base_url('plugins/dl-menu/component.css') ?>" type='text/css' media='all' />

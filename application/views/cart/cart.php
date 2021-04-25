@@ -43,7 +43,7 @@ else:
     </tbody>
 </table>
  
-<p><?= form_submit('', 'Update your Cart'); echo anchor('cart/empty_cart', 'Empty Cart', 'class="empty"');?></p>
+<p><?= form_submit('', 'Checkout your Cart'); echo anchor('cart/empty_cart', 'Empty Cart', 'class="empty"');?></p>
 <p><small>If the quantity is set to zero, the item will be removed from the cart.</small></p>
 <?php 
 echo form_close(); 

@@ -31,6 +31,21 @@ class Ordertaker extends CI_Controller
 		$this->load->view('order-taker/menu-mixed', $data);
 		$this->load->view('order-taker/footer-order');
 	}
+	
+	public function checkout(){
+		$user_id = $this->session->userdata('user_id');
+
+        $data['data_core'] = $this->userlogin_model->GetNama($user_id);
+
+        $data['categories'] = $this->category_model->get_categories();
+		$data['featured_menus'] = $this->menu_model->get_featured_menus();
+		$data['cat_menu'] = $this->menu_model->get_menus_by_category(1);
+		$data['menus'] = $this->menu_model->get_menus();
+		
+        $this->load->view('order-taker/header-order', $data);
+        $this->load->view('cart/checkout');
+        $this->load->view('order-taker/footer-order');
+    }
 
 	public function logout()
 	{

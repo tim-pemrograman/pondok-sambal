@@ -175,7 +175,7 @@
 														<?= form_open('cart/add_cart_item'); ?>
             														<fieldset>
 																	
-                													<?= form_input($cat_menu->id,'1' ); ?>
+                													<?= form_hidden('quantity','1' ); ?>
                 													<?= form_hidden('id', $cat_menu->id); ?>
                 													<?= form_submit('add', 'Add to Cart!'); ?>
             														</fieldset>
@@ -237,9 +237,8 @@ $(document).ready(function() {
 
     $("button.add_cart form").submit(function() {
         // Get the product ID and the quantity 
-		var quantity = 'input[name=<?= $cat_menu->id;?>]';
         var id = $(this).find('input[name=id]').val();
-        var qty = $(this).find(quantity+id+']').val();
+        var qty = $(this).find('input[name=quantity'+id+']').val();
         
          $.post("<?= base_url()?>/cart/add_cart_item", { id: id, quantity: qty, ajax: '1' },
               function(data){	

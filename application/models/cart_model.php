@@ -12,7 +12,6 @@
             
             $id = $this->input->post('id'); // Assign posted product_id to $id
             $cty = $this->input->post('quantity'); // Assign posted quantity to $cty
-            var_dump($cty); exit;
             //$this->db->where('id', $id); // Select where id matches the posted id
             $query = $this->db->get_where('tbl_product', array('id' => $id)); // Select the products where a match is found and limit the query by 1
             
