@@ -117,7 +117,7 @@
 				<div class="clear"></div>
 			</section>
 			<section id="content-section-3">
-				<div class="gdlr-color-wrapper  gdlr-show-all no-skin"
+				<div class="gdlr-color-wrapper gdlr-show-all no-skin"
 					style="background-color: #ffffff; padding-bottom: 25px; ">
 					<div class="container">
 						<div class="menu-item-wrapper menu-column-3 type-classic">
@@ -152,17 +152,17 @@
 														<div name="quantity" class="input-group" style="width: 40%; margin-left:auto; margin-right:auto;">
 															<span class="input-group-btn">
 																<button type="button" class="btn btn-danger btn-number"
-																	data-type="minus" data-field="<?php echo'quantity' . $cat_menu->id ?>">
+																	data-type="minus" data-field="<?php echo'quantity'.$cat_menu->id ?>">
 																	<span class="glyphicon glyphicon-minus">-</span>
 																</button>
 															</span>
-															<input type="text" name="<?php echo'quantity' . $cat_menu->id ?>"
+															<input type="text" name="<?php echo'quantity'.$cat_menu->id ?>"
 																class="form-control input-number" value="1" min="1"
-																max="100" id="<?= $cat_menu->id?>">
+																max="100" id="<?php echo'quantity'.$cat_menu->id ?>">
 																
 															<span class="input-group-btn">
 																<button type="button" class="btn btn-success btn-number"
-																	data-type="plus" data-field="<?php echo'quantity' . $cat_menu->id ?>">
+																	data-type="plus" data-field="<?php echo'quantity'.$cat_menu->id ?>">
 																	<span class="glyphicon glyphicon-plus">+</span>
 																</button>
 															</span>
@@ -171,7 +171,8 @@
 													<button class="add_cart btn  btn-block">
 														<?= form_open('cart/add_cart_item'); ?>
             														<fieldset>
-                													<?php //form_hidden('quantity',); ?>
+																	<!-- Ini Hidden qty harus di isi sama value input dari atas -->
+                													<?php //form_hidden('quantity'); ?>
                 													<?= form_hidden('id', $cat_menu->id); ?>
                 													<?= form_submit('add', 'Add to Cart!'); ?>
             														</fieldset>
