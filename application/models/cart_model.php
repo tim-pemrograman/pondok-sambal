@@ -11,7 +11,10 @@
         function validate_add_cart_item(){
             
             $id = $this->input->post('id'); // Assign posted product_id to $id
-            $cty = $this->input->post('quantity'); // Assign posted quantity to $cty
+            $idqty = 'quantity'.$id;
+            $cty = $this->input->post($idqty); // Assign posted quantity to $cty
+
+            // var_dump($cty);exit;
             
             //$this->db->where('id', $id); // Select where id matches the posted id
             $query = $this->db->get_where('tbl_product', array('id' => $id)); // Select the products where a match is found and limit the query by 1
@@ -39,7 +42,7 @@
                     //     'name'    => 'T-Shirt',
                     // );
                 
-                    // var_dump($data); exit;
+                    var_dump($data); exit;
                     
                     // Add the data to the cart using the insert function that is available because we loaded the cart library
                     // var_dump($this->cart->insert($data)); exit;
