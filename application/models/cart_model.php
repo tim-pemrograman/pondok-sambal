@@ -39,7 +39,7 @@
                     //     'name'    => 'T-Shirt',
                     // );
                 
-                    // var_dump($data); exit;
+                    var_dump($data); exit;
                     
                     // Add the data to the cart using the insert function that is available because we loaded the cart library
                     // var_dump($this->cart->insert($data)); exit;

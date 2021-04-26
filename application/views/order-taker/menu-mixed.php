@@ -117,7 +117,7 @@
 				<div class="clear"></div>
 			</section>
 			<section id="content-section-3">
-				<div class="gdlr-color-wrapper  gdlr-show-all no-skin"
+				<div class="gdlr-color-wrapper gdlr-show-all no-skin"
 					style="background-color: #ffffff; padding-bottom: 25px; ">
 					<div class="container">
 						<div class="menu-item-wrapper menu-column-3 type-classic">
@@ -153,6 +153,7 @@
 														<div name="<?= $cat_menu->id;?>" <?= $cat_menu->id;?> class="input-group" style="width: 40%; margin-left:auto; margin-right:auto;">
 															<span class="input-group-btn">
 																<button type="button" class="btn btn-danger btn-number"
+<<<<<<< HEAD
 																	data-type="minus" data-field="<?= $cat_menu->id;?>" <?= $cat_menu->id;?>>
 																	<span class="glyphicon glyphicon-minus">-</span>
 																</button>
@@ -165,6 +166,19 @@
 															<span class="input-group-btn">
 																<button type="button" class="btn btn-success btn-number"
 																	data-type="plus" data-field="<?= $cat_menu->id;?>" <?= $cat_menu->id;?>>
+=======
+																	data-type="minus" data-field="<?php echo'quantity'.$cat_menu->id ?>">
+																	<span class="glyphicon glyphicon-minus">-</span>
+																</button>
+															</span>
+															<input type="text" name="<?php echo'quantity'.$cat_menu->id ?>"
+																class="form-control input-number" value="1" min="1"
+																max="100" id="<?php echo'quantity'.$cat_menu->id ?>">
+																
+															<span class="input-group-btn">
+																<button type="button" class="btn btn-success btn-number"
+																	data-type="plus" data-field="<?php echo'quantity'.$cat_menu->id ?>">
+>>>>>>> bacdf542d14f6f722ac3c1baec56aac247278a0f
 																	<span class="glyphicon glyphicon-plus">+</span>
 																</button>
 															</span>
