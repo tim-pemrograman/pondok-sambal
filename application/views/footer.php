@@ -123,8 +123,11 @@
 <script type='text/javascript' src='<?= base_url('plugins/gdlr-portfolio/gdlr-portfolio-script.js')?>'></script>
 
 
-
-
+<script>
+$(":radio").change(function () {
+  $(".choice").text(this.value + " stars");
+});
+</script>
 
 <script>
 	(function ($) {

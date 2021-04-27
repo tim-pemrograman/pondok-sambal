@@ -1,3 +1,4 @@
+
 <div class="content-wrapper">
 	<div class="gdlr-content">
 
@@ -60,121 +61,136 @@
 														<div class="quform-element six columns">
 															<br>
 															<h6 style="margin-bottom:0;">Rasa Makanan</h6>
-															<div class="star-rating">
+															
+																
 																<fieldset>
-																	<input type="radio" id="star5" name="rasa"
-																		value="5" /><label for="star5"
-																		title="Outstanding">5 stars</label>
-																	<input type="radio" id="star4" name="rasa"
-																		value="4" /><label for="star4"
-																		title="Very Good">4 stars</label>
-																	<input type="radio" id="star3" name="rasa"
-																		value="3" /><label for="star3" title="Good">3
-																		stars</label>
-																	<input type="radio" id="star2" name="rasa"
-																		value="2" /><label for="star2" title="Poor">2
-																		stars</label>
+																<div class="star-rating">
 																	<input type="radio" id="star1" name="rasa"
-																		value="1" /><label for="star1"
+																		value="1" /><i></i><label for="star1"
 																		title="Very Poor">1 star</label>
+																	<input type="radio" id="star2" name="rasa"
+																		value="2" /><i></i><label for="star2" 
+																		title="Poor">2 stars</label>
+																	<input type="radio" id="star3" name="rasa"
+																		value="3" /><i></i><label for="star3" title="Good">3
+																		stars</label>
+																	<input type="radio" id="star4" name="rasa"
+																		value="4" /><i></i><label for="star4"
+																		title="Very Good">4 stars</label>
+																	
+																	<input type="radio" id="star5" name="rasa"
+																		value="5" /><i></i><label for="star5"
+																		title="Outstanding">5 stars</label>
+																</div>
 																</fieldset>
-															</div>
+															
 														</div>
 														<!-- Sambal -->
 														<div class="quform-element six columns">
 															<br>
 															<h6 style="margin-bottom:0;">Rasa Sambal</h6>
-															<div class="star-rating">
+															
 																<fieldset>
-																	<input type="radio" id="star5" name="sambal"
-																		value="5" /><label for="star5"
-																		title="Outstanding">5 stars</label>
-																	<input type="radio" id="star4" name="sambal"
-																		value="4" /><label for="star4"
-																		title="Very Good">4 stars</label>
-																	<input type="radio" id="star3" name="sambal"
-																		value="3" /><label for="star3" title="Good">3
-																		stars</label>
-																	<input type="radio" id="star2" name="sambal"
-																		value="2" /><label for="star2" title="Poor">2
-																		stars</label>
+																<div class="star-rating">
 																	<input type="radio" id="star1" name="sambal"
-																		value="1" /><label for="star1"
+																		value="1" /><i></i><label for="star1"
 																		title="Very Poor">1 star</label>
+																	<input type="radio" id="star2" name="sambal"
+																		value="2" /><i></i><label for="star2" 
+																		title="Poor">2 stars</label>
+																	<input type="radio" id="star3" name="sambal"
+																		value="3" /><i></i><label for="star3" title="Good">3
+																		stars</label>
+																	<input type="radio" id="star4" name="sambal"
+																		value="4" /><i></i><label for="star4"
+																		title="Very Good">4 stars</label>
+																	
+																	<input type="radio" id="star5" name="sambal"
+																		value="5" /><i></i><label for="star5"
+																		title="Outstanding">5 stars</label>
+																</div>
 																</fieldset>
-															</div>
+															
 														</div>
 														<!-- Keramaian -->
 														<div class="quform-element six columns">
 															<br>
 															<h6 style="margin-bottom:0;">Keramaian</h6>
-															<div class="star-rating">
+															
 																<fieldset>
-																	<input type="radio" id="star5" name="ramai"
-																		value="5" /><label for="star5"
-																		title="Outstanding">5 stars</label>
-																	<input type="radio" id="star4" name="ramai"
-																		value="4" /><label for="star4"
-																		title="Very Good">4 stars</label>
-																	<input type="radio" id="star3" name="ramai"
-																		value="3" /><label for="star3" title="Good">3
-																		stars</label>
-																	<input type="radio" id="star2" name="ramai"
-																		value="2" /><label for="star2" title="Poor">2
-																		stars</label>
+																<div class="star-rating">
 																	<input type="radio" id="star1" name="ramai"
-																		value="1" /><label for="star1"
+																		value="1" /><i></i><label for="star1"
 																		title="Very Poor">1 star</label>
+																	<input type="radio" id="star2" name="ramai"
+																		value="2" /><i></i><label for="star2" 
+																		title="Poor">2 stars</label>
+																	<input type="radio" id="star3" name="ramai"
+																		value="3" /><i></i><label for="star3" title="Good">3
+																		stars</label>
+																	<input type="radio" id="star4" name="ramai"
+																		value="4" /><i></i><label for="star4"
+																		title="Very Good">4 stars</label>
+																	
+																	<input type="radio" id="star5" name="ramai"
+																		value="5" /><i></i><label for="star5"
+																		title="Outstanding">5 stars</label>
+																</div>
 																</fieldset>
-															</div>
+															
 														</div>
 														<!-- Kenyamanan -->
 														<div class="quform-element six columns">
 															<br>
 															<h6 style="margin-bottom:0;">Kenyamanan</h6>
-															<div class="star-rating">
+															
 																<fieldset>
-																	<input type="radio" id="star5" name="nyaman"
-																		value="5" /><label for="star5"
-																		title="Outstanding">5 stars</label>
-																	<input type="radio" id="star4" name="nyaman"
-																		value="4" /><label for="star4"
-																		title="Very Good">4 stars</label>
-																	<input type="radio" id="star3" name="nyaman"
-																		value="3" /><label for="star3" title="Good">3
-																		stars</label>
-																	<input type="radio" id="star2" name="nyaman"
-																		value="2" /><label for="star2" title="Poor">2
-																		stars</label>
+																<div class="star-rating">
 																	<input type="radio" id="star1" name="nyaman"
-																		value="1" /><label for="star1"
+																		value="1" /><i></i><label for="star1"
 																		title="Very Poor">1 star</label>
+																	<input type="radio" id="star2" name="nyaman"
+																		value="2" /><i></i><label for="star2" 
+																		title="Poor">2 stars</label>
+																	<input type="radio" id="star3" name="nyaman"
+																		value="3" /><i></i><label for="star3" title="Good">3
+																		stars</label>
+																	<input type="radio" id="star4" name="nyaman"
+																		value="4" /><i></i><label for="star4"
+																		title="Very Good">4 stars</label>
+																	
+																	<input type="radio" id="star5" name="nyaman"
+																		value="5" /><i></i><label for="star5"
+																		title="Outstanding">5 stars</label>
+																</div>
 																</fieldset>
-															</div>
+															
 														</div>
 														<!-- Pelayanan -->
 														<div class="quform-element six columns">
 															<br>
 															<h6 style="margin-bottom:0;">Pelayanan</h6>
-															<div class="star-rating">
+															
 																<fieldset>
+																<div class="star-rating">
 																	<input type="radio" id="star5" name="layanan"
-																		value="5" /><label for="star5"
+																		value="5" /><i></i><label for="star5"
 																		title="Outstanding">5 stars</label>
 																	<input type="radio" id="star4" name="layanan"
-																		value="4" /><label for="star4"
+																		value="4" /><i></i><label for="star4"
 																		title="Very Good">4 stars</label>
 																	<input type="radio" id="star3" name="layanan"
-																		value="3" /><label for="star3" title="Good">3
+																		value="3" /><i></i><label for="star3" title="Good">3
 																		stars</label>
 																	<input type="radio" id="star2" name="layanan"
-																		value="2" /><label for="star2" title="Poor">2
+																		value="2" /><i></i><label for="star2" title="Poor">2
 																		stars</label>
 																	<input type="radio" id="star1" name="layanan"
-																		value="1" /><label for="star1"
+																		value="1" /><i></i><label for="star1"
 																		title="Very Poor">1 star</label>
+																		</div>
 																</fieldset>
-															</div>
+															
 														</div>
 
 													</div>
@@ -340,3 +356,4 @@
 	<div class="clear"></div>
 </div>
 <!-- content wrapper -->
+
