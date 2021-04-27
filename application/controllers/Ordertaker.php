@@ -10,6 +10,7 @@ class Ordertaker extends CI_Controller
 		$this->load->model('menu_model');
 		$this->load->model('userlogin_model');
 		$this->load->model('cart_model'); // Load our cart model for our entire class
+		$this->load->model('checkout_model'); // Load our cart model for our entire class
 		$this->load->library('cart');
 	}
 
@@ -47,6 +48,21 @@ class Ordertaker extends CI_Controller
         $this->load->view('order-taker/footer-order');
     }
 
+	public function confirmCheckout($method) {
+		if($method == 'e-wallet' || $method == 'cod') {
+			if($method == 'e-wallet') {
+				$type = 0;
+				$this->checkout_model->addCheckout($type);
+				redirect('ordertaker/payment');
+			} if($method == 'cod') {
+				$type = 1;
+				$this->checkout_model->addCheckout($type);
+			} 
+		} else {
+			redirect('ordertaker/checkout');
+		}
+	}
+
 	public function payment(){
 		$user_id = $this->session->userdata('user_id');
 
@@ -56,11 +72,15 @@ class Ordertaker extends CI_Controller
 		$data['featured_menus'] = $this->menu_model->get_featured_menus();
 		$data['cat_menu'] = $this->menu_model->get_menus_by_category(1);
 		$data['menus'] = $this->menu_model->get_menus();
-		
-        $this->load->view('order-taker/header-order', $data);
-        $this->load->view('cart/payment');
-        $this->load->view('order-taker/footer-order');
+		if ($this->form_validation->run() === FALSE) {
+			$this->load->view('order-taker/header-order', $data);
+			$this->load->view('cart/payment');
+			$this->load->view('order-taker/footer-order');
+		} else {
+			// insert payment image and change status;
+		}
     }
+	
 
 	public function logout()
 	{
