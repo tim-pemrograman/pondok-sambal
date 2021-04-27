@@ -7,10 +7,10 @@ class message_model extends CI_Model
         return $query->result();
     }
 
-    // public function add_users($data)
-    // {
-    //     $this->db->insert('tbl_employee', $data);
-    // }
+    public function add_message($data)
+    {
+        $this->db->insert('tbl_message', $data);
+    }
 
     // public function get_employee_by_id($id)
     // {
