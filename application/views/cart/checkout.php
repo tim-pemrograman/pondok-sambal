@@ -71,15 +71,14 @@ else:
 	<div class="right-side">
 		<div class="new"> <a href="<?= base_url('ordertaker/confirmCheckout/e-wallet')?>"> E-Wallet and M-banking </a></div>
 	</div>
-	<div class="left-side" style="margin-left:60%;">
-		<div class="card">
-			<div class="card-line"></div>
-			<div class="buttons"></div>
+	<div class="left-side" style="margin-left:60%; --left-side: #ca4242; ">
+		<div class="card" style=" width: 90px; height:40px;  background-image: url(<?= base_url('assets/images/rupiah.jpeg')?>); background-size: cover; -webkit-box-shadow: 9px 9px 9px -2px rgba(200, 77, 77, 0.72); -moz-box-shadow: 9px 9px 9px -2px rgba(200, 77, 87, 0.72); -webkit-box-shadow: 9px 9px 9px -2px rgba(200, 77, 77, 0.72); border-radius: 2px; ">
+
 		</div>
 		<div class="post">
 			<div class="post-line"></div>
 			<div class="screen">
-				<div class="dollar">Rp</div>
+				<div class="dollar" style="color: #d6303e;">Rp</div>
 			</div>
 			<div class="numbers"></div>
 			<div class="numbers-line2"></div>
