@@ -83,8 +83,6 @@ class Ordertaker extends CI_Controller
 		}
     }
 	
-<<<<<<< HEAD
-=======
 	public function review()
 	{
 		$user_id = $this->session->userdata('user_id');
@@ -148,7 +146,6 @@ class Ordertaker extends CI_Controller
 		$this->load->view('order-taker/confirmation');
 		$this->load->view('order-taker/footer-order');
 	}
->>>>>>> 9de755a743155079f100a605f009c9047e2ccf59
 
 	public function logout()
 	{
