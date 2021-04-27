@@ -210,28 +210,28 @@
 														<!-- Dropdown - User Information -->
 
 														<li class="menu-item">
-															<a class="dropdown-item" href="#">
+															<a  href="#">
 																<i
 																	class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
 																Profile
 															</a>
 														</li>
 														<li class="menu-item">
-															<a class="dropdown-item" href="#">
+															<a  href="#">
 																<i
 																	class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
 																Settings
 															</a>
 														</li>
 														<li class="menu-item">
-															<a class="dropdown-item" href="#">
+															<a  href="#">
 																<i
 																	class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
 																Activity Log
 															</a>
 														</li>
 														<li class="menu-item">
-															<a class="dropdown-item" href="#logoutModal"
+															<a  href="#logoutModal"
 																data-toggle="modal" data-target="#logoutModal">
 																<i
 																	class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -264,7 +264,11 @@
 														<!-- Dropdown - User Information -->
 
 														<li class="menu-item">
+<<<<<<< HEAD
 															<a>
+=======
+															<a  href="#">
+>>>>>>> 1186dd27570562967f0b77ef549a504457fbf117
 															<?php $this->view('cart/cart'); ?>
 															</a>
 														</li>
@@ -275,33 +279,33 @@
 											<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
 												data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 												<span
-													class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $data_core['Fname'].' '.$data_core['Lname'];?></span>
-												<img class="img-profile rounded-circle"
-													src="https://cdn.business2community.com/wp-content/assets/uploads/2017/08/blank-profile-picture-973460_640.png">
+													class="mr-2 d-none d-lg-inline "><?= $data_core['Fname'].' '.$data_core['Lname'];?></span>
+												<img style="width: 20px;" class="img-profile rounded-circle"
+													src="<?= base_url('assets/images/default-profile.png'); ?>">
 											</a>
 											<ul class="sub-menu">
 												<!-- Dropdown - User Information -->
 
 												<li class="menu-item">
-													<a class="dropdown-item" href="#">
+													<a  href="#">
 														<i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
 														Profile
 													</a>
 												</li>
 												<li class="menu-item">
-													<a class="dropdown-item" href="#">
+													<a  href="#">
 														<i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
 														Settings
 													</a>
 												</li>
 												<li class="menu-item">
-													<a class="dropdown-item" href="#">
+													<a  href="#">
 														<i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
 														Activity Log
 													</a>
 												</li>
 												<li class="menu-item">
-													<a class="dropdown-item" href="#" data-toggle="modal"
+													<a  href="#" data-toggle="modal"
 														data-target="#logoutModal">
 														<i
 															class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
