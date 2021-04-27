@@ -9,9 +9,11 @@ class Ordertaker extends CI_Controller
 		$this->load->model('category_model');
 		$this->load->model('menu_model');
 		$this->load->model('userlogin_model');
+		$this->load->model('payment_model');
 		$this->load->model('cart_model'); // Load our cart model for our entire class
 		$this->load->model('checkout_model'); // Load our cart model for our entire class
 		$this->load->library('cart');
+		$this->load->library('form_validation');
 	}
 
 	public function index()
@@ -81,6 +83,72 @@ class Ordertaker extends CI_Controller
 		}
     }
 	
+<<<<<<< HEAD
+=======
+	public function review()
+	{
+		$user_id = $this->session->userdata('user_id');
+
+        $data['data_core'] = $this->userlogin_model->GetNama($user_id);
+		
+        $this->load->view('order-taker/header-order', $data);
+        $this->load->view('order-taker/review');
+        $this->load->view('order-taker/footer-order');
+	}
+
+	public function add_proof()
+    {
+			$user_id = $this->session->userdata('user_id');
+			$Id = $this->userlogin_model->GetId($user_id);
+            $upload_image = $this->upload_image();
+            $data = array(
+                'img_path' => $upload_image,
+                'id' => $Id
+            );
+            var_dump($data); exit;
+            $this->payment_model->add_payment($data);
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Bukti Pembayaran berhasil ditambah!</div>');
+            redirect('ordertaker/confirmation');
+        
+    }
+
+	private function upload_image()
+    {
+        $config['upload_path'] = './assets/images/payment/';
+        $config['allowed_types'] = 'gif|jpg|png|pdf';
+        $config['max_size'] = 10000;
+
+        $this->load->library('upload', $config);
+
+        // return $config;
+        if (!$this->upload->do_upload('img_path')) {
+            $error = array('error' => $this->upload->display_errors());
+            return $error;
+        } else {
+            $data = array('upload_data' => $this->upload->data());
+            // $type = explode('.', $_FILES['img_path']['name']);
+            // $type = $type[count($type) - 1];
+
+            $path = $config['upload_path'] . $data["upload_data"]["file_name"];
+            return ($data == true) ? $path : false;
+        }
+    }
+
+	public function confirmation()
+	{
+		
+		$user_id = $this->session->userdata('user_id');
+
+        $data['data_core'] = $this->userlogin_model->GetNama($user_id);
+		
+
+        //Load View
+		$this->load->helper('url');
+		$this->load->view('order-taker/header-order', $data);
+		$this->load->view('order-taker/confirmation');
+		$this->load->view('order-taker/footer-order');
+	}
+>>>>>>> 9de755a743155079f100a605f009c9047e2ccf59
 
 	public function logout()
 	{
