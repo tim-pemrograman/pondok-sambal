@@ -74,9 +74,9 @@ class Ordertaker extends CI_Controller
                 'id' => $Id
             );
             var_dump($data); exit;
-            // $this->payment_model->add_payment($data);
-            // $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Bukti Pembayaran berhasil ditambah!</div>');
-            // redirect('ordertaker/payment');
+            $this->payment_model->add_payment($data);
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Bukti Pembayaran berhasil ditambah!</div>');
+            redirect('ordertaker/confirmation');
         
     }
 
@@ -101,6 +101,21 @@ class Ordertaker extends CI_Controller
             return ($data == true) ? $path : false;
         }
     }
+
+	public function confirmation()
+	{
+		
+		$user_id = $this->session->userdata('user_id');
+
+        $data['data_core'] = $this->userlogin_model->GetNama($user_id);
+		
+
+        //Load View
+		$this->load->helper('url');
+		$this->load->view('order-taker/header-order', $data);
+		$this->load->view('order-taker/confirmation');
+		$this->load->view('order-taker/footer-order');
+	}
 
 	public function logout()
 	{
