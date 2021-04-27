@@ -64,26 +64,20 @@
 
 													
 													<div class="input-group" style="width: 30%; float:right;" >
-															<span class="input-group-btn">
-																<button type="button" class="btn btn-danger btn-number"
-																	data-type="minus" data-field="<?=$menu->id?>">
-																	<span class="glyphicon glyphicon-minus">-</span>
-																</button>
-															</span>
-															<input type="text" name="<?=$menu->id?>"
-																class="form-control input-number" value="1" min="1"
-																max="100">
-																
-															<span class="input-group-btn">
-																<button type="button" class="btn btn-success btn-number"
-																	data-type="plus" data-field= '<?=$menu->id?>'>
-																	<span class="glyphicon glyphicon-plus">+</span>
-																</button>
-															</span>
+													<button class="add_cart btn  btn-block">
+														<?= form_open('cart/add_cart_item'); ?>
+            														<fieldset>
+																	
+                													<?= form_input('quantity','1' ); ?>
+                													<?= form_hidden('id', $menu->id); ?>
 														</div>
 														<br>
-														<a class="btn btn-success" data-toggle="modal"><i
-																class="fas fa-edit ">Add to Cart</i></a>
+														
+                													<?= form_submit('add', 'Add to Cart!'); ?>
+            														</fieldset>
+        													<?= form_close(); ?>
+														
+														</button>
 														<div class="gdlr-list-menu-gimmick"></div>
 													
 												</div>

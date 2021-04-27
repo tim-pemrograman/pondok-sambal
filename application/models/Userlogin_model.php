@@ -21,6 +21,12 @@ class Userlogin_model extends CI_Model
         return $query->row_array();
     }
 
+    public function GetId($Id)
+    {
+        $query = $this->db->get_where('tbl_user', ['id' => $Id]);
+        return $query->row_array();
+    }
+
     public function InsertDtLogin($data_login)  
     {
         $data_login = [

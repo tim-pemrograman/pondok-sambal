@@ -47,7 +47,23 @@ else:
         </tr>
     </tbody>
 </table>
-<img src="<?= base_url('assets/images/rekening.jpeg')?>" alt="" style="width: 20%; display:block; margin-left:auto; margin-right:auto;">
+<?php echo form_open_multipart('ordertaker/add_proof'); ?>
+                    <!-- Image Form -->
+                    <div class="form-group">
+                    <img src="<?= base_url('assets/images/rekening.jpeg')?>" alt="" style="width: 20%; display:block; margin-left:auto; margin-right:auto;">
+                    </div>
+                    <div class="text-center">
+                        <label for="inputImage">Image</label>
+                        <input type="file" class="text-center" id="img_path" name="img_path" accept="image/*">
+                        <?= form_error('img_path', '<small class="text-danger">', ' </small>') ?>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" name="submit" class="btn btn-primary" value="upload">Add Bukti</button>
+                    </div>
+                    </form>
+                   <div class="clear"><p></p></div>
+               
+
 <?php 
 echo form_close(); 
 endif;

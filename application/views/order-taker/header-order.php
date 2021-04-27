@@ -264,11 +264,7 @@
 														<!-- Dropdown - User Information -->
 
 														<li class="menu-item">
-<<<<<<< HEAD
 															<a>
-=======
-															<a  href="#">
->>>>>>> 1186dd27570562967f0b77ef549a504457fbf117
 															<?php $this->view('cart/cart'); ?>
 															</a>
 														</li>
