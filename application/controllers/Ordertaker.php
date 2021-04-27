@@ -67,6 +67,17 @@ class Ordertaker extends CI_Controller
         $this->load->view('cart/payment');
         $this->load->view('order-taker/footer-order');
     }
+	
+	public function review()
+	{
+		$user_id = $this->session->userdata('user_id');
+
+        $data['data_core'] = $this->userlogin_model->GetNama($user_id);
+		
+        $this->load->view('order-taker/header-order', $data);
+        $this->load->view('order-taker/review');
+        $this->load->view('order-taker/footer-order');
+	}
 
 	public function add_proof()
     {

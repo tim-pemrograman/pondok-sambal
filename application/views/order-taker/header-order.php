@@ -254,7 +254,7 @@
 											<a href="<?= base_url('ordertaker')?>" class="sf-with-ul-pre">Menu</a>
 										</li>
 										<li class="menu-item menu-item-has-children">
-											<a href="<?= base_url('#')?>" class="sf-with-ul-pre">Review</a>
+											<a href="<?= base_url('ordertaker/review')?>" class="sf-with-ul-pre">Review</a>
 										</li>
 										<li class="menu-item menu-item-has-children menu-item menu-item-has-children gdlr-normal-menu">
 										<a class="nav-link dropdown-toggle" href="#" id="userDropdown"
