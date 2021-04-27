@@ -49,6 +49,10 @@ class Ordertaker extends CI_Controller
         $this->load->view('order-taker/footer-order');
     }
 
+	public function save_order(){
+		
+	}
+
 	public function payment(){
 		$user_id = $this->session->userdata('user_id');
 
