@@ -177,7 +177,7 @@
 									<ul id="menu-main-menu" class="dl-menu gdlr-main-mobile-menu">
 
 										<li class="menu-item menu-item-has-children"><a
-												href="<?= base_url('menupage/menu')?>">Menu</a>
+												href="<?= base_url('ordertaker')?>">Menu</a>
 										</li>
 
 										<li class="menu-item menu-item-has-children menu-item-641"><a
@@ -251,7 +251,7 @@
 										
 										<li
 											class="menu-item menu-item-has-childrenmenu-item menu-item-has-children gdlr-normal-menu">
-											<a href="<?= base_url('menupage/menu')?>" class="sf-with-ul-pre">Menu</a>
+											<a href="<?= base_url('ordertaker')?>" class="sf-with-ul-pre">Menu</a>
 										</li>
 										<li class="menu-item menu-item-has-children">
 											<a href="<?= base_url('#')?>" class="sf-with-ul-pre">Review</a>

@@ -71,14 +71,15 @@
             $qty = $this->input->post('qty');
  
             // Cycle true all items and update them
-            for($i=0;$i < $total;$i++)
+            for($i=0;$i < count($item);$i++)
                 {
                 // Create an array with the products rowid's and quantities. 
                 $data = array(
                 'rowid' => $item[$i],
                 'qty'   => $qty[$i]
                 );
-         
+                // var_dump(count($item));
+        //  var_dump($total); exit;
             // Update the cart with the new information
             $this->cart->update($data);
         }

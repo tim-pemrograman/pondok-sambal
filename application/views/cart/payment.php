@@ -47,6 +47,7 @@ else:
         </tr>
     </tbody>
 </table>
+<img src="<?= base_url('assets/images/rekening.jpeg')?>" alt="" style="width: 20%; display:block; margin-left:auto; margin-right:auto;">
 <?php 
 echo form_close(); 
 endif;
