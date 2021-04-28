@@ -19,9 +19,22 @@ class order_model extends CI_Model
         return $query->row();
     }
 
-    public function get_order_detail()
+    public function get_orders_by_status($user_id)
     {
-        # code...
+        
+        $array = array('order_status !=' => 4, 'cust_id' => $user_id);
+        $this->db->where($array);
+        $query = $this->db->get('tbl_order');
+        return $query->result();
+        // var_dump($query->result()); exit;
+    }
+
+    public function get_user_orders_by_status()
+    {
+        $this->db->where('order_status !=', 4);
+        $query = $this->db->get('tbl_order');
+        return $query->result();
+        // var_dump($query->result()); exit;
     }
 
     public function proceed_checkout($method, $status)

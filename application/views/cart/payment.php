@@ -4,6 +4,7 @@
 		<h1 class="gdlr-page-title">Checkout - Upload Payment</h1>
 	</div>
 </div>
+<div class="container">
 <?php 
 if(!$this->cart->contents()):
     echo 'You don\'t have any items yet.';
@@ -47,6 +48,7 @@ else:
 		</tr>
 	</tbody>
 </table>
+</div>
 <div class="container">
     <div class="mt-5">
         <?= form_open_multipart('ordertaker/payment'); ?>

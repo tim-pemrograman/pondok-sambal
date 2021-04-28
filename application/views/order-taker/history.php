@@ -5,7 +5,7 @@
 	</div>
 </div>
 <?php 
-if(!$this->order_model->get_order_by_id($id)):
+if(!$this->order_model->get_order_by_id()):
     echo '<h1 class:text-center;>You don\'t have any orders yet.</h1>';
     // var_dump('masuk content tpi gk ad'); exit;
 else:
