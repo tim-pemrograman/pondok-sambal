@@ -29,38 +29,32 @@
 																class="post-859 post type-post status-publish format-standard has-post-thumbnail hentry category-blog category-fit-row tag-blog tag-news">
 																<div class="gdlr-standard-style">
 																	<div class="gdlr-blog-thumbnail">
-																		<a href="<?= base_url('')?>"> <img
-																				src="<?= base_url('assets/images/article/resto-3.jpg')?>"
-																				alt="" width="400" height="300" /></a>
+																		<a href="<?= base_url('article/detail').$article->article_id?>"> <img
+																				src="<?= base_url($article->img_path)?>"
+																				alt="" style="height: 200px;" /></a>
 																		<div class="gdlr-sticky-banner"><i
-																				class="fa fa-bullhorn"></i>Sticky Post</div>
+																				class="fa fa-eye"></i><?= $article->views; ?></div>
 																	</div>
 
 																	<div class="gdlr-blog-info gdlr-info">
 																		<div class="blog-info blog-date"><i
-																				class="fa fa-clock-o"></i><a href="#">23 Jan
-																				2021</a></div>
+																				class="fa fa-clock-o"></i><a href="#"><?= (new DateTime($article->created_at))->format('d M Y H:i')?></a></div>
 																		<div class="blog-info blog-author"><i
 																				class="fa fa-pencil"></i><a href="#"
 																				title="Posts by Kisus"
-																				rel="author">Kisus</a></div>
+																				rel="author"><?= $article->Fname." ".$article->Lname; ?> </a></div>
 																		<div class="clear"></div>
 																	</div>
 
 																	<header class="post-header">
 																		<h3 class="gdlr-blog-title gdlr-content-font"><a
-																				href="<?= base_url('article')?>">Cuma
-																				disini Pedasnya gak ngebosenin</a></h3>
+																				href="<?= base_url('article/detail/').$article->article_id?>"><?= $article->title; ?></a></h3>
 																		<div class="clear"></div>
 																	</header>
 																	<!-- entry-header -->
 
-																	<div class="gdlr-blog-content">Kalian mau cari tempat
-																		makan siang, sore, dan bahkan malam? Disini tempat
-																		yang tepat terutama untuk kalian kaum pencinta pedas
-																		yang menggoyang lidah. Hanya disini bisa merasakan
-																		berbagai macam sambal...
-																		<div class="clear"></div><a href="article"
+																	<div class="gdlr-blog-content"><?=substr($article->content, 0, 100) ?>...
+																		<div class="clear"></div><a href="<?= base_url('article/detail/').$article->article_id?>"
 																			class="excerpt-read-more">Read More</a></div>
 																</div>
 															</article>
@@ -72,10 +66,10 @@
 											<div class="clear"></div>
 										</div>
 									</div>
-									<div class="gdlr-pagination"><span aria-current='page'
+									<!-- <div class="gdlr-pagination"><span aria-current='page'
 											class='page-numbers current'>1</span>
 										<a class='page-numbers' href='#' )?>2</a>
-										<a class="next page-numbers" href="<?= base_url('#')?>">Next &rsaquo;</a></div>
+										<a class="next page-numbers" href="<?= base_url('#')?>">Next &rsaquo;</a></div> -->
 								</div>
 								<div class="clear"></div>
 							</div>

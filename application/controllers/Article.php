@@ -14,8 +14,22 @@ class Article extends CI_Controller
 		
 		$this->load->helper('url');
 		$this->load->view('header');
-		$this->load->view('article', $data);
+		$this->load->view('articles/list', $data);
 		$this->load->view('footer');
     }
+
+	public function detail($id) {
+		$data['article'] = $this->article_model->get_article_by_id($id);
+		$this->article_model->view_article($id);
+		
+		$this->load->helper('url');
+		$this->load->view('header');
+		$this->load->view('articles/detail', $data);
+		$this->load->view('footer');
+	}
+
+	// public function read_article($id) {
+		
+	// }
         
 }
