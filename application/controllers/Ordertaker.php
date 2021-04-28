@@ -53,12 +53,14 @@ class Ordertaker extends CI_Controller
 	public function confirmCheckout($method) {
 		if($method == 'e-wallet' || $method == 'cod') {
 			if($method == 'e-wallet') {
-				$type = 0;
+				// $type = 0;
 				// $this->order_model->proceedCheckout($type);
 				redirect('ordertaker/payment');
 			} if($method == 'cod') {
 				$type = 1;
-				$this->order_model->proceed_checkout($type);
+				$status = 0;
+				$this->order_model->proceed_checkout($type, $status);
+				$this->cart->destroy();
 				redirect('ordertaker/confirmation');
 			} 
 		} else {
@@ -88,7 +90,8 @@ class Ordertaker extends CI_Controller
 				$this->load->view('order-taker/footer-order');
 			} else {
 				$type = 0;
-				$order_id = $this->order_model->proceed_checkout($type);
+				$status = 1;
+				$order_id = $this->order_model->proceed_checkout($type, $status);
 				if($order_id != NULL && $order_id != '') {
 					$this->add_proof($order_id);
 				} else {

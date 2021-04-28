@@ -1,6 +1,12 @@
 <?php
 class order_model extends CI_Model 
 {
+    // status:
+    // 0 -> order & not paid
+    // 1 -> order & paid
+    // 2 -> admin accepted, order on process
+    // 3 -> on delivery
+    // 4 -> delivered & paid
     public function get_orders() 
     {
 
@@ -16,9 +22,9 @@ class order_model extends CI_Model
         # code...
     }
 
-    public function proceed_checkout($method)
+    public function proceed_checkout($method, $status)
     {
-        $order_id = $this->addOrder($method);
+        $order_id = $this->addOrder($method, $status);
         // if id is not empty then insert order item
         if($order_id != NULL && $order_id != '') {
             // echo"not empty";
@@ -38,7 +44,7 @@ class order_model extends CI_Model
         return $order_id;
     }
 
-    public function addOrder($method) 
+    public function addOrder($method, $status) 
     {
         // declare needed variables
         $user_id = $this->session->userdata('user_id');
@@ -64,7 +70,8 @@ class order_model extends CI_Model
             'total_qty' => (int)$total_item,
             'total_price' => (int)$total_price,
             'order_date' => $now,
-            'payment_method' => $method
+            'payment_method' => $method,
+            'order_status' => $status
         );
 
         // insert into tbl_order and return id
