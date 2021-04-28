@@ -9,12 +9,14 @@ class order_model extends CI_Model
     // 4 -> delivered & paid
     public function get_orders() 
     {
-
+        $query = $this->db->get('tbl_order');
+        return $query->result();
     }
 
-    public function get_order_by_id() 
+    public function get_order_by_id($id) 
     {
-
+        $query = $this->db->get_where('tbl_order', array('id' => $id));
+        return $query->row();
     }
 
     public function get_order_detail()

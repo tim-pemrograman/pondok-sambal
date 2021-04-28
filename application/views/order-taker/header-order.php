@@ -224,7 +224,7 @@
 															</a>
 														</li>
 														<li class="menu-item">
-															<a  href="#">
+															<a  href="<?= base_url('ordertaker/history') ?>">
 																<i
 																	class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
 																Activity Log
@@ -295,7 +295,7 @@
 													</a>
 												</li>
 												<li class="menu-item">
-													<a  href="#">
+													<a  href="<?= base_url('ordertaker/history') ?>">
 														<i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
 														Activity Log
 													</a>
