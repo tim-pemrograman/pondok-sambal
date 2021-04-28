@@ -131,7 +131,7 @@
 										</ul>
 									</li>
 									<li class="menu-item menu-item-has-children menu-item-641"><a
-											href="<?= base_url('blogpage/blog4')?>">Blog</a>
+											href="<?= base_url('article')?>">Blog</a>
 									</li>
 									<li class="menu-item menu-item-has-children menu-item-641">
 									<a href="<?= base_url('loginpage/login')?>">ORDER NOW!</a>
@@ -169,7 +169,7 @@
 									</li>
 									<li
 										class="menu-item menu-item-has-children menu-item-641menu-item menu-item-has-children menu-item-641 gdlr-mega-menu">
-										<a href="<?= base_url('blogpage/blog4')?>" class="sf-with-ul-pre">Blog</a></li>
+										<a href="<?= base_url('article')?>" class="sf-with-ul-pre">Blog</a></li>
 									<li class="menu-item menu-item-has-childrenmenu-item menu-item-has-children gdlr-normal-menu">
 										<a href="<?= base_url('loginpage/login')?>">ORDER NOW!</a>
 									</li>

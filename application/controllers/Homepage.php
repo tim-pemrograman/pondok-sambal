@@ -8,12 +8,14 @@ class Homepage extends CI_Controller
 		$this->load->model('banner_model');
 		$this->load->model('gallery_model');
 		$this->load->model('menu_model');
+		$this->load->model('article_model');
 	}
 	public function index()
 	{
 		$data['banners'] = $this->banner_model->get_banners();
 		$data['galleries'] = $this->gallery_model->get_galleries();
 		$data['featured_menus'] = $this->menu_model->get_featured_menus();
+		$data['recent_articles'] = $this->article_model->get_recent();
 
 		$this->load->helper('url');
 		$this->load->view('header');
