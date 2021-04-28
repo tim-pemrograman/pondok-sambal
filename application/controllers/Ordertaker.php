@@ -58,7 +58,7 @@ class Ordertaker extends CI_Controller
 				redirect('ordertaker/payment');
 			} if($method == 'cod') {
 				$type = 1;
-				$this->order_model->proceedCheckout($type);
+				$this->order_model->proceed_checkout($type);
 				redirect('ordertaker/confirmation');
 			} 
 		} else {
@@ -80,19 +80,15 @@ class Ordertaker extends CI_Controller
 	
 			if (empty($_FILES['img_path']['name'])) {
 				$this->form_validation->set_rules('img_path', 'img_path', 'required');
-				// var_dump("failed");
 			}
 	
 			if ($this->form_validation->run() === FALSE && empty($_FILES['img_path']['name'])) {
 				$this->load->view('order-taker/header-order', $data);
 				$this->load->view('cart/payment');
 				$this->load->view('order-taker/footer-order');
-				var_dump("failed");
 			} else {
-				var_dump("succeed");
 				$type = 0;
 				$order_id = $this->order_model->proceed_checkout($type);
-				var_dump($order_id);
 				if($order_id != NULL && $order_id != '') {
 					$this->add_proof($order_id);
 				} else {
@@ -123,7 +119,8 @@ class Ordertaker extends CI_Controller
 			'order_id' => $order_id
 		);
 		$this->payment_model->add_payment($data);
-		$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Bukti Pembayaran berhasil ditambah!</div>');
+		$this->cart->destroy();
+		// $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Bukti Pembayaran berhasil ditambah!</div>');
 		redirect('ordertaker/confirmation');
     }
 
