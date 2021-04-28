@@ -119,7 +119,7 @@ class Company extends CI_Controller {
                 'address' => $this->input->post('address'),
                 'phone' => $this->input->post('phone')
             );
-        } else {
+        } elseif (empty($_FILES['gallery_img']['name'])) {
             $gallery_image = $this->upload_gallery_image();
             $banner_image = $this->upload_banner_image();
             $data = array(
@@ -128,8 +128,30 @@ class Company extends CI_Controller {
                 'email' => $this->input->post('email'),
                 'address' => $this->input->post('address'),
                 'phone' => $this->input->post('phone'),
-                'gallery_image' => $gallery_image,
                 'banner_image' => $banner_image
+            );
+        } elseif (empty($_FILES['banner_img']['name'])) {
+                $gallery_image = $this->upload_gallery_image();
+                $banner_image = $this->upload_banner_image();
+                $data = array(
+                    'name' => $this->input->post('name'),
+                    'about' => $this->input->post('about'),
+                    'email' => $this->input->post('email'),
+                    'address' => $this->input->post('address'),
+                    'phone' => $this->input->post('phone'),
+                    'gallery_image' => $gallery_image
+                );
+        }else{
+            $gallery_image = $this->upload_gallery_image();
+            $banner_image = $this->upload_banner_image();
+            $data = array(
+                'name' => $this->input->post('name'),
+                'about' => $this->input->post('about'),
+                'email' => $this->input->post('email'),
+                'address' => $this->input->post('address'),
+                'phone' => $this->input->post('phone'),
+                'banner_image' => $banner_image,
+                'gallery_image' => $gallery_image
             );
         }
         // var_dump($data);

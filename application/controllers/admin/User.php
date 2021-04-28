@@ -37,7 +37,7 @@ class User extends CI_Controller {
 		$employee_id = $this->session->userdata('employee_id');
 
         $data['data_core'] = $this->login_model->GetNama($employee_id);
-		$data['titles'] = "User List - Pondok Sambal";
+		$data['titles'] = "Employee List - Pondok Sambal";
 
         $data['data_users'] = $this->user_model->get_users();
         // var_dump($data['data_users']);
@@ -102,7 +102,7 @@ class User extends CI_Controller {
 
         $data['data_user'] = $this->user_model->get_employee_by_id($id);
 
-        $data['titles'] = "Edit Article - Pondok Sambal";
+        $data['titles'] = "Edit User - Pondok Sambal";
         $data['action'] = "edit";
         $data['header'] = "Ubah";
 

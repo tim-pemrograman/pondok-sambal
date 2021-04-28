@@ -5,14 +5,16 @@ class Aboutpage extends CI_Controller
 	{
 		parent::__construct();
 		// Load Model
-		$this->load->model('gallery_model');
+		$this->load->model('company_model');
 		$this->load->model('message_model');
 	}
 	public function about()
 	{
+		$data['company'] = $this->company_model->get_company();
+
 		$this->load->helper('url');
 		$this->load->view('header');
-		$this->load->view('about-us');
+		$this->load->view('about-us',$data);
 		$this->load->view('footer');
 	}
 	// public function testi()
