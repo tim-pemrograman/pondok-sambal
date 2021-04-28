@@ -1,12 +1,27 @@
 <?php
-class checkout_model extends CI_Model 
+class order_model extends CI_Model 
 {
-    public function addCheckout($method)
+    public function get_orders() 
+    {
+
+    }
+
+    public function get_order_by_id() 
+    {
+
+    }
+
+    public function get_order_detail()
+    {
+        # code...
+    }
+
+    public function proceed_checkout($method)
     {
         $order_id = $this->addOrder($method);
         // if id is not empty then insert order item
         if($order_id != NULL && $order_id != '') {
-            echo"not empty";
+            // echo"not empty";
 
             foreach (($this->cart->contents()) as $item):
                 // insert order item
@@ -20,9 +35,11 @@ class checkout_model extends CI_Model
             endforeach;
         }
 
+        return $order_id;
     }
 
-    public function addOrder($method) {
+    public function addOrder($method) 
+    {
         // declare needed variables
         $user_id = $this->session->userdata('user_id');
         $total_item = 0;
@@ -56,7 +73,8 @@ class checkout_model extends CI_Model
         return $returned_order_id;
     }
 
-    public function doPayment() {
+    public function doPayment() 
+    {
 
     }
 }

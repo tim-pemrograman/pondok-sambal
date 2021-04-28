@@ -11,7 +11,7 @@ class Ordertaker extends CI_Controller
 		$this->load->model('userlogin_model');
 		$this->load->model('payment_model');
 		$this->load->model('cart_model'); // Load our cart model for our entire class
-		$this->load->model('checkout_model'); // Load our cart model for our entire class
+		$this->load->model('order_model'); // Load our cart model for our entire class
 		$this->load->library('cart');
 		$this->load->library('form_validation');
 	}
@@ -54,11 +54,12 @@ class Ordertaker extends CI_Controller
 		if($method == 'e-wallet' || $method == 'cod') {
 			if($method == 'e-wallet') {
 				$type = 0;
-				$this->checkout_model->addCheckout($type);
+				// $this->order_model->proceedCheckout($type);
 				redirect('ordertaker/payment');
 			} if($method == 'cod') {
 				$type = 1;
-				$this->checkout_model->addCheckout($type);
+				$this->order_model->proceedCheckout($type);
+				redirect('ordertaker/confirmation');
 			} 
 		} else {
 			redirect('ordertaker/checkout');
@@ -67,20 +68,40 @@ class Ordertaker extends CI_Controller
 
 	public function payment(){
 		$user_id = $this->session->userdata('user_id');
-
-        $data['data_core'] = $this->userlogin_model->GetNama($user_id);
-
-        $data['categories'] = $this->category_model->get_categories();
-		$data['featured_menus'] = $this->menu_model->get_featured_menus();
-		$data['cat_menu'] = $this->menu_model->get_menus_by_category(1);
-		$data['menus'] = $this->menu_model->get_menus();
-		if ($this->form_validation->run() === FALSE) {
-			$this->load->view('order-taker/header-order', $data);
-			$this->load->view('cart/payment');
-			$this->load->view('order-taker/footer-order');
+		if($user_id == NULL || $user_id == '') {
+			redirect('homepage');
 		} else {
-			// insert payment image and change status;
+			$data['data_core'] = $this->userlogin_model->GetNama($user_id);
+	
+			$data['categories'] = $this->category_model->get_categories();
+			$data['featured_menus'] = $this->menu_model->get_featured_menus();
+			$data['cat_menu'] = $this->menu_model->get_menus_by_category(1);
+			$data['menus'] = $this->menu_model->get_menus();
+	
+			if (empty($_FILES['img_path']['name'])) {
+				$this->form_validation->set_rules('img_path', 'img_path', 'required');
+				// var_dump("failed");
+			}
+	
+			if ($this->form_validation->run() === FALSE && empty($_FILES['img_path']['name'])) {
+				$this->load->view('order-taker/header-order', $data);
+				$this->load->view('cart/payment');
+				$this->load->view('order-taker/footer-order');
+				var_dump("failed");
+			} else {
+				var_dump("succeed");
+				$type = 0;
+				$order_id = $this->order_model->proceed_checkout($type);
+				var_dump($order_id);
+				if($order_id != NULL && $order_id != '') {
+					$this->add_proof($order_id);
+				} else {
+					redirect('ordertaker/checkout');
+				}
+	
+			}
 		}
+
     }
 	
 	public function review()
@@ -94,20 +115,16 @@ class Ordertaker extends CI_Controller
         $this->load->view('order-taker/footer-order');
 	}
 
-	public function add_proof()
-    {
-			$user_id = $this->session->userdata('user_id');
-			$Id = $this->userlogin_model->GetId($user_id);
-            $upload_image = $this->upload_image();
-            $data = array(
-                'img_path' => $upload_image,
-                'id' => $Id
-            );
-            var_dump($data); exit;
-            $this->payment_model->add_payment($data);
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Bukti Pembayaran berhasil ditambah!</div>');
-            redirect('ordertaker/confirmation');
-        
+	public function add_proof($order_id)
+    {	
+		$upload_image = $this->upload_image();
+		$data = array(
+			'img_path' => $upload_image,
+			'order_id' => $order_id
+		);
+		$this->payment_model->add_payment($data);
+		$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Bukti Pembayaran berhasil ditambah!</div>');
+		redirect('ordertaker/confirmation');
     }
 
 	private function upload_image()
