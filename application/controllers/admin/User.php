@@ -44,7 +44,7 @@ class User extends CI_Controller {
         // exit;
 
 		$this->load->view('admin/template/header',$data);
-		$this->load->view('admin/template/sidebar');
+		$this->load->view('admin/template/sidebar',$data);
 		$this->load->view('admin/template/topbar',$data);
 		$this->load->view('admin/user/index',$data);
 		$this->load->view('admin/template/footer');
@@ -55,7 +55,7 @@ class User extends CI_Controller {
         $data['meta_data'] = getSEOData();
         $data['data_core'] = $this->validate();
 
-        $data['titles'] = "Tambah Users Baru - Pondok Sambal";
+        $data['titles'] = "Employee List - Pondok Sambal";
         $data['action'] = "add";
         $data['header'] = "Tambah";
 
@@ -72,7 +72,7 @@ class User extends CI_Controller {
         
         if ($this->form_validation->run() === FALSE) {
             $this->load->view('admin/template/header',$data);
-            $this->load->view('admin/template/sidebar');
+            $this->load->view('admin/template/sidebar',$data);
             $this->load->view('admin/template/topbar',$data);
             $this->load->view('admin/user/form');
             $this->load->view('admin/template/footer');
@@ -102,7 +102,7 @@ class User extends CI_Controller {
 
         $data['data_user'] = $this->user_model->get_employee_by_id($id);
 
-        $data['titles'] = "Edit User - Pondok Sambal";
+        $data['titles'] = "Employee List - Pondok Sambal";
         $data['action'] = "edit";
         $data['header'] = "Ubah";
 
@@ -120,7 +120,7 @@ class User extends CI_Controller {
         
         if ($this->form_validation->run() === FALSE) {
             $this->load->view('admin/template/header', $data);
-            $this->load->view('admin/template/sidebar');
+            $this->load->view('admin/template/sidebar',$data);
             $this->load->view('admin/template/topbar', $data);
             $this->load->view('admin/user/form');
             $this->load->view('admin/template/footer');

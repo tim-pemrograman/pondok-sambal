@@ -48,7 +48,7 @@ class Seo extends CI_Controller {
         $data['action'] = "edit";
 
 		$this->load->view('admin/template/header',$data);
-		$this->load->view('admin/template/sidebar');
+		$this->load->view('admin/template/sidebar',$data);
 		$this->load->view('admin/template/topbar',$data);
 		$this->load->view('admin/seo/index',$data);
 		$this->load->view('admin/template/footer');

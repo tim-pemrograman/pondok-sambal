@@ -38,7 +38,7 @@ class Banner extends CI_Controller
         $data['titles'] = "Banner - Pondok Sambal";
 
         $this->load->view('admin/template/header', $data);
-        $this->load->view('admin/template/sidebar');
+        $this->load->view('admin/template/sidebar',$data);
         $this->load->view('admin/template/topbar', $data);
         $this->load->view('admin/banner/index', $data);
         $this->load->view('admin/template/footer');
