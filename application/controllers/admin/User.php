@@ -32,6 +32,7 @@ class User extends CI_Controller {
 	// Halaman dashboard
 	public function index()
 	{
+        $data['meta_data'] = getSEOData();
 
 		$employee_id = $this->session->userdata('employee_id');
 
@@ -51,6 +52,7 @@ class User extends CI_Controller {
 
     public function add()
 	{
+        $data['meta_data'] = getSEOData();
         $data['data_core'] = $this->validate();
 
         $data['titles'] = "Tambah Users Baru - Pondok Sambal";
@@ -95,6 +97,7 @@ class User extends CI_Controller {
 
     public function edit($id)
     {
+        $data['meta_data'] = getSEOData();
         $data['data_core'] = $this->validate();
 
         $data['data_user'] = $this->user_model->get_employee_by_id($id);

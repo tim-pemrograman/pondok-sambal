@@ -2,8 +2,6 @@
     <div class="col-6">
         <!-- Page Heading -->
         <h1 class="h3 mb-4 text-gray-800">Company Profile</h1>
-        <br>
-        <br>
         <?= $this->session->flashdata('message') ?>
 
             <?php
