@@ -5,10 +5,12 @@
 	</div>
 </div>
 <?php 
-if(!$all_orders < 0):
-    echo '<h1 class:text-center;>You don\'t have any orders yet.</h1>';
-    // var_dump('masuk content tpi gk ad'); exit;
-else:
+if(!$all_orders): ?>
+<div class="text-center mt-5">
+    <h1 class="text-center">You don't have any orders yet.</h1>;
+    <img class="text-center" src="<?= base_url('assets/images/none.gif') ?>" alt="">
+</div>
+<?php else:
 ?>
 <div class="text-center mt-5">
 <h2>Ongoing order</h2>
