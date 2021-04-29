@@ -13,7 +13,7 @@
     <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item active">
+    <li class="<?php if($titles == 'Dashboard - Pondok Sambal'){echo 'nav-item active'; } else{echo 'nav-item';}; ?>">
         <a class="nav-link" href="<?= base_url('admin/dashboard') ?>">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
@@ -28,16 +28,16 @@
     </div>
 
     <!-- Nav Item - Charts -->
-    <li class="nav-item">
+    <li class="<?php if($titles == 'Company - Pondok Sambal'){echo 'nav-item active'; } else{echo 'nav-item';}; ?>">
         <a class="nav-link" href="<?= base_url('admin/company') ?>">
             <i class="fas fa-building"></i>
             <span>Company</span></a>
     </li>
 
     <!-- Nav Item - Charts -->
-    <li class="nav-item">
+    <li class="<?php if($titles == 'Gallery - Pondok Sambal'){echo 'nav-item active'; } else{echo 'nav-item';}; ?>">
         <a class="nav-link" href="<?= base_url('admin/gallery') ?>">
-            <i class="fas fa-building"></i>
+            <i class="fas fa-images"></i>
             <span>Gallery</span></a>
     </li>
 
@@ -50,10 +50,10 @@
     </div>
 
     <!-- Nav Item - Charts -->
-    <li class="nav-item">
+    <li class="<?php if($titles == 'Employee List - Pondok Sambal'){echo 'nav-item active'; } else{echo 'nav-item';}; ?>">
         <a class="nav-link" href="<?= base_url('admin/user') ?>">
             <i class="fas fa-users"></i>
-            <span>User List</span></a>
+            <span>Employee List</span></a>
     </li>
 
     <!-- Divider -->
@@ -65,38 +65,52 @@
     </div>
 
     <!-- Nav Item - Tables -->
-    <li class="nav-item">
+    <li class="<?php if($titles == 'Order - Pondok Sambal'){echo 'nav-item active'; } else{echo 'nav-item';}; ?>">
+        <a class="nav-link" href="<?= base_url('admin/order') ?>">
+            <i class="fas fa-chalkboard-teacher"></i>
+            <span>Manage Order</span></a>
+    </li>
+
+    <!-- Nav Item - Tables -->
+    <li class="<?php if($titles == 'Category - Pondok Sambal'){echo 'nav-item active'; } else{echo 'nav-item';}; ?>">
         <a class="nav-link" href="<?= base_url('admin/category') ?>">
             <i class="fas fa-list-ul"></i>
             <span>Category</span></a>
     </li>
 
     <!-- Nav Item - Tables -->
-    <li class="nav-item">
+    <li class="<?php if($titles == 'Menu - Pondok Sambal'){echo 'nav-item active'; } else{echo 'nav-item';}; ?>">
         <a class="nav-link" href="<?= base_url('admin/menu') ?>">
             <i class="fas fa-utensils"></i>
             <span>Menu</span></a>
     </li>
 
     <!-- Nav Item - Charts -->
-    <li class="nav-item">
+    <li class="<?php if($titles == 'Article - Pondok Sambal'){echo 'nav-item active'; } else{echo 'nav-item';}; ?>">
         <a class="nav-link" href="<?= base_url('admin/article') ?>">
             <i class="fas fa-newspaper"></i>
             <span>Article</span></a>
     </li>
 
     <!-- Nav Item - Charts -->
-    <li class="nav-item">
+    <li class="<?php if($titles == 'Banner - Pondok Sambal'){echo 'nav-item active'; } else{echo 'nav-item';}; ?>">
         <a class="nav-link" href="<?= base_url('admin/banner') ?>">
             <i class="fas fa-newspaper"></i>
             <span>Banner</span></a>
     </li>
 
     <!-- Nav Item - Tables -->
-    <li class="nav-item">
+    <li class="<?php if($titles == 'Message - Pondok Sambal'){echo 'nav-item active'; } else{echo 'nav-item';}; ?>">
         <a class="nav-link" href="<?= base_url('admin/message') ?>">
             <i class="fas fa-envelope-open-text"></i>
             <span>Message</span></a>
+    </li>
+
+    <!-- Nav Item - SEO -->
+    <li class="<?php if($titles == 'Manage SEO - Pondok Sambal'){echo 'nav-item active'; } else{echo 'nav-item';}; ?>">
+        <a class="nav-link" href="<?= base_url('admin/seo') ?>">
+            <i class="fas fa-globe-asia"></i>
+            <span>Manage SEO</span></a>
     </li>
 
     <!-- Divider -->

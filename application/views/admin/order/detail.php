@@ -1,8 +1,7 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Employee List</h1>
-    <a href="<?= base_url('admin'); ?>/user/add" class="btn btn-primary">Add New Users</a>
+    <h1 class="h3 mb-2 text-gray-800">Detail Order</h1>
     <br>
     <br>
     <?= $this->session->flashdata('message') ?>
@@ -13,29 +12,30 @@
                     <thead>
                         <tr> 
                             <th>No</th>
-                            <td>First Name</td>
-                            <td>Last Name</td>
-                            <td>Email</td>
-                            <td>Phone</td>
-                            <td>Address</td>
+                            <!-- <td>Menu Name</td> -->
+                            <td>Item Qty</td>
+                            <td>Price per Item</td>
+                            <td>Sub Total</td>
+                            <td>Note</td>
                             <th>Action</th>
                         </tr>
                     </thead>
 
                     <tbody>
-                    <?php $i=0; foreach($data_users as $data_users): $i++;?>
+                    <?php $i=0; foreach($data_order as $data_order): $i++;?>
                     
                     <tr>
                          <td><?= $i; ?></td>
-                         <td><?= $data_users->Fname; ?></td>
-                         <td><?= $data_users->Lname; ?></td>
-                         <td><?= $data_users->email; ?></td>
-                         <td><?= $data_users->phone; ?></td>
-                         <td><?= $data_users->address; ?></td>
+                         <!-- <td><?= $data_order->Fname.' '.$data_order->Lname; ?></td> -->
+                         <td><?= $data_order->item_qty; ?></td>
+                         <td><?= $data_order->price_per_item; ?></td>
+                         <td><?= $data_order->price_per_item * $data_order->item_qty; ?></td>
+                         <td><?php if($data_order->notes == ''){ echo '-'; } else{ echo $data_order->notes; } ; ?></td>
                          <td>
                              <a class="btn-circle btn-primary"
-                                href="<?= base_url('admin'); ?>/user/edit/<?= $data_users->employee_id; ?>"><i class="fas fa-edit "></i></a>
-                             <a class="btn-circle btn-danger" onclick="return deleteUser(<?= $data_users->employee_id; ?>)" href="javascript:void(0)"><i class="fas fa-trash "></i></a>
+                                    href="<?= base_url('admin'); ?>/order/view/<?= $data_order->order_id; ?>"><i class="fas fa-eye "></i></a>
+                             <!-- <a class="btn-circle btn-primary"
+                                href="<?= base_url('admin'); ?>/user/edit/<?= $data_order->employee_id; ?>"><i class="fas fa-edit "></i></a> -->
                          </td>
                     </tr>
                     <?php endforeach; ?>

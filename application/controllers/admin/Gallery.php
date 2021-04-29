@@ -33,6 +33,7 @@ class Gallery extends CI_Controller
     // Halaman dashboard
     public function index()
     {
+        $data['meta_data'] = getSEOData();
         $data['data_core'] = $this->validate();
 
         $data['galleries'] = $this->gallery_model->get_galleries();
@@ -40,7 +41,7 @@ class Gallery extends CI_Controller
         $data['titles'] = "Gallery - Pondok Sambal";
 
         $this->load->view('admin/template/header', $data);
-        $this->load->view('admin/template/sidebar');
+        $this->load->view('admin/template/sidebar',$data);
         $this->load->view('admin/template/topbar', $data);
         $this->load->view('admin/gallery/index');
         $this->load->view('admin/template/footer');
@@ -48,9 +49,10 @@ class Gallery extends CI_Controller
 
     public function add()
     {
+        $data['meta_data'] = getSEOData();
         $data['data_core'] = $this->validate();
 
-        $data['titles'] = "Add Gallery - Pondok Sambal";
+        $data['titles'] = "Gallery - Pondok Sambal";
 
         if (empty($_FILES['img_path']['name'])) {
             $this->form_validation->set_rules('img_path', 'image', 'required');
@@ -58,7 +60,7 @@ class Gallery extends CI_Controller
 
         if ($this->form_validation->run() === FALSE && empty($_FILES['img_path']['name'])) {
             $this->load->view('admin/template/header', $data);
-            $this->load->view('admin/template/sidebar');
+            $this->load->view('admin/template/sidebar',$data);
             $this->load->view('admin/template/topbar', $data);
             $this->load->view('admin/gallery/form');
             $this->load->view('admin/template/footer');

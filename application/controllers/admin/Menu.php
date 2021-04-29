@@ -27,7 +27,7 @@ class Menu extends CI_Controller
     // Halaman dashboard
     public function index()
     {
-
+        $data['meta_data'] = getSEOData();
         $data['data_core'] = $this->validate();
 
         $data['menus'] = $this->menu_model->get_menus();
@@ -35,7 +35,7 @@ class Menu extends CI_Controller
         $data['titles'] = "Menu - Pondok Sambal";
 
         $this->load->view('admin/template/header', $data);
-        $this->load->view('admin/template/sidebar');
+        $this->load->view('admin/template/sidebar',$data);
         $this->load->view('admin/template/topbar', $data);
         $this->load->view('admin/menu/index');
         $this->load->view('admin/template/footer');
@@ -50,9 +50,10 @@ class Menu extends CI_Controller
 
     public function add()
     {
+        $data['meta_data'] = getSEOData();
         $data['data_core'] = $this->validate();
 
-        $data['titles'] = "Add New Menu - Pondok Sambal";
+        $data['titles'] = "Menu - Pondok Sambal";
         $data['action'] = "add";
         $data['header'] = "Tambah";
 
@@ -66,7 +67,7 @@ class Menu extends CI_Controller
 
         if ($this->form_validation->run() === FALSE) {
             $this->load->view('admin/template/header', $data);
-            $this->load->view('admin/template/sidebar');
+            $this->load->view('admin/template/sidebar',$data);
             $this->load->view('admin/template/topbar', $data);
             $this->load->view('admin/menu/form');
             $this->load->view('admin/template/footer');
@@ -121,12 +122,13 @@ class Menu extends CI_Controller
 
     public function edit($id)
     {
+        $data['meta_data'] = getSEOData();
         $data['data_core'] = $this->validate();
 
         $data['menu'] = $this->menu_model->get_menu_by_id($id);
         $data['categories'] = $this->category_model->get_categories();
 
-        $data['titles'] = "Edit Menu - Pondok Sambal";
+        $data['titles'] = "Menu - Pondok Sambal";
         $data['action'] = "edit";
         $data['header'] = "Ubah";
 
@@ -138,7 +140,7 @@ class Menu extends CI_Controller
 
         if ($this->form_validation->run() === FALSE) {
             $this->load->view('admin/template/header', $data);
-            $this->load->view('admin/template/sidebar');
+            $this->load->view('admin/template/sidebar',$data);
             $this->load->view('admin/template/topbar', $data);
             $this->load->view('admin/menu/form');
             $this->load->view('admin/template/footer');

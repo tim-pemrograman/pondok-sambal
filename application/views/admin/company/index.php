@@ -2,13 +2,13 @@
     <div class="col-6">
         <!-- Page Heading -->
         <h1 class="h3 mb-4 text-gray-800">Company Profile</h1>
-        <br>
-        <br>
         <?= $this->session->flashdata('message') ?>
 
             <?php
                 $id = '/' . $data_company->company_id;
             echo form_open_multipart('admin/company/edit'. $id); ?>
+
+            
 
 
         <!-- <form method="POST" action="" enctype="multipart/form-data"> -->

@@ -29,6 +29,7 @@ class Category extends CI_Controller
 
     public function index()
     {
+        $data['meta_data'] = getSEOData();
         $data['data_core'] = $this->validate();
 
         $data['categories'] = $this->category_model->get_categories();
@@ -36,7 +37,7 @@ class Category extends CI_Controller
         $data['titles'] = "Category - Pondok Sambal";
 
         $this->load->view('admin/template/header', $data);
-        $this->load->view('admin/template/sidebar');
+        $this->load->view('admin/template/sidebar',$data);
         $this->load->view('admin/template/topbar', $data);
         $this->load->view('admin/category/index');
         $this->load->view('admin/template/footer');
@@ -44,9 +45,10 @@ class Category extends CI_Controller
 
     public function add()
     {
+        $data['meta_data'] = getSEOData();
         $data['data_core'] = $this->validate();
 
-        $data['titles'] = "Add New Category - Pondok Sambal";
+        $data['titles'] = "Category - Pondok Sambal";
 
         $this->form_validation->set_rules('name', 'name', 'required');
         $this->form_validation->set_rules('description', 'description');
@@ -54,7 +56,7 @@ class Category extends CI_Controller
 
         if ($this->form_validation->run() === FALSE) {
             $this->load->view('admin/template/header', $data);
-            $this->load->view('admin/template/sidebar');
+            $this->load->view('admin/template/sidebar',$data);
             $this->load->view('admin/template/topbar', $data);
             $this->load->view('admin/category/form');
             $this->load->view('admin/template/footer');

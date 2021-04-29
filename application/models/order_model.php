@@ -18,6 +18,28 @@ class order_model extends CI_Model
         $query = $this->db->get_where('tbl_order', array('id' => $id));
         return $query->row();
     }
+  
+  public function admin_get_order()
+    {        
+        $this->db->select('*');
+        $this->db->from('tbl_order');
+        $this->db->join('tbl_user', 'tbl_order.cust_id = tbl_user.user_id');
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function admin_get_order_byid($id)
+    {
+        $query = $this->db->get_where('tbl_order_item', array('order_id' => $id));
+        return $query->result();
+
+        // //Join with tbl_menu
+        // $this->db->select('*');
+        // $this->db->from('tbl_order');
+        // $this->db->join('tbl_menu', 'tbl_order.id_menu = tbl_menu.menu_id');
+        // $this->db->where('tbl_order.order_id', $id);
+        // return $query->row();
+    }
 
     public function get_orders_by_status($user_id)
     {

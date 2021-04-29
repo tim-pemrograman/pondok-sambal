@@ -33,13 +33,14 @@ class Article extends CI_Controller {
 	// Halaman dashboard
 	public function index()
 	{
+        $data['meta_data'] = getSEOData();
 		$data['data_core'] = $this->validate();
 
 		$data['titles'] = "Article - Pondok Sambal";
         $data['articles'] = $this->article_model->get_articles();
 
 		$this->load->view('admin/template/header',$data);
-		$this->load->view('admin/template/sidebar');
+		$this->load->view('admin/template/sidebar',$data);
 		$this->load->view('admin/template/topbar',$data);
 		$this->load->view('admin/article/index');
 		$this->load->view('admin/template/footer');
@@ -47,13 +48,14 @@ class Article extends CI_Controller {
 
     public function view($id)
     {
+        $data['meta_data'] = getSEOData();
         $data['data_core'] = $this->validate();
 
 		$data['titles'] = "Article - Pondok Sambal";
         $data['article'] = $this->article_model->view_article($id);
 
 		$this->load->view('admin/template/header',$data);
-		$this->load->view('admin/template/sidebar');
+		$this->load->view('admin/template/sidebar',$data);
 		$this->load->view('admin/template/topbar',$data);
 		$this->load->view('admin/article/detail');
 		$this->load->view('admin/template/footer');
@@ -61,9 +63,10 @@ class Article extends CI_Controller {
 
     public function add()
     {
+        $data['meta_data'] = getSEOData();
         $data['data_core'] = $this->validate();
 
-        $data['titles'] = "Tambah Artikel Baru - Pondok Sambal";
+        $data['titles'] = "Article - Pondok Sambal";
         $data['action'] = "add";
         $data['header'] = "Tambah";
 
@@ -77,7 +80,7 @@ class Article extends CI_Controller {
 
         if ($this->form_validation->run() === FALSE) {
             $this->load->view('admin/template/header', $data);
-            $this->load->view('admin/template/sidebar');
+            $this->load->view('admin/template/sidebar',$data);
             $this->load->view('admin/template/topbar', $data);
             $this->load->view('admin/article/form');
             $this->load->view('admin/template/footer');
@@ -130,11 +133,12 @@ class Article extends CI_Controller {
 
     public function edit($id)
     {
+        $data['meta_data'] = getSEOData();
         $data['data_core'] = $this->validate();
 
         $data['article'] = $this->article_model->get_article_by_id($id);
 
-        $data['titles'] = "Edit Article - Pondok Sambal";
+        $data['titles'] = "Article - Pondok Sambal";
         $data['action'] = "edit";
         $data['header'] = "Ubah";
 
@@ -144,7 +148,7 @@ class Article extends CI_Controller {
         
         if ($this->form_validation->run() === FALSE) {
             $this->load->view('admin/template/header', $data);
-            $this->load->view('admin/template/sidebar');
+            $this->load->view('admin/template/sidebar',$data);
             $this->load->view('admin/template/topbar', $data);
             $this->load->view('admin/article/form');
             $this->load->view('admin/template/footer');

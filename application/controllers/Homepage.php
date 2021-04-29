@@ -8,6 +8,7 @@ class Homepage extends CI_Controller
 		$this->load->model('banner_model');
 		$this->load->model('gallery_model');
 		$this->load->model('menu_model');
+		$this->load->model('article_model');
 		$this->load->model('Userlogin_model');
 		$this->load->library('form_validation');
 
@@ -27,6 +28,8 @@ class Homepage extends CI_Controller
 		$data['banners'] = $this->banner_model->get_banners();
 		$data['galleries'] = $this->gallery_model->get_galleries();
 		$data['featured_menus'] = $this->menu_model->get_featured_menus();
+
+		$data['recent_articles'] = $this->article_model->get_recent();
 		$data['data_core'] = $this->Userlogin_model->GetNama($user_id);
 
 		$this->load->helper('url');

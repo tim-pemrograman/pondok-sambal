@@ -73,6 +73,18 @@ class Auth extends CI_Controller {
 		redirect('admin/auth');
 	}
 
+	public function blocked()
+	{
+		$data['titles'] = "403 Forbidden - Keanggotaan";
+		$this->load->view('auth/blocked');
+	}
+
+	public function notfound()
+	{
+		$data['titles'] = "404 Not Found - Pondok Sambal";
+		$this->load->view('admin/404');
+	}
+
 }
 
 ?>

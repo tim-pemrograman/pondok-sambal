@@ -7,7 +7,7 @@ class Message extends CI_Controller {
     {
         parent::__construct();
         // Load Model
-        // $this->load->model('message_model');
+        $this->load->model('message_model');
         $this->load->model('login_model');
         $this->load->library('form_validation');
 
@@ -25,17 +25,30 @@ class Message extends CI_Controller {
 	// Halaman dashboard
 	public function index()
 	{
+        $data['meta_data'] = getSEOData();
 		$employee_id = $this->session->userdata('employee_id');
 
         $data['data_core'] = $this->login_model->GetNama($employee_id);
+        $data['data_message'] = $this->message_model->get_messages();
+
+        // var_dump($data['data_message']); exit;
+
 		$data['titles'] = "Message - Pondok Sambal";
 
 		$this->load->view('admin/template/header',$data);
-		$this->load->view('admin/template/sidebar');
+		$this->load->view('admin/template/sidebar',$data);
 		$this->load->view('admin/template/topbar',$data);
-		$this->load->view('admin/message/index');
+		$this->load->view('admin/message/index',$data);
 		$this->load->view('admin/template/footer');
 	}
+
+    public function delete($id)
+    {
+        $this->message_model->delete_message($id);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+        Data message berhasil dihapus! </div>');
+        redirect('admin/message');
+    }
 
 }
 

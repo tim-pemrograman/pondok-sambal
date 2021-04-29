@@ -37,14 +37,14 @@
 				<div class="clear"></div>
 				<ul>
 					<li>
-						<a href="<?= base_url('blogpage/blog4')?>">Cuma disini Pedasnya gak ngebosenin</a>
+						<a href="<?= base_url('article')?>">Cuma disini Pedasnya gak ngebosenin</a>
 					</li>
 					<li>
-						<a href="<?= base_url('blogpage/blog4')?>">Kamu tidak akan tahu apa itu pedas kalau belum ke
+						<a href="<?= base_url('article')?>">Kamu tidak akan tahu apa itu pedas kalau belum ke
 							Pondok Sambal!</a>
 					</li>
 					<li>
-						<a href="<?= base_url('blogpage/blog4')?>">Cuma disini kamu bisa makan enak dan pedas yang
+						<a href="<?= base_url('article')?>">Cuma disini kamu bisa makan enak dan pedas yang
 							nagih!</a>
 					</li>
 				</ul>
@@ -125,8 +125,11 @@
 <script type='text/javascript' src='<?= base_url('plugins/gdlr-portfolio/gdlr-portfolio-script.js')?>'></script>
 
 
-
-
+<script>
+$(":radio").change(function () {
+  $(".choice").text(this.value + " stars");
+});
+</script>
 
 <script>
 	(function ($) {
