@@ -8,6 +8,7 @@ class Ordertaker extends CI_Controller
 		// Load Model
 		$this->load->model('category_model');
 		$this->load->model('menu_model');
+		$this->load->model('order_model');
 		$this->load->model('userlogin_model');
 		$this->load->model('payment_model');
 		$this->load->model('cart_model'); // Load our cart model for our entire class
@@ -35,6 +36,20 @@ class Ordertaker extends CI_Controller
 		$this->load->view('order-taker/footer-order');
 	}
 	
+	public function history(){
+		$user_id = $this->session->userdata('user_id');
+
+        $data['data_core'] = $this->userlogin_model->GetNama($user_id);
+        $data['ongoing_orders'] = $this->order_model->get_orders_by_status($user_id);
+		
+
+        //Load View
+		$this->load->helper('url');
+		$this->load->view('order-taker/header-order', $data);
+		$this->load->view('order-taker/confirmation');
+		$this->load->view('order-taker/footer-order');
+	}
+
 	public function checkout(){
 		$user_id = $this->session->userdata('user_id');
 
@@ -61,7 +76,7 @@ class Ordertaker extends CI_Controller
 				$status = 0;
 				$this->order_model->proceed_checkout($type, $status);
 				$this->cart->destroy();
-				redirect('ordertaker/confirmation');
+				redirect('ordertaker/history');
 			} 
 		} else {
 			redirect('ordertaker/checkout');
@@ -149,20 +164,6 @@ class Ordertaker extends CI_Controller
         }
     }
 
-	public function confirmation()
-	{
-		
-		$user_id = $this->session->userdata('user_id');
-
-        $data['data_core'] = $this->userlogin_model->GetNama($user_id);
-		
-
-        //Load View
-		$this->load->helper('url');
-		$this->load->view('order-taker/header-order', $data);
-		$this->load->view('order-taker/confirmation');
-		$this->load->view('order-taker/footer-order');
-	}
 
 	public function logout()
 	{

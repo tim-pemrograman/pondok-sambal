@@ -1,13 +1,12 @@
 <div class="gdlr-page-title-wrapper">
 	<div class="gdlr-page-title-overlay"></div>
 	<div class="gdlr-page-title-container container">
-		<h1 class="gdlr-page-title">Checkout</h1>
+		<h1 class="gdlr-page-title">Order History</h1>
 	</div>
 </div>
-<div class="container">
 <?php 
-if(!$this->cart->contents()):
-    echo 'You don\'t have any items yet.';
+if(!$this->order_model->get_order_by_id()):
+    echo '<h1 class:text-center;>You don\'t have any orders yet.</h1>';
     // var_dump('masuk content tpi gk ad'); exit;
 else:
 ?>
@@ -72,7 +71,7 @@ else:
 	<div class="right-side">
 		<div class="new"> <a href="<?= base_url('ordertaker/confirmCheckout/e-wallet')?>"> E-Wallet and M-banking </a></div>
 	</div>
-	<div class="left-side" style="margin-left:100%; --left-side: #ca4242; ">
+	<div class="left-side" style="margin-left:80%; --left-side: #ca4242; ">
 		<div class="card" style=" width: 90px; height:40px;  background-image: url(<?= base_url('assets/images/rupiah.jpeg')?>); background-size: cover; -webkit-box-shadow: 9px 9px 9px -2px rgba(200, 77, 77, 0.72); -moz-box-shadow: 9px 9px 9px -2px rgba(200, 77, 87, 0.72); -webkit-box-shadow: 9px 9px 9px -2px rgba(200, 77, 77, 0.72); border-radius: 2px; ">
 
 		</div>
@@ -96,4 +95,3 @@ else:
 echo form_close(); 
 endif;
 ?>
-</div>
