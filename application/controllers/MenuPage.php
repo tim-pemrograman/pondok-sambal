@@ -11,6 +11,9 @@ class MenuPage extends CI_Controller
 	}
 	public function menu()
 	{
+		$data['title_head'] = "Daftar Menu - Pondok Sambal";
+		$data['meta_data'] = getSEOData();
+
 		$data['categories'] = $this->category_model->get_categories();
 		$data['featured_menus'] = $this->menu_model->get_featured_menus();
 		$data['cat_menus'] = $this->menu_model->get_menus_by_category(1);

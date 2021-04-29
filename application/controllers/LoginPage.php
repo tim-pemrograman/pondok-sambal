@@ -18,6 +18,9 @@ class LoginPage extends CI_Controller
 
 	public function login()
 	{
+		$data['title_head'] = "Login Pondok Sambal";
+		$data['meta_data'] = getSEOData();
+
         $this->form_validation->set_rules('email', 'email', 'required');
 		$this->form_validation->set_rules('password', 'Password', 'trim|required');
 		if ($this->form_validation->run() ==  false) {

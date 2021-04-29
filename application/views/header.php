@@ -10,9 +10,10 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="initial-scale=1.0" />
 
-	<title>Pondok Sambal </title>
+	<title><?= $title_head; ?></title>
 	<link rel="icon" href="<?= base_url('assets/images/logo.png')?>" type="image/x-icon" sizes="157x48">
-
+	<meta name="description" content="<?= $meta_data->meta_description; ?>">
+	<meta name="keywords" content="<?= $meta_data->meta_keyword; ?>">
 
 	<link rel='stylesheet'
 		href='https://fonts.googleapis.com/css?family=Courgette%3Aregular&amp;subset=latin%2Clatin-ext&amp;ver=b85dc0fb3d1e6e1da870c45887969c19'

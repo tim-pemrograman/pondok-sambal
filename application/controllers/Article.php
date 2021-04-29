@@ -10,8 +10,9 @@ class Article extends CI_Controller
 	
     public function index()
 	{	
-		$data['articles'] = $this->article_model->get_articles();
-		
+		$data['title_head'] = "Artikel Pondok Sambal";
+		$data['meta_data'] = getSEOData();
+
 		$this->load->helper('url');
 		$this->load->view('header');
 		$this->load->view('articles/list', $data);
@@ -19,9 +20,11 @@ class Article extends CI_Controller
     }
 
 	public function detail($id) {
+		$data['meta_data'] = getSEOData();
+		
 		$data['article'] = $this->article_model->get_article_by_id($id);
-		$this->article_model->view_article($id);
 		$data['title_head'] = $data['article']->title;
+		$this->article_model->view_article($id);
 		$this->load->helper('url');
 		$this->load->view('header',$data);
 		$this->load->view('articles/detail', $data);

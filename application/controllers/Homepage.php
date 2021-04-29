@@ -12,6 +12,9 @@ class Homepage extends CI_Controller
 	}
 	public function index()
 	{
+		$data['title_head'] = "Pondok Sambal Goldenland Batam";
+		$data['meta_data'] = getSEOData();
+
 		$data['banners'] = $this->banner_model->get_banners();
 		$data['galleries'] = $this->gallery_model->get_galleries();
 		$data['featured_menus'] = $this->menu_model->get_featured_menus();

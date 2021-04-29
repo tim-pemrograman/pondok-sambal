@@ -10,6 +10,9 @@ class Aboutpage extends CI_Controller
 	}
 	public function about()
 	{
+		$data['title_head'] = "Mengenai Pondok Sambal";
+		$data['meta_data'] = getSEOData();
+
 		$data['company'] = $this->company_model->get_company();
 
 		$this->load->helper('url');
@@ -26,6 +29,9 @@ class Aboutpage extends CI_Controller
 	// }
 	public function contact()
 	{
+		$data['title_head'] = "Hubungki Kami - Pondok Sambal";
+		$data['meta_data'] = getSEOData();
+
 		$this->load->helper('url');
 		$this->load->view('header');
 		$this->load->view('contact-page');
@@ -73,6 +79,8 @@ class Aboutpage extends CI_Controller
 
 	public function gallery3nc()
 	{
+		$data['title_head'] = "Galeri Pondok Sambal";
+		$data['meta_data'] = getSEOData();
 		$data['galleries'] = $this->gallery_model->get_galleries();
 
 		$this->load->helper('url');
