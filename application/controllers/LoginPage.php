@@ -8,8 +8,8 @@ class LoginPage extends CI_Controller
 		parent::__construct();
 
 		// Load url helper
-		$this->load->model('login_model');
-		$this->load->model('signup_model');
+		$this->load->model('Userlogin_model');
+		$this->load->model('Usersignup_model');
 		// $this->load->model('role_model');
 		// $this->load->model('user_model');
 		$this->load->library('form_validation');
@@ -37,19 +37,19 @@ class LoginPage extends CI_Controller
 		$password = $this->input->post('password');
 
 
-		$user = $this->login_model->GetEmail($email);
-		$password = $this->login_model->GetPass($password);
+		$user = $this->Userlogin_model->GetEmail($email);
+		$password = $this->Userlogin_model->GetPass($password);
 
 		// Cek User
 		if ($user && $password) {
 
 			$role = [
-				'employee_id' => $user['employee_id']
+				'user_id' => $user['user_id']
 			];
 			// Simpan Role ke session
 			$this->session->set_userdata($role);
 
-			redirect('Homepage');
+			redirect('ordertaker');
 		} else {
 			$this->session->set_flashdata('message', '<div class="alert alert-danger">Email Tidak Di Temukan !, Periksa Kembali</div>');
 			redirect('loginpage/login');
@@ -63,7 +63,7 @@ class LoginPage extends CI_Controller
 		$email = $this->input->post('email');
 
 
-		$user = $this->signup_model->GetEmail($email);
+		$user = $this->Usersignup_model->GetEmail($email);
 	
 			if ($user && $email) {
 				$this->session->set_flashdata('message', '<div>Email anda telah terpakai,Periksa Kembali</div>');
@@ -90,7 +90,7 @@ class LoginPage extends CI_Controller
 			'address' => $this->input->post('address')
 			
 		];
-		 $this->signup_model->InsertDtAcc($data_acc);
+		 $this->Usersignup_model->InsertDtAcc($data_acc);
 		 $this->session->set_flashdata('message', '<div class="alert alert-danger">Akun berhasil dibuat!, Silahkan login</div>');
 		 redirect('loginpage/login');
 	
@@ -98,10 +98,10 @@ class LoginPage extends CI_Controller
 
 	public function logout()
 	{
-		$this->session->unset_userdata('employee_id');
+		$this->session->unset_userdata('user_id');
 
 		$this->session->set_flashdata('message', '<div class="alert alert-success">Logout Berhasil</div>');
-		redirect('admin/auth');
+		redirect('homepage');
 	}
 
 }
