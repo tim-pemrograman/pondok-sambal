@@ -6,6 +6,7 @@ class article_model extends CI_Model
         $this->db->select('*');
         $this->db->from('tbl_article');
         $this->db->join('tbl_employee', 'tbl_employee.employee_id = tbl_article.employee_id');
+        $this->db->order_by('created_at', 'DESC');
         $query = $this->db->get();
         return $query->result();
     }
@@ -50,6 +51,7 @@ class article_model extends CI_Model
         $this->db->from('tbl_article');
         $this->db->join('tbl_employee', 'tbl_employee.employee_id = tbl_article.employee_id');
         $this->db->limit(3);
+        $this->db->order_by('created_at', 'DESC');
         $query = $this->db->get();
         return $query->result();
     }
