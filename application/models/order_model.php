@@ -45,6 +45,24 @@ class order_model extends CI_Model
         return $query->result();
     }
 
+    public function receipt_get_order_byid($id)
+    {
+        // $query = $this->db->get_where('tbl_order_item', array('order_id' => $id));
+        // return $query->result();
+
+        // //Join with tbl_menu
+        $this->db->select('*');
+        $this->db->from('tbl_order_item');
+        $this->db->join('tbl_product', 'tbl_order_item.product_id = tbl_product.id');
+        $this->db->join('tbl_order', 'tbl_order_item.order_id = tbl_order.order_id');
+        $this->db->join('tbl_user', 'tbl_order.cust_id = tbl_user.user_id');
+        $this->db->join('tbl_payment', 'tbl_order_item.order_id = tbl_payment.order_id');
+        $this->db->where('tbl_order_item.order_id', $id);
+        $query = $this->db->get();
+        return $query->row();
+    }
+
+
     public function get_orders_by_status($user_id)
     {
         
