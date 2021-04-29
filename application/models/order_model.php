@@ -24,21 +24,25 @@ class order_model extends CI_Model
         $this->db->select('*');
         $this->db->from('tbl_order');
         $this->db->join('tbl_user', 'tbl_order.cust_id = tbl_user.user_id');
+        $this->db->join('tbl_payment', 'tbl_order.order_id = tbl_payment.order_id');
         $query = $this->db->get();
         return $query->result();
     }
 
     public function admin_get_order_byid($id)
     {
-        $query = $this->db->get_where('tbl_order_item', array('order_id' => $id));
-        return $query->result();
+        // $query = $this->db->get_where('tbl_order_item', array('order_id' => $id));
+        // return $query->result();
 
         // //Join with tbl_menu
-        // $this->db->select('*');
-        // $this->db->from('tbl_order');
-        // $this->db->join('tbl_menu', 'tbl_order.id_menu = tbl_menu.menu_id');
-        // $this->db->where('tbl_order.order_id', $id);
-        // return $query->row();
+        $this->db->select('*');
+        $this->db->from('tbl_order_item');
+        $this->db->join('tbl_product', 'tbl_order_item.product_id = tbl_product.id');
+        $this->db->join('tbl_order', 'tbl_order_item.order_id = tbl_order.order_id');
+        $this->db->join('tbl_payment', 'tbl_order_item.order_id = tbl_payment.order_id');
+        $this->db->where('tbl_order_item.order_id', $id);
+        $query = $this->db->get();
+        return $query->result();
     }
 
     public function get_orders_by_status($user_id)
@@ -127,6 +131,13 @@ class order_model extends CI_Model
     public function doPayment() 
     {
 
+    }
+
+    public function update_proses($order_status, $id_order)
+    {
+        $this->db->set('order_status', $order_status);
+        $this->db->where('order_id', $id_order);
+        $this->db->update('tbl_order'); // gives UPDATE `mytable` SET `field` = 'field+1' WHERE `id` = 2
     }
 }
 ?>

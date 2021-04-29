@@ -19,6 +19,7 @@
                             <td>Payment Method</td>
                             <td>Order Date</td>
                             <td>Order Status</td>
+                            <td>Bukti Transaksi</td>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -54,6 +55,7 @@
                                 }; 
                             ?>
                          </td>
+                         <td><img src="<?= base_url($data_order->img_path); ?>" width="100" alt="img bukti"></td>
                          <td>
                              <a class="btn-circle btn-primary"
                                     href="<?= base_url('admin'); ?>/order/view/<?= $data_order->order_id; ?>"><i class="fas fa-eye "></i></a>
@@ -63,6 +65,16 @@
                          </td>
                     </tr>
                     <?php endforeach; ?>
+                        <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle my-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Filter
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="<?= base_url('admin'); ?>/order/update_proses/proses/<?= $data_order->order_id; ?>">Sedang Diproses</a>
+                                <a class="dropdown-item" href="<?= base_url('admin'); ?>/order/update_proses/jalan/<?= $data_order->order_id; ?>">Sedang di jalan</a>
+                                <a class="dropdown-item" href="<?= base_url('admin'); ?>/order/update_proses/selesai/<?= $data_order->order_id; ?>">Transaksi Selesai</a>
+                            </div>
+                        </div>
                     </tbody>
 
                 </table>

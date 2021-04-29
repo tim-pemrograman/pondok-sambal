@@ -4,6 +4,7 @@
     <h1 class="h3 mb-2 text-gray-800">Detail Order</h1>
     <br>
     <br>
+    <p><?php //var_dump($data_order); exit; ?></p>
     <?= $this->session->flashdata('message') ?>
     <div class="card shadow mb-4">
         <div class="card-body">
@@ -12,12 +13,11 @@
                     <thead>
                         <tr> 
                             <th>No</th>
-                            <!-- <td>Menu Name</td> -->
+                            <td>Menu Name</td>
                             <td>Item Qty</td>
                             <td>Price per Item</td>
                             <td>Sub Total</td>
                             <td>Note</td>
-                            <th>Action</th>
                         </tr>
                     </thead>
 
@@ -26,30 +26,73 @@
                     
                     <tr>
                          <td><?= $i; ?></td>
-                         <!-- <td><?= $data_order->Fname.' '.$data_order->Lname; ?></td> -->
+                         <td><?= $data_order->name ?></td>
                          <td><?= $data_order->item_qty; ?></td>
                          <td><?= $data_order->price_per_item; ?></td>
                          <td><?= $data_order->price_per_item * $data_order->item_qty; ?></td>
                          <td><?php if($data_order->notes == ''){ echo '-'; } else{ echo $data_order->notes; } ; ?></td>
-                         <td>
-                             <a class="btn-circle btn-primary"
-                                    href="<?= base_url('admin'); ?>/order/view/<?= $data_order->order_id; ?>"><i class="fas fa-eye "></i></a>
-                             <!-- <a class="btn-circle btn-primary"
-                                href="<?= base_url('admin'); ?>/user/edit/<?= $data_order->employee_id; ?>"><i class="fas fa-edit "></i></a> -->
-                         </td>
                     </tr>
                     <?php endforeach; ?>
+                            <p style="font-weight: bold">No Order : </p>
+                            <p style="text-decoration: underline;"><?= $data_order->receipt_no; ?></p>
+
+                            <p style="font-weight: bold">Bukti Pembayaran : </p>
+                            <img src="<?= base_url($data_order->img_path); ?>" width="100" style="margin-bottom: 20px" alt="img bukti">
+                            
+                            <div class="column">
+                                <p style="font-weight: bold">Status Order :</p>
+                                <p>
+                                    <?php 
+                                        switch($data_order->order_status){
+                                            case '0':
+                                                echo '0 - Belum Dibayar';
+                                                break;
+                                            case '1':
+                                                echo '1 - Menunggu Konfirmasi Admin';
+                                                break;
+                                            case '2':
+                                                echo '2 - Sedang Diproses';
+                                                break;
+                                            case '3':
+                                                echo '3 - Sedang di jalan';
+                                                break;
+                                            case '4':
+                                                echo '4 - Transaksi Selesai';
+                                                break;
+                                        }; 
+                                    ?>
+                                </p>
+                            </div>
+
+                            <div class="dropdown">
+                                <button class="btn btn-primary dropdown-toggle my-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Update Order Status
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="<?= base_url('admin'); ?>/order/update_proses/proses/<?= $data_order->order_id; ?>">Sedang Diproses</a>
+                                    <a class="dropdown-item" href="<?= base_url('admin'); ?>/order/update_proses/jalan/<?= $data_order->order_id; ?>">Sedang di jalan</a>
+                                    <a class="dropdown-item" href="<?= base_url('admin'); ?>/order/update_proses/selesai/<?= $data_order->order_id; ?>">Transaksi Selesai</a>
+                                </div>
+                            </div>
+                            
                     </tbody>
 
                 </table>
+                <?php if($data_order->order_status == 4){
+                   echo "<button type='button' class='btn btn-primary' >Print Receipt</button>";
+                }?>
             </div>
         </div>
     </div>
 
 </div>
 
-
 <script type="text/javascript">
+    
+    $(document).ready(function() {
+        $('#dataTable').DataTable();
+    });
+
     var url = "<?php echo base_url(); ?>";
 
     function deleteUser(id) {

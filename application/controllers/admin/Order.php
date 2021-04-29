@@ -36,7 +36,7 @@ class Order extends CI_Controller {
 		$employee_id = $this->session->userdata('employee_id');
 
         $data['data_core'] = $this->login_model->GetNama($employee_id);
-        $data['data_order'] = $this->order_model->get_order();
+        $data['data_order'] = $this->order_model->admin_get_order();
 
 		$data['titles'] = "Order - Pondok Sambal";
         $data['action'] = "edit";
@@ -53,7 +53,7 @@ class Order extends CI_Controller {
         $data['meta_data'] = getSEOData();
 
         $data['data_core'] = $this->validate();
-        $data['data_order'] = $this->order_model->get_order_byid($id_order);
+        $data['data_order'] = $this->order_model->admin_get_order_byid($id_order);
 
         // var_dump($data['data_order']); 
         // exit;
@@ -88,6 +88,26 @@ class Order extends CI_Controller {
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
         Data SEO berhasil diupdate! </div>');
         redirect('admin/seo');
+    }
+
+    public function update_proses($status_type, $id_order)
+    {
+        
+        $data['data_core'] = $this->validate();
+        
+        // var_dump($data);
+        // exit;
+        if($status_type == 'proses'){
+            $this->order_model->update_proses(2, $id_order);
+        }elseif($status_type == 'jalan'){
+            $this->order_model->update_proses(3, $id_order);
+        }elseif($status_type == 'selesai'){
+            $this->order_model->update_proses(4, $id_order);
+        }
+
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+        Data Order berhasil diupdate! </div>');
+        redirect('admin/order');
     }
 
 }
