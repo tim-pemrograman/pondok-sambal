@@ -37,7 +37,7 @@
     <!-- Nav Item - Charts -->
     <li class="<?php if($titles == 'Gallery - Pondok Sambal'){echo 'nav-item active'; } else{echo 'nav-item';}; ?>">
         <a class="nav-link" href="<?= base_url('admin/gallery') ?>">
-            <i class="fas fa-building"></i>
+            <i class="fas fa-images"></i>
             <span>Gallery</span></a>
     </li>
 

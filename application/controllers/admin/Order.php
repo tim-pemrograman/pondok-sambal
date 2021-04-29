@@ -47,6 +47,25 @@ class Order extends CI_Controller {
 		$this->load->view('admin/order/index',$data);
 		$this->load->view('admin/template/footer');
 	}
+    
+    public function view($id_order)
+	{
+        $data['meta_data'] = getSEOData();
+
+        $data['data_core'] = $this->validate();
+        $data['data_order'] = $this->order_model->get_order_byid($id_order);
+
+        // var_dump($data['data_order']); 
+        // exit;
+
+		$data['titles'] = "Order - Pondok Sambal";
+
+		$this->load->view('admin/template/header',$data);
+		$this->load->view('admin/template/sidebar',$data);
+		$this->load->view('admin/template/topbar',$data);
+		$this->load->view('admin/order/detail',$data);
+		$this->load->view('admin/template/footer');
+	}
 
     public function edit()
     {
