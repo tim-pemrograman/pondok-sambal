@@ -4,7 +4,12 @@
 		<h1 class="gdlr-page-title">Order History</h1>
 	</div>
 </div>
-
+<?php 
+if(!$all_orders < 0):
+    echo '<h1 class:text-center;>You don\'t have any orders yet.</h1>';
+    // var_dump('masuk content tpi gk ad'); exit;
+else:
+?>
 <div class="text-center mt-5">
 <h2>Ongoing order</h2>
 </div>
@@ -61,8 +66,8 @@
 		</p>
 		</div>
 	
-	</div>
-	<?php }elseif($ongoing_order->order_status == 4) { ?>
+	</div>}
+
 
 		<table width="100%" cellpadding="0" cellspacing="0">
 	<thead>
@@ -75,13 +80,14 @@
 		</tr>
 	</thead>
 	<tbody>
+	<?php var_dump('yes'); exit; ?>
 		<?php $i = 1; ?>
 
 		<?php foreach($ongoing_orders as $orders): ?>
 		<?php echo form_hidden('rowid[]', $orders['rowid']); ?>
 		<tr <?php if($i&1){ echo 'class="alt"'; }?>>
 		<td>
-			
+		<?= $orders->name; ?>
 		</td>
 			<td>
 				<?php echo form_input(array('name' => 'qty[]', 'value' => $items['qty'], 'maxlength' => '3', 'size' => '5')); ?>
@@ -110,3 +116,4 @@
 <div class="clear">
 			<p></p>
 		</div>
+<?php endif; ?>

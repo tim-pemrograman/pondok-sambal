@@ -41,12 +41,12 @@ class Ordertaker extends CI_Controller
 
         $data['data_core'] = $this->userlogin_model->GetNama($user_id);
         $data['ongoing_orders'] = $this->order_model->get_orders_by_status($user_id);
-		
+		$data['all_orders'] = $this->order_model->get_orders($user_id);
 
         //Load View
 		$this->load->helper('url');
 		$this->load->view('order-taker/header-order', $data);
-		$this->load->view('order-taker/confirmation');
+		$this->load->view('order-taker/confirmation', $data);
 		$this->load->view('order-taker/footer-order');
 	}
 
@@ -125,7 +125,7 @@ class Ordertaker extends CI_Controller
         $data['data_core'] = $this->userlogin_model->GetNama($user_id);
 		
         $this->load->view('order-taker/header-order', $data);
-        $this->load->view('order-taker/review');
+        $this->load->view('contact-page');
         $this->load->view('order-taker/footer-order');
 	}
 

@@ -7,10 +7,12 @@ class order_model extends CI_Model
     // 2 -> admin accepted, order on process
     // 3 -> on delivery
     // 4 -> delivered & paid
-    public function get_orders() 
+    public function get_orders($user_id) 
     {
+        $array = array('order_status !=' => 4, 'cust_id' => $user_id);
+        $this->db->where($array);
         $query = $this->db->get('tbl_order');
-        return $query->result();
+        return $query->row();
     }
 
     public function get_order_by_id($id) 
