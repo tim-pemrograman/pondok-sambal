@@ -27,9 +27,10 @@
                                                 border-radius: 5px; 
                                                 float:left;
                                                 margin-right: 30px;
+                                                margin-left: 15px;
                                                 " src="<?= base_url($article->img_path); ?>" alt="<?= $article->title; ?>">
                                     </div>
-                                    <p style="white-space: pre-line; font-size: 18px; margin: 30px 0;"><?= $article->content; ?></p>
+                                    <p style="white-space: pre-line; margin: 30px 0;"><?= $article->content; ?></p>
 								</div>
 								<div class="clear"></div>
 							</div>

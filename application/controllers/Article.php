@@ -21,9 +21,9 @@ class Article extends CI_Controller
 	public function detail($id) {
 		$data['article'] = $this->article_model->get_article_by_id($id);
 		$this->article_model->view_article($id);
-		
+		$data['title_head'] = $data['article']->title;
 		$this->load->helper('url');
-		$this->load->view('header');
+		$this->load->view('header',$data);
 		$this->load->view('articles/detail', $data);
 		$this->load->view('footer');
 	}
