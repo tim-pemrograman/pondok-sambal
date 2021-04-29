@@ -139,7 +139,7 @@ class Ordertaker extends CI_Controller
 		$this->payment_model->add_payment($data);
 		$this->cart->destroy();
 		// $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Bukti Pembayaran berhasil ditambah!</div>');
-		redirect('ordertaker/confirmation');
+		redirect('ordertaker/history');
     }
 
 	private function upload_image()
