@@ -35,9 +35,12 @@ class order_model extends CI_Model
                     'price_per_item' => $item['price'],
                     'item_qty' => $item['qty'],
                     'sub_total' => $item['price'] * $item['qty'],
-                    'order_id' => $order_id
+                    'product_id' => (int)$item['id'],
+                    'order_id' => $order_id,
+                    
                 );
                 $this->db->insert('tbl_order_item', $data_order_item);
+                // var_dump($data_order_item);exit;
             endforeach;
         }
 
@@ -50,16 +53,18 @@ class order_model extends CI_Model
         $user_id = $this->session->userdata('user_id');
         $total_item = 0;
         $total_price = 0;
-
         // now date
         $this->load->helper('date');
         date_default_timezone_set('Asia/Jakarta');
         $now = date('Y-m-d H:i:s');
-
+        
+        // generate receipt number
+        $receipt_no = date('Y/m/d')."/ORDER/UID/".$user_id.rand(0,100000);
+        
         // count total price and total item
         foreach (($this->cart->contents()) as $item):
             
-                $total_price += $item['price'];
+                $total_price += $item['price']*$item['qty'];
                 $total_item += $item['qty'];
                 
         endforeach;
@@ -67,13 +72,15 @@ class order_model extends CI_Model
         // create data order array
         $data_order = array(
             'cust_id' => (int)$user_id,
+            'receipt_no' => $receipt_no,
             'total_qty' => (int)$total_item,
             'total_price' => (int)$total_price,
             'order_date' => $now,
             'payment_method' => $method,
             'order_status' => $status
         );
-
+        
+        // var_dump($data_order);exit;
         // insert into tbl_order and return id
         $this->db->insert('tbl_order', $data_order);
         $returned_order_id = $this->db->insert_id();
