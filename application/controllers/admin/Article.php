@@ -52,7 +52,7 @@ class Article extends CI_Controller {
         $data['data_core'] = $this->validate();
 
 		$data['titles'] = "Article - Pondok Sambal";
-        $data['article'] = $this->article_model->view_article($id);
+        $data['article'] = $this->article_model->get_article_by_id($id);
 
 		$this->load->view('admin/template/header',$data);
 		$this->load->view('admin/template/sidebar',$data);
