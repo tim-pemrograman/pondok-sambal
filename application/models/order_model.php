@@ -74,7 +74,7 @@ class order_model extends CI_Model
         // count total price and total item
         foreach (($this->cart->contents()) as $item):
             
-                $total_price += $item['price'];
+                $total_price += $item['price']*$item['qty'];
                 $total_item += $item['qty'];
                 
         endforeach;
