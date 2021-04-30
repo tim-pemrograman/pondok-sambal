@@ -37,7 +37,7 @@ else:
 
 			<td>Rp <?php echo $this->cart->format_number($items['price']); ?></td>
 			<td>Rp <?php echo $this->cart->format_number($items['subtotal']); ?></td>
-			<td>Rp <?php echo $this->cart->format_number($items['subtotal']); ?></td>
+			<td>Rp <?php echo$this->cart->format_number($items['subtotal']*10/100); ?></td>
 		</tr>
 
 		<?php $i++; ?>
@@ -47,7 +47,7 @@ else:
 			<td</td> <td>
 				</td>
 				<td><strong>Total</strong></td>
-				<td>Rp <?= $this->cart->format_number($this->cart->total()); ?></td>
+				<td>Rp <?php echo $this->cart->format_number($this->cart->total() + ($items['subtotal']*10/100))  ; ?></td>
 		</tr>
 	</tbody>
 </table>
