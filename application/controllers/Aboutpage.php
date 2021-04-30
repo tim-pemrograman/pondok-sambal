@@ -7,6 +7,7 @@ class Aboutpage extends CI_Controller
 		// Load Model
 		$this->load->model('company_model');
 		$this->load->model('message_model');
+		$this->load->model('gallery_model');
 	}
 	public function about()
 	{
