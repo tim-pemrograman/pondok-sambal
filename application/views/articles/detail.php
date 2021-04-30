@@ -28,7 +28,9 @@
                                                 float:left;
                                                 margin-right: 30px;
                                                 margin-left: 15px;
-                                                " src="<?= base_url($article->img_path); ?>" alt="<?= $article->title; ?>">
+                                                " 
+												onerror="this.src='<?= base_url('assets/images/default.jpg'); ?>'" 
+												src="<?= base_url($article->img_path); ?>" alt="<?= $article->title; ?>">
                                     </div>
                                     <p style="white-space: pre-line; margin: 30px 0;"><?= $article->content; ?></p>
 								</div>

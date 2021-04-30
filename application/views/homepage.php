@@ -15,7 +15,7 @@
 								<?php foreach ($banners as $banner) : ?>
 								<div class="ms-slide" data-delay="3" data-fill-mode="fill">
 									<div class="mask" style="background-color: black;">
-										<img src="<?= base_url($banner->img_path) ?>" alt="<?= $banner->img_alt; ?>"
+										<img onerror="this.src='<?= base_url('assets/images/food.jpg'); ?>'"  src="<?= base_url($banner->img_path) ?>" alt="<?= $banner->img_alt; ?>"
 											title="<?= $banner->img_alt; ?>"
 											data-src="<?= base_url($banner->img_path) ?>" style="opacity: 0.6; " />
 									</div>
@@ -420,7 +420,7 @@
 															<div class="gdlr-blog-thumbnail">
 																<a
 																	href="<?= base_url('article/detail').$article->article_id?>">
-																	<img src="<?= base_url($article->img_path)?>" alt=""
+																	<img onerror="this.src='<?= base_url('assets/images/default.jpg'); ?>'"  src="<?= base_url($article->img_path)?>" alt=""
 																		style="height: 200px;" /></a>
 																<div class="gdlr-sticky-banner"><i
 																		class="fa fa-eye"></i><?= $article->views; ?>
@@ -493,7 +493,7 @@
 								<div class="gallery-column <?= ($i == 1) ? 'two-fifth' : 'one-fifth' ?> columns">
 									<div class="gallery-item">
 										<a href="<?= base_url($gallery->img_path) ?>" data-fancybox-group="gdlr-gal-1"
-											data-rel="fancybox"><img src="<?= base_url($gallery->img_path) ?>"
+											data-rel="fancybox"><img onerror="this.src='<?= base_url('assets/images/default.jpg'); ?>'"  src="<?= base_url($gallery->img_path) ?>"
 												alt="<?= $gallery->img_alt; ?>" width="400"
 												height="<?= ($i == 1) ? '500' : '400' ?>" /></a>
 									</div>

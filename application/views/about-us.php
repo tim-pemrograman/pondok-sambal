@@ -21,7 +21,7 @@
 									<div class="flexbox-container" style="display:flex;">
 										<!-- Image Div -->
 										<div class="column" style="flex: 1;">
-											<img class="float-lg-left" 
+											<img onerror="this.src='<?= base_url('assets/images/default.jpg'); ?>'"  class="float-lg-left" 
 												style="
 													width: calc(100% - 30px);
 													max-width:500px;

@@ -30,7 +30,7 @@
 																<div class="gdlr-standard-style">
 																	<div class="gdlr-blog-thumbnail">
 																		<a href="<?= base_url('article/detail').$article->article_id?>"> <img
-																				src="<?= base_url($article->img_path)?>"
+																		onerror="this.src='<?= base_url('assets/images/default.jpg'); ?>'" src="<?= base_url($article->img_path)?>"
 																				alt="" style="height: 200px;" /></a>
 																		<div class="gdlr-sticky-banner"><i
 																				class="fa fa-eye"></i><?= $article->views; ?></div>

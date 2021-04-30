@@ -20,7 +20,7 @@
 						?>
 							<div class="gallery-column four columns">
 								<div class="gallery-item">
-									<a href="<?= base_url($gallery->img_path) ?>" data-fancybox-group="gdlr-gal-1" data-rel="fancybox"><img src="<?= base_url($gallery->img_path) ?>" alt="" width="700" height="400" /></a>
+									<a href="<?= base_url($gallery->img_path) ?>" data-fancybox-group="gdlr-gal-1" data-rel="fancybox"><img onerror="this.src='<?= base_url('assets/images/default.jpg'); ?>'" src="<?= base_url($gallery->img_path) ?>" alt="" width="700" height="400" /></a>
 								</div>
 							</div>
 						<?php endforeach; ?>

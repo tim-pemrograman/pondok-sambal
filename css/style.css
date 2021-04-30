@@ -231,7 +231,7 @@ img.gdlr-full-boxed-background{ min-height: 100%; min-width: 1024px;
 .gdlr-navigation-gimmick { position: absolute; height: 2px; top: 54px; }
 
 .gdlr-page-title-wrapper { padding: 205px 0px 60px; position: relative; z-index: 89; text-align: center; line-height: 1;
-	background-image: url('../images/page-title-background.jpg'); background-repeat: repeat; background-position: center; }
+	background-image: url('../assets/images/page-title-background.jpg'); background-repeat: repeat; background-position: center; }
 .gdlr-page-title-wrapper .gdlr-page-title-overlay{ position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; 
 	background: #000; opacity: 0.2; filter: alpha(opacity=20); }
 .gdlr-page-title-wrapper .gdlr-page-title-container{ position: relative; }
@@ -855,8 +855,8 @@ body .ls-v5 .ls-nav-next { right: 20px; }
 /* -- Master slider style modification --*/
 body .ms-skin-default .ms-nav-prev,
 body .ms-skin-default .ms-nav-next{ width: 27px; height: 46px; margin-top: -13px; }
-body .ms-skin-default .ms-nav-prev{ background: url('../images/master-slider-left.png'); }
-body .ms-skin-default .ms-nav-next{ background: url('../images/master-slider-right.png'); }
+body .ms-skin-default .ms-nav-prev{ background: url('../assets/images/master-slider-left.png'); }
+body .ms-skin-default .ms-nav-next{ background: url('../assets/images/master-slider-right.png'); }
 body .ms-skin-default .ms-bullet { background-image: none; ;
 	border-width: 2px; border-style: solid; border-color: #ffffff;
 	-moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%; 
