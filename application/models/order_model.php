@@ -25,6 +25,7 @@ class order_model extends CI_Model
         $this->db->from('tbl_order');
         $this->db->join('tbl_user', 'tbl_order.cust_id = tbl_user.user_id');
         $this->db->join('tbl_payment', 'tbl_order.order_id = tbl_payment.order_id');
+        $this->db->where('tbl_order.dlt', 0);
         $query = $this->db->get();
         return $query->result();
     }
@@ -36,6 +37,7 @@ class order_model extends CI_Model
         $this->db->join('tbl_user', 'tbl_order.cust_id = tbl_user.user_id');
         $this->db->join('tbl_payment', 'tbl_order.order_id = tbl_payment.order_id');
         $this->db->where('order_status', $filter);
+        $this->db->where('tbl_order.dlt', 0);
         $query = $this->db->get();
         return $query->result();
     }
@@ -165,6 +167,13 @@ class order_model extends CI_Model
     public function update_proses($order_status, $id_order)
     {
         $this->db->set('order_status', $order_status);
+        $this->db->where('order_id', $id_order);
+        $this->db->update('tbl_order'); // gives UPDATE `mytable` SET `field` = 'field+1' WHERE `id` = 2
+    }
+
+    public function delete_order($id_order)
+    {
+        $this->db->set('dlt', 1);
         $this->db->where('order_id', $id_order);
         $this->db->update('tbl_order'); // gives UPDATE `mytable` SET `field` = 'field+1' WHERE `id` = 2
     }

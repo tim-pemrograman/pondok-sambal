@@ -138,6 +138,20 @@ class Order extends CI_Controller {
         redirect('admin/order');
     }
 
+    public function delete($id_order)
+    {
+        
+        $data['data_core'] = $this->validate();
+        
+        // var_dump($data);
+        // exit;
+        $this->order_model->delete_order($id_order);
+
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+        Data Order berhasil dihapus! </div>');
+        redirect('admin/order');
+    }
+
 }
 
 ?>

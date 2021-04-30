@@ -63,7 +63,7 @@
                                     href="<?= base_url('admin'); ?>/order/view/<?= $data_order->order_id; ?>"><i class="fas fa-eye "></i></a>
                              <!-- <a class="btn-circle btn-primary"
                                 href="<?= base_url('admin'); ?>/user/edit/<?= $data_order->employee_id; ?>"><i class="fas fa-edit "></i></a> -->
-                             <a class="btn-circle btn-danger" onclick="return deleteUser(<?= $data_order->order_id; ?>)" href="javascript:void(0)"><i class="fas fa-trash "></i></a>
+                             <a class="btn-circle btn-danger" onclick="return deleteOrder(<?= $data_order->order_id; ?>)" href="javascript:void(0)"><i class="fas fa-trash "></i></a>
                          </td>
                     </tr>
                     <?php endforeach; ?>
@@ -120,10 +120,10 @@
 <script type="text/javascript">
     var url = "<?php echo base_url(); ?>";
 
-    function deleteUser(id) {
-        var x = confirm("Apakah Anda ingin menghapus User ini?");
+    function deleteOrder(id) {
+        var x = confirm("Apakah Anda ingin menghapus Order ini?");
         if (x == true)
-            window.location = url + "admin/user/delete/" + id;
+            window.location = url + "admin/order/delete/" + id;
         else
             return false;
     }
