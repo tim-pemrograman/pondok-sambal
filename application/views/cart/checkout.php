@@ -20,6 +20,7 @@ else:
 			<th>Item Description</th>
 			<th>Item Price</th>
 			<th>Sub-Total</th>
+			<th>Tax (10% ppn)</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -35,6 +36,7 @@ else:
 			<td><?php echo $items['name']; ?></td>
 
 			<td>Rp <?php echo $this->cart->format_number($items['price']); ?></td>
+			<td>Rp <?php echo $this->cart->format_number($items['subtotal']); ?></td>
 			<td>Rp <?php echo $this->cart->format_number($items['subtotal']); ?></td>
 		</tr>
 
