@@ -9,9 +9,7 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="initial-scale=1.0" />
-	<meta name="description" content="<?= $meta_data->meta_description; ?>">
-	<meta name="keywords" content="<?= $meta_data->meta_keyword; ?>">
-	<meta name=”robots” content="index, follow">
+	
 
 	<title><?= $title_head; ?></title>
 	<link rel="icon" href="<?= base_url('assets/images/logo.png')?>" type="image/x-icon" sizes="157x48">
@@ -46,7 +44,21 @@
 		type='text/css' media='all' />
 	<link rel='stylesheet' href="<?= base_url('css/master-custom.css') ?>" type='text/css' media='all' />
 
-
+	<meta name="title" content="<?= $head_title; ?>">
+	<meta name="description" content="<?= $meta_data->meta_description; ?>">
+	<meta name="keywords" content="<?= $meta_data->meta_keyword; ?>">
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Rumah Makan Pondok Sambal Goldenland Batam" />
+	<meta property="og:description" content="<?= $meta_data->meta_description; ?>" />
+	<meta property="og:image" content="http://localhost/pondok-sambal/assets/images/logops.png" />
+	<meta property="og:url" content="http://localhost/pondok-sambal/" />
+	<meta property="og:site_name" content="Rumah Makan Pondok Sambal Goldenland Batam" />
+	<meta name="twitter:title" content="Rumah Makan Pondok Sambal Goldenland Batam">
+	<meta name="twitter:description" content="<?= $meta_data->meta_description; ?>">
+	<meta name="twitter:image" content="http://localhost/pondok-sambal/assets/images/logops.png">
+	<meta name="twitter:site" content="@PONDOKSAMBAL">
+	<meta name="twitter:creator" content="@PONDOKSAMBAL">
+	<meta name=”robots” content="index, follow">
 
 </head>
 
