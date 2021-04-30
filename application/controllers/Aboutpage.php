@@ -16,7 +16,7 @@ class Aboutpage extends CI_Controller
 		$data['company'] = $this->company_model->get_company();
 
 		$this->load->helper('url');
-		$this->load->view('header');
+		$this->load->view('header',$data);
 		$this->load->view('about-us',$data);
 		$this->load->view('footer');
 	}
@@ -33,7 +33,7 @@ class Aboutpage extends CI_Controller
 		$data['meta_data'] = getSEOData();
 
 		$this->load->helper('url');
-		$this->load->view('header');
+		$this->load->view('header',$data);
 		$this->load->view('contact-page');
 		$this->load->view('footer');
 	}
@@ -84,7 +84,7 @@ class Aboutpage extends CI_Controller
 		$data['galleries'] = $this->gallery_model->get_galleries();
 
 		$this->load->helper('url');
-		$this->load->view('header');
+		$this->load->view('header',$data);
 		$this->load->view('gallery-3-columns-without-caption', $data);
 		$this->load->view('footer');
 	}

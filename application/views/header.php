@@ -44,7 +44,7 @@
 		type='text/css' media='all' />
 	<link rel='stylesheet' href="<?= base_url('css/master-custom.css') ?>" type='text/css' media='all' />
 
-	<meta name="title" content="<?= $head_title; ?>">
+	<meta name="title" content="<?= $title_head; ?>">
 	<meta name="description" content="<?= $meta_data->meta_description; ?>">
 	<meta name="keywords" content="<?= $meta_data->meta_keyword; ?>">
 	<meta property="og:type" content="website" />

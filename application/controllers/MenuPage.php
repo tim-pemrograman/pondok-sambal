@@ -20,7 +20,7 @@ class MenuPage extends CI_Controller
 		$data['menus'] = $this->menu_model->get_menus();
 
 		$this->load->helper('url');
-		$this->load->view('header');
+		$this->load->view('header',$data);
 		$this->load->view('menu-mixed', $data);
 		$this->load->view('footer');
 	}

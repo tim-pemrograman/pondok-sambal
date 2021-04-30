@@ -27,7 +27,7 @@ class LoginPage extends CI_Controller
 			$data['titles'] = "Login - Pondok Sambal";
 			
 
-		    $this->load->view('login');
+		    $this->load->view('login',$data);
 	
 		} else {
 			$this->_login();

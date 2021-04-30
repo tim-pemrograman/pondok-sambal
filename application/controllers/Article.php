@@ -13,8 +13,10 @@ class Article extends CI_Controller
 		$data['title_head'] = "Artikel Pondok Sambal";
 		$data['meta_data'] = getSEOData();
 
+		$data['articles'] = $this->article_model->get_articles();
+
 		$this->load->helper('url');
-		$this->load->view('header');
+		$this->load->view('header', $data);
 		$this->load->view('articles/list', $data);
 		$this->load->view('footer');
     }

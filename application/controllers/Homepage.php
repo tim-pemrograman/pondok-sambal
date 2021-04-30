@@ -21,7 +21,7 @@ class Homepage extends CI_Controller
 		$data['recent_articles'] = $this->article_model->get_recent();
 
 		$this->load->helper('url');
-		$this->load->view('header');
+		$this->load->view('header',$data);
 		$this->load->view('homepage', $data);
 		$this->load->view('footer');
 	}
