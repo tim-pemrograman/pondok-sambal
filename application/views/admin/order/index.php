@@ -3,8 +3,7 @@
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">Manage Order</h1>
     <!-- <a href="<?= base_url('admin'); ?>/user/add" class="btn btn-primary">Add New Users</a> -->
-    <br>
-    <br>
+    <p>Filter : <?= $status; ?></p>
     <?= $this->session->flashdata('message') ?>
     <div class="card shadow mb-4">
         <div class="card-body">
@@ -13,6 +12,7 @@
                     <thead>
                         <tr> 
                             <th>No</th>
+                            <th>Receipt No</th>
                             <td>Customer Name</td>
                             <td>Total Qty</td>
                             <td>Total Price</td>
@@ -29,11 +29,13 @@
                     
                     <tr>
                          <td><?= $i; ?></td>
+                         <td><?= $data_order->receipt_no; ?></td>
                          <td><?= $data_order->Fname.' '.$data_order->Lname; ?></td>
                          <td><?= $data_order->total_qty; ?></td>
-                         <td><?= $data_order->total_price; ?></td>
+                         <td><?= "Rp. ".number_format($data_order->total_price); ?></td>
                          <td><?php if($data_order->payment_method == 1){echo 'Cash on Delivery';}else{echo "Bank Transfer";}; ?></td>
                          <td><?= date_format(date_create($data_order->order_date),'d M Y || H:i:s')?></td>
+                         <!-- <td style="background-color: #008000; color: white;"> -->
                          <td>
                             <?php 
                                 switch($data_order->order_status){
@@ -65,7 +67,7 @@
                          </td>
                     </tr>
                     <?php endforeach; ?>
-                        <div class="dropdown">
+                        <!-- <div class="dropdown">
                             <button class="btn btn-primary dropdown-toggle my-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Filter
                             </button>
@@ -74,7 +76,37 @@
                                 <a class="dropdown-item" href="<?= base_url('admin'); ?>/order/update_proses/jalan/<?= $data_order->order_id; ?>">Sedang di jalan</a>
                                 <a class="dropdown-item" href="<?= base_url('admin'); ?>/order/update_proses/selesai/<?= $data_order->order_id; ?>">Transaksi Selesai</a>
                             </div>
-                        </div>
+                        </div> -->
+                        <a href="<?= base_url('admin/order/') ?>" class="btn btn-danger mb-3 btn-icon-split">
+                            <span class="icon text-white-50">
+                                <i class="fas fa-window-close"></i>
+                            </span>
+                            <span class="text">Clear Filter</span>
+                        </a>
+
+                        <a href="<?= base_url('admin/order/filter/2') ?>" class="btn btn-primary mb-3 ml-3 btn-icon-split">
+                            <span class="icon text-white-50">
+                                <i class="fas fa-clock"></i>
+                            </span>
+                            <span class="text">Sedang diproses</span>
+                        </a>
+
+                        <a href="<?= base_url('admin/order/filter/3') ?>" class="btn btn-warning mb-3 ml-3 btn-icon-split">
+                            <span class="icon text-white-50">
+                                <i class="fas fa-car-side"></i>
+                            </span>
+                            <span class="text">Sedang dijalan</span>
+                        </a>
+
+                        <a href="<?= base_url('admin/order/filter/4') ?>" class="btn btn-success mb-3 ml-3 btn-icon-split">
+                            <span class="icon text-white-50">
+                                <i class="fas fa-check-square"></i>
+                            </span>
+                            <span class="text">Transaksi Selesai</span>
+                        </a>
+
+                       
+
                     </tbody>
 
                 </table>

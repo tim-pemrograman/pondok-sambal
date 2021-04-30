@@ -40,6 +40,34 @@ class Order extends CI_Controller {
 
 		$data['titles'] = "Order - Pondok Sambal";
         $data['action'] = "edit";
+        $data['status'] = "-All-";
+
+		$this->load->view('admin/template/header',$data);
+		$this->load->view('admin/template/sidebar',$data);
+		$this->load->view('admin/template/topbar',$data);
+		$this->load->view('admin/order/index',$data);
+		$this->load->view('admin/template/footer');
+	}
+
+    // Halaman dashboard
+	public function filter($filter)
+	{
+        $data['meta_data'] = getSEOData();
+		$employee_id = $this->session->userdata('employee_id');
+
+        $data['data_core'] = $this->login_model->GetNama($employee_id);
+        $data['data_order'] = $this->order_model->filter_get_order($filter);
+
+		$data['titles'] = "Order - Pondok Sambal";
+        $data['action'] = "edit";
+
+        if($filter == 2){
+            $data['status'] = "Sedang diproses";
+        }elseif($filter == 3){
+            $data['status'] = "Sedang dijalan";
+        }elseif($filter == 4){
+            $data['status'] = "Transaksi Selesai";
+        }
 
 		$this->load->view('admin/template/header',$data);
 		$this->load->view('admin/template/sidebar',$data);

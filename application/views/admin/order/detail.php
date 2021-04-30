@@ -34,50 +34,64 @@
                          <?php $total += $data_order->price_per_item * $data_order->item_qty ?>
                     </tr>
                     <?php endforeach; ?>
-                            <p style="font-weight: bold">No Order : </p>
-                            <p style="text-decoration: underline;"><?= $data_order->receipt_no; ?></p>
-                            
-                            <p style="font-weight: bold">Order Date: </p>
-                            <p style="text-decoration: underline;"><?= date_format(date_create($data_order->order_date),'D, d M Y || h:i:s a'); ?></p>
 
-                            <p style="font-weight: bold">Bukti Pembayaran : </p>
-                            <img src="<?= base_url($data_order->img_path); ?>" width="100" style="margin-bottom: 20px" alt="img bukti">
-                            
-                            <div class="column">
-                                <p style="font-weight: bold">Status Order :</p>
-                                <p>
-                                    <?php 
-                                        switch($data_order->order_status){
-                                            case '0':
-                                                echo '0 - Belum Dibayar';
-                                                break;
-                                            case '1':
-                                                echo '1 - Menunggu Konfirmasi Admin';
-                                                break;
-                                            case '2':
-                                                echo '2 - Sedang Diproses';
-                                                break;
-                                            case '3':
-                                                echo '3 - Sedang di jalan';
-                                                break;
-                                            case '4':
-                                                echo '4 - Transaksi Selesai';
-                                                break;
-                                        }; 
-                                    ?>
-                                </p>
-                            </div>
-                            
-                            <div class="dropdown">
-                                <button <?php if($data_order->order_status == 4){ echo "hidden"; }; ?> class="btn btn-primary dropdown-toggle my-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Update Order Status
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href=".base_url('admin/order/update_proses/proses/');.$data_order->order_id;.">Sedang Diproses</a>
-                                    <a class="dropdown-item" href=".base_url('admin/order/update_proses/jalan/');.$data_order->order_id;.">Sedang di jalan</a>
-                                    <a class="dropdown-item" href=".base_url('admin/order/update_proses/selesai/');.$data_order->order_id;.">Transaksi Selesai</a>
+                        <div class="flexbox-container" style="display:flex;">
+
+                            <!-- Div Kiri -->
+                            <div class="column" style="flex: 1;">
+                                <p style="font-weight: bold">No Order : </p>
+                                <p style="text-decoration: underline;"><?= $data_order->receipt_no; ?></p>
+                                
+                                <p style="font-weight: bold">Order Date: </p>
+                                <p style="text-decoration: underline;"><?= date_format(date_create($data_order->order_date),'D, d M Y || h:i:s a'); ?></p>
+
+                                <!-- Dropdown Button for udating Status -->
+                                <div class="dropdown">
+                                    <button <?php if($data_order->order_status == 4){ echo "disabled"; }; ?> class="btn btn-primary dropdown-toggle my-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Update Order Status
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="<?php echo base_url('admin/order/update_proses/proses/').$data_order->order_id; ?>">Sedang Diproses</a>
+                                        <a class="dropdown-item" href="<?php echo base_url('admin/order/update_proses/jalan/').$data_order->order_id; ?>">Sedang di jalan</a>
+                                        <a class="dropdown-item" href="<?php echo base_url('admin/order/update_proses/selesai/').$data_order->order_id; ?>">Transaksi Selesai</a>
+                                    </div>
                                 </div>
                             </div>
+                            
+                            <!-- Div Kanan -->
+                            <div class="column" style="flex: 1;">
+                                <!-- Status Order Header -->
+                                <div class="column">
+                                    <p style="font-weight: bold">Status Order :</p>
+                                    <p>
+                                        <?php 
+                                            switch($data_order->order_status){
+                                                case '0':
+                                                    echo '0 - Belum Dibayar';
+                                                    break;
+                                                case '1':
+                                                    echo '1 - Menunggu Konfirmasi Admin';
+                                                    break;
+                                                case '2':
+                                                    echo '2 - Sedang Diproses';
+                                                    break;
+                                                case '3':
+                                                    echo '3 - Sedang di jalan';
+                                                    break;
+                                                case '4':
+                                                    echo '4 - Transaksi Selesai';
+                                                    break;
+                                            }; 
+                                        ?>
+                                    </p>
+                                </div>
+
+                                <!-- Img Bukti -->
+                                <p style="font-weight: bold">Bukti Pembayaran : </p>
+                                <a href="<?= base_url($data_order->img_path); ?>" target="_blank"><img src="<?= base_url($data_order->img_path); ?>" width="100" style="margin-bottom: 20px" alt="img bukti"></a>
+                            </div>
+                            
+                        </div>
                             
                     </tbody>
                     <?php $tax = $total*10/100; ?>
@@ -110,11 +124,6 @@
 </div>
 
 <script type="text/javascript">
-    
-    $(document).ready(function() {
-        $('#dataTable').DataTable();
-    });
-
     var url = "<?php echo base_url(); ?>";
 
     function deleteUser(id) {
@@ -124,4 +133,14 @@
         else
             return false;
     }
+
+    // function updateProses(id) {
+    //     var x = confirm("Update Status Menjadi Sedang diproses ?");
+    //     if (x == true)
+    //         window.location = url + "admin/order/update_proses/proses/" + id;
+    //     else
+    //         return false;
+    // }
+
+    
 </script>
