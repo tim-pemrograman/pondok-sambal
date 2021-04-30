@@ -39,9 +39,13 @@ class Ordertaker extends CI_Controller
 	public function history(){
 		$user_id = $this->session->userdata('user_id');
 
+        // var_dump($data['data_order']); exit;
+
         $data['data_core'] = $this->userlogin_model->GetNama($user_id);
         $data['ongoing_orders'] = $this->order_model->get_orders_by_status($user_id);
 		$data['all_orders'] = $this->order_model->get_orders($user_id);
+		$data['data_order'] = $this->order_model->history_order_byid($order_id);
+
 
         //Load View
 		$this->load->helper('url');

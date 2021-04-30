@@ -7,7 +7,7 @@ class order_model extends CI_Model
     // 2 -> admin accepted, order on process
     // 3 -> on delivery
     // 4 -> delivered & paid
-    public function get_orders() 
+    public function get_orders($user_id) 
     {
         $query = $this->db->get('tbl_order');
         return $query->result();
@@ -25,7 +25,7 @@ class order_model extends CI_Model
         return $query->result();
     }
 
-    public function history_order_byid($id)
+    public function history_order_byid($order_id)
     {
         // $query = $this->db->get_where('tbl_order_item', array('order_id' => $id));
         // return $query->result();
@@ -36,7 +36,7 @@ class order_model extends CI_Model
         $this->db->join('tbl_product', 'tbl_order_item.product_id = tbl_product.id');
         $this->db->join('tbl_order', 'tbl_order_item.order_id = tbl_order.order_id');
         $this->db->join('tbl_payment', 'tbl_order_item.order_id = tbl_payment.order_id');
-        $this->db->where('tbl_order_item.order_id', $id);
+        $this->db->where('tbl_order_item.order_id', $order_id);
         $query = $this->db->get();
         return $query->result();
     }
