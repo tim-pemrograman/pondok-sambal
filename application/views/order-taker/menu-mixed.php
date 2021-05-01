@@ -140,31 +140,9 @@
 													<div class="menu-info menu-ingredients-caption gdlr-skin-info">
 														<?= $cat_menu->description; ?></div>
 													<h3>Rp <?= $cat_menu->price; ?></h3>
-													<!-- <input type="number" name="quantity" id="<?= $cat_menu->id;?>" value="1"
-														class="quantity form-control"> -->
-														
-														<!-- <div name="<?= $cat_menu->id;?>" <?= $cat_menu->id;?> class="input-group" style="width: 40%; margin-left:auto; margin-right:auto;">
-															<span class="input-group-btn">
-																<button type="button" class="btn btn-danger btn-number"
-																	data-type="minus" data-field="<?= $cat_menu->id;?>" <?= $cat_menu->id;?>>
-																	<span class="glyphicon glyphicon-minus">-</span>
-																</button>
-															</span>
-															
-															<input type="text" name="<?= $cat_menu->id;?>" <?= $cat_menu->id;?>
-																class="form-control input-number" value="1" min="1"
-																max="100" id="quantity"> 
-																
-															<span class="input-group-btn">
-																<button type="button" class="btn btn-success btn-number"
-																	data-type="plus" data-field="<?= $cat_menu->id;?>" <?= $cat_menu->id;?>>
-																	<span class="glyphicon glyphicon-plus">+</span>
-																</button>
-															</span>
-														</div> -->
+													
 													<div class="clear"> <br></div>
-													<!-- <a class="add_cart btn-circle btn-primary" data-toggle="modal" ><i class="fas fa-edit ">Add to Cart</i></a> -->
-													<button class="add_cart btn  btn-block">
+													<button class="add_cart btn btn-block">
 														<?= form_open('cart/add_cart_item'); ?>
             														<fieldset>
 																	
