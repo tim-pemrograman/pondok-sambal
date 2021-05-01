@@ -30,7 +30,7 @@
 							<div class="gdlr-image-frame-item gdlr-item">
 								<div class="gdlr-frame frame-type-none">
 									<div class="gdlr-image-link-shortcode"><img
-											src="<?= base_url('assets/images/menu/sateayam.jpeg')?>" alt="" width="250"
+											src="<?= base_url('assets/images/menu/SATEAYAM.jpeg')?>" alt="" width="250"
 											height="250" /></div>
 								</div>
 							</div>
@@ -113,13 +113,12 @@
 			<section id="content-section-3">
 				<div class="gdlr-color-wrapper gdlr-show-all no-skin"
 					style="background-color: #ffffff; padding-bottom: 25px; ">
-					<div class="container">
+					<div class="container-fluid">
 						<div class="menu-item-wrapper menu-column-3 type-classic">
 							<div class="menu-item-holder">
-								<div class="gdlr-grid" data-type="menu" data-layout="fitRows">
-									
-									<?php $i=0; foreach($menus as $cat_menu): ?>
-									<div class="four columns">
+								<div class="row">
+								<?php $i=0; foreach($menus as $cat_menu): ?>
+									<div class="col-lg-3 col-md-4 col-sm-6 col-12">
 										<div class="gdlr-item gdlr-menu-item gdlr-classic-menu with-price">
 											<div class="gdlr-ux gdlr-classic-menu-ux">
 												<div class="gdlr-menu-thumbnail">
@@ -187,25 +186,6 @@
 											}
 										endforeach; ?>
 								</div>
-								<div class="col-md-4">
-									<h4>Shopping Cart</h4>
-									<table class="table table-striped">
-										<thead>
-											<tr>
-												<th>Items</th>
-												<th>Price</th>
-												<th>Qty</th>
-												<th>Total</th>
-												<th>Actions</th>
-											</tr>
-										</thead>
-										<tbody id="detail_cart">
-
-										</tbody>
-
-									</table>
-								</div>
-								<div class="clear"></div>
 							</div>
 						</div>
 						<div class="clear"></div>
@@ -220,8 +200,8 @@
 	</div>
 	<!-- gdlr-content -->
 	<div class="clear"></div>
-	<script type="text/javascript" src="<?php echo base_url().'assets/vendor/jquery/jquery.min.js'?>"></script>
-	<script type="text/javascript" src="<?php echo base_url().'assets/vendor/bootstrap/js/bootstrap.min.js'?>"></script>
+	<!-- <script type="text/javascript" src="<?= base_url().'assets/js/jquery-3.2.1.js'?>"></script>
+	<script type="text/javascript" src="<?= base_url().'assets/js/bootstrap.js'?>"></script> -->
 
 	
 
