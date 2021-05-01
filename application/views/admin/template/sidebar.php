@@ -37,7 +37,7 @@
     <!-- Nav Item - Charts -->
     <li class="<?php if($titles == 'Gallery - Pondok Sambal'){echo 'nav-item active'; } else{echo 'nav-item';}; ?>">
         <a class="nav-link" href="<?= base_url('admin/gallery') ?>">
-            <i class="fas fa-building"></i>
+            <i class="fas fa-images"></i>
             <span>Gallery</span></a>
     </li>
 
@@ -63,6 +63,13 @@
     <div class="sidebar-heading">
         Features
     </div>
+
+    <!-- Nav Item - Tables -->
+    <li class="<?php if($titles == 'Order - Pondok Sambal'){echo 'nav-item active'; } else{echo 'nav-item';}; ?>">
+        <a class="nav-link" href="<?= base_url('admin/order') ?>">
+            <i class="fas fa-chalkboard-teacher"></i>
+            <span>Manage Order</span></a>
+    </li>
 
     <!-- Nav Item - Tables -->
     <li class="<?php if($titles == 'Category - Pondok Sambal'){echo 'nav-item active'; } else{echo 'nav-item';}; ?>">

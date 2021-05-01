@@ -43,6 +43,7 @@
 	<link rel='stylesheet' href="<?= base_url('plugins/masterslider/public/assets/css/masterslider.main.css') ?>"
 		type='text/css' media='all' />
 	<link rel='stylesheet' href="<?= base_url('css/master-custom.css') ?>" type='text/css' media='all' />
+	<!-- <link rel='stylesheet' href="<?= base_url('assets/css/sb-admin-2.min.css') ?>" type='text/css' media='all' /> -->
 
 	<meta name="title" content="<?= $title_head; ?>">
 	<meta name="description" content="<?= $meta_data->meta_description; ?>">
@@ -79,19 +80,22 @@
 							<div class="social-icon">
 								<a href="#" target="_blank">
 									<img width="32" height="32"
-										src="<?= base_url('assets/images/light/social-icon/facebook.png')?>" alt="Facebook" />
+										src="<?= base_url('assets/images/light/social-icon/facebook.png')?>"
+										alt="Facebook" />
 								</a>
 							</div>
 							<div class="social-icon">
 								<a href="#" target="_blank">
 									<img width="32" height="32"
-										src="<?= base_url('assets/images/light/social-icon/flickr.png')?>" alt="Flickr" />
+										src="<?= base_url('assets/images/light/social-icon/flickr.png')?>"
+										alt="Flickr" />
 								</a>
 							</div>
 							<div class="social-icon">
 								<a href="#" target="_blank">
 									<img width="32" height="32"
-										src="<?= base_url('assets/images/light/social-icon/linkedin.png')?>" alt="Linkedin" />
+										src="<?= base_url('assets/images/light/social-icon/linkedin.png')?>"
+										alt="Linkedin" />
 								</a>
 							</div>
 							<div class="social-icon">
@@ -104,9 +108,11 @@
 							<div class="social-icon">
 								<a href="#" target="_blank">
 									<img width="32" height="32"
-										src="<?= base_url('assets/images/light/social-icon/twitter.png')?>" alt="Twitter" />
+										src="<?= base_url('assets/images/light/social-icon/twitter.png')?>"
+										alt="Twitter" />
 								</a>
 							</div>
+							
 							<div class="clear"></div>
 						</div>
 					</div>
@@ -149,7 +155,7 @@
 											href="<?= base_url('article')?>">Blog</a>
 									</li>
 									<li class="menu-item menu-item-has-children menu-item-641">
-									<a href="<?= base_url('loginpage/login')?>">ORDER NOW!</a>
+										<a href="<?= base_url('loginpage/login')?>">ORDER NOW!</a>
 									</li>
 
 								</ul>
@@ -184,13 +190,16 @@
 									</li>
 									<li
 										class="menu-item menu-item-has-children menu-item-641menu-item menu-item-has-children menu-item-641 gdlr-mega-menu">
+                    
 										<a href="<?= base_url('article')?>" class="sf-with-ul-pre">Blog</a></li>
 									<li class="menu-item menu-item-has-childrenmenu-item menu-item-has-children gdlr-normal-menu">
+                    
 										<a href="<?= base_url('loginpage/login')?>">ORDER NOW!</a>
 									</li>
 
 								</ul><img id="gdlr-menu-search-button"
-									src="<?= base_url('assets/images/magnifier-light.png')?>" alt="" width="58" height="59" />
+									src="<?= base_url('assets/images/magnifier-light.png')?>" alt="" width="58"
+									height="59" />
 								<div class="gdlr-menu-search" id="gdlr-menu-search">
 									<form method="get" id="searchform" action="#">
 										<div class="search-text">
@@ -210,4 +219,5 @@
 					</div>
 				</div>
 			</div>
+			<!-- Logout Modal-->
 		</header>

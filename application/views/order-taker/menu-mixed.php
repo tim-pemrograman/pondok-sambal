@@ -47,6 +47,7 @@
 								</div>
 								<div class="menu-item-holder">
 									<div class="gdlr-menu-list-wrapper">
+									
 										<?php foreach ($featured_menus as $menu): ?>
 										<div class="clear"></div>
 										<div class="twelve columns">
@@ -57,15 +58,28 @@
 																href="#"><?= $menu->name; ?></a></h3>
 														<div class="menu-info menu-ingredients-caption gdlr-skin-info">
 															<?= $menu->description; ?></div>
-															<h3>Rp <?= $menu->price; ?></h3>
-														
+														<h3>Rp <?= $menu->price; ?></h3>
+
 													</div>
 
-													<div class="menu-info menu-price gdlr-title-font gdlr-skin-link">
-													<a class="btn-circle btn-primary" data-toggle="modal" href="<?= base_url('loginpage/login')?>"><i
-																class="fas fa-edit ">Order Now!</i></a>
+													
+													<div class="input-group" style="width: 30%; float:right;" >
+													<button class="add_cart btn  btn-block">
+														<?= form_open('cart/add_cart_item'); ?>
+            														<fieldset>
+																	
+                													<?= form_input('quantity','1' ); ?>
+                													<?= form_hidden('id', $menu->id); ?>
+														</div>
+														<br>
+														
+                													<?= form_submit('add', 'Add to Cart!'); ?>
+            														</fieldset>
+        													<?= form_close(); ?>
+														
+														</button>
 														<div class="gdlr-list-menu-gimmick"></div>
-													</div>
+													
 												</div>
 											</div>
 										</div>
@@ -97,16 +111,14 @@
 				<div class="clear"></div>
 			</section>
 			<section id="content-section-3">
-				<div class="gdlr-color-wrapper  gdlr-show-all no-skin"
+				<div class="gdlr-color-wrapper gdlr-show-all no-skin"
 					style="background-color: #ffffff; padding-bottom: 25px; ">
 					<div class="container">
 						<div class="menu-item-wrapper menu-column-3 type-classic">
 							<div class="menu-item-holder">
 								<div class="gdlr-grid" data-type="menu" data-layout="fitRows">
-									<?php $i=0; foreach($menus as $cat_menu): 
-											
-											$i++;
-										?>
+									
+									<?php $i=0; foreach($menus as $cat_menu): ?>
 									<div class="four columns">
 										<div class="gdlr-item gdlr-menu-item gdlr-classic-menu with-price">
 											<div class="gdlr-ux gdlr-classic-menu-ux">
@@ -125,22 +137,73 @@
 												</div>
 												<div class="gdlr-menu-item-content">
 													<h3 class="menu-title gdlr-skin-title gdlr-content-font"><a
-															href="#"><?= $menu->name; ?></a></h3>
+															href="#"><?= $cat_menu->name; ?></a></h3>
 													<div class="menu-info menu-ingredients-caption gdlr-skin-info">
-														<?= $menu->description; ?></div>
-													<h3>Rp <?= $menu->price; ?></h3>
-													<p><a class="add_cart btn-circle btn-primary" data-toggle="modal" href="<?= base_url('loginpage/login')?>" ><i class="fas fa-edit ">Order Now!</i></a></p>
-													
+														<?= $cat_menu->description; ?></div>
+													<h3>Rp <?= $cat_menu->price; ?></h3>
+													<!-- <input type="number" name="quantity" id="<?= $cat_menu->id;?>" value="1"
+														class="quantity form-control"> -->
+														
+														<!-- <div name="<?= $cat_menu->id;?>" <?= $cat_menu->id;?> class="input-group" style="width: 40%; margin-left:auto; margin-right:auto;">
+															<span class="input-group-btn">
+																<button type="button" class="btn btn-danger btn-number"
+																	data-type="minus" data-field="<?= $cat_menu->id;?>" <?= $cat_menu->id;?>>
+																	<span class="glyphicon glyphicon-minus">-</span>
+																</button>
+															</span>
+															
+															<input type="text" name="<?= $cat_menu->id;?>" <?= $cat_menu->id;?>
+																class="form-control input-number" value="1" min="1"
+																max="100" id="quantity"> 
+																
+															<span class="input-group-btn">
+																<button type="button" class="btn btn-success btn-number"
+																	data-type="plus" data-field="<?= $cat_menu->id;?>" <?= $cat_menu->id;?>>
+																	<span class="glyphicon glyphicon-plus">+</span>
+																</button>
+															</span>
+														</div> -->
+													<div class="clear"> <br></div>
+													<!-- <a class="add_cart btn-circle btn-primary" data-toggle="modal" ><i class="fas fa-edit ">Add to Cart</i></a> -->
+													<button class="add_cart btn  btn-block">
+														<?= form_open('cart/add_cart_item'); ?>
+            														<fieldset>
+																	
+                													<?= form_input('quantity','1' ); ?>
+                													<?= form_hidden('id', $cat_menu->id); ?>
+                													<?= form_submit('add', 'Add to Cart!'); ?>
+            														</fieldset>
+        													<?= form_close(); ?>
+														
+														</button>
 												</div>
 											</div>
 										</div>
 									</div>
-
+																
 									<?php 
 											if(($i%3) == 0 && $i <= count($menus) && $i!== 0) {
 												echo"<div class='clear'></div>";
 											}
 										endforeach; ?>
+								</div>
+								<div class="col-md-4">
+									<h4>Shopping Cart</h4>
+									<table class="table table-striped">
+										<thead>
+											<tr>
+												<th>Items</th>
+												<th>Price</th>
+												<th>Qty</th>
+												<th>Total</th>
+												<th>Actions</th>
+											</tr>
+										</thead>
+										<tbody id="detail_cart">
+
+										</tbody>
+
+									</table>
 								</div>
 								<div class="clear"></div>
 							</div>
@@ -157,46 +220,40 @@
 	</div>
 	<!-- gdlr-content -->
 	<div class="clear"></div>
-	<script type="text/javascript" src="<?php echo base_url().'assets/vendor/jquery/jquery.min.js'?>"></script>
-	<script type="text/javascript" src="<?php echo base_url().'assets/vendor/bootstrap/js/bootstrap.min.js'?>"></script>
-	<script type="text/javascript">
-		$(document).ready(function () {
-			$('.add_cart').click(function () {
-				var id = $(this).data("id");
-				var name = $(this).data("name");
-				var price = $(this).data("price");
-				var quantity = $('#' + id).val();
-				$.ajax({
-					url: "<?php echo site_url('menupage/add_to_cart');?>",
-					method: "POST",
-					data: {
-						id: id,
-						name: name,
-						price: price,
-						quantity: quantity
-					},
-					success: function (data) {
-						$('#detail_cart').html(data);
-					}
-				});
-			});
-			$('#detail_cart').load("<?php echo site_url('menupage/load_cart');?>");
-			$(document).on('click', '.remove_cart', function () {
-				var menu = $(this).attr("id");
-				$.ajax({
-					url: "<?php echo site_url('menupage/delete_cart');?>",
-					method: "POST",
-					data: {
-						menu: menu
-					},
-					success: function (data) {
-						$('#detail_cart').html(data);
-					}
-				});
-			});
-		});
+	<script type="text/javascript" src="<?= base_url().'assets/js/jquery-3.2.1.js'?>"></script>
+	<script type="text/javascript" src="<?= base_url().'assets/js/bootstrap.js'?>"></script>
 
-	</script>
+	
+
+	<script>
+$(document).ready(function() { 
+    /*place jQuery actions here*/ 
+
+    $("button.add_cart form").submit(function() {
+        // Get the product ID and the quantity 
+        var id = $(this).find('input[name=id]').val();
+        var qty = $(this).find('input[name=quantity'+id+']').val();
+        
+         $.post("<?= base_url()?>/cart/add_cart_item", { id: id, quantity: qty, ajax: '1' },
+              function(data){	
+                  // Interact with returned data
+          });
+          
+        return false; // Stop the browser of loading the page defined in the form "action" parameter.
+    });
+
+});
+
+$(".empty").live("click", function(){
+    $.get(link + "cart/empty_cart", function(){
+        $.get(link + "cart/show_cart", function(cart){
+              $("#cart_content").html(cart);
+        });
+    });
+    
+    return false;
+});
+</script>
 
 </div>
 <!-- content wrapper -->

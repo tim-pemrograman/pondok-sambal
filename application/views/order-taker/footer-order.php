@@ -37,14 +37,14 @@
 				<div class="clear"></div>
 				<ul>
 					<li>
-						<a href="<?= base_url('article')?>">Cuma disini Pedasnya gak ngebosenin</a>
+						<a href="<?= base_url('blogpage/blog4')?>">Cuma disini Pedasnya gak ngebosenin</a>
 					</li>
 					<li>
-						<a href="<?= base_url('article')?>">Kamu tidak akan tahu apa itu pedas kalau belum ke
+						<a href="<?= base_url('blogpage/blog4')?>">Kamu tidak akan tahu apa itu pedas kalau belum ke
 							Pondok Sambal!</a>
 					</li>
 					<li>
-						<a href="<?= base_url('article')?>">Cuma disini kamu bisa makan enak dan pedas yang
+						<a href="<?= base_url('blogpage/blog4')?>">Cuma disini kamu bisa makan enak dan pedas yang
 							nagih!</a>
 					</li>
 				</ul>
@@ -91,13 +91,52 @@
 				Copyright 2021 Valorant. All Right Revered.
 			</div>
 			<div class="clear"></div>
+
+			
 		</div>
 	</div>
 </footer>
 </div>
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-primary" href="<?php echo base_url(); ?>homepage">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Bootstrap core JavaScript-->
+<script src="<?= base_url('assets/') ?>vendor/jquery/jquery.min.js"></script>
+<script src="<?= base_url('assets/') ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="<?= base_url('assets/') ?>vendor/jquery-easing/jquery.easing.min.js"></script>
+
 <!-- Custom scripts for all pages-->
 <script src="<?= base_url('assets/') ?>js/sb-admin-2.min.js"></script>
-<!-- body-wrapper -->
+
+<!-- Page level plugins -->
+<script src="<?= base_url('assets/') ?>vendor/chart.js/Chart.min.js"></script>
+
+<!-- Page level custom scripts -->
+<script src="<?= base_url('assets/') ?>js/demo/chart-area-demo.js"></script>
+<script src="<?= base_url('assets/') ?>js/demo/chart-pie-demo.js"></script>
+
+<!-- Fancybox -->
+<script type='text/javascript' src='<?= base_url('plugins/fancybox/jquery.fancybox.pack.js') ?>'></script>
+<script type='text/javascript' src='<?= base_url('plugins/fancybox/helpers/jquery.fancybox-media.js') ?>'></script>
+<script type='text/javascript' src='<?= base_url('plugins/fancybox/helpers/jquery.fancybox-thumbs.js') ?>'></script>
+<script type='text/javascript' src='<?= base_url('plugins/gdlr-portfolio/gdlr-portfolio-script.js') ?>'></script>
 
 <script type='text/javascript' src='<?= base_url('js/jquery/jquery.js')?>'></script>
 <script type='text/javascript' src='<?= base_url('js/jquery/jquery-migrate.min.js')?>'></script>
@@ -124,12 +163,83 @@
 <script type='text/javascript' src='<?= base_url('plugins/jquery.transit.min.js')?>'></script>
 <script type='text/javascript' src='<?= base_url('plugins/gdlr-portfolio/gdlr-portfolio-script.js')?>'></script>
 
-
 <script>
-$(":radio").change(function () {
-  $(".choice").text(this.value + " stars");
+//plugin bootstrap minus and plus
+//http://jsfiddle.net/laelitenetwork/puJ6G/
+$('.btn-number').click(function(e){
+    e.preventDefault();
+    
+    fieldName = $(this).attr('data-field');
+    type      = $(this).attr('data-type');
+    var input = $("input[name='"+fieldName+"']");
+    var currentVal = parseInt(input.val());
+    if (!isNaN(currentVal)) {
+        if(type == 'minus') {
+            
+            if(currentVal > input.attr('min')) {
+                input.val(currentVal - 1).change();
+            } 
+            if(parseInt(input.val()) == input.attr('min')) {
+                $(this).attr('disabled', true);
+            }
+
+        } else if(type == 'plus') {
+
+            if(currentVal < input.attr('max')) {
+                input.val(currentVal + 1).change();
+            }
+            if(parseInt(input.val()) == input.attr('max')) {
+                $(this).attr('disabled', true);
+            }
+
+        }
+    } else {
+        input.val(0);
+    }
 });
+$('.input-number').focusin(function(){
+   $(this).data('oldValue', $(this).val());
+});
+$('.input-number').change(function() {
+    
+    minValue =  parseInt($(this).attr('min'));
+    maxValue =  parseInt($(this).attr('max'));
+    valueCurrent = parseInt($(this).val());
+    
+    name = $(this).attr('name');
+    if(valueCurrent >= minValue) {
+        $(".btn-number[data-type='minus'][data-field='"+name+"']").removeAttr('disabled')
+    } else {
+        alert('Sorry, the minimum value was reached');
+        $(this).val($(this).data('oldValue'));
+    }
+    if(valueCurrent <= maxValue) {
+        $(".btn-number[data-type='plus'][data-field='"+name+"']").removeAttr('disabled')
+    } else {
+        alert('Sorry, the maximum value was reached');
+        $(this).val($(this).data('oldValue'));
+    }
+    
+    
+});
+$(".input-number").keydown(function (e) {
+        // Allow: backspace, delete, tab, escape, enter and .
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 190]) !== -1 ||
+             // Allow: Ctrl+A
+            (e.keyCode == 65 && e.ctrlKey === true) || 
+             // Allow: home, end, left, right
+            (e.keyCode >= 35 && e.keyCode <= 39)) {
+                 // let it happen, don't do anything
+                 return;
+        }
+        // Ensure that it is a number and stop the keypress
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+        }
+    });
 </script>
+
+
 
 <script>
 	(function ($) {
