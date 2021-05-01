@@ -54,7 +54,7 @@
 												<div class="gdlr-ux gdlr-list-menu-ux">
 													<div class="gdlr-menu-item-content">
 														<h3 class="menu-title gdlr-skin-title gdlr-content-font"><a
-																href="#"><?= $menu->name; ?></a></h3>
+																href="<?= base_url('loginpage/login')?>"><?= $menu->name; ?></a></h3>
 														<div class="menu-info menu-ingredients-caption gdlr-skin-info">
 															<?= $menu->description; ?></div>
 															<h3>Rp <?= $menu->price; ?></h3>
@@ -62,8 +62,8 @@
 													</div>
 
 													<div class="menu-info menu-price gdlr-title-font gdlr-skin-link">
-													<a class="btn-circle btn-primary" data-toggle="modal" href="<?= base_url('loginpage/login')?>"><i
-																class="fas fa-edit ">Order Now!</i></a>
+													<a class="btn-circle btn-primary" href="<?= base_url('loginpage/login')?>"><i
+																class="fa fa-shopping-cart ">Order Now!</i></a>
 														<div class="gdlr-list-menu-gimmick"></div>
 													</div>
 												</div>

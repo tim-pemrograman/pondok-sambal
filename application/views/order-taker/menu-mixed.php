@@ -55,7 +55,7 @@
 												<div class="gdlr-ux gdlr-list-menu-ux">
 													<div class="gdlr-menu-item-content">
 														<h3 class="menu-title gdlr-skin-title gdlr-content-font"><a
-																href="#"><?= $menu->name; ?></a></h3>
+																><?= $menu->name; ?></a></h3>
 														<div class="menu-info menu-ingredients-caption gdlr-skin-info">
 															<?= $menu->description; ?></div>
 														<h3>Rp <?= $menu->price; ?></h3>
@@ -122,7 +122,7 @@
 										<div class="gdlr-item gdlr-menu-item gdlr-classic-menu with-price">
 											<div class="gdlr-ux gdlr-classic-menu-ux">
 												<div class="gdlr-menu-thumbnail">
-													<a href="#">
+													<a>
 														<img src="
 															<?php 
 															if(($cat_menu->product_img) == '') {
