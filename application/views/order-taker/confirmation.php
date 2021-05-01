@@ -124,6 +124,9 @@ if (!$all_orders) : ?>
                                 case '4':
                                     echo '4 - Transaksi Selesai';
                                     break;
+                                case '5':
+                                    echo '5 - Transaksi ditolak Admin';
+                                    break;
                             };
                             ?>
                         </td>

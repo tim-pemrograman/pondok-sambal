@@ -60,7 +60,7 @@ class order_model extends CI_Model
     public function get_orders_by_status($user_id)
     {
         
-        $array = array('order_status !=' => 4, 'cust_id' => $user_id);
+        $array = array('order_status !=' => 5, 'cust_id' => $user_id);
         $this->db->where($array);
         $query = $this->db->get('tbl_order');
         return $query->result();
@@ -141,7 +141,7 @@ class order_model extends CI_Model
 
     public function get_user_orders_by_status()
     {
-        $this->db->where('order_status !=', 4);
+        $this->db->where('order_status !=', 5);
         $query = $this->db->get('tbl_order');
         return $query->result();
         // var_dump($query->result()); exit;

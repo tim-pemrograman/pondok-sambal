@@ -13,11 +13,11 @@
 				<tr>
 					<th>No</th>
 					<th>Image</th>
-					<td>Menu Name</td>
-					<td>Item Qty</td>
-					<td>Note</td>
-					<td>Price per Item</td>
-					<td>Sub Total</td>
+					<th>Menu Name</th>
+					<th>Item Qty</th>
+					<th>Note</th>
+					<th>Price per Item</th>
+					<th>Sub Total</th>
 				</tr>
 			</thead>
 
@@ -78,6 +78,9 @@
 												break;
 											case '4':
 												echo '4 - Transaksi Selesai';
+												break;
+											case '5':
+												echo '5 - Transaksi ditolak oleh Pondok Sambal';
 												break;
 										}; 
 									?>
