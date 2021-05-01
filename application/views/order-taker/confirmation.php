@@ -25,12 +25,12 @@ if (!$all_orders) : ?>
             <?php if ($ongoing_order->order_status == 0 || $ongoing_order->order_status == 1) { ?>
                 <div class="col-lg-4 col-12">
                     <div class="row h-100 border border-secondary" style="margin: auto;">
-                        <div class="col-sm" style=" grid-template-rows:2fr 2fr 1fr;">
+                        <div class="col-8" style=" grid-template-rows:2fr 2fr 1fr;">
                             <h6 class="mt-2">Mohon Tunggu Konfirmasi Pesanan Anda</h6>
                             <p> No. Order: <?= $ongoing_order->receipt_no ?> </p>
                         </div>
                         <div class="col-4">
-                            <img style="width:100%; max-height: 110px;" src="<?= base_url('assets/images/waiting.gif') ?>" alt="">
+                            <img style="width:100%; max-height: 110px; object-fit:contain;" src="<?= base_url('assets/images/waiting.gif') ?>" alt="">
                         </div>
                     </div>
                 </div>
@@ -43,7 +43,7 @@ if (!$all_orders) : ?>
     
                         </div>
                         <div class="col-4">
-                            <img style="width:100%; max-height: 100px;" src="<?= base_url('assets/images/wait-food.gif') ?>" alt="">
+                            <img style="width:100%; max-height: 100px;object-fit:contain;" src="<?= base_url('assets/images/wait-food.gif') ?>" alt="">
                         </div>
                     </div>
                 </div>
@@ -56,7 +56,7 @@ if (!$all_orders) : ?>
                             <p>No. Order: <?= $ongoing_order->receipt_no ?></p>
                         </div>
                         <div class="col-4">
-                            <img style="width:100%; max-height: 100px;" src="<?= base_url('assets/images/otw.gif') ?>" alt="">
+                            <img style="width:100%; max-height: 100px;object-fit:contain;" src="<?= base_url('assets/images/otw.gif') ?>" alt="">
                         </div>
     
     
@@ -129,7 +129,7 @@ if (!$all_orders) : ?>
                         </td>
 
                         <td>
-                            <a class="btn-circle btn-primary" href="<?= base_url(); ?>/ordertaker/view/<?= $data_order->order_id; ?>"><i class="fas fa-eye "></i></a>
+                            <a class="btn-circle btn-primary" href="<?= base_url(); ?>/ordertaker/view/<?= $data_order->order_id; ?>"><i class="fa fa-eye "></i></a>
 
                         </td>
                     </tr>
