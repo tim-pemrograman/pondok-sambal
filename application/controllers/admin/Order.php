@@ -61,7 +61,9 @@ class Order extends CI_Controller {
 		$data['titles'] = "Order - Pondok Sambal";
         $data['action'] = "edit";
 
-        if($filter == 2){
+        if($filter == 0){
+            $data['status'] = "Belum dibayar";
+        }elseif($filter == 2){
             $data['status'] = "Sedang diproses";
         }elseif($filter == 3){
             $data['status'] = "Sedang dijalan";
