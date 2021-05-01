@@ -38,8 +38,8 @@
 					<div class="field">
 						<input type="password" name="password" class="form-control form-control-user"id="exampleInputPassword" placeholder="Password" required>
 					</div>
-					<div class="pass-link">
-						<a href="#">Forgot password?</a></div>
+					<!-- <div class="pass-link">
+						<a href="#">Forgot password?</a></div> -->
 					<div class="field btn">
 						<div class="btn-layer">
 						</div>
