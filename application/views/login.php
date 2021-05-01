@@ -55,11 +55,12 @@
 					<div class="field">
 						<input type="text" name="Lname" class="form-control form-control-user" id="exampleLastName" placeholder="Last Name" required>
 					</div>
-					<div class="field">
-						<input type="text" name="phone" class="form-control form-control-user" id="exampleLastName" placeholder="Phone Number" required>
+					<div class="field" >
+					<label for="examplephone" readonly> +62 </label>
+						<input type="number"  name="phone" class="form-control form-control-user" id="examplephone" placeholder="Phone Number" required style="width: 89%;">
 					</div>
 					<div class="field">
-						<input type="text" name="address" class="form-control form-control-user" id="exampleLastName" placeholder="Address" required>
+						<input type="text" name="address" class="form-control form-control-user" id="exampleAddress" placeholder="Address" required>
 					</div>
 					<div class="field">
 					<input type="email" name="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email Address" required>

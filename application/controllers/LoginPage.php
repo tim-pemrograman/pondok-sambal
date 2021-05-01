@@ -82,17 +82,17 @@ class LoginPage extends CI_Controller
 	private function _signup()
 	{
 		
-				
+		$phone = $this->input->post('phone');		
 		$data_acc = [
-
 			'Fname' => $this->input->post('Fname'),
 			'Lname' => $this->input->post('Lname'),
 			'email' => $this->input->post('email'),
 			'password' => $this->input->post('password'),
-			'phone' => $this->input->post('phone'),
+			'phone' => 62 . $phone,
 			'address' => $this->input->post('address')
 			
 		];
+		// var_dump($data_acc); exit;
 		 $this->usersignup_model->InsertDtAcc($data_acc);
 		 $this->session->set_flashdata('message', '<div class="alert alert-danger">Akun berhasil dibuat!, Silahkan login</div>');
 		 redirect('loginpage/login');
