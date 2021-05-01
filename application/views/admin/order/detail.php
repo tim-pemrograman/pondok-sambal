@@ -47,7 +47,7 @@
 
                                 <!-- Dropdown Button for udating Status -->
                                 <div class="dropdown">
-                                    <button <?php if($data_order->order_status == 4){ echo "disabled"; }; ?> class="btn btn-primary dropdown-toggle my-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button <?php if($data_order->order_status == 4 || $data_order->order_status == 5 ){ echo "disabled"; }; ?> class="btn btn-primary dropdown-toggle my-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Update Order Status
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -56,6 +56,10 @@
                                         <a class="dropdown-item" href="<?php echo base_url('admin/order/update_proses/selesai/').$data_order->order_id; ?>">Transaksi Selesai</a>
                                     </div>
                                 </div>
+                                
+                                <!-- <a type='button' class='btn btn-danger mb-3' href="<?php echo base_url('admin/order/update_proses/tolak/').$data_order->order_id; ?>">Tolak Order <i class='fas fa-fw fa-times-circle'></i></a> -->
+                                <a type='button' <?php if($data_order->order_status == 4 || $data_order->order_status == 5 ){ echo "hidden"; }; ?> class='btn btn-danger mb-3'  onclick="return rejectOrder(<?= $data_order->order_id; ?>)" href="javascript:void(0)" >Tolak Order <i class='fas fa-fw fa-times-circle'></i></a>
+
                             </div>
                             
                             <!-- Div Kanan -->
@@ -80,6 +84,9 @@
                                                     break;
                                                 case '4':
                                                     echo '4 - Transaksi Selesai';
+                                                    break;
+                                                case '5':
+                                                    echo '5 - Transaksi ditolak';
                                                     break;
                                             }; 
                                         ?>
@@ -125,6 +132,14 @@
 
 <script type="text/javascript">
     var url = "<?php echo base_url(); ?>";
+
+    function rejectOrder(id) {
+        var reject = confirm("Apakah Anda ingin Menolak Order ini?");
+        if (reject == true)
+            window.location = url + "admin/order/tolak/" + id;
+        else
+            return false;
+    }
 
     function deleteUser(id) {
         var x = confirm("Apakah Anda ingin menghapus User ini?");
