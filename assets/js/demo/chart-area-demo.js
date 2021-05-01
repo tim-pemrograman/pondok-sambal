@@ -34,7 +34,7 @@ let total;
 function getData(){
   $.ajax({
     async: false, 
-    url:"dashboard/getChart",
+    url:"http://localhost/pondok-sambal/admin/dashboard/getChart",
     method:"POST",
     data:{},
     success:function(data){ 
