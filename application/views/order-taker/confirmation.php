@@ -27,15 +27,12 @@ if(!$all_orders): ?>
 		<h6 class="text-center mt-2">Mohon Tunggu Konfirmasi Pesanan Anda</h6>
         <p> No. Order: <?= $ongoing_order->receipt_no ?> </p>
         </div>
-        <div class="col-4">
+    <div class="col-4">
 			<img style="max-width: 210px; max-height: 110px;" src="<?= base_url('assets/images/waiting.gif') ?>" alt="">
 	</div>
-		
-		<!-- <div class="clear">
-			<p></p>
-		</div> -->
-		
 
+		
+   
 	</div>
 	<?php }elseif($ongoing_order->order_status == 0 || $ongoing_order->order_status == 2) { ?>
 	<div class="row border border-secondary" style="margin: auto;" >
