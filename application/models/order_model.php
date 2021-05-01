@@ -13,19 +13,36 @@ class order_model extends CI_Model
         return $query->result();
     }
 
+    
     public function history_order($user_id)
     {       
+        
+        
+        $this->db->select('*');
+        $this->db->from('tbl_order');
+        $this->db->join('tbl_user', 'tbl_order.cust_id = tbl_user.user_id');
+        // $this->db->join('tbl_payment', 'tbl_order.order_id = tbl_payment.order_id');
+
         $array = array('cust_id' => $user_id);
         $this->db->where($array); 
+        $query = $this->db->get();
+        // var_dump($query->result()); exit;
+        return $query->result();
+    }
+
+    public function filter_get_order($filter)
+    {
         $this->db->select('*');
         $this->db->from('tbl_order');
         $this->db->join('tbl_user', 'tbl_order.cust_id = tbl_user.user_id');
         $this->db->join('tbl_payment', 'tbl_order.order_id = tbl_payment.order_id');
+        $this->db->where('order_status', $filter);
+        $this->db->where('tbl_order.dlt', 0);
         $query = $this->db->get();
         return $query->result();
     }
 
-    public function history_order_byid($id)
+    public function history_order_byid($order_id)
     {
         // $query = $this->db->get_where('tbl_order_item', array('order_id' => $id));
         // return $query->result();
@@ -35,8 +52,7 @@ class order_model extends CI_Model
         $this->db->from('tbl_order_item');
         $this->db->join('tbl_product', 'tbl_order_item.product_id = tbl_product.id');
         $this->db->join('tbl_order', 'tbl_order_item.order_id = tbl_order.order_id');
-        $this->db->join('tbl_payment', 'tbl_order_item.order_id = tbl_payment.order_id');
-        $this->db->where('tbl_order_item.order_id', $id);
+        $this->db->where('tbl_order_item.order_id', $order_id);
         $query = $this->db->get();
         return $query->result();
     }

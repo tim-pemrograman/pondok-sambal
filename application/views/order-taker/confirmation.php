@@ -12,77 +12,86 @@ if(!$all_orders): ?>
 </div>
 <?php else:
 ?>
+
+    
+
 <div class="text-center mt-5">
 <h2>Ongoing order</h2>
 </div>
-<div class="mt-5 row" style="display: flex;">
+<div class="mt-5" style="display: flex;">
 <?php foreach ($ongoing_orders as $ongoing_order):?>
 
 <?php if($ongoing_order->order_status == 0 || $ongoing_order->order_status == 1){ ?>
-	<div class="col-2 ml-5 border border-secondary">
-	<div style="display: inline-grid; grid-template-rows:2fr 2fr 1fr;">
-		<h5 class="text-center mt-2">Mohon Tunggu Konfirmasi Pesanan Anda</h5>
-		<div class="text-center">
-			<img style="max-width: 220px;" src="<?= base_url('assets/images/waiting.gif') ?>" alt="">
-			<br>
-			</div>
-			<p>
-		No. Order: <?= $ongoing_order->order_id ?>
-			
-			</p>
+	<div class="row border border-secondary" style="margin: auto;">
+	<div class="col-sm" style=" grid-template-rows:2fr 2fr 1fr;">
+		<h6 class="text-center mt-2">Mohon Tunggu Konfirmasi Pesanan Anda</h6>
+        <p> No. Order: <?= $ongoing_order->receipt_no ?> </p>
+        </div>
+        <div class="col-4">
+			<img style="max-width: 210px; max-height: 110px;" src="<?= base_url('assets/images/waiting.gif') ?>" alt="">
+	</div>
+		
 		<!-- <div class="clear">
 			<p></p>
 		</div> -->
-		</div>
+		
 
 	</div>
 	<?php }elseif($ongoing_order->order_status == 0 || $ongoing_order->order_status == 2) { ?>
-	<div class="col-2 ml-5 border border-secondary" >
-		<div style="display: inline-grid; grid-template-rows:2fr 2fr 1fr;">
-			<h5 class="text-center mt-2">Pesanan sedang dipersiapkan! </h5>
-			<div class="text-center">
-				<img style="max-width: 200px;" src="<?= base_url('assets/images/wait-food.gif') ?>" alt="">
-				<br>
+	<div class="row border border-secondary" style="margin: auto;" >
+		<div class="col-sm" style=" grid-template-rows:2fr 2fr 1fr;">
+			<h6 class="text-center mt-2">Pesanan sedang dipersiapkan! </h6>
+            <p>No. Order: <?= $ongoing_order->receipt_no ?></p>
+            
 			</div>
-			<p>
-				No. Order: <?= $ongoing_order->order_id ?>
-			
-			</p>
+            <div class="col-4">   
+				<img style="max-width: 210px; max-height: 100px;" src="<?= base_url('assets/images/wait-food.gif') ?>" alt="">
+				</div>
+	
 			<!-- <div class="clear">
 				<p></p>
 			</div> -->
 		
 		</div>
 	
-	</div>
-	<?php }elseif($ongoing_order->order_status == 0 || $ongoing_order->order_status == 3) { ?>
-	<div class="col-2 ml-5 border border-secondary">
-	<div style="display: inline-grid; grid-template-rows:2fr 2fr 1fr;">
-		<h5 class="text-center mt-2">Pesanan dalam perjalanan! Bersiaplah untuk makan. </h5>
-		<div class="text-center">
-			<img style="max-width: 150px;" src="<?= base_url('assets/images/otw.gif') ?>" alt="">
-			<br>
-		</div>
-		<p>
-			No. Order: <?= $ongoing_order->order_id ?>
-		</p>
-		</div>
 	
-	</div>}
+	<?php }elseif($ongoing_order->order_status == 0 || $ongoing_order->order_status == 3) { ?>
+	<div class="row border border-secondary" style="margin: auto; ">
+	<div class="col-sm" style="grid-template-rows:2fr 2fr 1fr;">
+		<h6 class="text-center mt-2">Pesanan dalam perjalanan! Bersiaplah untuk makan. </h6>
+		<p>No. Order: <?= $ongoing_order->receipt_no ?></p>
+        </div>
+		<div class="col-4">
+			<img style="max-width: 210px; max-height: 100px;" src="<?= base_url('assets/images/otw.gif') ?>" alt="">
+		</div>
+		
+	
+	</div>
 
 
-	<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+
+	<?php } ?>
+	<?php endforeach; ?>
+</div>
+
+<?php endif; ?>
+<?= $this->session->flashdata('message') ?>
+    <div class="container">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr> 
                             <th>No</th>
-                            <td>Customer Name</td>
-                            <td>Total Qty</td>
-                            <td>Total Price</td>
-                            <td>Payment Method</td>
-                            <td>Order Date</td>
-                            <td>Order Status</td>
-                            <td>Bukti Transaksi</td>
-                            <th>Action</th>
+                            <th>Receipt No</th>
+                            <th>Customer Name</th>
+                            <th>Total Qty</th>
+                            <th>Total Price</th>
+                            <th>Payment Method</th>
+                            <th>Order Date</th>
+                            <th>Order Status</th>
+                            <th>Detail</th>
                         </tr>
                     </thead>
 
@@ -91,11 +100,13 @@ if(!$all_orders): ?>
                     
                     <tr>
                          <td><?= $i; ?></td>
+                         <td><?= $data_order->receipt_no; ?></td>
                          <td><?= $data_order->Fname.' '.$data_order->Lname; ?></td>
                          <td><?= $data_order->total_qty; ?></td>
-                         <td><?= $data_order->total_price; ?></td>
+                         <td><?= "Rp. ".number_format($data_order->total_price); ?></td>
                          <td><?php if($data_order->payment_method == 1){echo 'Cash on Delivery';}else{echo "Bank Transfer";}; ?></td>
                          <td><?= date_format(date_create($data_order->order_date),'d M Y || H:i:s')?></td>
+                         <!-- <td style="background-color: #008000; color: white;"> -->
                          <td>
                             <?php 
                                 switch($data_order->order_status){
@@ -117,33 +128,18 @@ if(!$all_orders): ?>
                                 }; 
                             ?>
                          </td>
-                         <td><img src="<?= base_url($data_order->img_path); ?>" width="100" alt="img bukti"></td>
+                         
                          <td>
                              <a class="btn-circle btn-primary"
-                                    href="<?= base_url('admin'); ?>/order/view/<?= $data_order->order_id; ?>"><i class="fas fa-eye "></i></a>
-                             <!-- <a class="btn-circle btn-primary"
-                                href="<?= base_url('admin'); ?>/user/edit/<?= $data_order->employee_id; ?>"><i class="fas fa-edit "></i></a> -->
-                             <a class="btn-circle btn-danger" onclick="return deleteUser(<?= $data_order->order_id; ?>)" href="javascript:void(0)"><i class="fas fa-trash "></i></a>
+                                    href="<?= base_url(); ?>/ordertaker/view/<?= $data_order->order_id; ?>"><i class="fas fa-eye "></i></a>
+                             
                          </td>
                     </tr>
                     <?php endforeach; ?>
-                        <div class="dropdown">
-                            <button class="btn btn-primary dropdown-toggle my-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Filter
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="<?= base_url('admin'); ?>/order/update_proses/proses/<?= $data_order->order_id; ?>">Sedang Diproses</a>
-                                <a class="dropdown-item" href="<?= base_url('admin'); ?>/order/update_proses/jalan/<?= $data_order->order_id; ?>">Sedang di jalan</a>
-                                <a class="dropdown-item" href="<?= base_url('admin'); ?>/order/update_proses/selesai/<?= $data_order->order_id; ?>">Transaksi Selesai</a>
-                            </div>
-                        </div>
+                        
                     </tbody>
 
                 </table>
-	<?php } ?>
-	<?php endforeach; ?>
-</div>
-<div class="clear">
-			<p></p>
-		</div>
-<?php endif; ?>
+            </div>
+        </div>
+    </div>

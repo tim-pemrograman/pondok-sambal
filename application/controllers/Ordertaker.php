@@ -36,15 +36,16 @@ class Ordertaker extends CI_Controller
 		$this->load->view('order-taker/footer-order');
 	}
 	
+	
 	public function history(){
 		$user_id = $this->session->userdata('user_id');
-
+		
         // var_dump($data['data_order']); exit;
 
         $data['data_core'] = $this->userlogin_model->GetNama($user_id);
         $data['ongoing_orders'] = $this->order_model->get_orders_by_status($user_id);
 		$data['all_orders'] = $this->order_model->get_orders($user_id);
-		$data['data_order'] = $this->order_model->history_order_byid($order_id);
+		$data['data_order'] = $this->order_model->history_order($user_id);
 
 
         //Load View
@@ -52,6 +53,25 @@ class Ordertaker extends CI_Controller
 		$this->load->view('order-taker/header-order', $data);
 		$this->load->view('order-taker/confirmation', $data);
 		$this->load->view('order-taker/footer-order');
+	}
+
+	public function view($order_id)
+	{
+		$user_id = $this->session->userdata('user_id');
+
+        $data['data_core'] = $this->userlogin_model->GetNama($user_id);
+        $data['data_order'] = $this->order_model->history_order_byid($order_id);
+
+        // var_dump($data['data_order']); 
+        // exit;
+
+		
+
+		 //Load View
+		 $this->load->helper('url');
+		 $this->load->view('order-taker/header-order', $data);
+		 $this->load->view('order-taker/detail', $data);
+		 $this->load->view('order-taker/footer-order');
 	}
 
 	public function checkout(){
