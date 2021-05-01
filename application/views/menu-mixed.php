@@ -111,7 +111,7 @@
 										<div class="gdlr-item gdlr-menu-item gdlr-classic-menu with-price">
 											<div class="gdlr-ux gdlr-classic-menu-ux">
 												<div class="gdlr-menu-thumbnail">
-													<a href="#">
+													<a href="<?= base_url('loginpage/login')?>">
 														<img src="
 															<?php 
 															if(($cat_menu->product_img) == '') {
@@ -125,11 +125,11 @@
 												</div>
 												<div class="gdlr-menu-item-content">
 													<h3 class="menu-title gdlr-skin-title gdlr-content-font"><a
-															href="#"><?= $menu->name; ?></a></h3>
+															href="<?= base_url('loginpage/login')?>"><?= $menu->name; ?></a></h3>
 													<div class="menu-info menu-ingredients-caption gdlr-skin-info">
 														<?= $menu->description; ?></div>
 													<h3>Rp <?= $menu->price; ?></h3>
-													<p><a class="add_cart btn-circle btn-primary" data-toggle="modal" href="<?= base_url('loginpage/login')?>" ><i class="fas fa-edit ">Order Now!</i></a></p>
+													<p><a class="add_cart btn-circle btn-primary" href="<?= base_url('loginpage/login')?>" ><i class="fa fa-shopping-cart" style="padding-right: 10px;"></i>Order Now!</a></p>
 													
 												</div>
 											</div>
@@ -157,8 +157,8 @@
 	</div>
 	<!-- gdlr-content -->
 	<div class="clear"></div>
-	<script type="text/javascript" src="<?php echo base_url().'assets/vendor/jquery/jquery.min.js'?>"></script>
-	<script type="text/javascript" src="<?php echo base_url().'assets/vendor/bootstrap/js/bootstrap.min.js'?>"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 	<script type="text/javascript">
 		$(document).ready(function () {
 			$('.add_cart').click(function () {

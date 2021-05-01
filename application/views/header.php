@@ -172,8 +172,8 @@
 										class="menu-item menu-item-has-childrenmenu-item menu-item-has-children gdlr-normal-menu">
 										<a href="<?= base_url('menupage/menu')?>" class="sf-with-ul-pre">Menu</a>
 									</li>
-									<li class="menu-itemmenu-item gdlr-normal-menu"><a
-											href="<?= base_url('team/member')?>">Chefs</a></li>
+									<!-- <li class="menu-itemmenu-item gdlr-normal-menu"><a
+											href="<?= base_url('team/member')?>">Chefs</a></li> -->
 									<li
 										class="menu-item menu-item-has-children menu-item menu-item-has-children gdlr-normal-menu">
 										<a href="<?= base_url('aboutpage/about')?>" class="sf-with-ul-pre">Pages</a>

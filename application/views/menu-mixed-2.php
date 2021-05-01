@@ -30,7 +30,7 @@
 							<div class="gdlr-image-frame-item gdlr-item">
 								<div class="gdlr-frame frame-type-none">
 									<div class="gdlr-image-link-shortcode"><img
-											src="<?= base_url('assets/images/menu/SATEAYAM.jpeg')?>" alt="" width="250"
+											src="<?= base_url('assets/images/menu/sateayam.jpeg')?>" alt="" width="250"
 											height="250" /></div>
 								</div>
 							</div>
