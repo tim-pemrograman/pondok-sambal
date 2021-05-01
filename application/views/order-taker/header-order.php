@@ -31,6 +31,7 @@
 
 
 	<link rel='stylesheet' href="<?= base_url('css/style.css') ?>" type='text/css' media='all' />
+	<link rel='stylesheet' href="<?= base_url('css/star.css') ?>" type='text/css' media='all' />
 	<link rel='stylesheet' href="<?= base_url('plugins/superfish/css/superfish.css') ?>" type='text/css' media='all' />
 	<link rel='stylesheet' href="<?= base_url('plugins/dl-menu/component.css') ?>" type='text/css' media='all' />
 	<link rel='stylesheet' href="<?= base_url('plugins/font-awesome-new/css/font-awesome.min.css') ?>" type='text/css'
@@ -192,7 +193,9 @@
 
 														<li class="menu-item">
 															<a>
+															<div>
 															<?php $this->view('cart/cart'); ?>
+															</div>
 															</a>
 														</li>
 														</ul>
@@ -209,20 +212,6 @@
 													<ul class="sub-menu">
 														<!-- Dropdown - User Information -->
 
-														<li class="menu-item">
-															<a  href="#">
-																<i
-																	class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-																Profile
-															</a>
-														</li>
-														<li class="menu-item">
-															<a  href="#">
-																<i
-																	class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-																Settings
-															</a>
-														</li>
 														<li class="menu-item">
 															<a  href="<?= base_url('ordertaker/history') ?>">
 																<i
@@ -265,7 +254,9 @@
 
 														<li class="menu-item">
 															<a>
+															<div>
 															<?php $this->view('cart/cart'); ?>
+															</div>
 															</a>
 														</li>
 														</ul>
@@ -283,28 +274,16 @@
 												<!-- Dropdown - User Information -->
 
 												<li class="menu-item">
-													<a  href="#">
-														<i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-														Profile
-													</a>
-												</li>
-												<li class="menu-item">
-													<a  href="#">
-														<i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-														Settings
-													</a>
-												</li>
-												<li class="menu-item">
 													<a  href="<?= base_url('ordertaker/history') ?>">
-														<i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-														Activity Log
+														<i class="fa fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+														Order History
 													</a>
 												</li>
 												<li class="menu-item">
 													<a  href="#" data-toggle="modal"
 														data-target="#logoutModal">
 														<i
-															class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+															class="fa fa-sign-out fa-sm fa-fw mr-2 text-gray-400"></i>
 														Logout
 													</a>
 												</li>

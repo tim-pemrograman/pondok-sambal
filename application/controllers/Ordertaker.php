@@ -98,7 +98,15 @@ class Ordertaker extends CI_Controller
 			} if($method == 'cod') {
 				$type = 1;
 				$status = 0;
-				$this->order_model->proceed_checkout($type, $status);
+				$order_id  = $this->order_model->proceed_checkout($type, $status);
+				if($order_id != NULL && $order_id != '') {
+					$data = array(
+						'order_id' => $order_id
+					);
+					$this->payment_model->add_payment($data);
+				} else {
+					redirect('ordertaker/checkout');
+				}
 				$this->cart->destroy();
 				redirect('ordertaker/history');
 			} 
@@ -156,6 +164,7 @@ class Ordertaker extends CI_Controller
 	public function add_proof($order_id)
     {	
 		$upload_image = $this->upload_image();
+		
 		$data = array(
 			'img_path' => $upload_image,
 			'order_id' => $order_id

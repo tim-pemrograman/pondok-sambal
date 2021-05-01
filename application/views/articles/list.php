@@ -29,7 +29,7 @@
 																class="post-859 post type-post status-publish format-standard has-post-thumbnail hentry category-blog category-fit-row tag-blog tag-news">
 																<div class="gdlr-standard-style">
 																	<div class="gdlr-blog-thumbnail">
-																		<a href="<?= base_url('article/detail').$article->article_id?>"> <img
+																		<a href="<?= base_url('article/detail/').$article->article_id?>"> <img
 																		onerror="this.src='<?= base_url('assets/images/default.jpg'); ?>'" src="<?= base_url($article->img_path)?>"
 																				alt="" style="height: 200px;" /></a>
 																		<div class="gdlr-sticky-banner"><i
