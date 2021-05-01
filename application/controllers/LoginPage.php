@@ -8,8 +8,8 @@ class LoginPage extends CI_Controller
 		parent::__construct();
 
 		// Load url helper
-		$this->load->model('Userlogin_model');
-		$this->load->model('Usersignup_model');
+		$this->load->model('userlogin_model');
+		$this->load->model('usersignup_model');
 		// $this->load->model('role_model');
 		// $this->load->model('user_model');
 		$this->load->library('form_validation');
@@ -40,8 +40,8 @@ class LoginPage extends CI_Controller
 		$password = $this->input->post('password');
 
 
-		$user = $this->Userlogin_model->GetEmail($email);
-		$password = $this->Userlogin_model->GetPass($password);
+		$user = $this->userlogin_model->GetEmail($email);
+		$password = $this->userlogin_model->GetPass($password);
 
 		// Cek User
 		if ($user && $password) {
@@ -66,7 +66,7 @@ class LoginPage extends CI_Controller
 		$email = $this->input->post('email');
 
 
-		$user = $this->Usersignup_model->GetEmail($email);
+		$user = $this->usersignup_model->GetEmail($email);
 	
 			if ($user && $email) {
 				$this->session->set_flashdata('message', '<div>Email anda telah terpakai,Periksa Kembali</div>');
@@ -93,7 +93,7 @@ class LoginPage extends CI_Controller
 			'address' => $this->input->post('address')
 			
 		];
-		 $this->Usersignup_model->InsertDtAcc($data_acc);
+		 $this->usersignup_model->InsertDtAcc($data_acc);
 		 $this->session->set_flashdata('message', '<div class="alert alert-danger">Akun berhasil dibuat!, Silahkan login</div>');
 		 redirect('loginpage/login');
 	

@@ -30,7 +30,7 @@
 							<div class="gdlr-image-frame-item gdlr-item">
 								<div class="gdlr-frame frame-type-none">
 									<div class="gdlr-image-link-shortcode"><img
-											src="<?= base_url('assets/images/menu/SATEAYAM.jpeg')?>" alt="" width="250"
+											src="<?= base_url('assets/images/menu/sateayam.jpeg')?>" alt="" width="250"
 											height="250" /></div>
 								</div>
 							</div>
@@ -220,8 +220,8 @@
 	</div>
 	<!-- gdlr-content -->
 	<div class="clear"></div>
-	<script type="text/javascript" src="<?= base_url().'assets/js/jquery-3.2.1.js'?>"></script>
-	<script type="text/javascript" src="<?= base_url().'assets/js/bootstrap.js'?>"></script>
+	<script type="text/javascript" src="<?php echo base_url().'assets/vendor/jquery/jquery.min.js'?>"></script>
+	<script type="text/javascript" src="<?php echo base_url().'assets/vendor/bootstrap/js/bootstrap.min.js'?>"></script>
 
 	
 
