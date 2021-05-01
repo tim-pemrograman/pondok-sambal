@@ -165,7 +165,7 @@
 											<?php foreach ($featured_menus as $menu): ?>
 											<li class="gdlr-item gdlr-menu-item gdlr-classic-menu with-price">
 												<div class="gdlr-menu-thumbnail">
-													<a href="<?= base_url('menupage/single') ?>">
+													<a href="<?= base_url('menupage/menu') ?>">
 														<img src="
 														<?php 
 														if(($menu->product_img) == '') {
@@ -181,7 +181,7 @@
 												</div>
 												<div class="gdlr-menu-item-content">
 													<h3 class="menu-title gdlr-skin-title gdlr-content-font"><a
-															href="<?= base_url('menupage/single') ?>"><?= $menu->name; ?></a>
+															href="<?= base_url('menupage/menu') ?>"><?= $menu->name; ?></a>
 													</h3>
 													<div class="menu-info menu-ingredients-caption gdlr-skin-info">
 														<?= $menu->description; ?></div>
