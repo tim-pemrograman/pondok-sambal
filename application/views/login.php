@@ -56,7 +56,7 @@
 						<input type="text" name="Lname" class="form-control form-control-user" id="exampleLastName" placeholder="Last Name" required>
 					</div>
 					<div class="field">
-						<input type="text" name="phone" class="form-control form-control-user" id="exampleLastName" placeholder="Phone Number" required>
+						<input type="text" name="phone" class="form-control form-control-user" id="exampleLastName" placeholder="Phone Number (e.g 0812345678)" required>
 					</div>
 					<div class="field">
 						<input type="text" name="address" class="form-control form-control-user" id="exampleLastName" placeholder="Address" required>
