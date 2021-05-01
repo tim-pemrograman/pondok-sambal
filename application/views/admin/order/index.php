@@ -84,6 +84,13 @@
                             <span class="text">Clear Filter</span>
                         </a>
 
+                        <a href="<?= base_url('admin/order/filter/0') ?>" class="btn btn-secondary mb-3 ml-3 btn-icon-split">
+                            <span class="icon text-white-50">
+                                <i class="fas fa-clock"></i>
+                            </span>
+                            <span class="text">Belum di Bayar</span>
+                        </a>
+
                         <a href="<?= base_url('admin/order/filter/2') ?>" class="btn btn-primary mb-3 ml-3 btn-icon-split">
                             <span class="icon text-white-50">
                                 <i class="fas fa-clock"></i>
@@ -91,7 +98,7 @@
                             <span class="text">Sedang diproses</span>
                         </a>
 
-                        <a href="<?= base_url('admin/order/filter/3') ?>" class="btn btn-warning mb-3 ml-3 btn-icon-split">
+                        <a href="<?= base_url('admin/order/filter/3') ?>" class="btn btn-info mb-3 ml-3 btn-icon-split">
                             <span class="icon text-white-50">
                                 <i class="fas fa-car-side"></i>
                             </span>
