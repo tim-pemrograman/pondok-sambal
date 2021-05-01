@@ -54,6 +54,9 @@
                                     case '4':
                                         echo '4 - Transaksi Selesai';
                                         break;
+                                    case '5':
+                                        echo '5 - Transaksi ditolak';
+                                        break;
                                 }; 
                             ?>
                          </td>
@@ -77,9 +80,9 @@
                                 <a class="dropdown-item" href="<?= base_url('admin'); ?>/order/update_proses/selesai/<?= $data_order->order_id; ?>">Transaksi Selesai</a>
                             </div>
                         </div> -->
-                        <a href="<?= base_url('admin/order/') ?>" class="btn btn-danger mb-3 btn-icon-split">
+                        <a href="<?= base_url('admin/order/') ?>" class="btn btn-warning mb-3 btn-icon-split">
                             <span class="icon text-white-50">
-                                <i class="fas fa-window-close"></i>
+                                <i class="fas fa-filter"></i>
                             </span>
                             <span class="text">Clear Filter</span>
                         </a>
@@ -88,7 +91,7 @@
                             <span class="icon text-white-50">
                                 <i class="fas fa-clock"></i>
                             </span>
-                            <span class="text">Belum di Bayar</span>
+                            <span class="text">Pending Order</span>
                         </a>
 
                         <a href="<?= base_url('admin/order/filter/2') ?>" class="btn btn-primary mb-3 ml-3 btn-icon-split">
@@ -112,6 +115,12 @@
                             <span class="text">Transaksi Selesai</span>
                         </a>
 
+                        <a href="<?= base_url('admin/order/filter/5') ?>" class="btn btn-danger mb-3 ml-3 btn-icon-split">
+                            <span class="icon text-white-50">
+                                <i class="fas fa-times-circle"></i>
+                            </span>
+                            <span class="text">Transaksi ditolak</span>
+                        </a>
                        
 
                     </tbody>

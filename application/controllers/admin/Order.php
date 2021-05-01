@@ -62,13 +62,15 @@ class Order extends CI_Controller {
         $data['action'] = "edit";
 
         if($filter == 0){
-            $data['status'] = "Belum dibayar";
+            $data['status'] = "Pending Order";
         }elseif($filter == 2){
             $data['status'] = "Sedang diproses";
         }elseif($filter == 3){
             $data['status'] = "Sedang dijalan";
         }elseif($filter == 4){
             $data['status'] = "Transaksi Selesai";
+        }elseif($filter == 5){
+            $data['status'] = "Transaksi ditolak";
         }
 
 		$this->load->view('admin/template/header',$data);
@@ -149,8 +151,22 @@ class Order extends CI_Controller {
         // exit;
         $this->order_model->delete_order($id_order);
 
-        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+        $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
         Data Order berhasil dihapus! </div>');
+        redirect('admin/order');
+    }
+
+    public function tolak($id_order)
+    {
+        
+        $data['data_core'] = $this->validate();
+        
+        // var_dump($data);
+        // exit;
+        $this->order_model->reject_order($id_order);
+
+        $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+        Data Order berhasil ditolak! </div>');
         redirect('admin/order');
     }
 

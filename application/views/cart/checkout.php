@@ -53,6 +53,10 @@ else:
 </table>
 <p><?= form_submit('', 'Update your Cart'); form_submit('', 'Update your Cart'); echo anchor('cart/empty_cart', 'Empty Cart', 'class="empty"');?>
 </p>
+<?php 
+echo form_close(); 
+endif;
+?>
 <p><small>If the quantity is set to zero, the item will be removed from the cart.</small></p>
 <h3>Method of payment</h3>
 
@@ -94,8 +98,4 @@ else:
 <div class="clear">
 	<p></p>
 </div>
-<?php 
-echo form_close(); 
-endif;
-?>
 </div>

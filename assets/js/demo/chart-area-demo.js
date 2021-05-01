@@ -27,12 +27,55 @@ function number_format(number, decimals, dec_point, thousands_sep) {
   return s.join(dec);
 }
 
+var data_chart;
+let month;
+let total;
+
+function getData(){
+  $.ajax({
+    async: false, 
+    url:"http://localhost/pondok-sambal/admin/dashboard/getChart",
+    method:"POST",
+    data:{},
+    success:function(data){ 
+        // data_chart = data;
+        ReturnData(data);
+      }
+    });
+};
+  
+var dataReturn;
+function ReturnData(data) {
+  //do something with your parameter
+  dataReturn = data;
+  month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  total = [];
+
+  // looping chart total revenue and month
+  // Fill array with 0 as many as last array of dataReturn index
+  var count;
+  for(count = 0; count < dataReturn[dataReturn.length - 1]['month']; count++) {
+    total.push(0);
+    // console.log(count)
+  }
+  
+  // Replace array with dataReturn
+  dataReturn.forEach(element => {
+    total[element['month']-1] =  element['price'];
+  });
+
+}
+  
+
+getData();
+
+
 // Area Chart Example
 var ctx = document.getElementById("myAreaChart");
 var myLineChart = new Chart(ctx, {
   type: 'line',
   data: {
-    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    labels: month,
     datasets: [{
       label: "Earnings",
       lineTension: 0.3,
@@ -46,7 +89,7 @@ var myLineChart = new Chart(ctx, {
       pointHoverBorderColor: "rgba(78, 115, 223, 1)",
       pointHitRadius: 10,
       pointBorderWidth: 2,
-      data: [0, 10000, 5000, 15000, 10000, 20000, 15000, 25000, 20000, 30000, 25000, 40000],
+      data: total,
     }],
   },
   options: {

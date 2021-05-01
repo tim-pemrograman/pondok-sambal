@@ -19,7 +19,7 @@ width: 20%;
 	--post-line: #757375;
 	--post-line2: #545354;
 	--dollar: #30bdd6;
-    margin-left: 30%;
+    /* margin-left: 30%; */
 }
 
 .container-transaction:before {

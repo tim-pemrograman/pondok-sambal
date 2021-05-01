@@ -38,10 +38,10 @@
 
 																	<div class="gdlr-blog-info gdlr-info">
 																		<div class="blog-info blog-date"><i
-																				class="fa fa-clock-o"></i><a href="#"><?= (new DateTime($article->created_at))->format('d M Y H:i')?></a></div>
+																				class="fa fa-clock-o"></i><a href="<?= base_url('article/detail/').$article->article_id?>"><?= (new DateTime($article->created_at))->format('d M Y H:i')?></a></div>
 																		<div class="blog-info blog-author"><i
-																				class="fa fa-pencil"></i><a href="#"
-																				title="Posts by Kisus"
+																				class="fa fa-pencil"></i><a href="<?= base_url('article/detail/').$article->article_id?>"
+																				title="Posts by <?= $article->Fname." ".$article->Lname; ?>"
 																				rel="author"><?= $article->Fname." ".$article->Lname; ?> </a></div>
 																		<div class="clear"></div>
 																	</div>
