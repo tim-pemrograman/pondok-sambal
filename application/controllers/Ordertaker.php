@@ -15,10 +15,13 @@ class Ordertaker extends CI_Controller
 		$this->load->model('order_model'); // Load our cart model for our entire class
 		$this->load->library('cart');
 		$this->load->library('form_validation');
+		$this->load->model('article_model');
 	}
 
 	public function index()
 	{	
+		$data['page']="menu";
+		$data['recent_articles'] = $this->article_model->get_recent();
 		$user_id = $this->session->userdata('user_id');
 
         $data['data_core'] = $this->userlogin_model->GetNama($user_id);
@@ -38,6 +41,7 @@ class Ordertaker extends CI_Controller
 	
 	
 	public function history(){
+		$data['page']="history";
 		$user_id = $this->session->userdata('user_id');
 		
         // var_dump($data['data_order']); exit;
@@ -152,6 +156,7 @@ class Ordertaker extends CI_Controller
 	
 	public function review()
 	{
+		$data['page']="review";
 		$user_id = $this->session->userdata('user_id');
 
         $data['data_core'] = $this->userlogin_model->GetNama($user_id);

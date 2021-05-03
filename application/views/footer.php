@@ -21,13 +21,13 @@
 					<div class="gdlr-space" style="margin-top: 13px;"></div>
 
 					<i class="gdlr-icon fa fa-envelope-o" style="color: #fff; font-size: 16px; "></i>
-					reservation@pondoksambalresto.com
+					admin@pondoksambalresto.com
 
 					<div class="clear"></div>
 					<div class="gdlr-space" style="margin-top: 13px;"></div>
 
 					<i class="gdlr-icon fa fa-link" style="color: #fff; font-size: 16px; "></i>
-					http://pondoksambalresto.com
+					<a href="https://pondoksambal.tugaskuliah.web.id/">pondoksambal.tugaskuliah.web.id/</a>
 				</div>
 			</div>
 		</div>
@@ -36,17 +36,11 @@
 				<h3 class="gdlr-widget-title">Recent Posts</h3>
 				<div class="clear"></div>
 				<ul>
+					<?php foreach ($recent_articles as $article): ?>
 					<li>
-						<a href="<?= base_url('article')?>">Cuma disini Pedasnya gak ngebosenin</a>
+					<a href="<?= base_url('article/detail/').$article->article_id?>"><?= $article->title; ?></a>
 					</li>
-					<li>
-						<a href="<?= base_url('article')?>">Kamu tidak akan tahu apa itu pedas kalau belum ke
-							Pondok Sambal!</a>
-					</li>
-					<li>
-						<a href="<?= base_url('article')?>">Cuma disini kamu bisa makan enak dan pedas yang
-							nagih!</a>
-					</li>
+					<?php endforeach; ?>
 				</ul>
 			</div>
 		</div>
@@ -65,7 +59,7 @@
 
 	<div class="copyright-wrapper">
 		<div class="copyright-container container">
-			<div class="copyright-left">
+			<!-- <div class="copyright-left">
 
 				<a href="#" target="_blank">
 					<i class="gdlr-icon fa fa-facebook"></i>
@@ -86,7 +80,7 @@
 					<i class="gdlr-icon fa fa-flickr"></i>
 				</a>
 
-			</div>
+			</div> -->
 			<div class="copyright-right">
 				Copyright 2021 Valorant. All Right Revered.
 			</div>
@@ -94,7 +88,7 @@
 		</div>
 	</div>
 </footer>
-</div>
+<!-- </div> -->
 <!-- Custom scripts for all pages-->
 <script src="<?= base_url('assets/') ?>js/sb-admin-2.min.js"></script>
 <!-- body-wrapper -->

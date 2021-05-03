@@ -115,11 +115,11 @@
 						<div class="top-navigation-left">
 							<span class="top-bar-block"><i class="fa fa-phone"></i>+6281371337667</span>
 							<span class="top-bar-block"><i class="fa fa-envelope"></i>
-								reservation@pondoksambalresto.com</span> </div>
+								admin@pondoksambalresto.com</span> </div>
 						<div class="top-navigation-right">
 							<div class="top-navigation-right-text">
-								<i class="fa fa-clock-o"></i> Mon - Fri / 10:00-21:00, Sat - Sun / 09:00 - 23:00 </div>
-							<div class="top-social-wrapper">
+								<i class="fa fa-clock-o"></i> Mon - Sat / 11:00-20:30, Sun / Closed </div>
+							<!-- <div class="top-social-wrapper">
 								<div class="social-icon">
 									<a href="#" target="_blank">
 										<img width="32" height="32"
@@ -157,7 +157,7 @@
 								</div>
 
 								<div class="clear"></div>
-							</div>
+							</div> -->
 						</div>
 						<div class="clear"></div>
 					</div>
@@ -177,7 +177,7 @@
 									<button class="dl-trigger">Open Menu</button>
 									<ul id="menu-main-menu" class="dl-menu gdlr-main-mobile-menu">
 
-										<li class="menu-item menu-item-has-children"><a
+										<li class="menu-item menu-item-has-children <?= ($page=='menu') ? 'current-menu-item' :''; ?>"><a
 												href="<?= base_url('ordertaker')?>">Menu</a>
 										</li>
 
@@ -239,10 +239,10 @@
 									<ul id="menu-main-menu-1" class="sf-menu gdlr-main-menu">
 										
 										<li
-											class="menu-item menu-item-has-childrenmenu-item menu-item-has-children gdlr-normal-menu">
+											class="menu-item menu-item-has-childrenmenu-item menu-item-has-children gdlr-normal-menu <?= ($page=='menu') ? 'current-menu-item' :''; ?>">
 											<a href="<?= base_url('ordertaker')?>" class="sf-with-ul-pre">Menu</a>
 										</li>
-										<li class="menu-item menu-item-has-children">
+										<li class="menu-item menu-item-has-children <?= ($page=='review') ? 'current-menu-item' :''; ?>">
 											<a href="<?= base_url('ordertaker/review')?>" class="sf-with-ul-pre">Review</a>
 										</li>
 										<li class="menu-item menu-item-has-children menu-item menu-item-has-children gdlr-normal-menu">
@@ -273,7 +273,7 @@
 											<ul class="sub-menu">
 												<!-- Dropdown - User Information -->
 
-												<li class="menu-item">
+												<li class="menu-item <?= ($page=='history') ? 'current-menu-item' :''; ?>">
 													<a  href="<?= base_url('ordertaker/history') ?>">
 														<i class="fa fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
 														Order History

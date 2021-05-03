@@ -13,6 +13,7 @@ class MenuPage extends CI_Controller
 	}
 	public function menu()
 	{
+		$data['page'] = 'menu';
 		$data['title_head'] = "Daftar Menu - Pondok Sambal";
 		$data['meta_data'] = getSEOData();
 

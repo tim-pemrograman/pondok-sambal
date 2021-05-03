@@ -10,6 +10,8 @@ class Article extends CI_Controller
 	
     public function index()
 	{	
+		$data['page'] = 'article';
+
 		$data['title_head'] = "Artikel Pondok Sambal";
 		$data['meta_data'] = getSEOData();
 
@@ -22,6 +24,9 @@ class Article extends CI_Controller
     }
 
 	public function detail($id) {
+		
+		$data['page'] = 'article';
+
 		$data['meta_data'] = getSEOData();
 		
 		$data['article'] = $this->article_model->get_article_by_id($id);

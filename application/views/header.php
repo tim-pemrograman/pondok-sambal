@@ -72,11 +72,11 @@
 					<div class="top-navigation-left">
 						<span class="top-bar-block"><i class="fa fa-phone"></i>+6281371337667</span>
 						<span class="top-bar-block"><i class="fa fa-envelope"></i>
-							reservation@pondoksambalresto.com</span> </div>
+							admin@pondoksambalresto.com</span> </div>
 					<div class="top-navigation-right">
 						<div class="top-navigation-right-text">
-							<i class="fa fa-clock-o"></i> Mon - Fri / 10:00-21:00, Sat - Sun / 09:00 - 23:00 </div>
-						<div class="top-social-wrapper">
+							<i class="fa fa-clock-o"></i> Mon - Sat / 11:00-20:30, Sun / Closed </div>
+						<!-- <div class="top-social-wrapper">
 							<div class="social-icon">
 								<a href="#" target="_blank">
 									<img width="32" height="32"
@@ -114,7 +114,7 @@
 							</div>
 							
 							<div class="clear"></div>
-						</div>
+						</div> -->
 					</div>
 					<div class="clear"></div>
 				</div>
@@ -133,25 +133,25 @@
 							<div class="gdlr-responsive-navigation dl-menuwrapper" id="gdlr-responsive-navigation">
 								<button class="dl-trigger">Open Menu</button>
 								<ul id="menu-main-menu" class="dl-menu gdlr-main-mobile-menu">
-									<li class="menu-item menu-item-home current-menu-item "><a
+									<li class="menu-item menu-item-home <?= ($page=='home') ? 'current-menu-item' :''; ?>"><a
 											href="<?= base_url('/')?>" aria-current="page">Home</a></li>
-									<li class="menu-item menu-item-has-children"><a
+									<li class="menu-item menu-item-has-children <?= ($page=='menu') ? 'current-menu-item' :''; ?>"><a
 											href="<?= base_url('menupage/menu')?>">Menu</a>
 									</li>
 									<li class="menu-item"><a href="<?= base_url('team/member')?>">Chefs</a></li>
 									<li class="menu-item menu-item-has-children"><a
 											href="<?= base_url('aboutpage/about')?>">Pages</a>
 										<ul class="dl-submenu">
-											<li class="menu-item"><a href="<?= base_url('aboutpage/about')?>">About
+											<li class="menu-item"><a href="<?= base_url('aboutpage/about')?>" <?= ($page=='about') ? 'current-menu-item' :''; ?>>About
 													Us</a></li>
-											<li class="menu-item"><a href="<?= base_url('aboutpage/contact')?>">Contact
+											<li class="menu-item" <?= ($page=='contact') ? 'current-menu-item' :''; ?>><a href="<?= base_url('aboutpage/contact')?>">Contact
 													Us</a></li>
-											<li class="menu-item menu-item-has-children"><a
+											<li class="menu-item menu-item-has-children <?= ($page=='gallery') ? 'current-menu-item' :''; ?>"><a
 													href="<?= base_url('aboutpage/gallery3nc')?>">Gallery</a></li>
 
 										</ul>
 									</li>
-									<li class="menu-item menu-item-has-children menu-item-641"><a
+									<li class="menu-item menu-item-has-children menu-item-641 <?= ($page=='article') ? 'current-menu-item' :''; ?>"><a
 											href="<?= base_url('article')?>">Blog</a>
 									</li>
 									<li class="menu-item menu-item-has-children menu-item-641">
@@ -166,10 +166,10 @@
 						<div class="gdlr-navigation-wrapper">
 							<nav class="gdlr-navigation" id="gdlr-main-navigation" role="navigation">
 								<ul id="menu-main-menu-1" class="sf-menu gdlr-main-menu">
-									<li class="menu-item menu-item-home current-menu-item gdlr-normal-menu"><a
+									<li class="menu-item menu-item-home gdlr-normal-menu <?= ($page=='home') ? 'current-menu-item' :''; ?>"><a
 											href="<?= base_url('')?>">Home</a></li>
 									<li
-										class="menu-item menu-item-has-childrenmenu-item menu-item-has-children gdlr-normal-menu">
+										class="menu-item menu-item-has-childrenmenu-item menu-item-has-children gdlr-normal-menu <?= ($page=='menu') ? 'current-menu-item' :''; ?>">
 										<a href="<?= base_url('menupage/menu')?>" class="sf-with-ul-pre">Menu</a>
 									</li>
 									<!-- <li class="menu-itemmenu-item gdlr-normal-menu"><a
@@ -178,18 +178,18 @@
 										class="menu-item menu-item-has-children menu-item menu-item-has-children gdlr-normal-menu">
 										<a href="<?= base_url('aboutpage/about')?>" class="sf-with-ul-pre">Pages</a>
 										<ul class="sub-menu">
-											<li class="menu-item"><a href="<?= base_url('aboutpage/about')?>">About
+											<li class="menu-item <?= ($page=='about') ? 'current-menu-item' :''; ?>"><a href="<?= base_url('aboutpage/about')?>">About
 													Us</a></li>
-											<li class="menu-item"><a href="<?= base_url('aboutpage/contact')?>">Contact
+											<li class="menu-item <?= ($page=='contact') ? 'current-menu-item' :''; ?>"><a href="<?= base_url('aboutpage/contact')?>">Contact
 													Us</a></li>
-											<li class="menu-item menu-item-has-children"><a
+											<li class="menu-item menu-item-has-children <?= ($page=='gallery') ? 'current-menu-item' :''; ?>"><a
 													href="<?= base_url('aboutpage/gallery3nc')?>"
 													class="sf-with-ul-pre">Gallery</a></li>
 
 										</ul>
 									</li>
 									<li
-										class="menu-item menu-item-has-children menu-item-641menu-item menu-item-has-children menu-item-641 gdlr-mega-menu">
+										class="menu-item menu-item-has-children menu-item-641menu-item menu-item-has-children menu-item-641 gdlr-mega-menu <?= ($page=='article') ? 'current-menu-item' :''; ?>">
                     
 										<a href="<?= base_url('article')?>" class="sf-with-ul-pre">Blog</a></li>
 									<li class="menu-item menu-item-has-childrenmenu-item menu-item-has-children gdlr-normal-menu">

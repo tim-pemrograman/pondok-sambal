@@ -24,6 +24,7 @@ class Homepage extends CI_Controller
 	}
 	public function index()
 	{
+		$data['page'] = 'home';
 		$data['title_head'] = "Pondok Sambal Goldenland Batam";
 		$data['meta_data'] = getSEOData();
 
@@ -38,7 +39,7 @@ class Homepage extends CI_Controller
 		$this->load->helper('url');
 		$this->load->view('header',$data);
 		$this->load->view('homepage', $data);
-		$this->load->view('footer');
+		$this->load->view('footer', $data);
 	}
 
 	
