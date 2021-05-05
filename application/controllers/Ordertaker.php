@@ -36,11 +36,12 @@ class Ordertaker extends CI_Controller
 		$this->load->helper('url');
 		$this->load->view('order-taker/header-order', $data);
 		$this->load->view('order-taker/menu-mixed', $data);
-		$this->load->view('order-taker/footer-order');
+		$this->load->view('order-taker/footer-order',$data);
 	}
 	
 	
 	public function history(){
+		$data['recent_articles'] = $this->article_model->get_recent();
 		$data['page']="history";
 		$user_id = $this->session->userdata('user_id');
 		
@@ -56,11 +57,12 @@ class Ordertaker extends CI_Controller
 		$this->load->helper('url');
 		$this->load->view('order-taker/header-order', $data);
 		$this->load->view('order-taker/confirmation', $data);
-		$this->load->view('order-taker/footer-order');
+		$this->load->view('order-taker/footer-order', $data);
 	}
 
 	public function view($order_id)
 	{
+		$data['recent_articles'] = $this->article_model->get_recent();
 		$user_id = $this->session->userdata('user_id');
 
         $data['data_core'] = $this->userlogin_model->GetNama($user_id);
@@ -75,10 +77,11 @@ class Ordertaker extends CI_Controller
 		 $this->load->helper('url');
 		 $this->load->view('order-taker/header-order', $data);
 		 $this->load->view('order-taker/detail', $data);
-		 $this->load->view('order-taker/footer-order');
+		 $this->load->view('order-taker/footer-order',$data);
 	}
 
 	public function checkout(){
+		$data['recent_articles'] = $this->article_model->get_recent();
 		$user_id = $this->session->userdata('user_id');
 
         $data['data_core'] = $this->userlogin_model->GetNama($user_id);
@@ -90,7 +93,7 @@ class Ordertaker extends CI_Controller
 		
         $this->load->view('order-taker/header-order', $data);
         $this->load->view('cart/checkout');
-        $this->load->view('order-taker/footer-order');
+        $this->load->view('order-taker/footer-order',$data);
     }
 
 	public function confirmCheckout($method) {
@@ -120,6 +123,7 @@ class Ordertaker extends CI_Controller
 	}
 
 	public function payment(){
+		$data['recent_articles'] = $this->article_model->get_recent();
 		$user_id = $this->session->userdata('user_id');
 		if($user_id == NULL || $user_id == '') {
 			redirect('homepage');
@@ -138,7 +142,7 @@ class Ordertaker extends CI_Controller
 			if ($this->form_validation->run() === FALSE && empty($_FILES['img_path']['name'])) {
 				$this->load->view('order-taker/header-order', $data);
 				$this->load->view('cart/payment');
-				$this->load->view('order-taker/footer-order');
+				$this->load->view('order-taker/footer-order', $data);
 			} else {
 				$type = 0;
 				$status = 1;
@@ -156,6 +160,7 @@ class Ordertaker extends CI_Controller
 	
 	public function review()
 	{
+		$data['recent_articles'] = $this->article_model->get_recent();
 		$data['page']="review";
 		$user_id = $this->session->userdata('user_id');
 
@@ -163,7 +168,7 @@ class Ordertaker extends CI_Controller
 		
         $this->load->view('order-taker/header-order', $data);
         $this->load->view('contact-page');
-        $this->load->view('order-taker/footer-order');
+        $this->load->view('order-taker/footer-order', $data);
 	}
 
 	public function add_proof($order_id)

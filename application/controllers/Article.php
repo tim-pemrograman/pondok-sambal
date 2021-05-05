@@ -10,6 +10,7 @@ class Article extends CI_Controller
 	
     public function index()
 	{	
+		$data['recent_articles'] = $this->article_model->get_recent();
 		$data['page'] = 'article';
 
 		$data['title_head'] = "Artikel Pondok Sambal";
@@ -23,8 +24,9 @@ class Article extends CI_Controller
 		$this->load->view('footer');
     }
 
-	public function detail($id) {
-		
+	public function detail($id) 
+	{
+		$data['recent_articles'] = $this->article_model->get_recent();
 		$data['page'] = 'article';
 
 		$data['meta_data'] = getSEOData();

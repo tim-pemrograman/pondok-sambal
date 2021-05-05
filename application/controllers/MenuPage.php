@@ -9,10 +9,12 @@ class MenuPage extends CI_Controller
 		$this->load->model('category_model');
 		$this->load->model('menu_model');
 		$this->load->model('cart_model'); // Load our cart model for our entire class
+		$this->load->model('article_model'); // Load our cart model for our entire class
 		$this->load->library('cart');
 	}
 	public function menu()
 	{
+		$data['recent_articles'] = $this->article_model->get_recent();
 		$data['page'] = 'menu';
 		$data['title_head'] = "Daftar Menu - Pondok Sambal";
 		$data['meta_data'] = getSEOData();
