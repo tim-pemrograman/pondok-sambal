@@ -82,23 +82,22 @@ class Aboutpage extends CI_Controller
 				'pelayanan_n' => (int)$this->input->post('layanan')
 			 );
 
-			 $send_data = array($data_ml);
-			//  var_dump(json_encode($send_data));
-			//  var_dump($data_ml);
+			$send_data = array($data_ml);
 
             $last_messageid = $this->message_model->add_message($data);
-			// var_dump($last_messageid); exit;
 			$data_sentiment = $this->message_model->analyse_sentiment($send_data);
+			// Filter out value of return that doesn't numeric
+			$sentiment_val = (int)filter_var(json_decode($data_sentiment)->prediction, FILTER_SANITIZE_NUMBER_INT);
 
 			// Get Return Sentiment from API Machine Learning
 			$data_return_sentiment = array(
-				'sentiment' => json_decode($data_sentiment)->prediction,
+				'sentiment' => $sentiment_val,
 				'message_id' => $last_messageid
 			);
 			$this->message_model->addSentiment($data_return_sentiment);
-
 			
-			// var_dump(json_decode($data_sentiment)->prediction); exit;
+			// var_dump($data_return_sentiment); exit;
+
             $this->session->set_flashdata('message', '<div style="background:#93ffdf; padding: 10px 20px; color:black;border:5px" role="alert">Pesan Anda telah berhasil ditambah!</div>');
             redirect('aboutpage/contact');
         }
