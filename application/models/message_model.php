@@ -10,6 +10,8 @@ class message_model extends CI_Model
     public function add_message($data)
     {
         $this->db->insert('tbl_message', $data);
+        // Send back last id inserted from tbl_message
+        return $this->db->insert_id();
     }
 
     // public function get_employee_by_id($id)
@@ -66,6 +68,12 @@ class message_model extends CI_Model
         // exit;
 
         return $result;
+    }
+
+    public function addSentiment($data)
+    {
+        $this->db->insert('tbl_message_sentiment', $data);
+
     }
 
 }

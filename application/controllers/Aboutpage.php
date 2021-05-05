@@ -86,13 +86,21 @@ class Aboutpage extends CI_Controller
 			//  var_dump(json_encode($send_data));
 			//  var_dump($data_ml);
 
-            // $this->message_model->add_message($data);
-            // $this->message_model->analyse_sentiment($data_ml);
+            $last_messageid = $this->message_model->add_message($data);
+			// var_dump($last_messageid); exit;
 			$data_sentiment = $this->message_model->analyse_sentiment($send_data);
+
+			// Get Return Sentiment from API Machine Learning
+			$data_return_sentiment = array(
+				'sentiment' => json_decode($data_sentiment)->prediction,
+				'message_id' => $last_messageid
+			);
+			$this->message_model->addSentiment($data_return_sentiment);
+
 			
-			var_dump(json_decode($data_sentiment)->prediction); exit;
-            // $this->session->set_flashdata('message', '<div style="background:#93ffdf; padding: 10px 20px; color:black;border:5px" role="alert">Pesan Anda telah berhasil ditambah!</div>');
-            // redirect('aboutpage/contact');
+			// var_dump(json_decode($data_sentiment)->prediction); exit;
+            $this->session->set_flashdata('message', '<div style="background:#93ffdf; padding: 10px 20px; color:black;border:5px" role="alert">Pesan Anda telah berhasil ditambah!</div>');
+            redirect('aboutpage/contact');
         }
     }
 
