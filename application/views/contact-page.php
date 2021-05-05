@@ -172,23 +172,23 @@
 															<h6 style="margin-bottom:0;">Pelayanan</h6>
 															
 																<fieldset>
-																<div class="star-rating">
-																	<input type="radio" id="star5" name="layanan"
-																		value="5" /><i></i><label for="star5"
-																		title="Outstanding">5 stars</label>
-																	<input type="radio" id="star4" name="layanan"
-																		value="4" /><i></i><label for="star4"
-																		title="Very Good">4 stars</label>
-																	<input type="radio" id="star3" name="layanan"
-																		value="3" /><i></i><label for="star3" title="Good">3
-																		stars</label>
-																	<input type="radio" id="star2" name="layanan"
-																		value="2" /><i></i><label for="star2" title="Poor">2
-																		stars</label>
-																	<input type="radio" id="star1" name="layanan"
-																		value="1" /><i></i><label for="star1"
-																		title="Very Poor">1 star</label>
-																		</div>
+																	<div class="star-rating">
+																		<input type="radio" id="star1" name="layanan"
+																			value="1" /><i></i><label for="star1"
+																			title="Very Poor">1 star</label>
+																		<input type="radio" id="star2" name="layanan"
+																			value="2" /><i></i><label for="star2" title="Poor">2
+																			stars</label>
+																		<input type="radio" id="star3" name="layanan"
+																			value="3" /><i></i><label for="star3" title="Good">3
+																			stars</label>
+																		<input type="radio" id="star4" name="layanan"
+																			value="4" /><i></i><label for="star4"
+																			title="Very Good">4 stars</label>
+																		<input type="radio" id="star5" name="layanan"
+																			value="5" /><i></i><label for="star5"
+																			title="Outstanding">5 stars</label>
+																	</div>
 																</fieldset>
 															
 														</div>
