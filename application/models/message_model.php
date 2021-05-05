@@ -33,14 +33,17 @@ class message_model extends CI_Model
 
     public function analyse_sentiment($data)
     {
+
         /* API URL */
         $url = 'http://localhost:5000/predict';
-   
+        
         /* Init cURL resource */
         $ch = curl_init($url);
-   
+        
         /* Array Parameter Data */
-        $data = [json_encode($data)];
+        $data = json_encode($data);
+        
+        // var_dump($data); exit;
    
         /* pass encoded JSON string to the POST fields */
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
@@ -56,6 +59,11 @@ class message_model extends CI_Model
              
         /* close cURL resource */
         curl_close($ch);
+
+        // // cara panggilnya
+        // json_decode($result)->prediction;
+        // var_dump(json_decode($result)->prediction);
+        // exit;
 
         return $result;
     }

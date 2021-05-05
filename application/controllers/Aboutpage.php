@@ -81,12 +81,16 @@ class Aboutpage extends CI_Controller
 				'keramaian_n' => (int)$this->input->post('ramai'),
 				'pelayanan_n' => (int)$this->input->post('layanan')
 			 );
-			 var_dump(json_encode($data_ml));
-			 var_dump($data_ml);
+
+			 $send_data = array($data_ml);
+			//  var_dump(json_encode($send_data));
+			//  var_dump($data_ml);
 
             // $this->message_model->add_message($data);
             // $this->message_model->analyse_sentiment($data_ml);
-			//  var_dump( $this->message_model->analyse_sentiment($data_ml));
+			$data_sentiment = $this->message_model->analyse_sentiment($send_data);
+			
+			var_dump(json_decode($data_sentiment)->prediction); exit;
             // $this->session->set_flashdata('message', '<div style="background:#93ffdf; padding: 10px 20px; color:black;border:5px" role="alert">Pesan Anda telah berhasil ditambah!</div>');
             // redirect('aboutpage/contact');
         }
