@@ -31,5 +31,34 @@ class message_model extends CI_Model
         $this->db->delete('tbl_message', array('message_id' => $id));
     }
 
+    public function analyse_sentiment($data)
+    {
+        /* API URL */
+        $url = 'http://localhost:5000/predict';
+   
+        /* Init cURL resource */
+        $ch = curl_init($url);
+   
+        /* Array Parameter Data */
+        $data = [json_encode($data)];
+   
+        /* pass encoded JSON string to the POST fields */
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            
+        /* set the content type json */
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+            
+        /* set return type json */
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            
+        /* execute request */
+        $result = curl_exec($ch);
+             
+        /* close cURL resource */
+        curl_close($ch);
+
+        return $result;
+    }
+
 }
  

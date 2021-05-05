@@ -269,11 +269,10 @@
 									+6281371337667</p>
 								<p><i class="gdlr-icon fa fa-envelope" style="color: #444444; font-size: 16px; "></i>
 									reservation@pondoksambalrestaurant.com</p>
-								<p><i class="gdlr-icon fa fa-clock-o" style="color: #444444; font-size: 16px; "></i> Mon
-									- Fri / 10:00-21:00, Sat - Sun / 09:00 - 23:00</p>
+								<p><i class="gdlr-icon fa fa-clock-o" style="color: #444444; font-size: 16px; "></i> Mon - Sat / 11:00-20:00, Sun / CLOSED</p>
 							</div>
 						</div>
-						<div id="text-8" class="widget widget_text gdlr-item gdlr-widget">
+						<!-- <div id="text-8" class="widget widget_text gdlr-item gdlr-widget">
 							<h3 class="gdlr-widget-title">Social Media</h3>
 							<div class="clear"></div>
 							<div class="textwidget"><a href="http://facebook.com/goodlayers"><i
@@ -289,7 +288,7 @@
 										style="color: #444444; font-size: 28px; "></i></a> <a href="#"><i
 										class="gdlr-icon fa fa-instagram"
 										style="color: #444444; font-size: 28px; "></i></a>
-							</div>
+							</div> -->
 						</div>
 					</div>
 				</div>

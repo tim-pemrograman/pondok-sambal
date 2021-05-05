@@ -47,7 +47,7 @@ class Aboutpage extends CI_Controller
 
 	public function sendMessage()
     {
-
+		
 		$this->form_validation->set_rules('email', 'email', 'required');
         $this->form_validation->set_rules('phone', 'phone', 'required');
         $this->form_validation->set_rules('review', 'review');
@@ -61,10 +61,7 @@ class Aboutpage extends CI_Controller
         $now = date('Y-m-d H:i:s');
 
         if ($this->form_validation->run() === FALSE) {
-			$this->load->helper('url');
-			$this->load->view('header');
-			$this->load->view('contact-page');
-			$this->load->view('footer');
+			redirect('aboutpage/contact');
 		} else {
 			$data = array(
 				'email' => $this->input->post('email'),
@@ -77,10 +74,21 @@ class Aboutpage extends CI_Controller
 				'r_pelayanan' => (int)$this->input->post('layanan'),
 				'date_submitted' => $now
 			 );
-			//  var_dump($data);
-            $this->message_model->add_message($data);
-            $this->session->set_flashdata('message', '<div style="background:#93ffdf; padding: 10px 20px; color:black;border:5px" role="alert">Pesan Anda telah berhasil ditambah!</div>');
-            redirect('aboutpage/contact');
+			 $data_ml = array(
+				'rasa_n' => (int)$this->input->post('rasa'),
+				'sambal_n' => (int)$this->input->post('sambal'),
+				'kenyamanan_n' => (int)$this->input->post('nyaman'),
+				'keramaian_n' => (int)$this->input->post('ramai'),
+				'pelayanan_n' => (int)$this->input->post('layanan')
+			 );
+			 var_dump(json_encode($data_ml));
+			 var_dump($data_ml);
+
+            // $this->message_model->add_message($data);
+            // $this->message_model->analyse_sentiment($data_ml);
+			//  var_dump( $this->message_model->analyse_sentiment($data_ml));
+            // $this->session->set_flashdata('message', '<div style="background:#93ffdf; padding: 10px 20px; color:black;border:5px" role="alert">Pesan Anda telah berhasil ditambah!</div>');
+            // redirect('aboutpage/contact');
         }
     }
 
