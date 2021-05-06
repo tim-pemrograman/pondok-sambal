@@ -38,16 +38,16 @@ class Aboutpage extends CI_Controller
 		$data['page'] = 'contact';
 		$data['title_head'] = "Hubungki Kami - Pondok Sambal";
 		$data['meta_data'] = getSEOData();
-
+		
 		$this->load->helper('url');
 		$this->load->view('header',$data);
 		$this->load->view('contact-page');
 		$this->load->view('footer');
 	}
-
+	
 	public function sendMessage()
     {
-
+		
 		$this->form_validation->set_rules('email', 'email', 'required');
         $this->form_validation->set_rules('phone', 'phone', 'required');
         $this->form_validation->set_rules('review', 'review');
@@ -61,10 +61,7 @@ class Aboutpage extends CI_Controller
         $now = date('Y-m-d H:i:s');
 
         if ($this->form_validation->run() === FALSE) {
-			$this->load->helper('url');
-			$this->load->view('header');
-			$this->load->view('contact-page');
-			$this->load->view('footer');
+			$this->contact();
 		} else {
 			$data = array(
 				'email' => $this->input->post('email'),

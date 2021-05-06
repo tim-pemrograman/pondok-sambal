@@ -16,6 +16,7 @@ class Ordertaker extends CI_Controller
 		$this->load->library('cart');
 		$this->load->library('form_validation');
 		$this->load->model('article_model');
+		$this->load->model('message_model');
 	}
 
 	public function index()
@@ -167,9 +168,45 @@ class Ordertaker extends CI_Controller
         $data['data_core'] = $this->userlogin_model->GetNama($user_id);
 		
         $this->load->view('order-taker/header-order', $data);
-        $this->load->view('contact-page');
+        $this->load->view('order-taker/review');
         $this->load->view('order-taker/footer-order', $data);
 	}
+
+	public function sendMessage()
+    {
+		
+		$this->form_validation->set_rules('email', 'email', 'required');
+        $this->form_validation->set_rules('phone', 'phone', 'required');
+        $this->form_validation->set_rules('review', 'review');
+        $this->form_validation->set_rules('rasa', 'rasa');
+        $this->form_validation->set_rules('nyaman', 'nyaman');
+        $this->form_validation->set_rules('ramai', 'ramai');
+        $this->form_validation->set_rules('layanan', 'layanan');
+
+        $this->load->helper('date');
+        date_default_timezone_set('Asia/Jakarta');
+        $now = date('Y-m-d H:i:s');
+
+        if ($this->form_validation->run() === FALSE) {
+			$this->review();
+		} else {
+			$data = array(
+				'email' => $this->input->post('email'),
+				'phone' => $this->input->post('phone'),
+				'review' => $this->input->post('review'),
+				'r_rasa' => (int)$this->input->post('rasa'),
+				'r_sambal' => (int)$this->input->post('sambal'),
+				'r_kenyamanan' => (int)$this->input->post('nyaman'),
+				'r_keramaian' => (int)$this->input->post('ramai'),
+				'r_pelayanan' => (int)$this->input->post('layanan'),
+				'date_submitted' => $now
+			 );
+			//  var_dump($data);
+            $this->message_model->add_message($data);
+            $this->session->set_flashdata('message', '<div style="background:#93ffdf; padding: 10px 20px; color:black;border:5px" role="alert">Pesan Anda telah berhasil ditambah!</div>');
+            redirect('ordertaker/review');
+        }
+    }
 
 	public function add_proof($order_id)
     {	
