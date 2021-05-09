@@ -15,10 +15,7 @@ class Dashboard extends CI_Controller {
         if (!$this->session->userdata('employee_id')) {
             redirect('admin/auth');
         } else {
-			// // cek role
-            // if ($this->session->userdata('id_posisi') != "4") {
-            //     redirect('auth/blocked');
-            // }
+			
         }
     }
 
@@ -38,9 +35,6 @@ class Dashboard extends CI_Controller {
         
         $data['pending_order'] = $this->dashboard_model->getPendingOrder();
         $data['menu_available'] = $this->dashboard_model->getMenuCount();
-        
-
-        // var_dump($data['pending_order']); exit;
 
 		$data['titles'] = "Dashboard - Pondok Sambal";
 
@@ -77,6 +71,13 @@ class Dashboard extends CI_Controller {
         
         // return json_encode($data['data_chart']);
         
+    }
+
+    public function getPieChart() {
+
+        $data['data_pie_chart'] = $this->dashboard_model->getTotalSentiment();
+        header('Content-Type: application/json');
+        echo json_encode( $data['data_pie_chart'] );
     }
 
 }

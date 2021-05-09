@@ -68,5 +68,9 @@ class dashboard_model extends CI_Model
         return $query->result_array();
     }
 
+    public function getTotalSentiment() {
+        $query = $this->db->query("SELECT DISTINCT(SELECT COUNT(sentiment) FROM `tbl_message_sentiment` WHERE sentiment = 1) AS total_positive, (SELECT COUNT(sentiment) FROM `tbl_message_sentiment` WHERE sentiment = 0) AS total_negative FROM `tbl_message_sentiment`");
+        return $query->result();
+    }
 }
  

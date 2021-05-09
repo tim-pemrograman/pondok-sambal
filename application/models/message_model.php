@@ -62,11 +62,6 @@ class message_model extends CI_Model
         /* close cURL resource */
         curl_close($ch);
 
-        // // cara panggilnya
-        // json_decode($result)->prediction;
-        // var_dump(json_decode($result)->prediction);
-        // exit;
-
         return $result;
     }
 
@@ -75,6 +70,5 @@ class message_model extends CI_Model
         $this->db->insert('tbl_message_sentiment', $data);
 
     }
-
 }
  

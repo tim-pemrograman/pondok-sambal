@@ -47,7 +47,6 @@ class Aboutpage extends CI_Controller
 
 	public function sendMessage()
     {
-		
 		$this->form_validation->set_rules('email', 'email', 'required');
         $this->form_validation->set_rules('phone', 'phone', 'required');
         $this->form_validation->set_rules('review', 'review');
@@ -95,8 +94,6 @@ class Aboutpage extends CI_Controller
 				'message_id' => $last_messageid
 			);
 			$this->message_model->addSentiment($data_return_sentiment);
-			
-			// var_dump($data_return_sentiment); exit;
 
             $this->session->set_flashdata('message', '<div style="background:#93ffdf; padding: 10px 20px; color:black;border:5px" role="alert">Pesan Anda telah berhasil ditambah!</div>');
             redirect('aboutpage/contact');
