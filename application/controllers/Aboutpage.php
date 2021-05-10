@@ -25,13 +25,7 @@ class Aboutpage extends CI_Controller
 		$this->load->view('about-us',$data);
 		$this->load->view('footer');
 	}
-	// public function testi()
-	// {	
-	// 	$this->load->helper('url');
-	// 	$this->load->view('header');
-	// 	$this->load->view('testimonial');
-	// 	$this->load->view('footer');
-	// }
+	
 	public function contact()
 	{
 		$data['recent_articles'] = $this->article_model->get_recent();
