@@ -74,8 +74,50 @@ class Aboutpage extends CI_Controller
 				'r_pelayanan' => (int)$this->input->post('layanan'),
 				'date_submitted' => $now
 			 );
-			//  var_dump($data);
-            $this->message_model->add_message($data);
+			 $data_ml = array(
+				 'rasa_n' => (int)$this->input->post('rasa'),
+				 'sambal_n' => (int)$this->input->post('sambal'),
+				 'kenyamanan_n' => (int)$this->input->post('nyaman'),
+				 'keramaian_n' => (int)$this->input->post('ramai'),
+				 'pelayanan_n' => (int)$this->input->post('layanan')
+				);
+			// 0 -> Bagus
+			// 1-> Buruk
+			// 2 -> Netral
+			foreach ($data_ml as $key => &$value) {
+				switch($value){
+					case 1:
+						$value = 1;
+						break;
+					case 2:
+						$value = 1;
+						break;
+					case 3:
+						$value = 2;
+						break;
+					case 4:
+						$value = 0;
+						break;
+					case 5:
+						$value = 0;
+						break;
+					default:
+						$value = 2;
+				}
+			}
+
+			$send_data = array($data_ml);
+            $last_messageid = $this->message_model->add_message($data);
+			$data_sentiment = $this->message_model->analyse_sentiment($send_data);
+			// Filter out value of return that doesn't numeric
+			$sentiment_val = (int)filter_var(json_decode($data_sentiment)->prediction, FILTER_SANITIZE_NUMBER_INT);
+
+			// Get Return Sentiment from API Machine Learning
+			$data_return_sentiment = array(
+				'sentiment' => $sentiment_val,
+				'message_id' => $last_messageid
+			);
+			$this->message_model->addSentiment($data_return_sentiment);
             $this->session->set_flashdata('message', '<div style="background:#93ffdf; padding: 10px 20px; color:black;border:5px" role="alert">Pesan Anda telah berhasil ditambah!</div>');
             redirect('aboutpage/contact');
         }

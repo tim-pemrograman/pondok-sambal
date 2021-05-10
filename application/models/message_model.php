@@ -10,6 +10,8 @@ class message_model extends CI_Model
     public function add_message($data)
     {
         $this->db->insert('tbl_message', $data);
+        // Send back last id inserted from tbl_message
+        return $this->db->insert_id();
     }
 
     // public function get_employee_by_id($id)
@@ -31,5 +33,42 @@ class message_model extends CI_Model
         $this->db->delete('tbl_message', array('message_id' => $id));
     }
 
+    public function analyse_sentiment($data)
+    {
+
+        /* API URL */
+        $url = 'http://localhost:5000/predict';
+        
+        /* Init cURL resource */
+        $ch = curl_init($url);
+        
+        /* Array Parameter Data */
+        $data = json_encode($data);
+        
+        // var_dump($data); exit;
+   
+        /* pass encoded JSON string to the POST fields */
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            
+        /* set the content type json */
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+            
+        /* set return type json */
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            
+        /* execute request */
+        $result = curl_exec($ch);
+             
+        /* close cURL resource */
+        curl_close($ch);
+
+        return $result;
+    }
+
+    public function addSentiment($data)
+    {
+        $this->db->insert('tbl_message_sentiment', $data);
+
+    }
 }
  

@@ -172,23 +172,23 @@
 															<h6 style="margin-bottom:0;">Pelayanan</h6>
 															
 																<fieldset>
-																<div class="star-rating">
-																	<input type="radio" id="star5" name="layanan"
-																		value="5" /><i></i><label for="star5"
-																		title="Outstanding">5 stars</label>
-																	<input type="radio" id="star4" name="layanan"
-																		value="4" /><i></i><label for="star4"
-																		title="Very Good">4 stars</label>
-																	<input type="radio" id="star3" name="layanan"
-																		value="3" /><i></i><label for="star3" title="Good">3
-																		stars</label>
-																	<input type="radio" id="star2" name="layanan"
-																		value="2" /><i></i><label for="star2" title="Poor">2
-																		stars</label>
-																	<input type="radio" id="star1" name="layanan"
-																		value="1" /><i></i><label for="star1"
-																		title="Very Poor">1 star</label>
-																		</div>
+																	<div class="star-rating">
+																		<input type="radio" id="star1" name="layanan"
+																			value="1" /><i></i><label for="star1"
+																			title="Very Poor">1 star</label>
+																		<input type="radio" id="star2" name="layanan"
+																			value="2" /><i></i><label for="star2" title="Poor">2
+																			stars</label>
+																		<input type="radio" id="star3" name="layanan"
+																			value="3" /><i></i><label for="star3" title="Good">3
+																			stars</label>
+																		<input type="radio" id="star4" name="layanan"
+																			value="4" /><i></i><label for="star4"
+																			title="Very Good">4 stars</label>
+																		<input type="radio" id="star5" name="layanan"
+																			value="5" /><i></i><label for="star5"
+																			title="Outstanding">5 stars</label>
+																	</div>
 																</fieldset>
 															
 														</div>
@@ -269,11 +269,10 @@
 									+6281371337667</p>
 								<p><i class="gdlr-icon fa fa-envelope" style="color: #444444; font-size: 16px; "></i>
 									reservation@pondoksambalrestaurant.com</p>
-								<p><i class="gdlr-icon fa fa-clock-o" style="color: #444444; font-size: 16px; "></i> Mon
-									- Fri / 10:00-21:00, Sat - Sun / 09:00 - 23:00</p>
+								<p><i class="gdlr-icon fa fa-clock-o" style="color: #444444; font-size: 16px; "></i> Mon - Sat / 11:00-20:00, Sun / CLOSED</p>
 							</div>
 						</div>
-						<div id="text-8" class="widget widget_text gdlr-item gdlr-widget">
+						<!-- <div id="text-8" class="widget widget_text gdlr-item gdlr-widget">
 							<h3 class="gdlr-widget-title">Social Media</h3>
 							<div class="clear"></div>
 							<div class="textwidget"><a href="http://facebook.com/goodlayers"><i
@@ -289,7 +288,7 @@
 										style="color: #444444; font-size: 28px; "></i></a> <a href="#"><i
 										class="gdlr-icon fa fa-instagram"
 										style="color: #444444; font-size: 28px; "></i></a>
-							</div>
+							</div> -->
 						</div>
 					</div>
 				</div>
