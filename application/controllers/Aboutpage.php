@@ -80,8 +80,6 @@ class Aboutpage extends CI_Controller
 				 'keramaian_n' => (int)$this->input->post('ramai'),
 				 'pelayanan_n' => (int)$this->input->post('layanan')
 				);
-				
-			var_dump($data_ml);
 			// 0 -> Bagus
 			// 1-> Buruk
 			// 2 -> Netral
@@ -106,11 +104,8 @@ class Aboutpage extends CI_Controller
 						$value = 2;
 				}
 			}
-			
-			var_dump($data_ml);
 
 			$send_data = array($data_ml);
-			//  var_dump($data_ml);
             $last_messageid = $this->message_model->add_message($data);
 			$data_sentiment = $this->message_model->analyse_sentiment($send_data);
 			// Filter out value of return that doesn't numeric
